@@ -62,7 +62,7 @@ a {
     background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
             rgba(225, 225, 225, 0.8));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
-        inset -3px -3px rgba(150, 148, 148, 0.445);
+        inset -2px -2px rgba(34, 32, 32, 0.101);
     backdrop-filter: blur(10px);
 }
 
@@ -77,73 +77,65 @@ section {
 
 /* topbar */
 #topbar {
-    border-radius: 99px;
-    top: 0;
-    left: 0;
-    /* 固定定位 不會跟著卷軸走 */
     position: fixed;
-    /* 為了讓她不被底下section蓋過 故設定他z-index為最大(常用999表示絕對不會被蓋過) */
-    z-index: 999;
-
-    /* 定位會抓內容的尺寸 故要手動設定回w100% */
-    width: 100%;
+    width: 50%;
     max-width: 50%;
-    display: flex;
-    /* 預設主軸為水平 */
-    justify-content: space-between;
-    /* 主軸均分 貼齊頭尾 */
-    margin: 50px 50px;
     padding: 10px;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    /* 副軸(垂直)置中 */
-    transition: all 1s ease;
+    border-radius: 99px;
+    transition: max-width 1s ease, height 1s ease;
     z-index: 999;
 }
 
 #topbar .logo {
-    width: 10vh;
+    width: 65px;
+    transition: width 1s ease;
 }
 
 /* #topbar.collapsed {
-    width: 10vh;
-    transition: all 1s ease;
+    max-width: 75px;
+    border-radius: 99px;
 } */
-#topbar {
-    width: 10vh;
-    transition: all 1s ease;
+
+#topbar:hover {
+    max-width: 50vh;
+    height: auto;
+    /* 恢复到正常高度 */
 }
+
 #topbar .menu {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
-    transition: all 1s ease;
+    transition: opacity 2s ease;
+    visibility: visible;
     opacity: 1;
 }
 
-/* #topbar.collapsed .menu {
-    display: none;
-    opacity: 0;
-} */
 
-#topbar .menu {
-    display: none;
+
+
+#topbar.collapsed .menu {
+    visibility: hidden;
     opacity: 0;
+    transition: opacity 0.2s ease, visibility 0s 0.2s;
 }
 
-#topbar:hover {
-    width: 100%;
-}
 
 #topbar:hover .menu {
-    display: flex;
     opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 0s;
 }
 
 .menu a {
     color: #fff;
     padding: 10px 20px;
     text-align: center;
-    transition: 1s;
 }
 
 /* home區 */
