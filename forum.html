@@ -9,19 +9,23 @@
 </head>
 
 <body>
-        <header id="topbar">
-            <!-- logo區 -->
+    <div class="overlay"></div>
+    <header id="topbar">
+        <!-- logo區 -->
+        <div class="forum_head">
             <h1 class="logo">
                 <a href="./index.html">
                     <img src="./img/logo.svg" alt="jotalkLogo">
                 </a>
             </h1>
+
             <div class="menu">
                 <a href="./forum.html">綜合論壇<br>Forum</a>
                 <a href="#">酒吧清單<br>Bar List</a>
                 <a href="#">關於我們<br>About Us</a>
             </div>
-        </header>
+        </div>
+
         <div class="account_login">
             <button>
                 <a href="">會員登入</a>
@@ -29,12 +33,71 @@
         </div>
         <div class="forum_slogan">
             <h1>Let's Jotalk</h1>
-            
+            <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容">
+                <!-- <label for="">產品搜尋:</label> -->
+                <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
+                    placeholder="搜尋所有內容">
+                <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋">
+            </form>
+            <p>9999 會員 987 online 12345 文章</p>
+        </div>
+    </header>
+    <section class="forum_body">
+
+        <!-- 布告欄&標籤 -->
+        <div class="body_bull_tag">
+
+            <!-- 布告欄 -->
+            <div class="body_bulletin">
+                <div class="categories">
+                    <div class="body_guide">新手指南</div>
+                    <div class="body_special">本月福利</div>
+                    <div class="body_rank">成就排名</div>
+                </div>
+                <div class="bulletin_content">
+                    <!-- 這裡放置布告欄的內容 -->
+                    <p>這裡是內容區域，會根據選擇的類別顯示不同的內容。</p>
+                </div>
+            </div>
+
+            <!-- 標籤 -->
+            <div class="body_tagVdo">
+                <div class="tagVdo_categories">
+                    <div class="body_hotTag active">熱門標籤</div>
+                    <div class="body_hotVdo">熱門影片</div>
+                </div>
+
+                <div class="tagVdo_content">
+                    <!-- 多行文字 -->
+                    <div class="grid">
+                        <div>標籤1</div>
+                        <div>標籤2</div>
+                        <div>標籤3</div>
+                        <div>標籤4</div>
+                        <div>標籤5</div>
+                        <div>標籤6</div>
+                        <div>標籤7</div>
+                        <div>標籤8</div>
+                        <div>標籤9</div>
+                        <div>標籤10</div>
+                        <div>標籤11</div>
+                        <div>標籤12</div>
+                        <div>標籤13</div>
+                        <div>標籤14</div>
+                        <div>標籤15</div>
+                    </div>
+                    <!-- 更多的連結 -->
+                    <div class="more-link">
+                        <a href="#">更多熱門標籤>></a>
+                    </div>
+                </div>
+
+            </div>
+
+
 
         </div>
-        <section>
-
-        </section>
+    </section>
     <script src="./js/forum-script.js"></script>
 </body>
 
