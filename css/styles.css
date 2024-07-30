@@ -24,6 +24,7 @@ body {
         "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     font-size: 100%;
     line-height: 1.5;
+    /* color: #155569; */
 }
 
 /* 重置標題 */
@@ -140,7 +141,7 @@ section {
 }
 
 .menu a {
-    color: #fff;
+    color: #000000;
     padding: 10px 20px;
     text-align: center;
 }
@@ -212,21 +213,25 @@ section {
     /* 垂直居中 */
 }
 
-#forum figure {
+#forum .main{
+    background-image: url(../img/forum_bg.PNG);
     height: 90vh;
     width: 100%;
     z-index: 1;
-    overflow: hidden;
+    background-attachment: fixed;
+    /* 固定在背景 */
+    background-size: cover;
+    /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
+    background-position: center, center;
+    /* 將背景x y軸致中 */
+    background-repeat: no-repeat;
+    /* 重複保證不會重複拼貼 */
+    position: absolute;
 }
 
-#forum img {
-    height: 100%;
-    object-fit: cover;
-}
 
 #forum .content {
     z-index: 2;
-    position: absolute;
 }
 
 .left1-item {
@@ -241,384 +246,63 @@ section {
     justify-content: space-between;
 }
 
-
-
-
-
-.mouse {
-    background: #4e5559 linear-gradient(transparent 0%, transparent 50%, #ffffff 50%, #ffffff 100%);
-    position: relative;
-    width: 26px;
-    height: 44px;
-    border-radius: 100px;
-    background-size: 100% 200%;
-    -webkit-animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;
-    animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;
-    margin-top: 100px;
-    margin-bottom: 50px;
+.container {
+    z-index: 3;
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden;
 }
 
-.mouse:before,
-.mouse:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
+.column {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.mouse:before {
-    width: 23px;
-    height: 41px;
-    background-image: linear-gradient(5deg, rgba(0, 0, 0, 0.068),
-            rgba(70, 66, 66, 0.192));
-    backdrop-filter: blur(10px);
-    border-radius: 100px;
+.card {
+    width: 220px;
+    height: 230px;
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 16px;
+    user-select: none;
 }
 
-.mouse:after {
-    background-color: #ffffff;
-    width: 5px;
-    height: 5px;
-    border-radius: 100%;
-    -webkit-animation: trackBallSlide 5s linear infinite;
-    animation: trackBallSlide 5s linear infinite;
+.column-left {
+    animation: scrollUp 10s linear infinite;
 }
 
-@-webkit-keyframes colorSlide {
+.column-right {
+    animation: scrollDown 10s linear infinite;
+}
+
+.column:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollUp {
     0% {
-        background-position: 0% 100%;
+        transform: translateY(0);
     }
 
-    20% {
-        background-position: 0% 0%;
-    }
-
-    21% {
-        background-color: #4e5559;
-    }
-
-    29.99% {
-        background-color: #ffffff;
-        background-position: 0% 0%;
-    }
-
-    30% {
-        background-color: #4e5559;
-        background-position: 0% 100%;
-    }
-
-    50% {
-        background-position: 0% 0%;
-    }
-
-    51% {
-        background-color: #4e5559;
-    }
-
-    59% {
-        background-color: #ffffff;
-        background-position: 0% 0%;
-    }
-
-    60% {
-        background-color: #4e5559;
-        background-position: 0% 100%;
-    }
-
-    80% {
-        background-position: 0% 0%;
-    }
-
-    81% {
-        background-color: #4e5559;
-    }
-
-    90%,
     100% {
-        background-color: #ffffff;
+        transform: translateY(-100%);
     }
 }
 
-@keyframes colorSlide {
+@keyframes scrollDown {
     0% {
-        background-position: 0% 100%;
+        transform: translateY(-100%);
     }
 
-    20% {
-        background-position: 0% 0%;
-    }
-
-    21% {
-        background-color: #4e5559;
-    }
-
-    29.99% {
-        background-color: #ffffff;
-        background-position: 0% 0%;
-    }
-
-    30% {
-        background-color: #4e5559;
-        background-position: 0% 100%;
-    }
-
-    50% {
-        background-position: 0% 0%;
-    }
-
-    51% {
-        background-color: #4e5559;
-    }
-
-    59% {
-        background-color: #ffffff;
-        background-position: 0% 0%;
-    }
-
-    60% {
-        background-color: #4e5559;
-        background-position: 0% 100%;
-    }
-
-    80% {
-        background-position: 0% 0%;
-    }
-
-    81% {
-        background-color: #4e5559;
-    }
-
-    90%,
     100% {
-        background-color: #ffffff;
-    }
-}
-
-@-webkit-keyframes trackBallSlide {
-    0% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    6% {
-        opacity: 1;
-        transform: scale(0.9) translateY(5px);
-    }
-
-    14% {
-        opacity: 0;
-        transform: scale(0.4) translateY(40px);
-    }
-
-    15%,
-    19% {
-        opacity: 0;
-        transform: scale(0.4) translateY(-20px);
-    }
-
-    28%,
-    29.99% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    30% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    36% {
-        opacity: 1;
-        transform: scale(0.9) translateY(5px);
-    }
-
-    44% {
-        opacity: 0;
-        transform: scale(0.4) translateY(40px);
-    }
-
-    45%,
-    49% {
-        opacity: 0;
-        transform: scale(0.4) translateY(-20px);
-    }
-
-    58%,
-    59.99% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    60% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    66% {
-        opacity: 1;
-        transform: scale(0.9) translateY(5px);
-    }
-
-    74% {
-        opacity: 0;
-        transform: scale(0.4) translateY(40px);
-    }
-
-    75%,
-    79% {
-        opacity: 0;
-        transform: scale(0.4) translateY(-20px);
-    }
-
-    88%,
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-}
-
-@keyframes trackBallSlide {
-    0% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    6% {
-        opacity: 1;
-        transform: scale(0.9) translateY(5px);
-    }
-
-    14% {
-        opacity: 0;
-        transform: scale(0.4) translateY(40px);
-    }
-
-    15%,
-    19% {
-        opacity: 0;
-        transform: scale(0.4) translateY(-20px);
-    }
-
-    28%,
-    29.99% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    30% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    36% {
-        opacity: 1;
-        transform: scale(0.9) translateY(5px);
-    }
-
-    44% {
-        opacity: 0;
-        transform: scale(0.4) translateY(40px);
-    }
-
-    45%,
-    49% {
-        opacity: 0;
-        transform: scale(0.4) translateY(-20px);
-    }
-
-    58%,
-    59.99% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    60% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-
-    66% {
-        opacity: 1;
-        transform: scale(0.9) translateY(5px);
-    }
-
-    74% {
-        opacity: 0;
-        transform: scale(0.4) translateY(40px);
-    }
-
-    75%,
-    79% {
-        opacity: 0;
-        transform: scale(0.4) translateY(-20px);
-    }
-
-    88%,
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(-20px);
-    }
-}
-
-@-webkit-keyframes nudgeMouse {
-    0% {
-        transform: translateY(0);
-    }
-
-    20% {
-        transform: translateY(8px);
-    }
-
-    30% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(8px);
-    }
-
-    60% {
-        transform: translateY(0);
-    }
-
-    80% {
-        transform: translateY(8px);
-    }
-
-    90% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes nudgeMouse {
-    0% {
-        transform: translateY(0);
-    }
-
-    20% {
-        transform: translateY(8px);
-    }
-
-    30% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(8px);
-    }
-
-    60% {
-        transform: translateY(0);
-    }
-
-    80% {
-        transform: translateY(8px);
-    }
-
-    90% {
         transform: translateY(0);
     }
 }
