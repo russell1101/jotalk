@@ -6,3 +6,15 @@ window.addEventListener("scroll", function () {
         topbar.classList.remove("collapsed");
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const columns = document.querySelectorAll('.column');
+    columns.forEach(column => {
+        column.addEventListener('mouseover', () => {
+            column.style.animationPlayState = 'paused';
+        });
+        column.addEventListener('mouseout', () => {
+            column.style.animationPlayState = 'running';
+        });
+    });
+});
