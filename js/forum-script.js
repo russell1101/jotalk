@@ -11,81 +11,50 @@ window.addEventListener("scroll", function () {
 // 左側布告欄切換
 document.addEventListener('DOMContentLoaded', function () {
     const categories = document.querySelectorAll('.body_bulletin .categories div');
+    const contentDivs = document.querySelectorAll('.body_bulletin .bulletin_content > div');
 
     categories.forEach(category => {
         category.addEventListener('click', function () {
             // 移除所有類別的 active 類
             categories.forEach(c => c.classList.remove('active'));
+            // 移除所有內容的 active 類
+            contentDivs.forEach(content => content.classList.remove('active'));
+            
+            // 為當前點擊的類別添加 active 類
+            this.classList.add('active');
+
+            // 顯示相應的內容
+            const targetContentClass = this.className.split(' ')[0] + '_content';
+            document.querySelector(`.body_bulletin .${targetContentClass}`).classList.add('active');
+        });
+    });
+
+    // 設置默認顯示的內容
+    document.querySelector('.body_guide').click();
+});
+
+// 熱門標籤影片切換
+document.addEventListener('DOMContentLoaded', () => {
+    const tagVdoCategories = document.querySelectorAll('.body_tagVdo .tagVdo_categories div');
+
+    tagVdoCategories.forEach(tagVdoCategory => {
+        tagVdoCategory.addEventListener('click', function () {
+            // 移除所有類別的 active 類
+            tagVdoCategories.forEach(c => c.classList.remove('active'));
             // 為當前點擊的類別添加 active 類
             this.classList.add('active');
 
             // 根據所選類別更新內容
-            const content = document.querySelector('.body_bulletin .bulletin_content p');
-            switch (this.className.split(' ')[0]) { // 確保僅抓取類別名稱，避免 active 類影響
-                case 'body_guide':
-                    content.textContent = '這是新手指南的內容。';
-                    break;
-                case 'body_special':
-                    content.textContent = '這是本月福利的內容。';
-                    break;
-                case 'body_rank':
-                    content.textContent = '這是成就排名的內容。';
-                    break;
+            const hotTagContent = document.querySelector('.body_tagVdo .body_hotTag_content');
+            const hotVdoContent = document.querySelector('.body_tagVdo .body_hotVdo_content');
+
+            if (this.classList.contains('body_hotTag')) {
+                hotTagContent.classList.add('active');
+                hotVdoContent.classList.remove('active');
+            } else if (this.classList.contains('body_hotVdo')) {
+                hotTagContent.classList.remove('active');
+                hotVdoContent.classList.add('active');
             }
         });
-    });
-});
-
-
-// 熱門標籤影片切換
-tagVdoCategories.forEach(tagVdoCategory => {
-    tagVdoCategory.addEventListener('click', function () {
-        // 移除所有類別的 active 類
-        tagVdoCategories.forEach(c => c.classList.remove('active'));
-        // 為當前點擊的類別添加 active 類
-        this.classList.add('active');
-
-        // 根據所選類別更新內容
-        const tagVdoContent = document.querySelector('.body_tagVdo .tagVdo_content .grid');
-        switch (this.className.split(' ')[0]) { // 確保僅抓取類別名稱，避免 active 類影響
-            case 'body_hotTag':
-                tagVdoContent.innerHTML = `
-                    <div>標籤1</div>
-                    <div>標籤2</div>
-                    <div>標籤3</div>
-                    <div>標籤4</div>
-                    <div>標籤5</div>
-                    <div>標籤6</div>
-                    <div>標籤7</div>
-                    <div>標籤8</div>
-                    <div>標籤9</div>
-                    <div>標籤10</div>
-                    <div>標籤11</div>
-                    <div>標籤12</div>
-                    <div>標籤13</div>
-                    <div>標籤14</div>
-                    <div>標籤15</div>
-                `;
-                break;
-            case 'body_hotVdo':
-                tagVdoContent.innerHTML = `
-                    <div>影片1</div>
-                    <div>影片2</div>
-                    <div>影片3</div>
-                    <div>影片4</div>
-                    <div>影片5</div>
-                    <div>影片6</div>
-                    <div>影片7</div>
-                    <div>影片8</div>
-                    <div>影片9</div>
-                    <div>影片10</div>
-                    <div>影片11</div>
-                    <div>影片12</div>
-                    <div>影片13</div>
-                    <div>影片14</div>
-                    <div>影片15</div>
-                `;
-                break;
-        }
     });
 });

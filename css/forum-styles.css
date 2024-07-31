@@ -293,19 +293,53 @@ body {
 
 /* 布告欄內容區域 */
 .body_bulletin .bulletin_content {
-    padding: 36px 19px; /* 內容區域的內邊距，上下36px，左右19px */
+    padding: 16px 19px 36px 19px; /* 內容區域的內邊距，上下36px，左右19px */
     flex-grow: 1; /* 填充剩餘空間 */
     width: 300px; /* 固定內容區域寬度 */
     height: 530px; /* 固定內容區域高度 */
-    overflow-y: auto; /* 當內容溢出時顯示滾動條 */
+    /* overflow-y: auto; 當內容溢出時顯示滾動條 */
     border: 1px solid #000; /* 布告欄的邊框 */
     box-sizing: border-box;
     border-radius: 20px;
 }
 
-/* 布告欄內容區域的文字 */
-.body_bulletin .bulletin_content p {
-    margin: 0;
+/* ----------body 布告欄文字內容-新手指南 ---------- */
+
+/* 初始隱藏所有內容 */
+.bulletin_content > div {
+    display: none;
+}
+
+/* 顯示當前選中的內容 */
+.bulletin_content > .active {
+    display: block;
+}
+
+/* 類別區域 */
+.categories div {
+    cursor: pointer;
+}
+
+/* 當前選中的類別 */
+.categories .active {
+    border: 1px solid #000; /* 當前選中項的四邊框 */
+}
+
+/* 每個內容區域的樣式 */
+.bulletin_content div {
+    padding: 20px; /* 調整內容區域的內邊距 */
+}
+
+/* 標題和段落的行距 */
+.bulletin_content h2 {
+    margin-top: 20px;
+    font-size: 14px; /* 標題字體大小 */
+}
+
+.bulletin_content p {
+    margin-top: 5px;
+    font-size: 12px; /* 段落字體大小 */
+    line-height: 1; /* 行距 */
 }
 
 /* ----------body 熱門標籤影片---------- */
@@ -315,9 +349,12 @@ body {
     width: 350px; /* 與布告欄同寬 */
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #000; /* 只有上邊框 */
     box-sizing: border-box;
+    padding-top: 20px;
+    position: relative; /* 添加相對定位 */
+    z-index: 1; /* 確保在最上層 */
 }
+
 
 /* 類別區域 */
 .body_tagVdo .tagVdo_categories {
@@ -332,39 +369,88 @@ body {
     text-align: center;
     flex-grow: 1;
     cursor: pointer;
-    border-bottom: 2px solid transparent; /* 初始為透明邊框 */
 }
 
 /* 當前選中的類別 */
 .body_tagVdo .tagVdo_categories .active {
-    border: 2px solid #000; /* 當前選中項的底邊框 */
+    border: 1px solid #585858; /* 當前選中項的底邊框 */
+    border-radius: 10px;
 }
 
 /* 熱門標籤與熱門影片的內容 */
 .body_tagVdo .tagVdo_content {
+    position: relative; /* 改為相對定位 */
+    border-top: 1px solid #585858;
     padding: 20px 19px; /* 與上邊框的距離為 20px */
-    width: 280px; /* 固定內容區域寬度 */
+    width: 100%; /* 固定內容區域寬度 */
     height: 240px; /* 固定內容區域高度 */
     display: flex;
     flex-direction: column;
     align-items: center; /* 水平居中 */
+    justify-content: center;
     box-sizing: border-box;
+    z-index: 1; /* 確保內容區域在標籤區域上方 */
 }
 
-/* 多行文本區域 */
-.body_tagVdo .tagVdo_content .grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 五列 */
-    grid-template-rows: repeat(3, 1fr); /* 三行 */
-    gap: 15px; /* 單元格之間的間距 */
+.body_tagVdo .body_hotTag_content,
+.body_tagVdo .body_hotVdo_content {
+    position: absolute; /* 使內容區域可以正確堆疊 */
+    top: 0; /* 調整為適當的位置 */
+    left: 0; /* 調整為適當的位置 */
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* 確保內容區域在標籤區域之下 */
+}
+
+/* 標籤內容區域 */
+.body_tagVdo .body_hotTag_content {
+    display: block; /* 預設顯示 */
+    width: 100%;
+}
+
+.body_tagVdo .body_hotVdo_content {
+    display: none; /* 預設隱藏 */
+    width: 100%;
+}
+
+/* 顯示當前選中內容 */
+.body_tagVdo .body_hotTag_content.active,
+.body_tagVdo .body_hotVdo_content.active {
+    display: block;
+}
+
+/* 隱藏未選中內容 */
+.body_tagVdo .body_hotTag_content:not(.active),
+.body_tagVdo .body_hotVdo_content:not(.active) {
+    display: none;
+}
+
+/* 標籤和影片的橫向排列 */
+.body_tagVdo .body_hotTag_content.active .grid {
+    display: grid; /* 使用 Grid 進行佈局 */
+    grid-template-columns: repeat(3, 1fr); /* 三列 */
+    grid-template-rows: repeat(5, 1fr); /* 五行 */
+    gap: 10px; /* 單元格之間的間距 */
+    justify-content: center; /* 元素居中對齊 */
     width: 100%;
     text-align: center;
+}
+
+/* 每個標籤或影片的樣式 */
+.body_tagVdo .tagVdo_content .grid div {
+    box-sizing: border-box;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.body_tagVdo .tagVdo_content .grid div:hover {
+    /* background-color: #f0f0f0; */
 }
 
 /* 更多的連結 */
 .body_tagVdo .tagVdo_content .more-link {
     margin-top: 10px;
-    text-align: right;
+    text-align: center;
     width: 100%;
 }
 
@@ -375,5 +461,38 @@ body {
 }
 
 .body_tagVdo .tagVdo_content .more-link a:hover {
+    text-decoration: underline;
+}
+
+.body_hotVdo_content .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.body_hotVdo_content .video-item {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.body_hotVdo_content .video-item iframe {
+    width: 100%;
+    height: auto;
+}
+
+.body_hotVdo_content .more-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.body_hotVdo_content .more-link a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.body_hotVdo_content .more-link a:hover {
     text-decoration: underline;
 }
