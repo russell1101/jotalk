@@ -58,6 +58,8 @@ a {
     text-decoration: none;
 }
 
+
+
 /* 設置 body 背景圖 */
 body {
     background-image: url(../img/jotalk_background.jpg); /* 背景圖 URL */
@@ -71,6 +73,7 @@ body {
     overflow-x: hidden; /* 防止水平滾動條 */
 }
 
+
 .overlay {
     position: fixed; /* 固定位置，覆蓋在背景圖上 */
     top: 0;
@@ -81,6 +84,7 @@ body {
     backdrop-filter: blur(1px); /* 應用模糊效果 */
     z-index: -1; /*確保在所有內容之下 */
 }
+
 
 /* ----------頁首區---------- */
 
@@ -124,16 +128,24 @@ body {
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
         inset -2px -2px rgba(0, 0, 0, 0.027);
     position: fixed;
-    width: 50%;
+    width: 90px;
     height: 90px;
     padding: 14px;
     margin-top: 50px;
     margin-left: 50px;
     display: flex;
     align-items: center;
+    justify-content: center;  /* 确保内容在容器中心 */
     border-radius: 99px;
-    transition: width 1s ease;
+    transition: width 1s ease, border-radius 1s ease, justify-content 1s ease; /* 同步过渡 */
     z-index: 999;
+}
+
+
+#topbar .forum_head:hover {
+    width: 50%;  /* 滑鼠觸碰時擴展 */
+    border-radius: 99px;  /* 變長條 */
+    justify-content: space-between;  /* 水平排列内容 */
 }
 
 #topbar .forum_head .logo {
@@ -150,23 +162,21 @@ body {
     width: 60px;
 }
 
-#topbar .forum_head.collapsed {
+#topbar .forum_head .collapsed {
     width: 90px;
     border-radius: 99px;
     overflow: hidden;
-}
-
-#topbar .forum_head:hover {
-    width: 50%;
 }
 
 #topbar .forum_head .menu {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
-    transition: opacity 4s ease, visibility 0s 0.3s;
-    visibility: visible;
-    opacity: 1;
+    white-space: nowrap; /* 阻止文字换行 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease, visibility 0s 1s;  /* 菜單顯隱 */
 }
 
 
@@ -174,13 +184,16 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease, visibility 0s 0.2s;
+    justify-content: space-around;
+    padding: 0 50px;
 }
 
 
 #topbar .forum_head:hover .menu {
-    opacity: 1;
     visibility: visible;
-    transition: opacity 4s ease, visibility 0s 0.2s;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0s 0s;
+    justify-content: space-around; /* 确保项目在可用空间内对齐 */
 }
 
 .forum_head .menu a {
@@ -238,6 +251,20 @@ body {
 
 #topbar .forum_slogan p {
     color: #ffffff;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body_forum {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 80%;
+    max-width: 1040px;
 }
 
 /* ----------body 左側總容器---------- */

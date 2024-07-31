@@ -1,12 +1,24 @@
 // LOGO標題下滑縮放 
-window.addEventListener("scroll", function () {
-    var topbar = document.getElementById("#topbar .forum_head");
-    if (window.scrollY > 100) {  // 如果滾動超過100px
-        topbar.classList.add("collapsed");
-    } else {
-        topbar.classList.remove("collapsed");
-    }
-});
+document.addEventListener('DOMContentLoaded', function () {
+    const forumHead = document.querySelector('.forum_head');
+
+    // 鼠标移入移出事件
+    forumHead.addEventListener('mouseenter', function () {
+        this.style.width = '50%';  // 鼠标悬停时扩展
+        this.style.borderRadius = '99px';  // 转变为长条形
+    });
+
+    forumHead.addEventListener('mouseleave', function () {
+        this.style.width = '90px';  // 鼠标离开时缩回圆形
+        this.style.borderRadius = '99px';
+    });
+
+    // 滚动事件
+    window.addEventListener("scroll", function () {
+        forumHead.classList.add("collapsed");
+    });
+    });
+
 
 // 左側布告欄切換
 document.addEventListener('DOMContentLoaded', function () {
