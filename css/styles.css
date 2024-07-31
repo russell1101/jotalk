@@ -124,6 +124,7 @@ section {
     transition: opacity 4s ease, visibility 0s 0.3s;
     visibility: visible;
     opacity: 1;
+    white-space: nowrap;
 }
 
 
