@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener("scroll", function () {
         forumHead.classList.add("collapsed");
     });
-    });
+});
 
 
 // 左側布告欄切換
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             categories.forEach(c => c.classList.remove('active'));
             // 移除所有內容的 active 類
             contentDivs.forEach(content => content.classList.remove('active'));
-            
+
             // 為當前點擊的類別添加 active 類
             this.classList.add('active');
 
@@ -69,4 +69,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+
+// 右上活動切換
+document.addEventListener('DOMContentLoaded', () => {
+    // 获取所有类别标签
+    const categories = document.querySelectorAll('.news_categories div');
+    // 获取所有内容区域
+    const contentSections = document.querySelectorAll('.body_news ul');
+    // 获取所有的 "更多" 链接
+    const moreLinks = document.querySelectorAll('.news_more-link');
+
+    categories.forEach((category) => {
+        category.addEventListener('click', () => {
+            // 移除所有类别标签的 active 类
+            categories.forEach((cat) => cat.classList.remove('active'));
+            // 添加 active 类到当前被点击的标签
+            category.classList.add('active');
+
+            // 获取当前被点击标签的 data-target 属性
+            const target = category.getAttribute('data-target');
+
+            // 隐藏所有内容区域
+            contentSections.forEach((section) => {
+                section.classList.remove('active');
+            });
+
+            // 隐藏所有 "更多" 链接
+            moreLinks.forEach((link) => {
+                link.classList.remove('active-link');
+            });
+
+            // 显示对应的内容区域和链接
+            document.querySelector(`.${target}`).classList.add('active');
+            document.querySelector(`.${target} ~ .news_more-link`).classList.add('active-link');
+        });
+    });
+
+    // 默认显示热门活动内容
+    document.querySelector('.news_hotEvt').click();
 });
