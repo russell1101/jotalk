@@ -127,45 +127,18 @@ section {
     white-space: nowrap;
 }
 
-
-
-
 #topbar .menu a {
-    position: relative;
-    /* 确保伪元素定位相对于这个元素 */
     display: block;
     color: #000000;
     padding: 10px 20px;
     text-align: center;
+    border-bottom: solid 2px transparent;
+    /* 先預留底線的空間 以免造成推移 故先設定成透明 */
 }
 
-#topbar .menu a:after {
-    border-radius: 99px;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    direction: rtl;
-    z-index: 0;
-    /* 放在背景层 */
-    box-shadow:
-        -7px -7px 20px 0px #fff9,
-        -4px -4px 5px 0px #fff9,
-        7px 7px 20px 0px #0002,
-        4px 4px 5px 0px #0001;
-    transition: all 0.3s ease;
-}
-
-#topbar .menu a:hover:after {
-    left: auto;
-    right: 0;
-    width: 100%;
-}
-
-#topbar .menu a:active {
-    top: 2px;
+#topbar .menu a:hover {
+    border-bottom: solid 2px var(--deep);
+    transition: 0.35s ease-in-out;
 }
 
 
