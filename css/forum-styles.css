@@ -603,7 +603,7 @@ main {
 
 /* ----------body(右側) 活動欄---------- */
 
-/* 右侧活动栏容器 */
+/* 右侧活動欄容器 */
 .body_news {
     max-width: 100%;
     height: 550px;
@@ -652,8 +652,6 @@ main {
     /* 两行布局 */
     gap: 10px;
     /* 单元格之间的间距 */
-    width: calc(100% - 20px);
-    /* 外边距 */
     height: 100%;
     /* 占满父容器高度 */
     margin: 10px 0;
@@ -756,4 +754,110 @@ main {
     width: 100%; /* 占满父容器宽度 */
     border-radius: 10px; /* 圆角 */
     overflow: hidden;
+}
+
+
+/* 右侧文章欄容器 */
+.body_atc {
+    max-width: 100%;
+    height: 540px; /* 设置固定高度 */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; /* 确保在最上层 */
+}
+
+/* 类别标签区域 */
+.body_atc .atc_categories {
+    display: flex;
+    margin: 4px 0; /* 与内容区的间距 */
+    justify-content: flex-start;
+}
+
+.body_atc .atc_categories div {
+    padding: 1px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.body_atc .atc_categories .active {
+    border: 1px solid #585858; /* 当前选中项的边框 */
+    background-color: transparent; /* 当前选中项的背景色 */
+}
+
+.body_atc .atc_categories div:hover {
+    background-color: transparent; /* 悬停时的背景色 */
+}
+
+/* 文章内容区域样式 */
+.hotAtc_content,
+.niceAtc_content,
+.normalAtc_content {
+    border-top: 1px solid #585858; /* 当前选中项的边框 */
+    display: none; /* 默认隐藏 */
+    grid-template-columns: repeat(4, 1fr); /* 四列布局 */
+    grid-template-rows: repeat(2, 1fr); /* 两行布局 */
+    gap: 10px; /* 单元格之间的间距 */
+    width: 100%; /* 占满父容器宽度 */
+    height: 100%; /* 占满父容器高度 */
+    margin: 10px 0; /* 外边距 */
+    padding-top: 10px;
+    box-sizing: border-box; /* 包括边框和内边距 */
+    overflow: hidden; /* 确保内容不溢出 */
+    list-style: none; /* 移除列表样式 */
+}
+
+/* 显示 active 类别的内容 */
+.hotAtc_content.active,
+.niceAtc_content.active,
+.normalAtc_content.active {
+    display: grid; /* 使用 grid 布局显示 */
+}
+
+/* 每个文章项的样式 */
+.hotAtc_inner,
+.niceAtc_inner,
+.normalAtc_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    height: 100%; /* 占满父容器的高度 */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 增加轻微阴影 */
+}
+
+/* 确保文章链接的样式 */
+.hotAtc_inner a,
+.niceAtc_inner a,
+.normalAtc_inner a {
+    color: #333;
+    text-decoration: none; /* 移除下划线 */
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.hotAtc_inner a:hover,
+.niceAtc_inner a:hover,
+.normalAtc_inner a:hover {
+    background-color: #e0e0e0; /* 悬停时的背景色 */
+}
+
+/* "更多" 链接样式 */
+.atc_more-link {
+    display: none; /* 默认隐藏 */
+    text-align: right;
+}
+
+.atc_more-link.active-link {
+    display: block; /* 显示当 active-link 类存在时 */
 }
