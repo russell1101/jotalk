@@ -128,19 +128,31 @@ section {
     white-space: nowrap;
 }
 
+/* topbar 選項 hover效果 */
 #topbar .menu a {
     display: block;
     color: #000000;
     padding: 10px 20px;
     text-align: center;
-    border-bottom: solid 2px transparent; 
-    /* 先預留底線的空間 以免造成推移 故先設定成透明 */
+    position: relative;  
+    overflow: hidden;   
 }
 
-#topbar .menu a:hover {
-    border-bottom: solid 2px black; /*這裡我從1.5改成2*/
-    transition: 1s ease-in-out;
+#topbar .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;  
+    width: 0;  
+    height: 1.5px;
+    background-color: black;
+    transition: width 1s ease-in-out;  
 }
+
+#topbar .menu a:hover::after {
+    width: 100%;  
+}
+
 
 #topbar.collapsed .menu {
     visibility: hidden;
@@ -154,6 +166,7 @@ section {
     visibility: visible;
     transition: opacity 4s ease, visibility 0s 0.2s;
 }
+
 
 
 /* home區 */
@@ -220,7 +233,7 @@ section {
 }
 
 #forum .background {
-    background-image: url(../img/index/forum_bg.PNG);
+    background-color:#544f477c;
     height: 90vh;
     width: 100%;
     z-index: 1;
@@ -233,12 +246,38 @@ section {
     background-repeat: no-repeat;
     /* 重複保證不會重複拼貼 */
     position: absolute;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
 }
 
-#forum .content {
+#forum .title {
     z-index: 2;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 350px;
+    text-align: center;
 }
 
+#forum h2{
+    font-weight: 400;
+    font-size: 5rem;
+    letter-spacing: 0.1rem;
+    line-height: 3.5rem;
+    color: white;
+}
+
+#forum h3{
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: 1.5rem;
+    line-height: 3.5rem;
+    color: white;
+}
+
+#forum
 .left1-item {
     width: 300px;
     height: 250px;
@@ -257,6 +296,7 @@ section {
     width: 80%;
     max-width: 1000px;
     overflow: hidden;
+
 }
 
 .column {
@@ -312,6 +352,7 @@ section {
     }
 }
 
+
 /* about區 */
 #about video {
     object-fit: cover;
@@ -330,7 +371,7 @@ section {
     height: 80vh;
     width: 80%;
     margin: 50px 150px;
-    background-color: rgba(255, 255, 255, 0.534);
+    /* background-color: rgba(255, 255, 255, 0.534); */
     border-radius: 10px;
 }
 
@@ -341,7 +382,7 @@ section {
 }
 
 #about h2 {
-    color: #3f8da5;
+    color: #2c2c2c;
     font-size: 5rem;
 }
 
