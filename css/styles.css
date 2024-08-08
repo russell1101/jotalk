@@ -133,12 +133,12 @@ section {
     color: #000000;
     padding: 10px 20px;
     text-align: center;
-    border-bottom: solid 2px transparent;
+    border-bottom: solid 2px transparent; 
     /* 先預留底線的空間 以免造成推移 故先設定成透明 */
 }
 
 #topbar .menu a:hover {
-    border-bottom: solid 1.5px black;
+    border-bottom: solid 2px black; /*這裡我從1.5改成2*/
     transition: 1s ease-in-out;
 }
 

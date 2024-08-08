@@ -99,7 +99,7 @@ body {
 /* ----------頁首區---------- */
 
 
-/* topbar 要補遮色片 LOGO要收起來*/
+/* topbar 要補遮色片*/
 #topbar {
     background-image: url(../img/forum_pics/forum_head_pic.png);
     /* 圖片要壓縮 */
@@ -193,7 +193,7 @@ body {
     /* 隐藏溢出的内容 */
     visibility: hidden;
     opacity: 0;
-    transition: opacity 1s ease, visibility 0s 1s;
+    transition: opacity 4s ease, visibility 0s 0.3s;
     /* 菜單顯隱 */
 }
 
@@ -216,9 +216,17 @@ body {
 }
 
 .forum_head .menu a {
+    display: block;
     color: #000000;
     padding: 10px 20px;
     text-align: center;
+    border-bottom: solid 2px transparent;
+    /* 先預留底線的空間 以免造成推移 故先設定成透明 */
+}
+
+.forum_head .menu a:hover {
+    border-bottom: solid 2px black;
+    transition: 1s ease-in-out;
 }
 
 /* login按鈕位置 */
@@ -359,12 +367,23 @@ main {
     cursor: pointer;
     font-size: 14px;
     /* 調整字體大小 */
+    color: #155569;
 }
 
 /* 當前選中的類別 */
 .body_bulletin .categories .active {
-    border: 1px solid #000;
-    /* 當前選中項的四邊框 */
+    /* 移除懸停時的邊框顏色變化 */
+    pointer-events: none;
+    border: 1px solid transparent;
+    /* 確保邊框保持透明 */
+    background-color: #155569;
+    color: #ffffff;
+}
+
+.body_bulletin .categories div:hover {
+    border: 1px solid #585858;
+    /* background-color: transparent; */
+    /* 悬停时的背景色 */
 }
 
 /* 布告欄內容區域 */
@@ -617,6 +636,8 @@ main {
 
 /* 类别标签区域 */
 .body_news .news_categories {
+    /* border: 1px solid transparent; */
+    color: #155569;
     display: flex;
     justify-content: flex-start;
 }
@@ -625,18 +646,23 @@ main {
     padding: 1px 10px;
     cursor: pointer;
     border-radius: 10px;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+    border: 1px solid transparent;
+    /* transition: border-color 0.3s ease, background-color 0.3s ease; */
 }
 
 .body_news .news_categories .active {
-    border: 1px solid #585858;
+    pointer-events: none;
+    border: 1px solid transparent;
     /* 当前选中项的边框 */
-    background-color: transparent;
+    background-color: #155569;
     /* 当前选中项的背景色 */
+    color: #ffffff;
+
 }
 
 .body_news .news_categories div:hover {
-    background-color: transparent;
+    border: 1px solid #585858;
+    /* background-color: transparent; */
     /* 悬停时的背景色 */
 }
 
@@ -666,11 +692,15 @@ main {
 .limitEvt_content.active,
 .normalEvt_content.active {
     padding-top: 10px;
-    border-top: solid 1px #000;
-    display: grid; /* 使用 grid 顯示內容 */
-    grid-template-columns: repeat(2, 1fr); /* 兩列佈局 */
-    grid-template-rows: repeat(2, 1fr); /* 兩行佈局 */
-    gap: 10px; /* 單元格之間的間距 */
+    /* border-top: solid 1px #000; */
+    display: grid;
+    /* 使用 grid 顯示內容 */
+    grid-template-columns: repeat(2, 1fr);
+    /* 兩列佈局 */
+    grid-template-rows: repeat(2, 1fr);
+    /* 兩行佈局 */
+    gap: 10px;
+    /* 單元格之間的間距 */
 }
 
 /* 每个内容项的样式 */
@@ -749,10 +779,14 @@ main {
 .pic3,
 .pic4 {
     background-position: center;
-    background-size: cover; /* 确保图片占满容器 */
-    height: 100%; /* 占满父容器高度 */
-    width: 100%; /* 占满父容器宽度 */
-    border-radius: 10px; /* 圆角 */
+    background-size: cover;
+    /* 确保图片占满容器 */
+    height: 100%;
+    /* 占满父容器高度 */
+    width: 100%;
+    /* 占满父容器宽度 */
+    border-radius: 10px;
+    /* 圆角 */
     overflow: hidden;
 }
 
@@ -760,18 +794,21 @@ main {
 /* 右侧文章欄容器 */
 .body_atc {
     max-width: 100%;
-    height: 540px; /* 设置固定高度 */
+    height: 540px;
+    /* 设置固定高度 */
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     position: relative;
-    z-index: 1; /* 确保在最上层 */
+    z-index: 1;
+    /* 确保在最上层 */
 }
 
 /* 类别标签区域 */
 .body_atc .atc_categories {
     display: flex;
-    margin: 4px 0; /* 与内容区的间距 */
+    margin: 4px 0;
+    /* 与内容区的间距 */
     justify-content: flex-start;
 }
 
@@ -783,37 +820,51 @@ main {
 }
 
 .body_atc .atc_categories .active {
-    border: 1px solid #585858; /* 当前选中项的边框 */
-    background-color: transparent; /* 当前选中项的背景色 */
+    border: 1px solid #585858;
+    /* 当前选中项的边框 */
+    background-color: transparent;
+    /* 当前选中项的背景色 */
 }
 
 .body_atc .atc_categories div:hover {
-    background-color: transparent; /* 悬停时的背景色 */
+    background-color: transparent;
+    /* 悬停时的背景色 */
 }
 
 /* 文章内容区域样式 */
 .hotAtc_content,
 .niceAtc_content,
 .normalAtc_content {
-    border-top: 1px solid #585858; /* 当前选中项的边框 */
-    display: none; /* 默认隐藏 */
-    grid-template-columns: repeat(4, 1fr); /* 四列布局 */
-    grid-template-rows: repeat(2, 1fr); /* 两行布局 */
-    gap: 10px; /* 单元格之间的间距 */
-    width: 100%; /* 占满父容器宽度 */
-    height: 100%; /* 占满父容器高度 */
-    margin: 10px 0; /* 外边距 */
+    /* border-top: 1px solid #585858; 当前选中项的边框 */
+    display: none;
+    /* 默认隐藏 */
+    grid-template-columns: repeat(4, 1fr);
+    /* 四列布局 */
+    grid-template-rows: repeat(2, 1fr);
+    /* 两行布局 */
+    gap: 10px;
+    /* 单元格之间的间距 */
+    width: 100%;
+    /* 占满父容器宽度 */
+    height: 100%;
+    /* 占满父容器高度 */
+    margin: 10px 0;
+    /* 外边距 */
     padding-top: 10px;
-    box-sizing: border-box; /* 包括边框和内边距 */
-    overflow: hidden; /* 确保内容不溢出 */
-    list-style: none; /* 移除列表样式 */
+    box-sizing: border-box;
+    /* 包括边框和内边距 */
+    overflow: hidden;
+    /* 确保内容不溢出 */
+    list-style: none;
+    /* 移除列表样式 */
 }
 
 /* 显示 active 类别的内容 */
 .hotAtc_content.active,
 .niceAtc_content.active,
 .normalAtc_content.active {
-    display: grid; /* 使用 grid 布局显示 */
+    display: grid;
+    /* 使用 grid 布局显示 */
 }
 
 /* 每个文章项的样式 */
@@ -826,9 +877,11 @@ main {
     overflow: hidden;
     border-radius: 10px;
     background-color: #f8f8f8;
-    height: 100%; /* 占满父容器的高度 */
+    height: 100%;
+    /* 占满父容器的高度 */
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 增加轻微阴影 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* 增加轻微阴影 */
 }
 
 /* 确保文章链接的样式 */
@@ -836,7 +889,8 @@ main {
 .niceAtc_inner a,
 .normalAtc_inner a {
     color: #333;
-    text-decoration: none; /* 移除下划线 */
+    text-decoration: none;
+    /* 移除下划线 */
     padding: 15px;
     width: 100%;
     height: 100%;
@@ -849,15 +903,18 @@ main {
 .hotAtc_inner a:hover,
 .niceAtc_inner a:hover,
 .normalAtc_inner a:hover {
-    background-color: #e0e0e0; /* 悬停时的背景色 */
+    background-color: #e0e0e0;
+    /* 悬停时的背景色 */
 }
 
 /* "更多" 链接样式 */
 .atc_more-link {
-    display: none; /* 默认隐藏 */
+    display: none;
+    /* 默认隐藏 */
     text-align: right;
 }
 
 .atc_more-link.active-link {
-    display: block; /* 显示当 active-link 类存在时 */
+    display: block;
+    /* 显示当 active-link 类存在时 */
 }
