@@ -252,7 +252,7 @@ section {
     align-items: center;
 }
 
-#forum .glass{
+#forum .glass {
     position: absolute;
     bottom: 0;
 }
@@ -414,6 +414,61 @@ section {
 }
 
 @keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.pop {
+    display: inline-block;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transform: translateZ(0);
+    margin: 0.4em;
+    padding: 1em;
+    text-decoration: none;
+    border-radius: 99px;
+    opacity: 0;  /* 确保初始状态不可见 */
+    transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+    cursor: default; /* 移除点击光标 */
+}
+
+.pop.bubble-animate {
+    animation-name: pop;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.pop:hover {
+    animation-name: pop;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    cursor: default;
+    /* 鼠标悬停时不再显示点击光标 */
+}
+
+
+/* #about .upper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+#about .down {
+    display: flex;
+    justify-content: space-between;
+}
+
+@keyframes pop {
     50% {
         transform: scale(1.1);
     }
@@ -439,7 +494,7 @@ section {
     animation-duration: 1.5s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
-}
+} */
 
 #about h3 {
     margin-top: 80px;
