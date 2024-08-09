@@ -220,13 +220,46 @@ body {
     color: #000000;
     padding: 10px 20px;
     text-align: center;
-    border-bottom: solid 2px transparent;
+    border-bottom: solid 1px transparent;
     /* 先預留底線的空間 以免造成推移 故先設定成透明 */
 }
 
-.forum_head .menu a:hover {
-    border-bottom: solid 2px black;
-    transition: 1s ease-in-out;
+.forum_head .menu a {
+    display: block;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.forum_head .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: black;
+    transition: width 1s ease-in-out;
+}
+
+.forum_head .menu a:hover::after {
+    width: 100%;
+}
+
+
+.forum_head.collapsed .menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.2s;
+}
+
+
+.forum_head:hover .menu {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 4s ease, visibility 0s 0.2s;
 }
 
 /* login按鈕位置 */
@@ -813,6 +846,8 @@ main {
 }
 
 .body_atc .atc_categories div {
+    border: 1px solid transparent;
+    color: #155569;
     padding: 1px 10px;
     cursor: pointer;
     border-radius: 10px;
@@ -820,14 +855,16 @@ main {
 }
 
 .body_atc .atc_categories .active {
-    border: 1px solid #585858;
+    border: 1px solid transparent;
     /* 当前选中项的边框 */
-    background-color: transparent;
+    background-color: #155569;
     /* 当前选中项的背景色 */
+    color: #ffffff;
 }
 
 .body_atc .atc_categories div:hover {
-    background-color: transparent;
+    /* color: #ffffff; */
+    border: 1px solid #155569;
     /* 悬停时的背景色 */
 }
 
@@ -915,6 +952,125 @@ main {
 }
 
 .atc_more-link.active-link {
+    display: block;
+    /* 显示当 active-link 类存在时 */
+}
+
+/* 右側教學欄容器 */
+
+.body_teach {
+    max-width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* 教學類別標籤 */
+.body_teach .teach_categories {
+    /* border: 1px solid transparent; */
+    color: #155569;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.body_teach .teach_categories div {
+    padding: 1px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.body_teach .teach_categories .active {
+    pointer-events: none;
+    border: 1px solid transparent;
+    /* 当前选中项的边框 */
+    background-color: #155569;
+    /* 当前选中项的背景色 */
+    color: #ffffff;
+
+}
+
+.body_teach .teach_categories div:hover {
+    border: 1px solid #155569;
+    /* background-color: transparent; */
+}
+
+/* 教學內容區域樣式 */
+.baseWine_content,
+.bartendWine_content,
+.teachWine_content {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    /* 单元格之间的间距 */
+    width: 100%;
+    /* 占满父容器宽度 */
+    height: 100%;
+    /* 占满父容器高度 */
+    margin: 10px 0;
+    /* 外边距 */
+    padding-top: 10px;
+    box-sizing: border-box;
+    /* 包括边框和内边距 */
+    overflow: hidden;
+    /* 确保内容不溢出 */
+    list-style: none;
+    /* 移除列表样式 */
+}
+
+/* 显示 active 类别的内容 */
+.baseWine_content.active,
+.bartendWine_contentt.active,
+.teachWine_content.active {
+    display: grid;
+    /* 使用 grid 布局显示 */
+}
+
+.baseWinePic1 {
+    background-image: url('../img/forum_pics/teach_1.jpg');
+}
+
+.baseWinePic2 {
+    background-image: url('../img/forum_pics/teach_1.jpg');
+}
+
+.baseWinePic3 {
+    background-image: url('../img/forum_pics/teach_1.jpg');
+}
+
+.baseWinePic4 {
+    background-image: url('../img/forum_pics/teach_1.jpg');
+}
+
+/* 活动栏图片样式 */
+.baseWinePic1,
+.baseWinePic2,
+.baseWinePic3,
+.baseWinePic4 {
+    background-position: center;
+    background-size: cover;
+    /* 确保图片占满容器 */
+    height: 100%;
+    /* 占满父容器高度 */
+    width: 100%;
+    /* 占满父容器宽度 */
+    border-radius: 10px;
+    /* 圆角 */
+    overflow: hidden;
+}
+
+
+/* "更多" 链接样式 */
+.teachs_more-link {
+    display: none;
+    /* 默认隐藏 */
+    text-align: right;
+}
+
+.teachs_more-link.active-link {
     display: block;
     /* 显示当 active-link 类存在时 */
 }

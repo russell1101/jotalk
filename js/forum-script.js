@@ -143,3 +143,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// 右下文章欄切換
+document.addEventListener('DOMContentLoaded', () => {
+    // 获取所有类别标签
+    const categories = document.querySelectorAll('.teach_categories div');
+    // 获取所有内容区域
+    const contentSections = document.querySelectorAll('.body_teach ul');
+    // 获取所有的 "更多" 链接
+    const moreLinks = document.querySelectorAll('.teachs_more-link');
+
+    // 为每个类别标签添加点击事件
+    categories.forEach((category, index) => {
+        category.addEventListener('click', () => {
+            // 移除所有类别标签和内容区域的 active 类
+            categories.forEach(cat => cat.classList.remove('active'));
+            contentSections.forEach(section => section.classList.remove('active'));
+            moreLinks.forEach(link => link.classList.remove('active-link'));
+
+            // 为点击的标签添加 active 类
+            category.classList.add('active');
+
+            // 获取目标内容区域并显示
+            const targetContentClass = category.getAttribute('data-target');
+            const targetContent = document.querySelector(`.${targetContentClass}`);
+
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+
+            // 显示对应的 "更多" 链接
+            moreLinks[index].classList.add('active-link');
+        });
+    });
+});
