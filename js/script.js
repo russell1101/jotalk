@@ -1,3 +1,4 @@
+// 首頁區
 // topbar
 window.addEventListener("scroll", function () {
     var topbar = document.getElementById("topbar");
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, interval * 1000);
     });
 });
+
 // barlist 套件
 var $slider = $('.slideshow .slider'),
     maxItems = $('.item', $slider).length,
@@ -117,4 +119,3 @@ $('.slideshow-text').slick({
     speed: 900,
     cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
 });
-// 套件結束
