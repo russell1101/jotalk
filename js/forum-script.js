@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 鼠标移入移出事件
     forumHead.addEventListener('mouseenter', function () {
-        this.style.width = '50%';  // 鼠标悬停时扩展
+        this.style.width = '35%';  // 鼠标悬停时扩展
         this.style.borderRadius = '99px';  // 转变为长条形
     });
 

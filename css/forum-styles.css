@@ -155,7 +155,7 @@ body {
 
 
 #topbar .forum_head:hover {
-    width: 50%;
+    width: 35%;
     /* 滑鼠觸碰時擴展 */
     border-radius: 99px;
     /* 變長條 */
@@ -215,14 +215,14 @@ body {
     /* 确保项目在可用空间内对齐 */
 }
 
-.forum_head .menu a {
+/* .forum_head .menu a {
     display: block;
     color: #000000;
     padding: 10px 20px;
     text-align: center;
     border-bottom: solid 1px transparent;
-    /* 先預留底線的空間 以免造成推移 故先設定成透明 */
-}
+    /* 先預留底線的空間 以免造成推移 故先設定成透明 
+    } */
 
 .forum_head .menu a {
     display: block;

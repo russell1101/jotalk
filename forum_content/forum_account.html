@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forum-Atc</title>
+    <link rel="stylesheet" href="../css/forum/forum_account.css">
+</head>
+
+<body>
+    <!-- 壓在背景的透明板 -->
+    <div class="overlay"></div>
+
+    <!-- 頁首區 -->
+    <header id="topbar">
+        <!-- logo區 -->
+        <div class="forum_head">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.svg" alt="jotalkLogo">
+                </a>
+            </h1>
+
+            <div class="menu">
+                <a href="../forum.html">綜合論壇</a>
+                <a href="../barlist.html">酒吧清單</a>
+                <a href="#">關於我們</a>
+            </div>
+        </div>
+        <!-- 會員登入區 -->
+        <div class="account_login">
+            <button>
+                <a href="">發表文章</a>
+            </button>
+            <button>
+                <a href="">會員登入</a>
+            </button>
+        </div>
+
+        <!-- 標題及搜尋區 -->
+        <div class="forum_slogan">
+            <h1>Let's Jotalk</h1>
+            <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容">
+                <!-- <label for="">產品搜尋:</label> -->
+                <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
+                    placeholder="搜尋所有內容">
+                <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋">
+            </form>
+            <p>9999 會員 987 online 12345 文章</p>
+        </div>
+    </header>
+
+    <!-- 內文區 -->
+    <main>
+        <div class="forum-container">
+            <!-- 左區: 類別與標籤 -->
+            <div class="left-section">
+                <div class="categories">
+                    <div class="category active" data-target="Atc_hot">熱門文章</div>
+                    <div class="category" data-target="Atc_nice">精選文章</div>
+                    <div class="category" data-target="Atc_normal">一般文章</div>
+                </div>
+
+                <div class="tagTitle">熱門標籤</div>
+                
+                <div class="tags">
+                    <div class="tag" data-target="Atc_drunk">#醉後的事</div>
+                    <div class="tag" data-target="Atc_goodDrink">#酒超好喝</div>
+                    <div class="tag" data-target="Atc_search">#探店心得</div>
+                    <div class="tag" data-target="Atc_bartend">#調酒師帥</div>
+                    <div class="tag" data-target="Atc_run">#酒精路跑</div>
+                </div>
+            </div>
+    
+            <!-- 右區: 文章內容 -->
+            <div class="right-section">
+                <div class="Atc_content active" id="Atc_hot">
+                    <div class="article">熱門文章1</div>
+                    <div class="article">熱門文章2</div>
+                    <div class="article">熱門文章3</div>
+                    <div class="article">熱門文章4</div>
+                    <div class="article">熱門文章5</div>
+                    <div class="article">熱門文章6</div>
+                    <div class="article">熱門文章7</div>
+                    <div class="article">熱門文章8</div>
+                    <div class="article hidden">熱門文章9</div>
+                    <div class="article hidden">熱門文章10</div>
+                </div>
+                <div class="Atc_content hidden" id="Atc_nice">
+                    <div class="article">精選文章1</div>
+                    <div class="article">精選文章2</div>
+                    <div class="article">精選文章3</div>
+                    <div class="article">精選文章4</div>
+                    <div class="article">精選文章5</div>
+                    <div class="article">精選文章6</div>
+                    <div class="article">精選文章7</div>
+                    <div class="article">精選文章8</div>
+                    <div class="article hidden">精選文章9</div>
+                    <div class="article hidden">精選文章10</div>
+                </div>
+                <div class="Atc_content hidden" id="Atc_normal">
+                    <div class="article">一般文章1</div>
+                    <div class="article">一般文章2</div>
+                    <div class="article">一般文章3</div>
+                    <div class="article">一般文章4</div>
+                    <div class="article">一般文章5</div>
+                    <div class="article">一般文章6</div>
+                    <div class="article">一般文章7</div>
+                    <div class="article">一般文章8</div>
+                    <div class="article hidden">一般文章9</div>
+                    <div class="article hidden">一般文章10</div>
+                </div>
+                <button id="load-more">載入更多</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/forum/forum_account.js"></script>
+</body>
+
+</html>
