@@ -361,6 +361,7 @@ section {
 #barlist {
     position: relative;
 }
+
 /* 套件部分 */
 .slideshow {
     position: absolute;
@@ -500,6 +501,7 @@ section {
 .the-most img {
     max-width: 100%;
 }
+
 /* 套件結束 */
 
 /* about區 */
