@@ -81,7 +81,7 @@ section {
 /* topbar區 */
 #topbar {
     position: fixed;
-    width: 50%;
+    width: 35%;
     height: 90px;
     padding: 14px;
     margin-top: 50px;
@@ -115,7 +115,7 @@ section {
 }
 
 #topbar:hover {
-    width: 50%;
+    width: 35%;
 }
 
 #topbar .menu {
