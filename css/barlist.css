@@ -324,7 +324,7 @@ main {
 /*-------------------- 左側 ------------------*/
 .barlist_tag {
     display: flex;
-    margin-top: 20px;
+    margin-top: 102px;
     width: 120px;
     max-width: 120px;
     align-items: center;
@@ -390,7 +390,7 @@ main {
 /* ------------- 右邊背景 -------------*/
 .barlist_content {
     width: 900px;
-    margin: 20px 0 0 20px;
+    margin: 20px 0 0 80px;
 }
 
 
