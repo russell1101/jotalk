@@ -22,3 +22,10 @@ overlay.onclick = function () {
     myWindow.style.display = "none";
     overlay.style.display = "none";
 }
+
+
+// 表單寫入localstorage
+let btn_login=document.getElementById('btn_login');
+btn_login.addEventListener('click',function(){
+    let 
+});
