@@ -538,7 +538,7 @@ a.tag {
     grid-auto-flow: dense;
     /* remove altogether when grid span can be clamped */
     gap: var(--grid-gap);
-    margin: 30px auto;
+    margin: 50px auto;
 }
 
 
