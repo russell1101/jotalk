@@ -317,10 +317,11 @@ body {
 main {
     display: flex;
     justify-content: center;
+    max-width: 1140px;
 }
 
 /*-------------------- 左側 ------------------*/
-.barist_tag {
+.barlist_tag {
     display: flex;
     margin-top: 10px;
     width: 120px;
