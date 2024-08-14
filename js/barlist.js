@@ -1,3 +1,4 @@
+// 左邊標籤切換
 document.addEventListener("DOMContentLoaded", function () {
     const tagCategories = document.querySelectorAll('.tag_category');
     const tagTitles = document.querySelectorAll('.tag_title');
@@ -42,3 +43,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// 右上類別切換
