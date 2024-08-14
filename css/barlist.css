@@ -313,30 +313,38 @@ body {
     color: #ffffff;
 }
 
-/* 內容區 */
+/*---------------------- 內容區 ----------------------*/
 main {
     display: flex;
     justify-content: center;
 }
 
-/* 左側 */
+/*-------------------- 左側 ------------------*/
 .barist_tag {
+    display: flex;
+    margin-top: 10px;
     width: 120px;
     max-width: 120px;
+    align-items: center;
+    flex-direction: column;
 }
 
 .tag_category {
     margin-bottom: 10px;
+    border: 1px solid transparent; /* 預設無邊框 */
+}
+
+.tag_category.selected {
+    border: 1px solid #000000; /* 被選取時加上外框線 */
 }
 
 .tag_title {
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 5px;
-}
-
-.tag_items {
-    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .hidden {
@@ -347,4 +355,30 @@ main {
     margin-bottom: 3px;
     font-size: 0.9em;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 選中大標籤+小標籤的外框線 */
+.selected {
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 120px;
+}
+
+.tag_title.active {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+/* 選中的小標籤的樣式 */
+.tag_item.active {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
