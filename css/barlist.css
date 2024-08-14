@@ -317,6 +317,8 @@ body {
 main {
     display: flex;
     justify-content: center;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 /*-------------------- 左側 ------------------*/
@@ -630,9 +632,9 @@ a.tag {
 
     /* bg */
     &:before {
-        background: var(--grid-item--bg);
+        background-color: var(--grid-item--bg);
         clip-path: inset(0% 0% round 18px);
-        will-change: background;
+        will-change: background-color;
 
         content: "";
         inset: 0;
@@ -669,9 +671,9 @@ a.tag {
         mix-blend-mode: multiply;
         opacity: .75;
 
-        will-change: background, transform;
+        will-change: background-color, transform;
 
-        transition-property: background, filter, mix-blend-mode, opacity, transform;
+        transition-property: background-color, filter, mix-blend-mode, opacity, transform;
         transition-duration: 4.5s, .15s, .15s, .3s, 3s;
     }
 
@@ -808,7 +810,7 @@ a.tag {
             line-height: 0;
             width: var(--options--h);
 
-            transition-property: background, border;
+            transition-property: background-color, border;
 
             &:hover {
                 border-color: transparent;
@@ -850,7 +852,7 @@ a.tag {
             background: color-mix(in oklab, currentColor, transparent 90%);
 
             &:hover {
-                background: color-mix(in oklab, currentColor, transparent 80%);
+                background-color: color-mix(in oklab, currentColor, transparent 80%);
                 color: var(--primary--darkest);
             }
         }
@@ -860,7 +862,7 @@ a.tag {
             color: var(--secondary);
 
             &:hover {
-                background: var(--primary--darkest);
+                background-color: var(--primary--darkest);
             }
         }
     }
