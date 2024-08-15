@@ -44,4 +44,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// 右上類別切換
+// 右邊類別切換時下面改變
+document.addEventListener('DOMContentLoaded', function () {
+    const filters = document.querySelectorAll('.barlist_filters div');
+    const items = document.querySelectorAll('.list_item');
+
+    filters.forEach(filter => {
+        filter.addEventListener('click', function () {
+            const region = this.getAttribute('data-filter');
+
+            // 移除所有標籤的活動狀態
+            filters.forEach(f => f.classList.remove('active'));
+            // 為點擊的標籤添加活動狀態
+            this.classList.add('active');
+
+            // 顯示或隱藏區塊
+            items.forEach(item => {
+                if (region === 'all' || item.getAttribute('data-region') === region) {
+                    item.style.display = 'block'; // 顯示區塊
+                } else {
+                    item.style.display = 'none'; // 隱藏區塊
+                }
+            });
+        });
+    });
+});
+
