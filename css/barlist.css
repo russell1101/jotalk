@@ -355,13 +355,17 @@ main {
     display: none;
 }
 
-.tag_item {
+.tag_item,
+.tag_item .north,
+.tag_item .south,
+.tag_item .central {
     margin-bottom: 3px;
     font-size: 0.9em;
     cursor: pointer;
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 /* 選中大標籤+小標籤的外框線 */
@@ -371,20 +375,28 @@ main {
     width: 120px;
 }
 
-.tag_title.active {
+.tag_item.active,
+.tag_item .north.active,
+.tag_item .south.active,
+.tag_item .central.active {
     font-weight: bold;
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 
 }
 
 /* 選中的小標籤的樣式 */
-.tag_item.active {
+.tag_item.active,
+.tag_item .north.active,
+.tag_item .south.active,
+.tag_item .central.active {
     font-weight: bold;
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 /* ------------- 右邊背景 -------------*/
@@ -427,6 +439,38 @@ main {
     /* background-color: transparent; */
     /* 悬停时的背景色 */
 }
+
+/* ------------- 右中標籤儲存格 -------------*/
+.tags_box {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 900px;
+    height: 30px;
+    border: 1px solid transparent;
+    padding: 2px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.tag_item_in_box {
+    display: flex;
+    align-items: center;
+    background: #155569;
+    margin-right: 4px;
+    padding: 4px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.tag_item_in_box .remove-tag {
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+}
+
 
 /* Barlist */
 
@@ -551,7 +595,7 @@ a.tag {
     height: 450px;
 
     &:nth-of-type(1) .preview-image {
-        background-image: url("https://picsum.photos/id/327/1280/900.webp");
+        background-image: url("../img/forum_pics/news_pic2.jpg");
     }
 
     &:nth-of-type(2) .preview-image {
@@ -990,7 +1034,8 @@ a.tag {
     .item_content {
         &:hover {
             .tags--container {
-                animation: marquee 10s linear alternate infinite;
+                display: flex;
+                animation: marquee 10s linear infinite;
                 animation-delay: .6s;
                 animation-timing-function: ease-out;
 
@@ -1002,8 +1047,6 @@ a.tag {
     }
 }
 
-/*  */
-
 /* ANIMATIONS */
 @keyframes marquee {
     0% {
@@ -1011,6 +1054,6 @@ a.tag {
     }
 
     100% {
-        transform: translateX(-48%);
+        transform: translateX(-100%);
     }
 }
