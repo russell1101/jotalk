@@ -1,12 +1,30 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
 /* utf8一定要在行數1 */
 /* import 一定要在第二行 */
-/* 重置所有標籤的樣式 */
 
 /* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black:#000000;
+    --darkgrey: #2c2c2c;
+    --lightgrey: #585858;
+    --white:#ffffff;
 
+    /* 主色 */
+    --primary: #155569;
+    --secondary:#E1D7CE;
+    --tertiary:#887F76;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-60: rgba(255, 255, 255, .8);
+    --alpha-dg-20: rgba(44, 44, 44, .2);
+    --alpha-lg-10: rgba(88, 88, 88, .1);
+    --alpha-sec-30: rgba(225, 215, 206, .3);
+    --alpha-ter-30: rgba(136, 127, 118, .3);
+}
 
 * {
     margin: 0;
@@ -62,8 +80,8 @@ a {
 /* 玻璃擬態 */
 #topbar,
 .pop {
-    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
-            rgba(225, 225, 225, 0.8));
+    background-image: linear-gradient(0deg, rgba(225, 225, 225, 0.1),
+            rgba(225, 225, 225, 0.6));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
         inset -2px -2px rgba(0, 0, 0, 0.027);
     backdrop-filter: blur(10px);
@@ -122,7 +140,7 @@ section {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
-    transition: opacity 4s ease, visibility 0s 0.3s;
+    transition: opacity 3s ease, visibility 0s 0.4s;
     visibility: visible;
     opacity: 1;
     white-space: nowrap;
@@ -131,7 +149,9 @@ section {
 /* topbar 選項 hover效果 */
 #topbar .menu a {
     display: block;
-    color: #000000;
+    color:var(--black);
+    letter-spacing: .3rem;
+    font-weight: 800;
     padding: 10px 20px;
     text-align: center;
     position: relative;
@@ -144,9 +164,9 @@ section {
     bottom: 0;
     left: 0;
     width: 0;
-    height: 1.5px;
-    background-color: black;
-    transition: width 1s ease-in-out;
+    height: 1px;
+    background-color: var(--lightgrey);
+    transition: width .7s ease-in-out;
 }
 
 #topbar .menu a:hover::after {
@@ -178,19 +198,19 @@ section {
 }
 
 #home h1 {
-    font-family: Rumble, sans-serif;
-    font-weight: bold;
-    font-size: 20rem;
+    font-family: "Mallanna", sans-serif;
+    font-weight: 300;
+    font-size: 14rem;
     letter-spacing: .3rem;
-    color: rgba(225, 225, 225, 0.616);
-    line-height: 20rem;
+    color: rgba(225, 225, 225, 0.7);
 }
 
 #home h2 {
-    font-family: Rumble, sans-serif;
-    font-size: 2rem;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1.2rem;
     text-align: center;
-    color: rgba(225, 225, 225, 0.616);
+    color: rgba(225, 225, 225, 0.9);
 }
 
 #home {
@@ -217,7 +237,7 @@ section {
     position: relative;
     /* 為了讓裝飾花 超過contact區 會直接被隱藏 */
     overflow: hidden;
-    background-image: url(../img/jotalk_background.jpg);
+    background-color:var(--alpha-w-40);
     background-attachment: fixed;
     /* 固定在背景 */
     background-size: cover;
@@ -234,12 +254,10 @@ section {
 
 #forum .background {
     position: relative;
-    background-color: #544f477c;
+    background-image: url(../img/index/bg-index-2.png);
     height: 90vh;
     width: 100%;
     z-index: 1;
-    background-attachment: fixed;
-    /* 固定在背景 */
     background-size: cover;
     /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
     background-position: center, center;
@@ -250,11 +268,6 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-#forum .glass {
-    position: absolute;
-    bottom: 0;
 }
 
 #forum .title {
@@ -268,9 +281,10 @@ section {
 }
 
 #forum h2 {
+    font-family: "Mallanna", sans-serif;
     font-weight: 400;
     font-size: 5rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.5rem;
     line-height: 3.5rem;
     color: white;
 }
