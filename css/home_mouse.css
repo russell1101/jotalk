@@ -8,7 +8,7 @@
     -webkit-animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;
     animation: colorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;
     margin-bottom: 40px;
-    margin-top: 130px;
+    margin-top: 250px;
 }
 
 .mouse:before,
