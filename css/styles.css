@@ -79,9 +79,10 @@ a {
 
 /* 玻璃擬態 */
 #topbar,
-.pop {
-    background-image: linear-gradient(0deg, rgba(225, 225, 225, 0.1),
-            rgba(225, 225, 225, 0.6));
+.pop,
+.btn {
+    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
+            rgba(225, 225, 225, 0.8));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
         inset -2px -2px rgba(0, 0, 0, 0.027);
     backdrop-filter: blur(10px);
@@ -723,11 +724,22 @@ header {
 
 
 /* home區 */
-#home .content {
+#home .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     /*變垂直排*/
     flex-direction: column;
     align-items: center;
+}
+
+#home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 #home h1 {
@@ -746,10 +758,6 @@ header {
     color: rgba(225, 225, 225, 0.616);
 }
 
-#home {
-    justify-content: flex-end;
-}
-
 #home video {
     object-fit: cover;
     position: absolute;
@@ -762,17 +770,15 @@ header {
 /* 論壇區 */
 #forum {
     display: flex;
+    flex-direction: row;
     /* position 專門給absolute的定位依據 */
-    position: relative;
-    /* 為了讓裝飾花 超過contact區 會直接被隱藏 */
     overflow: hidden;
-    background-image: url(../img/jotalk_background.jpg);
+    background-image: url(../img/index/forum_bg.png);
     background-attachment: fixed;
     /* 固定在背景 */
     background-size: cover;
     /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
-    background-position: center, center;
-    /* 將背景x y軸致中 */
+    background-position: left, bottom;
     background-repeat: no-repeat;
     /* 重複保證不會重複拼貼 */
     justify-content: center;
@@ -781,47 +787,33 @@ header {
     /* 垂直居中 */
 }
 
-#forum .background {
-    position: relative;
-    background-color: #544f477c;
-    height: 90vh;
-    width: 100%;
-    z-index: 1;
-    background-attachment: fixed;
-    /* 固定在背景 */
-    background-size: cover;
-    /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
-    background-position: center, center;
-    /* 將背景x y軸致中 */
-    background-repeat: no-repeat;
-    /* 重複保證不會重複拼貼 */
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#forum .glass {
-    position: absolute;
-    bottom: 0;
-}
-
 #forum .title {
     z-index: 2;
-    height: 20vh;
+    height: 100%;
+    width: 55%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 450px;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5%;
     text-align: center;
 }
 
+#text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* forum 字體設定 */
 #forum h2 {
     font-weight: 400;
     font-size: 5rem;
     letter-spacing: 0.1rem;
     line-height: 3.5rem;
     color: white;
+    padding-bottom: 10px;
 }
 
 #forum h3 {
@@ -830,6 +822,35 @@ header {
     letter-spacing: 1.5rem;
     line-height: 3.5rem;
     color: white;
+}
+
+#forum .btn {
+    text-align: center;
+    /* 水平居中 */
+    background-color: #000;
+    color: #fff;
+    height: 50px;
+    width: 50%;
+    line-height: 50px;
+    /* 设置和按钮高度相同 */
+    padding: 0 20px;
+    border-radius: 99px;
+    transition: 0.35s ease-in-out;
+    display: flex;
+    /* 使用flexbox布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+}
+
+
+.container {
+    z-index: 3;
+    display: flex;
+    width: 45%;
+    max-width: 1000px;
+    overflow: hidden;
 }
 
 #forum .left1-item {
@@ -844,14 +865,7 @@ header {
     justify-content: space-between;
 }
 
-.container {
-    z-index: 3;
-    display: flex;
-    width: 80%;
-    max-width: 1000px;
-    overflow: hidden;
 
-}
 
 .column {
     flex: 1;
@@ -1175,14 +1189,14 @@ footer {
     display: flex;
 }
 
-#copyright{
+#copyright {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: end;
 }
 
-#copyright small{
+#copyright small {
     font-size: 12px;
 }
 
@@ -1212,7 +1226,7 @@ footer ul {
     /* 重複保證不會重複拼貼 */
 }
 
-#social a:hover{
+#social a:hover {
     opacity: 60%;
 }
 
