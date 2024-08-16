@@ -607,49 +607,228 @@ section {
 }
 
 
-/* #about .upper {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 15px;
-}
-
-#about .down {
-    display: flex;
-    justify-content: space-between;
-}
-
-@keyframes pop {
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.pop {
-    display: inline-block;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    transform: translateZ(0);
-    margin: 0.4em;
-    padding: 1em;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 99px;
-}
-
-.pop:hover {
-    animation-name: pop;
-    animation-duration: 1.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-} */
-
 #about h3 {
     margin-top: 80px;
     font-weight: 520;
     font-size: 1.3rem;
     letter-spacing: 0.1rem;
     line-height: 3.5rem;
+}
+
+
+/* 登入按鈕表單 */
+/* 遮罩層樣式 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+    /* 初始狀態隱藏 */
+}
+
+/* 登入按鈕樣式 */
+.account_login {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+.account_login button {
+    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
+            rgba(225, 225, 225, 0.8));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 99px;
+    opacity: 0.7;
+    /* 如果需要更改按鈕的透明度，可以使用 opacity */
+}
+
+/* 彈出視窗樣式 */
+#loginWindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #F5F5F5;
+    width: 20%;
+    height: 50vh;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    /* 初始狀態隱藏 */
+}
+
+.contant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* 關閉按鈕樣式 */
+#closebtn {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* login底線 */
+.login_border {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: #484848 solid 2px;
+}
+
+/* login字樣 */
+#loginWindow h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    color: #484848;
+}
+
+/* 登入表單 */
+#member_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* %以父層為基準 */
+    width: 80%;
+    height: 100%;
+}
+
+#member_form input {
+    width: 100%;
+    height: 2rem;
+    color: black;
+    font-weight: 400;
+    border: 1px solid #8B8B8B;
+    border-radius: 10px;
+    /* 取消表單元件的預設被景色 */
+    background-color: transparent;
+}
+
+/* :focus偽類別 形容狀態  */
+#member_form input:focus,
+#member_form textarea {
+    /* 修改focus預設樣式 */
+    outline: 1px solid #976c6e;
+}
+
+#member_form input::placeholder {
+    padding-left: 10px;
+    font-size: .8rem;
+    font-weight: 400;
+    color: #8B8B8B;
+}
+
+/* 忘記密碼字樣 */
+.forget_passward {
+    text-align: end;
+    width: 100%;
+}
+
+#loginWindow small {
+    font-size: .5rem;
+    cursor: pointer;
+}
+
+
+/* 登入註冊按鈕 */
+.button {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.button button {
+    width: 40%;
+    height: 30px;
+    background-color: #155569;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.button button:hover {
+    background-color: #155569c9;
+}
+
+/* 快速登入 */
+.fast__login {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.fast__login p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .5rem;
+    background-color: #F5F5F5;
+    padding: 0 10px;
+    color: #484848;
+    z-index: 10;
+}
+
+.icon-fb,
+.icon-mail,
+.icon-line {
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    transition: .5s ease;
+}
+
+.icon {
+    width: 70%;
+    height: 50px;
+}
+
+.icon ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-fb {
+    background-image: url(../img/會員登入/facebook\ 1.svg);
+}
+
+.icon-mail {
+    background-image: url(../img/會員登入/google\ 1.svg);
+}
+
+.icon-line {
+    background-image: url(../img/會員登入/line\ 1.svg);
+}
+
+.icon-fb:hover,
+.icon-mail:hover,
+.icon-line:hover {
+    opacity: 0.7;
 }
