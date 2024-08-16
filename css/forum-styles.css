@@ -327,7 +327,7 @@ main {
     justify-content: center;
     align-items: flex-start;
     /* 子元素頂部對齊 */
-    max-width: 1040px;
+    max-width: 1140px;
     /* 限制 section 最大寬度 */
     width: 100%;
     /* 使 section 延展到可用寬度 */
