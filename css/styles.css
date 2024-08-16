@@ -87,7 +87,8 @@ a {
     backdrop-filter: blur(10px);
 }
 
-section {
+section,
+header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,6 +96,8 @@ section {
     height: 100vh;
     /* vh視窗相對高度 */
 }
+
+
 
 /* topbar區 */
 #topbar {
@@ -190,7 +193,7 @@ section {
 
 
 /* home區 */
-.home .content {
+#home .content {
     display: flex;
     /*變垂直排*/
     flex-direction: column;
@@ -215,10 +218,6 @@ section {
 
 #home {
     justify-content: flex-end;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
 }
 
 #home video {
@@ -631,6 +630,73 @@ section {
     letter-spacing: 0.1rem;
     line-height: 3.5rem;
 }
+
+/* footer區 */
+footer {
+    padding: 0 150px;
+    width: 100%;
+    height: 130px;
+    display: flex;
+}
+
+#copyright{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#copyright small{
+    font-size: 12px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    /* 主軸變垂直 */
+    align-items: flex-end;
+    /* 副軸(水平)靠右 */
+}
+
+footer ul {
+    display: flex;
+}
+
+#social a {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    /* 右邊一樣最靠又貼齊 指向左邊補間距 */
+    transition: 0.35s ease-in-out;
+    background-size: cover;
+    /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
+    background-position: center, center;
+    /* 將背景x y軸致中 */
+    background-repeat: no-repeat;
+    /* 重複保證不會重複拼貼 */
+}
+
+#social a:hover{
+    opacity: 60%;
+}
+
+#x {
+    background-image: url(../img/footer/Icon-x.svg);
+}
+
+#ig {
+    background-image: url(../img/footer/Icon-ig.svg);
+}
+
+#yt {
+    background-image: url(../img/footer/Icon-yt.svg);
+}
+
+#in {
+    background-image: url(../img/footer/Icon-in.svg);
+}
+
+
 
 
 /* 登入按鈕表單 */
