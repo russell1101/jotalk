@@ -69,8 +69,7 @@ a {
     backdrop-filter: blur(10px);
 }
 
-section,
-header {
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,15 +144,21 @@ header {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 0;
+    left: 50%;
+    /* 初始位置在中心 */
+    right: 50%;
+    /* 初始位置在中心 */
     height: 1.5px;
     background-color: black;
-    transition: width 1s ease-in-out;
+    transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+    /* 改變 transition 參數 */
 }
 
 #topbar .menu a:hover::after {
-    width: 100%;
+    left: 0;
+    /* 展開到左邊界 */
+    right: 0;
+    /* 展開到右邊界 */
 }
 
 
@@ -223,8 +228,6 @@ header {
     /* position 專門給absolute的定位依據 */
     overflow: hidden;
     background-image: url(../img/index/forum_bg.png);
-    background-attachment: fixed;
-    /* 固定在背景 */
     background-size: cover;
     /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
     background-position: left, bottom;
@@ -243,7 +246,7 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 5%;
+    padding-right: 10%;
     text-align: center;
 }
 
@@ -300,26 +303,15 @@ header {
 
 
 .container {
-    z-index: 3;
     display: flex;
-    width: 45%;
-    max-width: 1000px;
+    width: 33%;
     overflow: hidden;
 }
 
-#forum .left1-item {
-    width: 300px;
-    height: 250px;
-    border: 5px solid #000;
-    border-radius: 10px;
-    background-color: #fff;
-    box-sizing: border-box;
-    padding: 20px 30px;
-    margin-bottom: 30px;
-    justify-content: space-between;
+.space {
+    display: flex;
+    width: 12%;
 }
-
-
 
 .column {
     flex: 1;
@@ -385,14 +377,14 @@ header {
     z-index: 1;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
 .slideshow .slider {
-    width: 100vw;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
     z-index: 2;
 }
 
@@ -401,8 +393,8 @@ header {
 }
 
 .slideshow .slider .item {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: relative;
     overflow: hidden;
     border: none;
@@ -413,8 +405,6 @@ header {
 }
 
 .slideshow .slider .item img {
-    /* min-width: 101%;
-    min-height: 101%; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -425,7 +415,7 @@ header {
 }
 
 .slideshow .slick-dots {
-    position: fixed;
+    position: absolute;
     z-index: 100;
     width: 40px;
     height: auto;
@@ -491,7 +481,7 @@ header {
     transform: translate(-50%, -50%);
     z-index: 100;
     font-size: 80px;
-    width: 100vw;
+    width: 100%;
     text-align: center;
     color: #fff;
     font-family: "Roboto Condensed", sans-serif;
@@ -500,6 +490,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 20px;
     line-height: 0.8;
+
 }
 
 @media (max-width: 767px) {
@@ -534,22 +525,27 @@ header {
     /* 使視頻在內容之後 */
 }
 
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #about .goal {
     display: flex;
     /*變垂直排*/
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 80vh;
     width: 80%;
-    margin: 50px 150px;
-    /* background-color: rgba(255, 255, 255, 0.534); */
-    border-radius: 10px;
 }
 
 #about .title {
+    height: 40%;
     text-align: center;
     color: black;
-    margin-bottom: 50px;
+    margin-bottom: 2%;
 }
 
 #about h2 {
@@ -565,13 +561,14 @@ header {
 }
 
 #about .bubble {
-    width: 90%;
+    padding-top: 5%;
+    width: 100%;
 }
 
 #about .upper {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 #about .down {
@@ -626,9 +623,8 @@ header {
     /* 鼠标悬停时不再显示点击光标 */
 }
 
-
 #about h3 {
-    margin-top: 80px;
+    margin-top: 5%;
     font-weight: 520;
     font-size: 1.3rem;
     letter-spacing: 0.1rem;
@@ -637,33 +633,61 @@ header {
 
 /* footer區 */
 footer {
-    padding: 0 150px;
     width: 100%;
-    height: 130px;
+    height: 10vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#frame {
+    width: 80%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#nav {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #copyright {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 #copyright small {
     font-size: 12px;
 }
 
-.nav {
+#info {
     display: flex;
-    flex-direction: column;
-    /* 主軸變垂直 */
-    align-items: flex-end;
-    /* 副軸(水平)靠右 */
+    justify-content: flex-end;
+    height: 100%;
+    width: 60%;
+}
+
+#social {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 40%;
 }
 
 footer ul {
-    display: flex;
+    gap: 5%;
+}
+
+#info a {
+    transition: 0.35s ease-in-out;
 }
 
 #social a {
@@ -678,6 +702,10 @@ footer ul {
     /* 將背景x y軸致中 */
     background-repeat: no-repeat;
     /* 重複保證不會重複拼貼 */
+}
+
+#info a:hover {
+    opacity: 60%;
 }
 
 #social a:hover {
@@ -734,11 +762,11 @@ footer ul {
     padding: 10px 20px;
     border-radius: 99px;
     opacity: 0.7;
-    /* 如果需要更改按鈕的透明度，可以使用 opacity */
 }
 
 /* 彈出視窗樣式 */
 #loginWindow {
+    position: relative;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -767,12 +795,17 @@ footer ul {
 
 /* 關閉按鈕樣式 */
 #closebtn {
-    position: fixed;
-    top: 5px;
-    right: 5px;
-    font-size: 1rem;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 14px;
     cursor: pointer;
     z-index: 10;
+    transition: .3s ease-in-out;
+}
+
+#closebtn:hover{
+    opacity: 60%;
 }
 
 /* login底線 */
@@ -802,7 +835,7 @@ footer ul {
     align-items: center;
     /* %以父層為基準 */
     width: 80%;
-    height: 100%;
+    height: 80%;
 }
 
 #member_form input {
@@ -824,7 +857,7 @@ footer ul {
 }
 
 #member_form input::placeholder {
-    padding-left: 10px;
+    padding-left: 5%;
     font-size: .8rem;
     font-weight: 400;
     color: #8B8B8B;
@@ -883,23 +916,33 @@ footer ul {
     z-index: 10;
 }
 
+
+
+.icon {
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon li{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .icon-fb,
 .icon-mail,
 .icon-line {
-    width: 35px;
-    height: 35px;
-    background-size: cover;
+    width: 60%;
+    height: 60%;
     transition: .5s ease;
-}
-
-.icon {
-    width: 70%;
-    height: 50px;
-}
-
-.icon ul {
-    display: flex;
-    justify-content: space-between;
+    background-size: contain;
+    /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
+    background-position: center, center;
+    background-repeat: no-repeat;
 }
 
 .icon-fb {

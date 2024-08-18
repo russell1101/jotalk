@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jotalk home</title>
+    <title>Jotalk_home</title>
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/home_mouse.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
@@ -14,21 +14,23 @@
 </head>
 
 <body>
-    <div id="topbar">
-        <!-- logo區 -->
-        <h1 class="logo">
-            <a href="./index.html">
-                <img src="./img/logo.svg" alt="jotalkLogo">
-            </a>
-        </h1>
-        <div class="menu">
-            <a href="./forum.html">綜合論壇</a>
-            <a href="./barlist.html">酒吧清單</a>
-            <a href="#">關於我們</a>
+    <header>
+        <div id="topbar">
+            <!-- logo區 -->
+            <h1 class="logo">
+                <a href="./index.html">
+                    <img src="./img/logo.svg" alt="jotalkLogo">
+                </a>
+            </h1>
+            <div class="menu">
+                <a href="./forum.html">綜合論壇</a>
+                <a href="./barlist.html">酒吧清單</a>
+                <a href="#">關於我們</a>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <header id="home">
+    <section id="home">
         <video autoplay loop muted>
             <source src="./img/index/home_bg.mp4" type="video/mp4">
             您的浏览器不支持HTML5视频标签。
@@ -38,7 +40,7 @@
             <h2>你的酒吧指南，帶你體驗品味與放鬆</h2>
         </div>
         <div class="mouse"></div>
-    </header>
+    </section>
     <main>
         <section id="forum">
             <div class="title">
@@ -66,10 +68,11 @@
                     <div class="card">Card 12</div>
                 </div>
             </div>
+            <div class="space"> </div>
         </section>
         <section id="barlist">
             <!-- 套件部分 -->
-            <!-- <div class="split-slideshow">
+            <div class="split-slideshow">
                 <div class="slideshow">
                     <div class="slider">
                         <div class="item">
@@ -92,7 +95,7 @@
                     <div class="item">Erosion</div>
                     <div class="item">Shape</div>
                 </div>
-            </div> -->
+            </div>
             <!-- 套件結束 -->
         </section>
         <section id="about">
@@ -124,21 +127,24 @@
         </section>
     </main>
     <footer>
-        <div id="copyright"><small>Jotalk © 2024 . All Rights Reserved. </small></div>
-        <div class="nav">
-            <ul id="info">
-                <li><a href="">隱私政策</a></li>
-                <li><a href="">服務條款</a></li>
-                <li><a href="">聯絡我們</a></li>
-                <li><a href="">店家登入</a></li>
-            </ul>
-            <ul id="social">
-                <li><a id="x" href=""></a></li>
-                <li><a id="ig" href=""></a></li>
-                <li><a id="yt" href=""></a></li>
-                <li><a id="in" href=""></a></li>
-            </ul>
+        <div id="frame">
+            <div id="copyright"><small>Jotalk © 2024 . All Rights Reserved. </small></div>
+            <div id="nav">
+                <ul id="info">
+                    <li><a href="">隱私政策</a></li>
+                    <li><a href="">服務條款</a></li>
+                    <li><a href="">聯絡我們</a></li>
+                    <li><a href="">店家登入</a></li>
+                </ul>
+                <ul id="social">
+                    <li><a id="x" href=""></a></li>
+                    <li><a id="ig" href=""></a></li>
+                    <li><a id="yt" href=""></a></li>
+                    <li><a id="in" href=""></a></li>
+                </ul>
+            </div>
         </div>
+
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>

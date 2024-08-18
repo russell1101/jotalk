@@ -1,0 +1,541 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+/* utf8一定要在行數1 */
+/* import 一定要在第二行 */
+/* 重置所有標籤的樣式 */
+
+/* 顏色設定(設定變數) */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加padding */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    color: #444;
+    display: block;
+    /* 預設inline行內元素改為block */
+    text-decoration: none;
+}
+
+/* 背板 */
+.overlay {
+    position: fixed;
+    /* 固定位置，覆蓋在背景圖上 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    /* 半透明的顏色覆蓋 */
+    backdrop-filter: blur(1px);
+    /* 應用模糊效果 */
+    z-index: -1;
+    /*確保在所有內容之下 */
+}
+
+/* 設置 body 背景圖 */
+body {
+    background-image: url(../img/jotalk_background.jpg);
+    /* 背景圖 URL */
+    background-size: cover;
+    /*使背景圖覆蓋整個頁面*/
+    /* background-position: center; 背景圖置中 */
+    background-repeat: no-repeat;
+    /* 防止背景圖重複 */
+    background-attachment: fixed;
+    /* 確保背景圖固定不隨內容滾動 */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* 確保 body 高度為視窗高度 */
+    overflow-x: hidden;
+    /* 防止水平滾動條 */
+}
+
+
+/* topbar 要補遮色片*/
+#topbar {
+    background-image: url(../img/forum_pics/forum_head_pic.png);
+    /* 圖片要壓縮 */
+    position: relative;
+    /* 設置為 relative 以便內部元素使用 absolute 定位 */
+    width: 100%;
+    /* 使 topbar 撐滿全寬 */
+    height: 400px;
+    /* 設置 topbar 高度 */
+    padding: 0;
+    /* 確保沒有額外的 padding */
+    margin: 0;
+    /* 確保沒有額外的 margin */
+    background-size: cover;
+    /* 確保背景圖覆蓋整個容器 */
+    background-position: center;
+    /* 將背景圖置中 */
+    background-repeat: no-repeat;
+    /* 防止背景圖重複 */
+    transition: height 0.3s ease;
+    z-index: 1000;
+}
+
+#topbar .forum_head section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+#topbar .forum_head {
+    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
+            rgba(225, 225, 225, 0.8));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    position: fixed;
+    width: 90px;
+    height: 90px;
+    padding: 14px;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 确保内容在容器中心 */
+    border-radius: 99px;
+    transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
+    /* 同步过渡 */
+    z-index: 999;
+}
+
+
+#topbar .forum_head:hover {
+    width: 35%;
+    /* 滑鼠觸碰時擴展 */
+    border-radius: 99px;
+    /* 變長條 */
+    justify-content: space-between;
+    /* 水平排列内容 */
+}
+
+#topbar .forum_head .logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+}
+
+#topbar .forum_head .logo a {
+    width: 60px;
+}
+
+#topbar .forum_head .collapsed {
+    width: 90px;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+#topbar .forum_head .menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    white-space: nowrap;
+    /* 阻止文字换行 */
+    overflow: hidden;
+    /* 隐藏溢出的内容 */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 4s ease, visibility 0s 0.3s;
+    /* 菜單顯隱 */
+}
+
+
+#topbar .forum_head .collapsed .menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.2s;
+    justify-content: space-around;
+    padding: 0 50px;
+}
+
+
+#topbar .forum_head:hover .menu {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0s 0s;
+    justify-content: space-around;
+    /* 确保项目在可用空间内对齐 */
+}
+
+.forum_head .menu a {
+    display: block;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#topbar .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* 初始位置在中心 */
+    right: 50%;
+    /* 初始位置在中心 */
+    height: 1.5px;
+    background-color: black;
+    transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+    /* 改變 transition 參數 */
+}
+
+#topbar .menu a:hover::after {
+    left: 0;
+    /* 展開到左邊界 */
+    right: 0;
+    /* 展開到右邊界 */
+}
+
+.forum_head.collapsed .menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.2s;
+}
+
+
+.forum_head:hover .menu {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 4s ease, visibility 0s 0.2s;
+}
+
+/* login按鈕位置 */
+#topbar .account_login {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+#topbar .account_login button {
+    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
+            rgba(225, 225, 225, 0.8));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 99px;
+    opacity: 0.7;
+    /* 如果需要更改按鈕的透明度，可以使用 opacity */
+}
+
+#topbar .account_login a {
+    color: #000000;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+#topbar .forum_slogan {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    /* 設置為 absolute 以便於在 topbar 中定位 */
+    bottom: 0;
+    /* 將其定位到 topbar 底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 水平居中 */
+    padding: 20px;
+}
+
+#topbar .forum_slogan h1 {
+    color: #ffffff;
+}
+
+#topbar .forum_slogan p {
+    color: #ffffff;
+}
+
+
+
+
+
+/* 登入按鈕表單 */
+/* 遮罩層樣式 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+    /* 初始狀態隱藏 */
+}
+
+/* 登入按鈕樣式 */
+.account_login {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+.account_login button {
+    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
+            rgba(225, 225, 225, 0.8));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 99px;
+    opacity: 0.7;
+}
+
+/* 彈出視窗樣式 */
+#loginWindow {
+    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #F5F5F5;
+    width: 20%;
+    height: 50vh;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    /* 初始狀態隱藏 */
+}
+
+.contant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* 關閉按鈕樣式 */
+#closebtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+    transition: .3s ease-in-out;
+}
+
+#closebtn:hover{
+    opacity: 60%;
+}
+
+/* login底線 */
+.login_border {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: #484848 solid 2px;
+}
+
+/* login字樣 */
+#loginWindow h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    color: #484848;
+}
+
+/* 登入表單 */
+#member_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* %以父層為基準 */
+    width: 80%;
+    height: 80%;
+}
+
+#member_form input {
+    width: 100%;
+    height: 2rem;
+    color: black;
+    font-weight: 400;
+    border: 1px solid #8B8B8B;
+    border-radius: 10px;
+    /* 取消表單元件的預設被景色 */
+    background-color: transparent;
+}
+
+/* :focus偽類別 形容狀態  */
+#member_form input:focus,
+#member_form textarea {
+    /* 修改focus預設樣式 */
+    outline: 1px solid #976c6e;
+}
+
+#member_form input::placeholder {
+    padding-left: 5%;
+    font-size: .8rem;
+    font-weight: 400;
+    color: #8B8B8B;
+}
+
+/* 忘記密碼字樣 */
+.forget_passward {
+    text-align: end;
+    width: 100%;
+}
+
+#loginWindow small {
+    font-size: .5rem;
+    cursor: pointer;
+}
+
+
+/* 登入註冊按鈕 */
+.button {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.button button {
+    width: 40%;
+    height: 30px;
+    background-color: #155569;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.button button:hover {
+    background-color: #155569c9;
+}
+
+/* 快速登入 */
+.fast__login {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.fast__login p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .5rem;
+    background-color: #F5F5F5;
+    padding: 0 10px;
+    color: #484848;
+    z-index: 10;
+}
+
+
+
+.icon {
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon li{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-fb,
+.icon-mail,
+.icon-line {
+    width: 60%;
+    height: 60%;
+    transition: .5s ease;
+    background-size: contain;
+    /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
+    background-position: center, center;
+    background-repeat: no-repeat;
+}
+
+.icon-fb {
+    background-image: url(../img/會員登入/facebook\ 1.svg);
+}
+
+.icon-mail {
+    background-image: url(../img/會員登入/google\ 1.svg);
+}
+
+.icon-line {
+    background-image: url(../img/會員登入/line\ 1.svg);
+}
+
+.icon-fb:hover,
+.icon-mail:hover,
+.icon-line:hover {
+    opacity: 0.7;
+}
