@@ -387,6 +387,14 @@ section {
     }
 }
 
+
+@media(max-width:1439px){
+    .column-right{
+        display: none;
+
+    }
+} 
+
 /* barlist區 */
 #barlist {
     position: relative;
