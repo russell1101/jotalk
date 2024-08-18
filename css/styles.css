@@ -9,7 +9,7 @@
     --black: #000000;
     --darkgrey: rgb(44, 44, 44);
     --lightgrey: rgb(88, 88, 88);
-    --white:#ffffff;
+    --white: #ffffff;
 
     /* 主色 */
     --primary: #155569;
@@ -21,7 +21,7 @@
     --alpha-b-20: rgba(0, 0, 0, .2);
     --alpha-b-40: rgba(0, 0, 0, 0.4);
     --alpha-lg-10: rgba(88, 88, 88, 0.1);
-    }
+}
 
 * {
     margin: 0;
@@ -97,7 +97,7 @@ section {
 /* topbar區 */
 #topbar {
     position: fixed;
-    width: 35%;
+    width: auto;
     height: 90px;
     padding: 14px;
     margin-top: 50px;
@@ -131,7 +131,7 @@ section {
 }
 
 #topbar:hover {
-    width: 35%;
+    width: auto;
 }
 
 #topbar .menu {
@@ -149,7 +149,9 @@ section {
     display: block;
     color: var(--darkgrey);
     font-weight: 900;
-    padding: 10px 20px;
+    letter-spacing: .2rem;
+    padding: 5px 0px;
+    margin: 0 40px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -165,7 +167,7 @@ section {
     /* 初始位置在中心 */
     height: .6px;
     background-color: var(--lightgrey);
-    transition: width .6s ease-in-out;
+    transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
     /* 改變 transition 參數 */
 }
 
@@ -214,7 +216,7 @@ section {
 
 #home h1 {
     font-family: "Mallanna", sans-serif;
-    font-size: 15vw;
+    font-size: clamp(10rem, 15vw, 15rem);
     letter-spacing: .3rem;
     color: rgba(225, 225, 225, 0.5);
 }
@@ -222,7 +224,7 @@ section {
 #home h2 {
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
-    font-size: 1.3vw;
+    font-size: clamp(1rem, 1.5vw, 2rem);
     letter-spacing: .9rem;
     text-align: center;
     color: rgba(225, 225, 225, 0.9);
@@ -262,7 +264,7 @@ section {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 10%;
+    padding-right: 3%;
     text-align: center;
 }
 
@@ -279,20 +281,21 @@ section {
     font-family: "Mallanna", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-size: 8vw;
+    font-size: clamp(2rem, 7vw, 8rem);
     letter-spacing: 0.2rem;
     line-height: 3.5rem;
     color: var(--alpha-w-80);
-    margin-bottom: 8%;
+    margin-bottom: 40px;
 }
 
 #forum h3 {
     font-weight: 350;
-    font-size: 1.2vw;
+    font-size: clamp(.7rem, 1.5vw, 2rem);
+    white-space: nowrap;
     letter-spacing: 0.4rem;
     line-height: 2.5rem;
     color: var(--alpha-w-80);
-    margin-bottom: 8%;
+    margin-bottom: 40px;
 }
 
 #forum .btn {
@@ -567,7 +570,7 @@ section {
 
 #about h2 {
     font-family: "Mallanna", sans-serif;
-    color: #2c2c2c;
+    color: var(--darkgrey);
     font-size: 3vw;
     letter-spacing: .2rem;
 }
@@ -577,7 +580,17 @@ section {
     font-size: 1rem;
     letter-spacing: 0.1rem;
     line-height: 3.5rem;
-    margin-top: 5rem;
+    margin-top: 10%;
+}
+
+#about h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    color: var(--darkgrey);
+    font-size: clamp(.5rem, 3vw, .9rem);
+    letter-spacing: .2rem;
+    margin-top: 5%;
+    font-weight: 520;
 }
 
 #about .bubble {
@@ -641,14 +654,6 @@ section {
     animation-iteration-count: 1;
     cursor: default;
     /* 鼠标悬停时不再显示点击光标 */
-}
-
-#about h3 {
-    margin-top: 5%;
-    font-weight: 520;
-    font-size: 1.3rem;
-    letter-spacing: 0.1rem;
-    line-height: 3.5rem;
 }
 
 /* footer區 */
@@ -824,7 +829,7 @@ footer ul {
     transition: .3s ease-in-out;
 }
 
-#closebtn:hover{
+#closebtn:hover {
     opacity: 60%;
 }
 
@@ -945,7 +950,7 @@ footer ul {
     justify-content: space-between;
 }
 
-.icon li{
+.icon li {
     width: 100%;
     height: 100%;
     display: flex;
