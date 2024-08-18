@@ -101,7 +101,7 @@ body {
 
 /* topbar 要補遮色片*/
 #topbar {
-    background-image: url(../img/forum_pics/forum_head_pic.png);
+    background-image: url(../img/forum_pics/forum_head_pic.jpg);
     /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */

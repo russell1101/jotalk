@@ -101,7 +101,7 @@ body {
 
 /* topbar 要補遮色片*/
 #topbar {
-    background-image: url(../img/forum_pics/forum_head_pic.png);
+    background-image: url(../img/barlist/barlist_head_pic.jpg);
     /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
@@ -325,8 +325,8 @@ main {
 .barlist_tag {
     display: flex;
     margin-top: 102px;
-    width: 120px;
-    max-width: 120px;
+    width:20%;
+    max-width: 160px;
     align-items: center;
     flex-direction: column;
 }
@@ -401,10 +401,17 @@ main {
 
 /* ------------- 右邊背景 -------------*/
 .barlist_content {
-    width: 900px;
+    width: 80%;
+    max-width: 900;
     margin: 20px 0 0 80px;
 }
 
+/* ------------- 響應式設計 -------------*/
+@media screen and (max-width: 1024px) {
+    .barlist_content {
+        margin: 20px 0 0 0; /* 在小解析度下去掉左邊距 */
+    }
+}
 
 /* ------------- 右上類別切換 -------------*/
 .barlist_content .barlist_filters {
@@ -444,7 +451,7 @@ main {
 .tags_box {
     display: flex;
     flex-wrap: nowrap;
-    width: 900px;
+    width: 100%;
     height: 30px;
     border: 1px solid transparent;
     padding: 2px;
@@ -566,7 +573,7 @@ a.tag {
     border-radius: 100px;
     display: flex;
     align-items: center;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     user-select: none;
     padding: 0 14px;
@@ -591,7 +598,7 @@ a.tag {
 /* GRID CELL */
 .list_item {
     position: relative;
-    width: 440px;
+    width: 100%;
     height: 450px;
 
     &:nth-of-type(1) .preview-image {
@@ -772,7 +779,9 @@ a.tag {
         }
 
         .title--container {
-            align-self: stretch;
+            display: flex;
+            justify-content: space-between; /* 將子元素一左一右排列 */
+            align-items: center; /* 將子元素垂直居中 */
             height: auto;
             padding-inline: calc(var(--content-padding) + 8px);
 
@@ -1035,7 +1044,7 @@ a.tag {
         &:hover {
             .tags--container {
                 display: flex;
-                animation: marquee 10s linear infinite;
+                animation: marquee 11s linear infinite;
                 animation-delay: .6s;
                 animation-timing-function: ease-out;
 
