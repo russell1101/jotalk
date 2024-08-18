@@ -1,12 +1,27 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
 /* utf8一定要在行數1 */
 /* import 一定要在第二行 */
-/* 重置所有標籤的樣式 */
 
 /* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white:#ffffff;
 
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+    }
 
 * {
     margin: 0;
@@ -24,7 +39,6 @@ body {
         "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     font-size: 100%;
     line-height: 1.5;
-    /* color: #155569; */
 }
 
 /* 重置標題 */
@@ -62,8 +76,8 @@ a {
 /* 玻璃擬態 */
 #topbar,
 .pop {
-    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
-            rgba(225, 225, 225, 0.8));
+    background-image: linear-gradient(45deg, rgba(225, 225, 225, 0.4),
+            rgba(225, 225, 225, 0.7));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
         inset -2px -2px rgba(0, 0, 0, 0.027);
     backdrop-filter: blur(10px);
@@ -133,7 +147,8 @@ section {
 /* topbar 選項 hover效果 */
 #topbar .menu a {
     display: block;
-    color: #000000;
+    color: var(--darkgrey);
+    font-weight: 900;
     padding: 10px 20px;
     text-align: center;
     position: relative;
@@ -148,9 +163,9 @@ section {
     /* 初始位置在中心 */
     right: 50%;
     /* 初始位置在中心 */
-    height: 1.5px;
-    background-color: black;
-    transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+    height: .6px;
+    background-color: var(--lightgrey);
+    transition: width .6s ease-in-out;
     /* 改變 transition 參數 */
 }
 
@@ -194,22 +209,23 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    line-height: 1.2;
 }
 
 #home h1 {
-    font-family: Rumble, sans-serif;
-    font-weight: bold;
-    font-size: 20rem;
+    font-family: "Mallanna", sans-serif;
+    font-size: 15vw;
     letter-spacing: .3rem;
-    color: rgba(225, 225, 225, 0.616);
-    line-height: 20rem;
+    color: rgba(225, 225, 225, 0.5);
 }
 
 #home h2 {
-    font-family: Rumble, sans-serif;
-    font-size: 2rem;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.3vw;
+    letter-spacing: .9rem;
     text-align: center;
-    color: rgba(225, 225, 225, 0.616);
+    color: rgba(225, 225, 225, 0.9);
 }
 
 #home video {
@@ -227,7 +243,7 @@ section {
     flex-direction: row;
     /* position 專門給absolute的定位依據 */
     overflow: hidden;
-    background-image: url(../img/index/forum_bg.png);
+    background-image: url(../img/index/bg-index-2.jpg);
     background-size: cover;
     /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
     background-position: left, bottom;
@@ -260,37 +276,39 @@ section {
 
 /* forum 字體設定 */
 #forum h2 {
+    font-family: "Mallanna", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 400;
-    font-size: 5rem;
-    letter-spacing: 0.1rem;
+    font-size: 8vw;
+    letter-spacing: 0.2rem;
     line-height: 3.5rem;
-    color: white;
-    padding-bottom: 10px;
+    color: var(--alpha-w-80);
+    margin-bottom: 8%;
 }
 
 #forum h3 {
     font-weight: 350;
-    font-size: 1rem;
-    letter-spacing: 0.3rem;
-    line-height: 3.5rem;
-    color: white;
+    font-size: 1.2vw;
+    letter-spacing: 0.4rem;
+    line-height: 2.5rem;
+    color: var(--alpha-w-80);
+    margin-bottom: 8%;
 }
 
 #forum .btn {
     text-align: center;
     /* 水平居中 */
-    background-color: #585858;
+    background-color: var(--alpha-b-40);
     color: #fff;
-    background-image: linear-gradient();
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
         inset -2px -2px rgba(0, 0, 0, 0.027);
     backdrop-filter: blur(10px);
     border: 1px solid #fff;
-    height: 50px;
-    width: 40%;
-    line-height: 50px;
-    /* 设置和按钮高度相同 */
-    padding: 0 20px;
+    width: auto;
+    letter-spacing: .2rem;
+    font-size: clamp(.5rem, 2.5vw, .9rem);
+    white-space: nowrap;
+    padding: 10px 20px;
     border-radius: 99px;
     transition: 0.35s ease-in-out;
     display: flex;
@@ -542,22 +560,24 @@ section {
 }
 
 #about .title {
-    height: 40%;
     text-align: center;
-    color: black;
-    margin-bottom: 2%;
+    color: var(--darkgrey);
+    margin-bottom: 20rem;
 }
 
 #about h2 {
+    font-family: "Mallanna", sans-serif;
     color: #2c2c2c;
-    font-size: 5rem;
+    font-size: 3vw;
+    letter-spacing: .2rem;
 }
 
 #about p {
-    font-weight: 400;
-    font-size: 1.3rem;
+    font-weight: 600;
+    font-size: 1rem;
     letter-spacing: 0.1rem;
     line-height: 3.5rem;
+    margin-top: 5rem;
 }
 
 #about .bubble {
