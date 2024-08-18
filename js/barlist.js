@@ -45,36 +45,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 左邊地區隨右邊標籤切換
-document.addEventListener('DOMContentLoaded', function () {
-    const filters = document.querySelectorAll('.barlist_filters .filter_item');
-    const regionItems = document.querySelectorAll('.tag_items .tag_item');
-    const allRegionItems = document.querySelectorAll('.tag_item');
-
-    filters.forEach(filter => {
-        filter.addEventListener('click', function () {
-            const region = this.getAttribute('data-filter');
-
-            // 移除所有篩選器的活動狀態
-            filters.forEach(f => f.classList.remove('active'));
-            this.classList.add('active');
-
-            // 更新地區標籤顯示
-            allRegionItems.forEach(item => {
-                if (item.classList.contains(region) || region === 'all') {
-                    item.style.display = 'block'; // 顯示符合篩選的地區標籤
-                } else if (item.classList.contains('north') || item.classList.contains('central') || item.classList.contains('south')) {
-                    item.style.display = 'none'; // 隱藏不符合篩選的地區標籤
-                }
-            });
-        });
-    });
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const tagsBox = document.querySelector('.tags_box');
     const tagItems = document.querySelectorAll('.tag_item');
     const listItems = document.querySelectorAll('.list_item');
     const filterItems = document.querySelectorAll('.filter_item');
+    const allRegionItems = document.querySelectorAll('.tag_item.north, .tag_item.central, .tag_item.south');
+
+    let selectedRegion = 'all'; // 初始化選中的地區為全部
 
     // 處理標籤的選擇與移除
     tagItems.forEach(item => {
@@ -113,9 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         listItems.forEach(listItem => {
             const tags = Array.from(listItem.querySelectorAll('.tag')).map(tag => tag.textContent.trim());
-            const matches = selectedTags.every(tag => tags.includes(tag));
+            const matchesTags = selectedTags.every(tag => tags.includes(tag));
+            const matchesRegion = selectedRegion === 'all' || listItem.getAttribute('data-region') === selectedRegion;
 
-            if (matches) {
+            if (matchesTags && matchesRegion) {
                 listItem.style.display = 'block';
             } else {
                 listItem.style.display = 'none';
@@ -126,25 +106,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // 右邊類別切換時的處理
     filterItems.forEach(filter => {
         filter.addEventListener('click', function () {
-            const region = this.getAttribute('data-filter');
+            selectedRegion = this.getAttribute('data-filter');
 
-            // 移除所有標籤的活動狀態
+            // 移除所有篩選的活動狀態
             filterItems.forEach(f => f.classList.remove('active'));
-            // 為點擊的標籤添加活動狀態
+            // 為點擊的篩選添加活動狀態
             this.classList.add('active');
 
-            // 顯示或隱藏區塊
-            listItems.forEach(item => {
-                if (region === 'all' || item.getAttribute('data-region') === region) {
-                    item.style.display = 'block'; // 顯示區塊
+            // 顯示或隱藏地區標籤
+            allRegionItems.forEach(item => {
+                if (selectedRegion === 'all' || item.classList.contains(selectedRegion)) {
+                    item.style.display = 'block'; // 顯示地區標籤
                 } else {
-                    item.style.display = 'none'; // 隱藏區塊
+                    item.style.display = 'none'; // 隱藏地區標籤
                 }
             });
 
-            // 更新顯示的 list_item 根據 tags_box 中的標籤
+            // 更新顯示的 list_item 根據 tags_box 中的標籤和選中的地區
             updateListItems();
         });
     });
 });
-
