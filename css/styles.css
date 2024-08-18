@@ -165,7 +165,7 @@ section {
     /* 初始位置在中心 */
     height: .6px;
     background-color: var(--lightgrey);
-    transition: width .6s ease-in-out;
+    transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
     /* 改變 transition 參數 */
 }
 
