@@ -400,6 +400,8 @@ main {
     width: 40%;
     min-width: 250px;
     height: 320px;
+    max-height: 320px;
+    /* 设置最大高度 */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -407,13 +409,16 @@ main {
     align-items: center;
     padding: 10px;
     gap: 10px;
+    overflow-y: auto;
+    /* 滚动条应用到整个容器 */
 }
 
 .store_month {
     width: 100%;
+    border-radius: 10px;
     background-color: #58585827;
     padding: 5px;
-    overflow: hidden;
+    transition: background-color 0.2s ease-in-out;
 }
 
 
@@ -436,15 +441,18 @@ main {
 }
 
 .record-content {
-    display: none;
+    /* display: none;
     max-height: 150px;
     /* 设置最大高度，控制内容区域大小 */
-    overflow-y: auto;
+    /* overflow-y: auto;
     /* 在内容超出时显示滚动条 */
-    padding: 0;
+    /* padding: 0; */
     /* 移除内边距，防止裁切内容 */
-    margin: 0;
-    /* 确保外边距不会影响滚动内容 */
+    /* margin: 0;  */
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
 }
 
 .record-content::-webkit-scrollbar-button {
@@ -452,6 +460,8 @@ main {
 }
 
 .this {
+    max-height: 200px;
+    /* 设置展开后的最大高度 */
     display: block;
 }
 
