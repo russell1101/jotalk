@@ -482,7 +482,9 @@ main {
     height: 430px;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -517,6 +519,11 @@ main {
     padding: 10px 20px;
     border-radius: 99px;
     opacity: 0.7;
+    cursor: pointer;
+}
+
+.account_login button:hover{
+    background-color: white;
 }
 
 /* 彈出視窗樣式 */
