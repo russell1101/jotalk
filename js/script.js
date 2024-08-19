@@ -43,6 +43,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// 會員頁面
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const content = this.parentNode.nextElementSibling;
+        if (content.style.display === 'none' || !content.style.display) {
+            content.style.display = 'block';
+            this.textContent = '-';
+        } else {
+            content.style.display = 'none';
+            this.textContent = '+';
+        }
+    });
+});
+
+
+
+
+
 // 會員登入頁
 // 取得按鈕、彈出視窗和遮罩層的元素
 let loginBtn = document.getElementById("loginBtn");
@@ -70,7 +88,7 @@ overlay.onclick = function () {
 
 
 // 表單寫入localstorage
-let btn_login=document.getElementById('btn_login');
-btn_login.addEventListener('click',function(){
-    let 
+let btn_login = document.getElementById('btn_login');
+btn_login.addEventListener('click', function () {
+    let
 });
