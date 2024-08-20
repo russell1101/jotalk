@@ -101,7 +101,7 @@ body {
 
 /* topbar 要補遮色片*/
 #topbar {
-    background-image: url(../../img/forum_pics/forum_head_pic.jpg);
+    background-image: url(../../img/forum_pics/teach_head_pic.jpg);
     /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
@@ -321,91 +321,49 @@ main {
     justify-content: center;
 }
 
-.forum-container {
-    display: flex;
-    max-width: 1140px;
-    margin-top: 20px;
-    padding: 20px;
-}
-
-/* 左側 */
-
-.left-section {
-    width: 20%;
-    max-width: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.categories .category.active,
-.tags .tag.active {
-    background-color: #155569;
-    color: #ffffff;
-}
-
-.categories .category {
-    padding: 1px 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    color: #155569;
-}
-
-.tagTitle {
-    margin: 0 10px;
-    font-size: 14px;
-}
-
-.tags {
-    border-top: solid 1px black;
-}
-
-.tags .tag{
-    color: #000000;
-    font-size: 12px;
-    padding: 7.5px 0;
-}
-
-/* 右側 */
-
-.right-section {
-    border-radius: 10px;
-    background-color: #ffffff;
+/* 大區標籤 */
+.teach_content {
     width: 100%;
-    max-width: 900px;
-    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    max-width: 920px;
+    padding: 20px;
+    flex-direction: column;
 }
 
-.Atc_content {
-    display: none;
+/* 上區標籤 */
+/* 教學類別標籤 */
+
+.top-section {
+    margin-top: 80px;
 }
 
-.Atc_content.active {
-    display: block;
-}
 
-.article {
-    margin-top: 20px;
-    width: 830px;
-    height: 170px;
-    padding: 0 20px;
-    background-color: #f0f0f0;
-}
-
-.hidden {
-    display: none;
-}
-
-#load-more {
-    display: block;
-    box-sizing: border-box;
-    padding: 10px 20px;
-    /* background-color: #155569; */
+.top-section .categories {
     color: #ffffff;
-    border: none;
-    border-radius: 5px;
+    width: 100%;
+    display: flex;
+
+}
+
+.top-section .categories div {
+    padding: 1px 15px;
     cursor: pointer;
-    text-align: center;
-    margin: 20px auto; /* 置中 */
-    max-width: 830px; /* 確保按鈕不會超過文章區域寬度 */
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.top-section .categories .active {
+    pointer-events: none;
+    border: 1px solid #ffffff;
+    /* 当前选中项的边框 */
+    background-color: transparent;
+    /* 当前选中项的背景色 */
+    color: #ffffff;
+
+}
+
+.top-section .categories div:hover {
+    border: 1px solid #ffffff;
+    /* background-color: transparent; */
 }
