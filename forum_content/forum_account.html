@@ -28,6 +28,8 @@
                 <a href="#">關於我們</a>
             </div>
         </div>
+
+
         <!-- 會員登入區 -->
         <div class="account_login">
             <button>
@@ -51,6 +53,8 @@
         </div>
     </header>
 
+
+
     <!-- 內文區 -->
     <main>
         <div class="forum-container">
@@ -61,10 +65,8 @@
                     <div class="category" data-target="Atc_nice">精選文章</div>
                     <div class="category" data-target="Atc_normal">一般文章</div>
                 </div>
-
-                <div class="tagTitle">熱門標籤</div>
-                
                 <div class="tags">
+                    <h2 id="tagTitle">熱門標籤</h2>
                     <div class="tag" data-target="Atc_drunk">#醉後的事</div>
                     <div class="tag" data-target="Atc_goodDrink">#酒超好喝</div>
                     <div class="tag" data-target="Atc_search">#探店心得</div>
@@ -72,11 +74,26 @@
                     <div class="tag" data-target="Atc_run">#酒精路跑</div>
                 </div>
             </div>
-    
+
             <!-- 右區: 文章內容 -->
             <div class="right-section">
                 <div class="Atc_content active" id="Atc_hot">
-                    <div class="article">熱門文章1</div>
+                    <div class="article">
+                        <div class="text">
+                            <div class="user">
+                                <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
+                                <h2>信義王陽明</h2>
+                                <small>4 hour ago</small>
+                            </div>
+                            <h2 id="article_title">文章標題</h2>
+                            <div id="hashtag">
+                                <small>#標籤放這邊</small>
+                                <small>#標籤放這邊</small>
+                            </div>
+                            <p>熱門文章內文放這邊，自動縮簡1排後變”...”</p>
+                        </div>
+                        <figure class="picture"><img src="../img/forum/news_pic1.jpg" alt=""></figure>
+                    </div>
                     <div class="article">熱門文章2</div>
                     <div class="article">熱門文章3</div>
                     <div class="article">熱門文章4</div>
