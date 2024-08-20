@@ -101,7 +101,7 @@ body {
 
 /* topbar 要補遮色片*/
 #topbar {
-    background-image: url(../../img/forum_pics/forum_head_pic.png);
+    background-image: url(../../img/forum_pics/forum_head_pic.jpg);
     /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
@@ -323,7 +323,7 @@ main {
 
 .forum-container {
     display: flex;
-    max-width: 1040px;
+    max-width: 1140px;
     margin-top: 20px;
     padding: 20px;
 }
@@ -331,7 +331,8 @@ main {
 /* 左側 */
 
 .left-section {
-    width: 120px;
+    width: 20%;
+    max-width: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -370,7 +371,8 @@ main {
 .right-section {
     border-radius: 10px;
     background-color: #ffffff;
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     margin-left: 20px;
 }
 
@@ -386,7 +388,7 @@ main {
     margin-top: 20px;
     width: 830px;
     height: 170px;
-    margin: 0 20px;
+    padding: 0 20px;
     background-color: #f0f0f0;
 }
 
