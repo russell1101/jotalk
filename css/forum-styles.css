@@ -101,7 +101,7 @@ body {
 
 /* topbar 要補遮色片*/
 #topbar {
-    background-image: url(../img/forum_pics/forum_head_pic.jpg);
+    background-image: url(../img/forum/forum_head_pic.jpg);
     /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
@@ -791,19 +791,19 @@ main {
 }
 
 .pic1 {
-    background-image: url('../img/forum_pics/news_pic1.jpg');
+    background-image: url('../img/forum/news_pic1.jpg');
 }
 
 .pic2 {
-    background-image: url('../img/forum_pics/news_pic2.jpg');
+    background-image: url('../img/forum/news_pic2.jpg');
 }
 
 .pic3 {
-    background-image: url('../img/forum_pics/news_pic3.jpg');
+    background-image: url('../img/forum/news_pic3.jpg');
 }
 
 .pic4 {
-    background-image: url('../img/forum_pics/news_pic4.jpg');
+    background-image: url('../img/forum/news_pic4.jpg');
 }
 
 /* 活动栏图片样式 */
@@ -1030,61 +1030,61 @@ main {
 
 /* 六大基酒圖片 */
 .baseWinePic1 {
-    background-image: url('../img/forum_pics/teach_1.jpg');
+    background-image: url('../img/forum/teach_1.jpg');
     cursor: pointer;
 }
 
 .baseWinePic2 {
-    background-image: url('../img/forum_pics/teach_1.jpg');
+    background-image: url('../img/forum/teach_1.jpg');
     cursor: pointer;
 }
 
 .baseWinePic3 {
-    background-image: url('../img/forum_pics/teach_1.jpg');
+    background-image: url('../img/forum/teach_1.jpg');
 }
 
 .baseWinePic4 {
-    background-image: url('../img/forum_pics/teach_1.jpg');
+    background-image: url('../img/forum/teach_1.jpg');
     cursor: pointer;
 }
 
 /* 經典調酒圖片 */
 .bartendWinePic1 {
-    background-image: url('../img/forum_pics/news_pic1.jpg');
+    background-image: url('../img/forum/news_pic1.jpg');
     cursor: pointer;
 }
 
 .bartendWinePic2 {
-    background-image: url('../img/forum_pics/news_pic1.jpg');
+    background-image: url('../img/forum/news_pic1.jpg');
     cursor: pointer;
 }
 
 .bartendWinePic3 {
-    background-image: url('../img/forum_pics/news_pic1.jpg');
+    background-image: url('../img/forum/news_pic1.jpg');
 }
 
 .bartendWinePic4 {
-    background-image: url('../img/forum_pics/news_pic1.jpg');
+    background-image: url('../img/forum/news_pic1.jpg');
     cursor: pointer;
 }
 
 /* 調酒教學圖片 */
 .teachWinePic1 {
-    background-image: url('../img/forum_pics/news_pic2.jpg');
+    background-image: url('../img/forum/news_pic2.jpg');
     cursor: pointer;
 }
 
 .teachWinePic2 {
-    background-image: url('../img/forum_pics/news_pic2.jpg');
+    background-image: url('../img/forum/news_pic2.jpg');
     cursor: pointer;
 }
 
 .teachWinePic3 {
-    background-image: url('../img/forum_pics/news_pic2.jpg');
+    background-image: url('../img/forum/news_pic2.jpg');
 }
 
 .teachWinePic4 {
-    background-image: url('../img/forum_pics/news_pic2.jpg');
+    background-image: url('../img/forum/news_pic2.jpg');
     cursor: pointer;
 }
 
