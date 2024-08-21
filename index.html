@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:100">
     <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- 步驟一：載入React, Bable -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
 </head>
 
 <body>
@@ -129,26 +137,25 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div id="frame">
-            <div id="copyright"><small>Jotalk © 2024 . All Rights Reserved. </small></div>
-            <div id="nav">
-                <ul id="info">
-                    <li><a href="">隱私政策</a></li>
-                    <li><a href="">服務條款</a></li>
-                    <li><a href="">聯絡我們</a></li>
-                    <li><a href="">店家登入</a></li>
-                </ul>
-                <ul id="social">
-                    <li><a id="x" href=""></a></li>
-                    <li><a id="ig" href=""></a></li>
-                    <li><a id="yt" href=""></a></li>
-                    <li><a id="in" href=""></a></li>
-                </ul>
-            </div>
-        </div>
 
-    </footer>
+    <!-- 步驟二：載入root元素 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // 步驟三：建立 React 元件
+        // 元件字首要大寫 而且有回傳值return
+        function App() {
+            // jsx語法
+            return (
+                <Footer />
+            )
+        }
+
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />)
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
