@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             contents.forEach(content => {
                 content.classList.add('hidden');
                 content.classList.remove('active');
-                
+
                 // 隱藏所有文章
                 const articles = content.querySelectorAll('.article');
                 articles.forEach(article => article.classList.add('hidden'));
@@ -67,3 +67,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
+
+// 等待文檔加載完成
+document.addEventListener('DOMContentLoaded', function () {
+    // 獲取圖片和 p 標籤元素
+    const likeImage = document.getElementById('like-image');
+    const heartNum = document.getElementById('heart_num');
+
+    // 將數字值從 p 標籤中獲取並轉換為整數
+    let count = parseInt(heartNum.textContent, 10);
+    // 使用布林值來控制狀態，初始為增加
+    let increment = true;
+
+    // 添加點擊事件處理程序
+    likeImage.addEventListener('click', function () {
+        // 根據 increment 的值更新 count
+        if (increment) {
+            count++;
+        } else {
+            count--;
+        }
+        // 更新 p 標籤中的數字
+        heartNum.textContent = count;
+        // 切換 increment 的值
+        increment = !increment;
+    });
+});

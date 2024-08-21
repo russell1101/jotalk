@@ -510,11 +510,16 @@ small {
 }
 
 .text p {
-    margin-top: 10px;
+    line-height: normal;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 16px;
+    font-weight: 600;
+    width: 90%;
+    /* 設定寬度為200px */
     overflow: hidden;
+    /* 隱藏超出範圍的內容 */
     text-overflow: ellipsis;
+    /* 超出部分用省略號表示 */
     white-space: nowrap;
+    /* 禁止換行 */
+    margin-top: 8px;
 }
