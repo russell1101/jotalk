@@ -1,7 +1,7 @@
-function Topbar() {
+function Topbar(props) {
     return (
         <>
-            <header id="topbar">
+            <header id="topbar" style={{ backgroundImage: `url(${props.bg})` }}>
                 <div className="forum_head">
                     <h1 className="logo">
                         <a href="./index.html">
@@ -18,8 +18,8 @@ function Topbar() {
 
 
                 <div className="forum_slogan">
-                    <h1>BAR LIST</h1>
-                    <p>酒吧清單</p>
+                    <h1>{props.h1}</h1>
+                    <p>{props.p}</p>
                 </div>
 
 

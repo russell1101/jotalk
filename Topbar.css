@@ -88,9 +88,6 @@ a {
     backdrop-filter: blur(10px);
 }
 
-
-
-
 /* 設置 body 背景圖 */
 body {
     background-image: url(../img/jotalk_background.jpg);
@@ -131,8 +128,6 @@ body {
 
 
 #topbar {
-    background-image: url(../img/barlist/barlist_head_pic.jpg);
-    /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
     width: 100%;
@@ -303,7 +298,6 @@ body {
 }
 
 #topbar .forum_slogan {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,10 +305,10 @@ body {
     text-align: center;
     position: absolute;
     /* 設置為 absolute 以便於在 topbar 中定位 */
-    bottom: 0;
+    top: 50%;
     /* 將其定位到 topbar 底部 */
-    left: 50%;
-    transform: translateX(-50%);
+    left: 30%;
+    transform: translate(-50%, -50%);
     /* 水平居中 */
     padding: 20px;
 }
@@ -325,18 +319,4 @@ body {
 
 #topbar .forum_slogan p {
     color: #ffffff;
-}
-
-
-/* 內容區 */
-main {
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
-.wrap {
-    display: flex;
-    justify-content: center;
-    margin: 10vh 0;
-    width: 100%;
 }

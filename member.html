@@ -14,8 +14,10 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <!-- footer元件 -->
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
+    <!-- topbar元件 -->
     <script type="text/babel" src="./Topbar.jsx"></script>
     <link rel="stylesheet" href="./Topbar.css">
 </head>
@@ -33,10 +35,10 @@
         function App() {
             // jsx語法
             return (
-                <Topbar />
+                <Topbar h1='BAR LIST' p='酒吧清單' bg='./img/member/member-head-pic.jpg' />
             )
+            
         }
-
         // 步驟四：渲染元件到根元件上
         ReactDOM
             .createRoot(document.getElementById('test'))
