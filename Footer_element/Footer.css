@@ -1,0 +1,101 @@
+/* footer區 */
+footer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+#frame {
+    width: 80%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#nav {
+    width: 60%;
+    min-width: 550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#copyright {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#copyright small {
+    font-size: 12px;
+}
+
+#info {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 60%;
+    min-width: 260px;
+    font-size: .85rem;
+}
+
+#social {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 40%;
+    max-width: 180px;
+}
+
+footer ul {
+    gap: 5%;
+}
+
+#info a {
+    transition: 0.35s ease-in-out;
+}
+
+#social a {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    /* 右邊一樣最靠又貼齊 指向左邊補間距 */
+    transition: 0.35s ease-in-out;
+    background-size: cover;
+    /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
+    background-position: center, center;
+    /* 將背景x y軸致中 */
+    background-repeat: no-repeat;
+    /* 重複保證不會重複拼貼 */
+}
+
+#info a:hover {
+    opacity: 60%;
+}
+
+#social a:hover {
+    opacity: 60%;
+}
+
+#x {
+    background-image: url(../img/footer/Icon-x.svg);
+}
+
+#ig {
+    background-image: url(../img/footer/Icon-ig.svg);
+}
+
+#yt {
+    background-image: url(../img/footer/Icon-yt.svg);
+}
+
+#in {
+    background-image: url(../img/footer/Icon-in.svg);
+}

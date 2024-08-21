@@ -6,6 +6,24 @@
 /* 重置所有標籤的樣式 */
 
 /* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
 
 
 * {
@@ -58,11 +76,21 @@ a {
     text-decoration: none;
 }
 
-
+/* 玻璃擬態 */
+#topbar .forum_head,
+#badge,
+.points_history,
+#history {
+    background-image: linear-gradient(45deg, rgba(225, 225, 225, 0.4),
+            rgba(225, 225, 225, 0.7));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(10px);
+}
 
 /* 設置 body 背景圖 */
 body {
-    background-image: url(../../img/jotalk_background.jpg);
+    background-image: url(../img/jotalk_background.jpg);
     /* 背景圖 URL */
     background-size: cover;
     /*使背景圖覆蓋整個頁面*/
@@ -80,7 +108,7 @@ body {
 }
 
 
-.overlay {
+.overlay_bg {
     position: fixed;
     /* 固定位置，覆蓋在背景圖上 */
     top: 0;
@@ -99,10 +127,7 @@ body {
 /* ----------頁首區---------- */
 
 
-/* topbar 要補遮色片*/
 #topbar {
-    background-image: url(../../img/forum_pics/forum_head_pic.jpg);
-    /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
     width: 100%;
@@ -131,14 +156,10 @@ body {
     height: 100vh;
 }
 
-
 #topbar .forum_head {
-    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
-            rgba(225, 225, 225, 0.8));
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
-        inset -2px -2px rgba(0, 0, 0, 0.027);
     position: fixed;
     width: 90px;
+    max-width: 550px;
     height: 90px;
     padding: 14px;
     margin-top: 50px;
@@ -151,16 +172,6 @@ body {
     transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
     /* 同步过渡 */
     z-index: 999;
-}
-
-
-#topbar .forum_head:hover {
-    width: 35%;
-    /* 滑鼠觸碰時擴展 */
-    border-radius: 99px;
-    /* 變長條 */
-    justify-content: space-between;
-    /* 水平排列内容 */
 }
 
 #topbar .forum_head .logo {
@@ -177,11 +188,23 @@ body {
     width: 60px;
 }
 
-#topbar .forum_head .collapsed {
+#topbar .forum_head.collapsed {
     width: 90px;
     border-radius: 99px;
     overflow: hidden;
 }
+
+#topbar .forum_head:hover {
+    width: 40%;
+    max-width: 550px;
+    /* 滑鼠觸碰時擴展 */
+    border-radius: 99px;
+    /* 變長條 */
+    justify-content: space-between;
+    /* 水平排列内容 */
+}
+
+
 
 #topbar .forum_head .menu {
     display: flex;
@@ -197,70 +220,56 @@ body {
     /* 菜單顯隱 */
 }
 
-
-#topbar .forum_head .collapsed .menu {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.5s ease, visibility 0s 0.2s;
-    justify-content: space-around;
-    padding: 0 50px;
-}
-
-
-#topbar .forum_head:hover .menu {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s ease, visibility 0s 0s;
-    justify-content: space-around;
-    /* 确保项目在可用空间内对齐 */
-}
-
-/* .forum_head .menu a {
+/* topbar .forum_head 選項 hover效果 */
+#topbar .forum_head .menu a {
     display: block;
-    color: #000000;
-    padding: 10px 20px;
-    text-align: center;
-    border-bottom: solid 1px transparent;
-    /* 先預留底線的空間 以免造成推移 故先設定成透明 
-} */
-
-.forum_head .menu a {
-    display: block;
-    color: #000000;
-    padding: 10px 20px;
+    color: var(--darkgrey);
+    font-weight: 900;
+    letter-spacing: .2rem;
+    /* padding: 5px 0px;
+    margin: 0 40px; */
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.forum_head .menu a::after {
+#topbar .forum_head .menu a::after {
     content: '';
     position: absolute;
     bottom: 0;
+    left: 50%;
+    /* 初始位置在中心 */
+    right: 50%;
+    /* 初始位置在中心 */
+    height: .6px;
+    background-color: var(--lightgrey);
+    transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+    /* 改變 transition 參數 */
+}
+
+#topbar .forum_head .menu a:hover::after {
     left: 0;
-    width: 0;
-    height: 1.5px;
-    background-color: black;
-    transition: width 1s ease-in-out;
-}
-
-.forum_head .menu a:hover::after {
-    width: 100%;
+    /* 展開到左邊界 */
+    right: 0;
+    /* 展開到右邊界 */
 }
 
 
-.forum_head.collapsed .menu {
+#topbar .forum_head.collapsed .menu {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease, visibility 0s 0.2s;
 }
 
 
-.forum_head:hover .menu {
+#topbar .forum_head:hover .menu {
     opacity: 1;
     visibility: visible;
     transition: opacity 4s ease, visibility 0s 0.2s;
+    justify-content: space-around;
 }
+
+
 
 /* login按鈕位置 */
 #topbar .account_login {
@@ -289,7 +298,6 @@ body {
 }
 
 #topbar .forum_slogan {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -297,10 +305,10 @@ body {
     text-align: center;
     position: absolute;
     /* 設置為 absolute 以便於在 topbar 中定位 */
-    bottom: 0;
+    top: 50%;
     /* 將其定位到 topbar 底部 */
-    left: 50%;
-    transform: translateX(-50%);
+    left: 30%;
+    transform: translate(-50%, -50%);
     /* 水平居中 */
     padding: 20px;
 }
@@ -311,210 +319,4 @@ body {
 
 #topbar .forum_slogan p {
     color: #ffffff;
-}
-
-
-
-
-
-/* 內文區 */
-/* 設定整個佈局 */
-/* 頁面樣式 */
-main {
-    display: flex;
-    justify-content: center;
-}
-
-.forum-container {
-    display: flex;
-    width: 80%;
-    max-width: 1140px;
-    margin-top: 20px;
-    padding: 20px;
-}
-
-
-
-/* 左側 */
-.left-section {
-    width: 20%;
-    max-width: 160px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 30px;
-}
-
-.categories .category.active,
-.tags .tag.active {
-    background-color: #155569;
-    color: #ffffff;
-}
-
-.categories {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-}
-
-.categories .category {
-    padding: 1px 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    color: #155569;
-}
-
-#tagTitle {
-    font-size: 14px;
-    border-bottom: 1px solid black;
-    margin-bottom: 2px;
-}
-
-.tags .tag {
-    color: #000000;
-    font-size: 12px;
-    padding: 7.5px 0;
-}
-
-/* 右側 */
-
-.right-section {
-    border-radius: 10px;
-    background-color: #ffffff;
-    width: 80%;
-    max-width: 900px;
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0;
-    padding: 30px 5px;
-}
-
-.Atc_content {
-    border-radius: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0;
-}
-
-.Atc_content.hidden {
-    display: none;
-}
-
-.article {
-    width: 90%;
-    height: 170px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    border-bottom: 1px solid #5858585b;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hidden {
-    display: none;
-}
-
-#load-more {
-    display: block;
-    box-sizing: border-box;
-    padding: 10px 20px;
-    /* background-color: #155569; */
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin: 20px auto;
-    /* 置中 */
-    max-width: 830px;
-    /* 確保按鈕不會超過文章區域寬度 */
-}
-
-
-
-/* 卡片內容 */
-.picture {
-    height: 90%;
-    width: 30%;
-    min-width: 100px;
-    max-width: 150px;
-
-}
-
-.picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.text {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 15px;
-    line-height: 0;
-}
-
-.user {
-    width: 55%;
-    min-width: 180px;
-    height: 20%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.user figure {
-    width: 25px;
-    height: 25px;
-}
-
-.user img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 99px;
-}
-
-.user h2 {
-    font-size: 15px;
-}
-
-#article_title {
-    font-size: 18px;
-    font-weight: 800;
-}
-
-#hashtag {
-    margin-top: 8px;
-}
-
-small {
-    font-size: 14px;
-    color: #585858;
-}
-
-.text p {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 16px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
