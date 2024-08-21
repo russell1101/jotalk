@@ -214,6 +214,7 @@ body {
     justify-content: space-around;
     /* 确保项目在可用空间内对齐 */
 }
+
 /* login按鈕位置 */
 #topbar .account_login {
     position: absolute;
@@ -239,6 +240,7 @@ body {
     padding: 10px 10px;
     text-align: center;
 }
+
 #topbar .forum_slogan {
     width: 100%;
     display: flex;
@@ -262,4 +264,65 @@ body {
 
 #topbar .forum_slogan p {
     color: #ffffff;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.title {
+    align-self: flex-start;
+    margin: 2% 0 0 4%;
+}
+
+.title h2{
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #155569;
+    letter-spacing:2px;
+
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.844);
+    border-radius: 20px;
+    margin: 3% 0 0 0;
+
+}
+
+.wrap {
+    width: 80%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: flex-end; /* 将内容靠右对齐 */
+    align-items: center; /* 在垂直方向上居中 */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* 纵向排列按钮 */
+    gap: 15px; /* 按钮之间的间距 */
+    margin:0 0 5% 10% ;
+}
+
+.circle-btn {
+    width: 15px; /* 缩小按钮宽度 */
+    height: 15px; /* 缩小按钮高度 */
+    border-radius: 50%; /* 使按钮成为圆形 */
+    background-color: white; /* 按钮的背景颜色 */
+    border: none; /* 移除按钮的边框 */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
 }
