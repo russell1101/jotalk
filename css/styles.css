@@ -97,16 +97,19 @@ section {
 /* topbar區 */
 #topbar {
     position: fixed;
-    width: auto;
+    width: 40%;
+    max-width: 550px;
     height: 90px;
     padding: 14px;
     margin-top: 50px;
     margin-left: 50px;
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
+    justify-content: center;
+    /* 确保内容在容器中心 */
     border-radius: 99px;
-    transition: width 1s ease;
+    transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
+    /* 同步过渡 */
     z-index: 999;
 }
 
@@ -131,17 +134,31 @@ section {
 }
 
 #topbar:hover {
-    width: auto;
+    width: 40%;
+    max-width: 550px;
+    /* 滑鼠觸碰時擴展 */
+    border-radius: 99px;
+    /* 變長條 */
+    justify-content: space-between;
+    /* 水平排列内容 */
+}
+
+#topbar.collapsed:hover {
+    transition: width 1s ease;
 }
 
 #topbar .menu {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
-    transition: opacity 4s ease, visibility 0s 0.3s;
+    white-space: nowrap;
+    /* 阻止文字换行 */
+    overflow: hidden;
+    /* 隐藏溢出的内容 */
     visibility: visible;
     opacity: 1;
-    white-space: nowrap;
+    transition: opacity 4s ease, visibility 0s 0.3s;
+    /* 菜單顯隱 */
 }
 
 /* topbar 選項 hover效果 */
@@ -150,8 +167,8 @@ section {
     color: var(--darkgrey);
     font-weight: 900;
     letter-spacing: .2rem;
-    padding: 5px 0px;
-    margin: 0 40px;
+    /* padding: 5px 0px;
+    margin: 0 40px; */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -190,7 +207,9 @@ section {
     opacity: 1;
     visibility: visible;
     transition: opacity 4s ease, visibility 0s 0.2s;
+    justify-content: space-around;
 }
+
 
 
 

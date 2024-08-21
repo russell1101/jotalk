@@ -8,6 +8,8 @@ window.addEventListener("scroll", function () {
         topbar.classList.remove("collapsed");
     }
 });
+
+
 // 滾動卡片 懸浮停止
 document.addEventListener('DOMContentLoaded', () => {
     const columns = document.querySelectorAll('.column');
