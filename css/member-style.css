@@ -6,6 +6,24 @@
 /* 重置所有標籤的樣式 */
 
 /* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
 
 
 * {
@@ -59,6 +77,7 @@ a {
 }
 
 /* 玻璃擬態 */
+#topbar .forum_head,
 #badge,
 .points_history,
 #history {
@@ -142,14 +161,10 @@ body {
     height: 100vh;
 }
 
-
 #topbar .forum_head {
-    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
-            rgba(225, 225, 225, 0.8));
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
-        inset -2px -2px rgba(0, 0, 0, 0.027);
     position: fixed;
     width: 90px;
+    max-width: 550px;
     height: 90px;
     padding: 14px;
     margin-top: 50px;
@@ -162,16 +177,6 @@ body {
     transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
     /* 同步过渡 */
     z-index: 999;
-}
-
-
-#topbar .forum_head:hover {
-    width: 40%;
-    /* 滑鼠觸碰時擴展 */
-    border-radius: 99px;
-    /* 變長條 */
-    justify-content: space-between;
-    /* 水平排列内容 */
 }
 
 #topbar .forum_head .logo {
@@ -188,11 +193,23 @@ body {
     width: 60px;
 }
 
-#topbar .forum_head .collapsed {
+#topbar .forum_head.collapsed {
     width: 90px;
     border-radius: 99px;
     overflow: hidden;
 }
+
+#topbar .forum_head:hover {
+    width: 40%;
+    max-width: 550px;
+    /* 滑鼠觸碰時擴展 */
+    border-radius: 99px;
+    /* 變長條 */
+    justify-content: space-between;
+    /* 水平排列内容 */
+}
+
+
 
 #topbar .forum_head .menu {
     display: flex;
@@ -208,35 +225,20 @@ body {
     /* 菜單顯隱 */
 }
 
-
-#topbar .forum_head .collapsed .menu {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.5s ease, visibility 0s 0.2s;
-    justify-content: space-around;
-    padding: 0 50px;
-}
-
-
-#topbar .forum_head:hover .menu {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s ease, visibility 0s 0s;
-    justify-content: space-around;
-    /* 确保项目在可用空间内对齐 */
-}
-
-
-.forum_head .menu a {
+/* topbar .forum_head 選項 hover效果 */
+#topbar .forum_head .menu a {
     display: block;
-    color: #000000;
-    padding: 10px 20px;
+    color: var(--darkgrey);
+    font-weight: 900;
+    letter-spacing: .2rem;
+    /* padding: 5px 0px;
+    margin: 0 40px; */
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-#topbar .menu a::after {
+#topbar .forum_head .menu a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -244,13 +246,13 @@ body {
     /* 初始位置在中心 */
     right: 50%;
     /* 初始位置在中心 */
-    height: 1.5px;
-    background-color: black;
+    height: .6px;
+    background-color: var(--lightgrey);
     transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
     /* 改變 transition 參數 */
 }
 
-#topbar .menu a:hover::after {
+#topbar .forum_head .menu a:hover::after {
     left: 0;
     /* 展開到左邊界 */
     right: 0;
@@ -258,18 +260,21 @@ body {
 }
 
 
-.forum_head.collapsed .menu {
+#topbar .forum_head.collapsed .menu {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease, visibility 0s 0.2s;
 }
 
 
-.forum_head:hover .menu {
+#topbar .forum_head:hover .menu {
     opacity: 1;
     visibility: visible;
     transition: opacity 4s ease, visibility 0s 0.2s;
+    justify-content: space-around;
 }
+
+
 
 /* login按鈕位置 */
 #topbar .account_login {

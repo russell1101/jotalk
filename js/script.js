@@ -81,6 +81,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+
+
+
+
 // 會員登入頁
 // 取得按鈕、彈出視窗和遮罩層的元素
 let loginBtn = document.getElementById("loginBtn");

@@ -1,0 +1,342 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+/* utf8一定要在行數1 */
+/* import 一定要在第二行 */
+/* 重置所有標籤的樣式 */
+
+/* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加padding */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    color: #444;
+    display: block;
+    /* 預設inline行內元素改為block */
+    text-decoration: none;
+}
+
+/* 玻璃擬態 */
+#topbar .forum_head,
+#badge,
+.points_history,
+#history {
+    background-image: linear-gradient(45deg, rgba(225, 225, 225, 0.4),
+            rgba(225, 225, 225, 0.7));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(10px);
+}
+
+
+
+
+/* 設置 body 背景圖 */
+body {
+    background-image: url(../img/jotalk_background.jpg);
+    /* 背景圖 URL */
+    background-size: cover;
+    /*使背景圖覆蓋整個頁面*/
+    /* background-position: center; 背景圖置中 */
+    background-repeat: no-repeat;
+    /* 防止背景圖重複 */
+    background-attachment: fixed;
+    /* 確保背景圖固定不隨內容滾動 */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* 確保 body 高度為視窗高度 */
+    overflow-x: hidden;
+    /* 防止水平滾動條 */
+}
+
+
+.overlay_bg {
+    position: fixed;
+    /* 固定位置，覆蓋在背景圖上 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    /* 半透明的顏色覆蓋 */
+    backdrop-filter: blur(1px);
+    /* 應用模糊效果 */
+    z-index: -1;
+    /*確保在所有內容之下 */
+}
+
+
+/* ----------頁首區---------- */
+
+
+#topbar {
+    background-image: url(../img/barlist/barlist_head_pic.jpg);
+    /* 圖片要壓縮 */
+    position: relative;
+    /* 設置為 relative 以便內部元素使用 absolute 定位 */
+    width: 100%;
+    /* 使 topbar 撐滿全寬 */
+    height: 400px;
+    /* 設置 topbar 高度 */
+    padding: 0;
+    /* 確保沒有額外的 padding */
+    margin: 0;
+    /* 確保沒有額外的 margin */
+    background-size: cover;
+    /* 確保背景圖覆蓋整個容器 */
+    background-position: center;
+    /* 將背景圖置中 */
+    background-repeat: no-repeat;
+    /* 防止背景圖重複 */
+    transition: height 0.3s ease;
+    z-index: 1000;
+}
+
+#topbar .forum_head section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#topbar .forum_head {
+    position: fixed;
+    width: 90px;
+    max-width: 550px;
+    height: 90px;
+    padding: 14px;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 确保内容在容器中心 */
+    border-radius: 99px;
+    transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
+    /* 同步过渡 */
+    z-index: 999;
+}
+
+#topbar .forum_head .logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+}
+
+#topbar .forum_head .logo a {
+    width: 60px;
+}
+
+#topbar .forum_head.collapsed {
+    width: 90px;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+#topbar .forum_head:hover {
+    width: 40%;
+    max-width: 550px;
+    /* 滑鼠觸碰時擴展 */
+    border-radius: 99px;
+    /* 變長條 */
+    justify-content: space-between;
+    /* 水平排列内容 */
+}
+
+
+
+#topbar .forum_head .menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    white-space: nowrap;
+    /* 阻止文字换行 */
+    overflow: hidden;
+    /* 隐藏溢出的内容 */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 4s ease, visibility 0s 0.3s;
+    /* 菜單顯隱 */
+}
+
+/* topbar .forum_head 選項 hover效果 */
+#topbar .forum_head .menu a {
+    display: block;
+    color: var(--darkgrey);
+    font-weight: 900;
+    letter-spacing: .2rem;
+    /* padding: 5px 0px;
+    margin: 0 40px; */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#topbar .forum_head .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* 初始位置在中心 */
+    right: 50%;
+    /* 初始位置在中心 */
+    height: .6px;
+    background-color: var(--lightgrey);
+    transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+    /* 改變 transition 參數 */
+}
+
+#topbar .forum_head .menu a:hover::after {
+    left: 0;
+    /* 展開到左邊界 */
+    right: 0;
+    /* 展開到右邊界 */
+}
+
+
+#topbar .forum_head.collapsed .menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.2s;
+}
+
+
+#topbar .forum_head:hover .menu {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 4s ease, visibility 0s 0.2s;
+    justify-content: space-around;
+}
+
+
+
+/* login按鈕位置 */
+#topbar .account_login {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+#topbar .account_login button {
+    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
+            rgba(225, 225, 225, 0.8));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 99px;
+    opacity: 0.7;
+    /* 如果需要更改按鈕的透明度，可以使用 opacity */
+}
+
+#topbar .account_login a {
+    color: #000000;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+#topbar .forum_slogan {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    /* 設置為 absolute 以便於在 topbar 中定位 */
+    bottom: 0;
+    /* 將其定位到 topbar 底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 水平居中 */
+    padding: 20px;
+}
+
+#topbar .forum_slogan h1 {
+    color: #ffffff;
+}
+
+#topbar .forum_slogan p {
+    color: #ffffff;
+}
+
+
+/* 內容區 */
+main {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    margin: 10vh 0;
+    width: 100%;
+}

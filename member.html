@@ -8,6 +8,7 @@
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/member-style.css">
 
+
     <!-- 步驟一：載入React, Bable -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -15,83 +16,32 @@
 
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
+    <script type="text/babel" src="./Topbar.jsx"></script>
+    <link rel="stylesheet" href="./Topbar.css">
 </head>
 
 <body>
     <!-- 壓在背景的透明板 -->
     <div class="overlay_bg"></div>
 
-    <!-- 頁首區 -->
-    <header id="topbar">
-        <!-- logo區 -->
-        <div class="forum_head">
-            <h1 class="logo">
-                <a href="./index.html">
-                    <img src="./img/logo.svg" alt="jotalkLogo">
-                </a>
-            </h1>
+    <!-- 步驟二：載入root元素 -->
+    <div id="test"></div>
+    <script type="text/babel">
 
-            <div class="menu">
-                <a href="./forum.html">綜合論壇</a>
-                <a href="./barlist.html">酒吧清單</a>
-                <a href="#">關於我們</a>
-            </div>
-        </div>
+        // 步驟三：建立 React 元件
+        // 元件字首要大寫 而且有回傳值return
+        function App() {
+            // jsx語法
+            return (
+                <Topbar />
+            )
+        }
 
-        <!-- 標題及搜尋區 -->
-        <div class="forum_slogan">
-            <h1>BAR LIST</h1>
-            <p>酒吧清單</p>
-        </div>
-
-
-        <!-- 會員登入區 -->
-        <div class="account_login">
-            <button id="loginBtn">會員登入</button>
-        </div>
-        <!-- 遮罩層 -->
-        <div id="overlay" class="overlay"></div>
-        <!-- 彈出登入視窗 -->
-        <div id="loginWindow" class="window">
-            <span id="closebtn">X</span>
-            <div class="contant">
-                <div class="login_border">
-                    <h2>LOGIN</h2>
-                </div>
-                <form action="./member.html" method="post" name="member_form" id="member_form" title="會員登入表單">
-                    <label for="email"></label>
-                    <input type="email" name="email" id="email" title="email欄位" placeholder="*輸入信箱" required
-                        autocomplete>
-                    <div class="forget_passward">
-                        <label for="password"></label>
-                        <input type="password" name="password" id="password" title="password欄位" placeholder="*輸入密碼"
-                            required autocomplete>
-                        <small>忘記密碼?</small>
-                    </div>
-                    <!-- 表單button要放在form裡面 -->
-                    <!-- button 屬性預設就是submit -->
-                    <div class="button">
-                        <button type="button" name="btn_submit" id="btn_login" title="送出按鈕">
-                            <span>登入</span>
-                        </button>
-                        <button type="button" name="btn_submit" id="btn_register" title="送出按鈕">
-                            <span>註冊</span>
-                        </button>
-                    </div>
-                    <div class="fast__login">
-                        <hr>
-                        <p>快速登入</p>
-                    </div>
-                    <ul class="icon">
-                        <li><a class="icon-fb" id="fb" href="#"></a></li>
-                        <li><a class="icon-mail" id="google" href="#"></a></li>
-                        <li><a class="icon-line" id="line" href="#"></a></li>
-                    </ul>
-                </form>
-            </div>
-        </div>
-    </header>
-
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('test'))
+            .render(<App />)
+    </script>
 
     <main>
         <div class="wrap">

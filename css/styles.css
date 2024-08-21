@@ -143,9 +143,7 @@ section {
     /* 水平排列内容 */
 }
 
-#topbar.collapsed:hover {
-    transition: width 1s ease;
-}
+
 
 #topbar .menu {
     display: flex;
