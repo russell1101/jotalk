@@ -552,6 +552,10 @@ main {
     z-index: 1;
     display: none;
     /* 初始狀態隱藏 */
+    opacity: 0;
+    /* 初始透明度為0 */
+    transition: opacity .8s ease;
+    /* 添加漸變效果，持續時間0.3秒 */
 }
 
 /* 登入按鈕樣式 */
@@ -597,6 +601,10 @@ main {
     align-items: center;
     display: none;
     /* 初始狀態隱藏 */
+    opacity: 0;
+    /* 初始透明度為0 */
+    transition: opacity .8s ease;
+    /* 添加漸變效果，持續時間0.3秒 */
 }
 
 .contant {
@@ -760,15 +768,15 @@ main {
 }
 
 .icon-fb {
-    background-image: url(../img/會員登入/facebook\ 1.svg);
+    background-image: url(../img/svg/facebook.svg);
 }
 
 .icon-mail {
-    background-image: url(../img/會員登入/google\ 1.svg);
+    background-image: url(../img/svg/google.svg);
 }
 
 .icon-line {
-    background-image: url(../img/會員登入/line\ 1.svg);
+    background-image: url(../img/svg/line.svg);
 }
 
 .icon-fb:hover,

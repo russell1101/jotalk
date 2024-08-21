@@ -86,27 +86,81 @@ let myWindow = document.getElementById("loginWindow");
 let overlay = document.getElementById("overlay");
 let close = document.getElementById("closebtn");
 
-// 當使用者點擊登入按鈕時，顯示彈出視窗和遮罩層
+
+// 當使用者點擊登入按鈕時，顯示彈出視窗和遮罩層，並添加漸變效果
 loginBtn.onclick = function () {
-    myWindow.style.display = "block";
-    overlay.style.display = "block";
-}
+    overlay.style.display = "block"; // 顯示遮罩層
+    myWindow.style.display = "block"; // 顯示彈出視窗
+    setTimeout(() => { // 使用setTimeout來觸發漸變效果
+        overlay.style.opacity = "1"; // 遮罩層漸變顯示
+        myWindow.style.opacity = "1"; // 彈出視窗漸變顯示
+    }, 10); // 延遲以確保display生效
+};
 
-// 當使用者點擊關閉按鈕時，隱藏彈出視窗和遮罩層
+// 當使用者點擊關閉按鈕時，隱藏彈出視窗和遮罩層，並添加漸變效果
 close.onclick = function () {
-    myWindow.style.display = "none";
-    overlay.style.display = "none";
-}
+    overlay.style.opacity = "0"; // 遮罩層漸變隱藏
+    myWindow.style.opacity = "0"; // 彈出視窗漸變隱藏
+    setTimeout(() => { // 使用setTimeout來等待漸變完成後隱藏
+        overlay.style.display = "none"; // 隱藏遮罩層
+        myWindow.style.display = "none"; // 隱藏彈出視窗
+    }, 800); // 漸變時間與transition一致
+};
 
-// 當使用者點擊遮罩層時，也隱藏彈出視窗和遮罩層
+// 當使用者點擊遮罩層時，也隱藏彈出視窗和遮罩層，並添加漸變效果
 overlay.onclick = function () {
-    myWindow.style.display = "none";
-    overlay.style.display = "none";
-}
+    close.onclick(); // 調用close的onclick事件
+};
 
 
 // 表單寫入localstorage
-let btn_login = document.getElementById('btn_login');
-btn_login.addEventListener('click', function () {
-    let
+// 登入 button要設定跳轉指令
+let btn1 = document.getElementById('btn_login');
+btn1.addEventListener('click', function () {
+    let uid = document.getElementById('email');
+    // 寫入到localStorage
+    window.localStorage.setItem('email', email.value);
+    // 取得密碼
+    let upw = document.getElementById('password');
+    // 寫入到localStorage
+    window.localStorage.setItem('password', password.value);
+    if (email.value === '') {
+        alert('未登錄用户');
+    } else {
+        alert(email.value + '登入成功');
+    }
+    window.location.href = './member.html';
+});
+
+let btn2 = document.getElementById('btn_register');
+btn2.addEventListener('click', function () {
+    let uid = document.getElementById('email');
+    // 寫入到localStorage
+    window.localStorage.setItem('email', email.value);
+    // 取得密碼
+    let upw = document.getElementById('password');
+    // 寫入到localStorage
+    window.localStorage.setItem('password', password.value);
+    if (email.value == '') {
+        alert(未登錄用户)
+    } else {
+        alert(email.value + '登入成功');
+    }
+    window.location.href = './member.html';
+});
+
+
+
+// 快速登入的提示
+const ids = ['fb', 'google', 'line'];
+
+ids.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener('click', function () {
+
+            alert(id + '登入成功');
+            window.location.href = './member.html';
+        });
+    }
 });

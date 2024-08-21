@@ -58,7 +58,7 @@
                 <div class="login_border">
                     <h2>LOGIN</h2>
                 </div>
-                <form action="" method="post" name="member_form" id="member_form" title="會員登入表單">
+                <form action="./member.html" method="post" name="member_form" id="member_form" title="會員登入表單">
                     <label for="email"></label>
                     <input type="email" name="email" id="email" title="email欄位" placeholder="*輸入信箱" required
                         autocomplete>
@@ -71,7 +71,7 @@
                     <!-- 表單button要放在form裡面 -->
                     <!-- button 屬性預設就是submit -->
                     <div class="button">
-                        <button type="submit" name="btn_submit" id="btn_login" title="送出按鈕">
+                        <button type="button" name="btn_submit" id="btn_login" title="送出按鈕">
                             <span>登入</span>
                         </button>
                         <button type="button" name="btn_submit" id="btn_register" title="送出按鈕">
@@ -83,9 +83,9 @@
                         <p>快速登入</p>
                     </div>
                     <ul class="icon">
-                        <li><a class="icon-fb" href="#"></a></li>
-                        <li><a class="icon-mail" href="#"></a></li>
-                        <li><a class="icon-line" href="#"></a></li>
+                        <li><a class="icon-fb" id="fb" href="#"></a></li>
+                        <li><a class="icon-mail" id="google" href="#"></a></li>
+                        <li><a class="icon-line" id="line" href="#"></a></li>
                     </ul>
                 </form>
             </div>

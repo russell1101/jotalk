@@ -880,15 +880,15 @@ section {
 }
 
 .icon-fb {
-    background-image: url(../img/會員登入/facebook\ 1.svg);
+    background-image: url(../img/svg/facebook.svg);
 }
 
 .icon-mail {
-    background-image: url(../img/會員登入/google\ 1.svg);
+    background-image: url(../img/svg/google.svg);
 }
 
 .icon-line {
-    background-image: url(../img/會員登入/line\ 1.svg);
+    background-image: url(../img/svg/line.svg);
 }
 
 .icon-fb:hover,
