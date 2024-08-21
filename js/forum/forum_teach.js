@@ -1,66 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const categories = document.querySelectorAll('.top-section .categories .category');
-    const teachAtc = document.querySelector('.teach_atc');
-
-    // 映射表
-    const headerMapping = {
-        'teach_baseWine': 'site-headerBase',
-        'teach_bartendWine': 'site-headerBartend',
-        'teach_teachWine': 'site-headerTeach'
-    };
-
-    // 處理分類點擊事件
-    function handleCategoryClick(event) {
-        const target = event.target;
-        if (!target.classList.contains('category')) return;
-
-        // 移除所有分類的 active 樣式
-        categories.forEach(category => category.classList.remove('active'));
-
-        // 添加點擊的分類的 active 樣式
-        target.classList.add('active');
-
-        // 獲取目標區域
-        const targetId = target.getAttribute('data-target');
-        const targetSection = document.getElementById(targetId);
-
-        // 隱藏所有下方區域
-        document.querySelectorAll('.teach_picBase, .teach_picBartend, .teach_picTeach').forEach(el => el.classList.remove('active'));
-
-        // 顯示對應的下方區域
-        if (targetSection) {
-            targetSection.classList.add('active');
-        }
-
-        // 隱藏所有 site-header 元素
-        document.querySelectorAll('.site-headerBase, .site-headerBartend, .site-headerTeach').forEach(el => el.classList.remove('active'));
-
-        // 使用映射表獲取對應的 site-header 類別
-        const headerClass = headerMapping[targetId];
-        const targetHeader = document.querySelector(`.${headerClass}`);
-
-        // 顯示對應的 site-header
-        if (targetHeader) {
-            targetHeader.classList.add('active');
-        }
-
-        // 滾動位置回到頂部
-        teachAtc.scrollTop = 0;
-    }
-
-    // 事件監聽
-    categories.forEach(category => category.addEventListener('click', handleCategoryClick));
-});
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
     let currentIndex = 0; // 當前顯示的圖片索引
     let sections = document.querySelectorAll('.section');
     const indicators = document.querySelectorAll('.indicator a');
@@ -148,4 +86,68 @@ document.addEventListener('DOMContentLoaded', function () {
     indicators.forEach(indicator => indicator.addEventListener('click', handleIndicatorClick));
     categories.forEach(category => category.addEventListener('click', handleCategoryClick));
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const categories = document.querySelectorAll('.top-section .categories .category');
+    const teachAtc = document.querySelector('.teach_atc');
+
+    // 映射表
+    const headerMapping = {
+        'teach_baseWine': 'site-headerBase',
+        'teach_bartendWine': 'site-headerBartend',
+        'teach_teachWine': 'site-headerTeach'
+    };
+
+    // 處理分類點擊事件
+    function handleCategoryClick(event) {
+        const target = event.target;
+        if (!target.classList.contains('category')) return;
+
+        // 移除所有分類的 active 樣式
+        categories.forEach(category => category.classList.remove('active'));
+
+        // 添加點擊的分類的 active 樣式
+        target.classList.add('active');
+
+        // 獲取目標區域
+        const targetId = target.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+
+        // 隱藏所有下方區域
+        document.querySelectorAll('.teach_picBase, .teach_picBartend, .teach_picTeach').forEach(el => el.classList.remove('active'));
+
+        // 顯示對應的下方區域
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+
+        // 隱藏所有 site-header 元素
+        document.querySelectorAll('.site-headerBase, .site-headerBartend, .site-headerTeach').forEach(el => el.classList.remove('active'));
+
+        // 使用映射表獲取對應的 site-header 類別
+        const headerClass = headerMapping[targetId];
+        const targetHeader = document.querySelector(`.${headerClass}`);
+
+        // 顯示對應的 site-header
+        if (targetHeader) {
+            targetHeader.classList.add('active');
+        }
+
+        // 滾動位置回到頂部
+        teachAtc.scrollTop = 0;
+    }
+
+    // 事件監聽
+    categories.forEach(category => category.addEventListener('click', handleCategoryClick));
+});
+
+
+
+
+
+
+
+
+
+
 
