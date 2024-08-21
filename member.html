@@ -7,6 +7,14 @@
     <title>Jotalk_member</title>
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/member-style.css">
+
+    <!-- 步驟一：載入React, Bable -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
 </head>
 
 <body>
@@ -378,6 +386,23 @@
         </div>
     </main>
 
+    <!-- 步驟二：載入root元素 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // 步驟三：建立 React 元件
+        // 元件字首要大寫 而且有回傳值return
+        function App() {
+            // jsx語法
+            return (
+                <Footer />
+            )
+        }
+
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />)
+    </script>
 
     <script src="./js/script.js"></script>
 </body>
