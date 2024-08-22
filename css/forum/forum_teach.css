@@ -390,7 +390,7 @@ html {
 .teach_atc .teach_picBartend,
 .teach_atc .teach_picTeach {
     width: 80%;
-    height: 600px;
+    height: 500px;
     /* height: 100vh; */
     position: relative;
     overflow: hidden;
@@ -430,7 +430,7 @@ html {
 
 /* 為不同的 section 設置背景圖片 */
 #pic1-1 {
-    background-image: url('../../img/forum/teach/barlist8.jpg');
+    background-image: url('../../img/forum/teach/base1.jpg');
 }
 
 #pic1-2 {
@@ -451,14 +451,13 @@ html {
 
 /* 為經典調酒 sections 設置背景圖片 */
 #pic2-1 {
-    background-image: url('../../img/forum/teach/barlist8.jpg');
+    background-image: url('../../img/forum/teach/bartend1.jpg');
 }
 
 #pic2-2 {
     background-image: url('../../img/forum/teach/barlist9.jpg');
 }
 
-/* 依次為其他 sections 設置背景圖片 */
 #pic2-3 {
     background-image: url('../../img/forum/teach/barlist10.jpg');
 }
@@ -468,7 +467,7 @@ html {
 }
 
 #pic2-5 {
-    background-image: url('../../img/forum/teach/barlist12.jpg');
+    background-image: url('../../img/forum/teach/bartend5.jpg');
 }
 
 /* 調酒教學 sections */
@@ -513,11 +512,11 @@ html {
         filter: blur(0);
         transform: scale(1);
         opacity: 1;
-        visibility: visible;
     }
 
     100% {
-        visibility: hidden;
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -552,4 +551,16 @@ html {
 
 .teach_atc .indicator li {
     margin: 10px 0;
+}
+
+.site-headerBartend .indicator a.active {
+    font-weight: bold;
+    color: #ffcc00; /* 可以根據需求更改顏色 */
+}
+
+/* 指示器的基本樣式 */
+.teach_atc .indicator a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: normal;
 }
