@@ -10,7 +10,7 @@
 
 <body>
     <!-- 壓在背景的透明板 -->
-    <div class="overlay"></div>
+    <div class="overlay_bg"></div>
 
     <!-- 頁首區 -->
     <header id="topbar">
@@ -78,7 +78,7 @@
             <!-- 右區: 文章內容 -->
             <div class="right-section">
                 <div class="Atc_content active" id="Atc_hot">
-                    <div class="article">
+                    <div class="article" data-target="content-1">
                         <div class="text">
                             <div class="user">
                                 <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
@@ -114,7 +114,7 @@
                         </div>
                         <figure class="picture"><img src="../img/forum/news_pic1.jpg" alt=""></figure>
                     </div>
-                    <div class="article">
+                    <div class="article" data-target="content-2">
                         <div class="text">
                             <div class="user">
                                 <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
@@ -185,6 +185,23 @@
                 </div>
                 <button id="load-more">載入更多</button>
             </div>
+        </div>
+
+        <!-- 文章內頁 -->
+        <div id="overlay" class="overlay"></div>
+        <div id="content-1" class="content hidden">
+            <span class="closebtn">X</span>
+            <div class="content_user">
+                <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
+                <h2>信義王陽明</h2>
+                <small>4 hour ago</small>
+            </div>
+        </div>
+
+        <div id="content-2" class="content hidden">
+            <span class="closebtn">X</span>
+            <h2>文章 2 標題</h2>
+            <p>這是文章 2 的內容。</p>
         </div>
     </main>
 
