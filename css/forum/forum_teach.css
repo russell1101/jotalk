@@ -415,7 +415,7 @@ html {
     /* 預設隱藏 */
     visibility: hidden;
     /* 預設隱藏 */
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     background-size: cover;
     /* 背景圖片自動調整大小以覆蓋整個區域 */
     background-position: center;
@@ -425,16 +425,12 @@ html {
 .teach_atc .section.active {
     opacity: 1;
     visibility: visible;
-    animation: zoom-scroll 0.5s ease-in-out;
+    animation: zoom-scroll 0.3s ease-in-out;
 }
 
 /* 為不同的 section 設置背景圖片 */
 #pic1-1 {
-<<<<<<< HEAD
-    background-image: url('../../img/forum/teach/base1.jpg');
-=======
     background-image: url('../../img/forum/teach/base-brandy.png');
->>>>>>> 29610e3b53615fa95259959135192bd4381a7bb4
 }
 
 #pic1-2 {
@@ -456,13 +452,10 @@ html {
 #pic1-6 {
     background-image: url('../../img/forum/teach/base-whisky.png');
 }
+
 /* 為經典調酒 sections 設置背景圖片 */
 #pic2-1 {
-<<<<<<< HEAD
-    background-image: url('../../img/forum/teach/bartend1.jpg');
-=======
     background-image: url('../../img/forum/teach/cockt-sidecar.png');
->>>>>>> 29610e3b53615fa95259959135192bd4381a7bb4
 }
 
 #pic2-2 {
@@ -478,15 +471,11 @@ html {
 }
 
 #pic2-5 {
-<<<<<<< HEAD
-    background-image: url('../../img/forum/teach/bartend5.jpg');
-=======
     background-image: url('../../img/forum/teach/cockt-cosmopolitan.png');
 }
 
 #pic2-6 {
     background-image: url('../../img/forum/teach/cockt-oldfashioned.png');
->>>>>>> 29610e3b53615fa95259959135192bd4381a7bb4
 }
 
 /* 調酒教學 sections */
@@ -552,14 +541,17 @@ html {
     right: 0;
     top: 0;
     display: none;
-    visibility: hidden; /* 可選，確保元素隱藏 */
+    visibility: hidden;
+    /* 可選，確保元素隱藏 */
 }
 
 .teach_atc .site-headerBase.active,
 .teach_atc .site-headerBartend.active,
 .teach_atc .site-headerTeach.active {
-    display: block; /* 或者使用 flex 根據需求 */
-    visibility: visible; /* 確保元素可見 */
+    display: block;
+    /* 或者使用 flex 根據需求 */
+    visibility: visible;
+    /* 確保元素可見 */
 }
 
 .teach_atc .indicator {
@@ -572,14 +564,16 @@ html {
     margin: 10px 0;
 }
 
-.site-headerBartend .indicator a.active {
+
+.teach_atc .indicator a.active {
     font-weight: bold;
-    color: #ffcc00; /* 可以根據需求更改顏色 */
+    color: #ffcc00;
+    /* 可以根據需求更改顏色 */
 }
 
 /* 指示器的基本樣式 */
 .teach_atc .indicator a {
     text-decoration: none;
-    color: #ffffff;
+    color: #2c2c2c;
     font-weight: normal;
 }

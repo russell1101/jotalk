@@ -109,8 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 指示器
+
 document.addEventListener('DOMContentLoaded', () => {
-    // 獲取所有類別區域和指示器
+    // 獲取所有區域和指示器
+    const teachAtc = document.querySelector('.teach_atc');
     const teachPicBase = document.querySelector('.teach_picBase');
     const teachPicBartend = document.querySelector('.teach_picBartend');
     const teachPicTeach = document.querySelector('.teach_picTeach');
@@ -119,50 +121,98 @@ document.addEventListener('DOMContentLoaded', () => {
     const indicatorsBartend = document.querySelectorAll('.site-headerBartend .indicator a');
     const indicatorsTeach = document.querySelectorAll('.site-headerTeach .indicator a');
 
-    function activateIndicator(indicators, sections, index) {
+    let currentIndexBase = 0;
+    let currentIndexBartend = 0;
+    let currentIndexTeach = 0;
+
+    function activateIndicator(indicators, index) {
         // 移除所有指示器的 active 類別
         indicators.forEach(indicator => indicator.classList.remove('active'));
-
+        
         // 為指定的指示器添加 active 類別
-        indicators[index].classList.add('active');
-
-        // 更新顯示的圖片區域
-        sections.forEach((section, i) => {
-            section.classList.toggle('active', i === index);
-        });
+        if (indicators[index]) {
+            indicators[index].classList.add('active');
+        }
     }
 
-    function handleIndicatorClick(event, indicators, sections) {
+    function handleIndicatorClick(event, indicators, currentIndexSetter) {
         event.preventDefault();
         const targetIndex = Array.from(indicators).indexOf(event.target.closest('a'));
 
         if (targetIndex >= 0) {
-            activateIndicator(indicators, sections, targetIndex);
+            activateIndicator(indicators, targetIndex);
+            currentIndexSetter(targetIndex);
         }
     }
 
     // 設置每個指示器的點擊事件
     indicatorsBase.forEach(indicator => {
-        indicator.addEventListener('click', (event) => handleIndicatorClick(event, indicatorsBase, teachPicBase.querySelectorAll('.section')));
+        indicator.addEventListener('click', (event) => handleIndicatorClick(event, indicatorsBase, (index) => currentIndexBase = index));
     });
 
     indicatorsBartend.forEach(indicator => {
-        indicator.addEventListener('click', (event) => handleIndicatorClick(event, indicatorsBartend, teachPicBartend.querySelectorAll('.section')));
+        indicator.addEventListener('click', (event) => handleIndicatorClick(event, indicatorsBartend, (index) => currentIndexBartend = index));
     });
 
     indicatorsTeach.forEach(indicator => {
-        indicator.addEventListener('click', (event) => handleIndicatorClick(event, indicatorsTeach, teachPicTeach.querySelectorAll('.section')));
+        indicator.addEventListener('click', (event) => handleIndicatorClick(event, indicatorsTeach, (index) => currentIndexTeach = index));
     });
 
-    // 預設顯示第一個指示器及對應圖片
+    // 處理滾輪事件，只在 teach_atc 區域內觸發
+    teachAtc.addEventListener('wheel', (event) => {
+        event.preventDefault();
+
+        const delta = Math.sign(event.deltaY);
+
+        if (teachPicBase.classList.contains('active')) {
+            const sections = teachPicBase.querySelectorAll('.section');
+            const totalSections = sections.length;
+            currentIndexBase = Math.max(0, Math.min(currentIndexBase + delta, totalSections - 1));
+            activateIndicator(indicatorsBase, currentIndexBase);
+        } else if (teachPicBartend.classList.contains('active')) {
+            const sections = teachPicBartend.querySelectorAll('.section');
+            const totalSections = sections.length;
+            currentIndexBartend = Math.max(0, Math.min(currentIndexBartend + delta, totalSections - 1));
+            activateIndicator(indicatorsBartend, currentIndexBartend);
+        } else if (teachPicTeach.classList.contains('active')) {
+            const sections = teachPicTeach.querySelectorAll('.section');
+            const totalSections = sections.length;
+            currentIndexTeach = Math.max(0, Math.min(currentIndexTeach + delta, totalSections - 1));
+            activateIndicator(indicatorsTeach, currentIndexTeach);
+        }
+    });
+
+    // 初始化
     function initialize() {
-        activateIndicator(indicatorsBase, teachPicBase.querySelectorAll('.section'), 0);
-        activateIndicator(indicatorsBartend, teachPicBartend.querySelectorAll('.section'), 0);
-        activateIndicator(indicatorsTeach, teachPicTeach.querySelectorAll('.section'), 0);
+        activateIndicator(indicatorsBase, 0);
+        activateIndicator(indicatorsBartend, 0);
+        activateIndicator(indicatorsTeach, 0);
     }
+
+    // 切換類別時重置指示器
+    document.querySelectorAll('.category-switch').forEach(category => {
+        category.addEventListener('click', () => {
+            // 根據當前顯示的區域重置對應的指示器
+            if (teachPicBase.classList.contains('active')) {
+                currentIndexBase = 0;
+                activateIndicator(indicatorsBase, currentIndexBase);
+            } else if (teachPicBartend.classList.contains('active')) {
+                currentIndexBartend = 0;
+                activateIndicator(indicatorsBartend, currentIndexBartend);
+            } else if (teachPicTeach.classList.contains('active')) {
+                currentIndexTeach = 0;
+                activateIndicator(indicatorsTeach, currentIndexTeach);
+            }
+        });
+    });
 
     initialize();
 });
+
+
+
+
+
 
 
 
