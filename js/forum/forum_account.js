@@ -123,3 +123,42 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+let articles = document.querySelectorAll(".article");
+let overlay = document.getElementById("overlay");
+let closeButtons = document.querySelectorAll(".closebtn");
+
+articles.forEach(article => {
+    article.onclick = function () {
+        let targetId = this.getAttribute("data-target");
+        let targetContent = document.getElementById(targetId);
+
+        overlay.style.display = "block"; // 顯示遮罩層
+        targetContent.style.display = "block"; // 顯示對應內容
+
+        setTimeout(() => {
+            overlay.style.opacity = "1"; // 遮罩層漸變顯示
+            targetContent.style.opacity = "1"; // 內容漸變顯示
+        }, 10);
+    }
+});
+
+closeButtons.forEach(button => {
+    button.onclick = function () {
+        let content = this.parentElement;
+
+        overlay.style.opacity = "0"; // 遮罩層漸變隱藏
+        content.style.opacity = "0"; // 內容漸變隱藏
+
+        setTimeout(() => {
+            overlay.style.display = "none";
+            content.style.display = "none";
+        }, 800);
+    }
+});
+
+overlay.onclick = function () {
+    closeButtons.forEach(button => button.onclick());
+};
