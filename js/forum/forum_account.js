@@ -71,64 +71,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 愛心點擊增加
 document.addEventListener('DOMContentLoaded', function () {
-    // 獲取圖片和 p 標籤元素
-    const heartImage = document.getElementById('heart_img');
-    const heartNum = document.getElementById('heart_num');
+    // 獲取所有的 heart 和 bookMark 容器
+    const heartContainers = document.querySelectorAll('#heart');
+    const bookMarkContainers = document.querySelectorAll('#bookMark');
 
-    // 將數字值從 p 標籤中獲取並轉換為整數
-    let count = parseInt(heartNum.textContent, 10);
-    // 使用布林值來控制狀態，初始為增加
-    let increment = true;
+    // 為每個 heart 容器添加事件處理程序
+    heartContainers.forEach(function (heartContainer) {
+        const heartImage = heartContainer.querySelector('#heart_img');
+        const heartNum = heartContainer.querySelector('#heart_num');
 
-    const originalSrc = "../img/forum/account/like/icon _heart_.svg";
-    const redSrc = "../img/forum/account/like/icon _heart_red.svg";
+        let count = parseInt(heartNum.textContent, 10);
+        let increment = true;
 
-    // 添加點擊事件處理程序
-    heartImage.addEventListener('click', function () {
-        // 根據 increment 的值更新 count
-        if (increment) {
-            count++;
-            // 換圖
-            heartImage.src = redSrc;
-        } else {
-            count--;
-            heartImage.src = originalSrc;
-        }
-        // 更新 p 標籤中的數字
-        heartNum.textContent = count;
-        // 切換 increment 的值
-        increment = !increment;
+        const originalSrc = "../img/forum/account/like/icon _heart_.svg";
+        const redSrc = "../img/forum/account/like/icon _heart_red.svg";
+
+        heartImage.addEventListener('click', function () {
+            if (increment) {
+                count++;
+                heartImage.src = redSrc;
+            } else {
+                count--;
+                heartImage.src = originalSrc;
+            }
+            heartNum.textContent = count;
+            increment = !increment;
+        });
     });
-});
 
-// 收藏點擊增加
-document.addEventListener('DOMContentLoaded', function () {
-    // 獲取圖片和 p 標籤元素
-    const bookmarkImg = document.getElementById('bookMark_img');
-    const bookmarkNum = document.getElementById('bookMark_num');
+    // 為每個 bookMark 容器添加事件處理程序
+    bookMarkContainers.forEach(function (bookMarkContainer) {
+        const bookmarkImg = bookMarkContainer.querySelector('#bookMark_img');
+        const bookmarkNum = bookMarkContainer.querySelector('#bookMark_num');
 
-    // 將數字值從 p 標籤中獲取並轉換為整數
-    let count = parseInt(bookmarkNum.textContent, 10);
-    // 使用布林值來控制狀態，初始為增加
-    let increment = true;
+        let count = parseInt(bookmarkNum.textContent, 10);
+        let increment = true;
 
-    const originalSrc = "../img/forum/account/like/icon _bookmark_.svg";
-    const redSrc = "../img/forum/account/like/icon _bookmark_red.svg";
+        const originalSrc = "../img/forum/account/like/icon _bookmark_.svg";
+        const redSrc = "../img/forum/account/like/icon _bookmark_red.svg";
 
-    // 添加點擊事件處理程序
-    bookmarkImg.addEventListener('click', function () {
-        // 根據 increment 的值更新 count
-        if (increment) {
-            count++;
-            // 換圖
-            bookmarkImg.src = redSrc;
-        } else {
-            count--;
-            bookmarkImg.src = originalSrc;
-        }
-        // 更新 p 標籤中的數字
-        bookmarkNum.textContent = count;
-        // 切換 increment 的值
-        increment = !increment;
+        bookmarkImg.addEventListener('click', function () {
+            if (increment) {
+                count++;
+                bookmarkImg.src = redSrc;
+            } else {
+                count--;
+                bookmarkImg.src = originalSrc;
+            }
+            bookmarkNum.textContent = count;
+            increment = !increment;
+        });
     });
 });
