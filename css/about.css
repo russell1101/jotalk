@@ -1,0 +1,282 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
+/* utf8一定要在行數1 */
+/* import 一定要在第二行 */
+
+/* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加padding */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    color: #444;
+    display: block;
+    /* 預設inline行內元素改為block */
+    text-decoration: none;
+}
+
+/* header區 */
+#about_head {
+    background-image: url(../img/about/about-head-pic.jpg);
+    position: relative;
+    /* 設置為 relative 以便內部元素使用 absolute 定位 */
+    width: 100%;
+    /* 使 topbar 撐滿全寬 */
+    height: 400px;
+    padding: 0;
+    /* 確保沒有額外的 padding */
+    margin: 0;
+    /* 確保沒有額外的 margin */
+    background-size: cover;
+    /* 確保背景圖覆蓋整個容器 */
+    background-position: center;
+    /* 將背景圖置中 */
+    background-repeat: no-repeat;
+    /* 防止背景圖重複 */
+    transition: height 0.3s ease;
+    z-index: 1000;
+}
+
+.topbar {
+    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
+            rgba(225, 225, 225, 0.8));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    position: fixed;
+    width: 90px;
+    height: 90px;
+    padding: 14px;
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 99px;
+    transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
+    z-index: 999;
+}
+
+
+.topbar:hover {
+    width: 35%;
+    /* 滑鼠觸碰時擴展 */
+    border-radius: 99px;
+    /* 變長條 */
+    justify-content: space-between;
+    /* 水平排列内容 */
+}
+
+.topbar .logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+}
+
+.topbar .logo a {
+    width: 60px;
+}
+
+.topbar .collapsed {
+    width: 90px;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.topbar .menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    white-space: nowrap;
+    /* 阻止文字换行 */
+    overflow: hidden;
+    /* 隐藏溢出的内容 */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 4s ease, visibility 0s 0.3s;
+    /* 菜單顯隱 */
+}
+
+
+.topbar .collapsed .menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.2s;
+    justify-content: space-around;
+    padding: 0 50px;
+}
+
+.topbar:hover .menu {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0s 0s;
+    justify-content: space-around;
+}
+
+.topbar .menu a {
+    display: block;
+    color: var(--darkgrey);
+    font-weight: 900;
+    letter-spacing: .2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.topbar .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 1px;
+    background-color: var(--lightgrey);
+    transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+}
+
+.topbar .menu a:hover::after {
+    left: 0;
+    right: 0;
+}
+
+
+.topbar .collapsed .menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.2s;
+}
+
+
+.topbar:hover .menu {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 4s ease, visibility 0s 0.2s;
+    justify-content: space-around;
+}
+
+.about_slogan {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    color: var(--white);
+    font-family: "Mallanna", sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: .1rem;
+}
+
+/* 內容區 */
+main {
+    display: flex;
+    justify-content: center;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.about_content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    margin: 3rem 0 1rem 0;
+    align-self: flex-start;    /* 靠左對齊 */
+    width: 100%;
+    text-align: left;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .2rem;
+}
+
+h2 .engFont{
+    font-family: "Mallanna", sans-serif;
+    font-size: 24px;
+    letter-spacing: .1rem;
+}
+
+.about_txt{
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    line-height: 2;
+    margin-bottom: 5rem;
+}
+
+.about_txt .engFont{
+    font-family: "Mallanna", sans-serif;
+    font-size: 18px;
+    font-weight: 550;
+    letter-spacing: .1rem;
+}
