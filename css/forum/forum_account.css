@@ -80,7 +80,7 @@ body {
 }
 
 
-.overlay {
+.overlay_bg {
     position: fixed;
     /* 固定位置，覆蓋在背景圖上 */
     top: 0;
@@ -120,7 +120,7 @@ body {
     background-repeat: no-repeat;
     /* 防止背景圖重複 */
     transition: height 0.3s ease;
-    z-index: 1000;
+    z-index: 200;
 }
 
 #topbar .forum_head section {
@@ -150,7 +150,7 @@ body {
     border-radius: 99px;
     transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
     /* 同步过渡 */
-    z-index: 999;
+    z-index: 300;
 }
 
 
@@ -437,7 +437,7 @@ main {
 .article {
     width: 90%;
     height: 170px;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     border-radius: 10px;
     border-bottom: 1px solid #5858585b;
     padding: 15px;
@@ -513,7 +513,7 @@ main {
     margin-bottom: 6px;
 }
 
-small {
+.text small {
     font-size: 14px;
     color: #585858;
 }
@@ -567,4 +567,78 @@ small {
     width: 14px;
     height: 14px;
     margin-right: 3px;
+}
+
+/* 文章內頁 */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+    /* 初始狀態隱藏 */
+    opacity: 0;
+    /* 初始透明度為0 */
+    transition: opacity .8s ease;
+    /* 添加漸變效果，持續時間0.3秒 */
+}
+
+.content {
+    position: fixed;
+    /* position: relative; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F5F5F5;
+    width: 50%;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transition: opacity .8s ease;
+}
+
+#closebtn {
+        position: absolute; /* 確保它相對於 .content 定位 */
+        top: 15px; /* 距離上方 15px */
+        right: 15px; /* 距離右邊 15px */
+        font-size: 14px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: .3s ease-in-out;
+}
+
+#closebtn:hover {
+    opacity: 60%;
+}
+
+.content_user {
+    width: 55%;
+    min-width: 180px;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content_user figure {
+    width: 25px;
+    height: 25px;
+}
+
+.content_user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 99px;
+}
+
+.content_user h2 {
+    font-size: 15px;
 }
