@@ -430,44 +430,63 @@ html {
 
 /* 為不同的 section 設置背景圖片 */
 #pic1-1 {
+<<<<<<< HEAD
     background-image: url('../../img/forum/teach/base1.jpg');
+=======
+    background-image: url('../../img/forum/teach/base-brandy.png');
+>>>>>>> 29610e3b53615fa95259959135192bd4381a7bb4
 }
 
 #pic1-2 {
-    background-image: url('../../img/forum/teach/barlist9.jpg');
+    background-image: url('../../img/forum/teach/base-gin.png');
 }
 
 #pic1-3 {
-    background-image: url('../../img/forum/teach/barlist10.jpg');
+    background-image: url('../../img/forum/teach/base-tequila.png');
 }
 
 #pic1-4 {
-    background-image: url('../../img/forum/teach/barlist11.jpg');
+    background-image: url('../../img/forum/teach/base-rum.png');
 }
 
 #pic1-5 {
-    background-image: url('../../img/forum/teach/barlist12.jpg');
+    background-image: url('../../img/forum/teach/base-vodka.png');
 }
 
+#pic1-6 {
+    background-image: url('../../img/forum/teach/base-whisky.png');
+}
 /* 為經典調酒 sections 設置背景圖片 */
 #pic2-1 {
+<<<<<<< HEAD
     background-image: url('../../img/forum/teach/bartend1.jpg');
+=======
+    background-image: url('../../img/forum/teach/cockt-sidecar.png');
+>>>>>>> 29610e3b53615fa95259959135192bd4381a7bb4
 }
 
 #pic2-2 {
-    background-image: url('../../img/forum/teach/barlist9.jpg');
+    background-image: url('../../img/forum/teach/cockt-ginfizz.png');
 }
 
 #pic2-3 {
-    background-image: url('../../img/forum/teach/barlist10.jpg');
+    background-image: url('../../img/forum/teach/cockt-margarita.png');
 }
 
 #pic2-4 {
-    background-image: url('../../img/forum/teach/barlist11.jpg');
+    background-image: url('../../img/forum/teach/cockt-longisland.png');
 }
 
 #pic2-5 {
+<<<<<<< HEAD
     background-image: url('../../img/forum/teach/bartend5.jpg');
+=======
+    background-image: url('../../img/forum/teach/cockt-cosmopolitan.png');
+}
+
+#pic2-6 {
+    background-image: url('../../img/forum/teach/cockt-oldfashioned.png');
+>>>>>>> 29610e3b53615fa95259959135192bd4381a7bb4
 }
 
 /* 調酒教學 sections */

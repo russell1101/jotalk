@@ -409,17 +409,7 @@ main {
     display: none;
 }
 
-.article {
-    width: 90%;
-    height: 170px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    border-bottom: 1px solid #5858585b;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 
 .hidden {
     display: none;
@@ -444,6 +434,24 @@ main {
 
 
 /* 卡片內容 */
+.article {
+    width: 90%;
+    height: 170px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border-bottom: 1px solid #5858585b;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: .35s ease-in-out;
+}
+
+.article:hover {
+    scale: 0.95;
+}
+
 .picture {
     height: 90%;
     width: 30%;
@@ -502,6 +510,7 @@ main {
 
 #hashtag {
     margin-top: 8px;
+    margin-bottom: 6px;
 }
 
 small {
@@ -521,5 +530,41 @@ small {
     /* 超出部分用省略號表示 */
     white-space: nowrap;
     /* 禁止換行 */
-    margin-top: 8px;
+}
+
+#like {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#like p {
+    font-size: 14px;
+    font-weight: 450;
+}
+
+#heart_img,
+#bookMark_img {
+    cursor: pointer;
+    transition: .25s ease-in-out;
+}
+
+#heart_img:hover,
+#bookMark_img:hover {
+    opacity: 60%;
+}
+
+#heart,
+#comment,
+#bookMark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#like img {
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
 }

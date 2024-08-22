@@ -69,10 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// 等待文檔加載完成
+// 愛心點擊增加
 document.addEventListener('DOMContentLoaded', function () {
     // 獲取圖片和 p 標籤元素
-    const likeImage = document.getElementById('like-image');
+    const heartImage = document.getElementById('heart_img');
     const heartNum = document.getElementById('heart_num');
 
     // 將數字值從 p 標籤中獲取並轉換為整數
@@ -80,16 +80,54 @@ document.addEventListener('DOMContentLoaded', function () {
     // 使用布林值來控制狀態，初始為增加
     let increment = true;
 
+    const originalSrc = "../img/forum/account/like/icon _heart_.svg";
+    const redSrc = "../img/forum/account/like/icon _heart_red.svg";
+
     // 添加點擊事件處理程序
-    likeImage.addEventListener('click', function () {
+    heartImage.addEventListener('click', function () {
         // 根據 increment 的值更新 count
         if (increment) {
             count++;
+            // 換圖
+            heartImage.src = redSrc;
         } else {
             count--;
+            heartImage.src = originalSrc;
         }
         // 更新 p 標籤中的數字
         heartNum.textContent = count;
+        // 切換 increment 的值
+        increment = !increment;
+    });
+});
+
+// 收藏點擊增加
+document.addEventListener('DOMContentLoaded', function () {
+    // 獲取圖片和 p 標籤元素
+    const bookmarkImg = document.getElementById('bookMark_img');
+    const bookmarkNum = document.getElementById('bookMark_num');
+
+    // 將數字值從 p 標籤中獲取並轉換為整數
+    let count = parseInt(bookmarkNum.textContent, 10);
+    // 使用布林值來控制狀態，初始為增加
+    let increment = true;
+
+    const originalSrc = "../img/forum/account/like/icon _bookmark_.svg";
+    const redSrc = "../img/forum/account/like/icon _bookmark_red.svg";
+
+    // 添加點擊事件處理程序
+    bookmarkImg.addEventListener('click', function () {
+        // 根據 increment 的值更新 count
+        if (increment) {
+            count++;
+            // 換圖
+            bookmarkImg.src = redSrc;
+        } else {
+            count--;
+            bookmarkImg.src = originalSrc;
+        }
+        // 更新 p 標籤中的數字
+        bookmarkNum.textContent = count;
         // 切換 increment 的值
         increment = !increment;
     });
