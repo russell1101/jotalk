@@ -247,7 +247,7 @@ main {
 }
 
 h2 {
-    margin: 3rem 0 1rem 0;
+    margin: 3rem 0 2rem 0;
     align-self: flex-start;    /* 靠左對齊 */
     width: 100%;
     text-align: left;
