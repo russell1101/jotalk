@@ -7,6 +7,15 @@
     <title>JOTALK – 關於我們</title>
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/about.css">
+
+    <!-- 步驟一：載入React, Bable -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- footer元件 -->
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
 </head>
 
 <body>
@@ -45,7 +54,8 @@
                     幸運的是，我們認了一個可靠的大哥—ChatGPT，大哥是最閃亮的那顆救星，幫助我們解決了無數的技術難題。<br>
                     <br>
                     未來，我們希望能吸引更多志同道合的朋友加入我們的行列，一起打造一個更棒的酒吧社群。<br>
-                    我們會持續調整和優化 <code class="engFont">JOTALK</code> 的功能，確保大家每次在 <code class="engFont">JOTALK</code> 上找到的，都是最符合你心中所想的那間酒吧。
+                    我們會持續調整和優化 <code class="engFont">JOTALK</code> 的功能，確保大家每次在 <code class="engFont">JOTALK</code>
+                    上找到的，都是最符合你心中所想的那間酒吧。
                     <br>
                     <br>
                     生活總是把我們搞得破破爛爛，但我們學會了靠酒精來縫縫補補。<br>
@@ -54,6 +64,27 @@
             </div>
         </div>
     </main>
+
+
+    <!-- 步驟二：載入root元素 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // 步驟三：建立 React 元件
+        // 元件字首要大寫 而且有回傳值return
+        function App() {
+            // jsx語法
+            return (
+                <Footer />
+            )
+        }
+
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />)
+    </script>
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
