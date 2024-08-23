@@ -343,7 +343,7 @@ main {
 
 
 .top-section .categories {
-    color: #ffffff;
+    color: #2c2c2c;
     width: 100%;
     display: flex;
 
@@ -362,7 +362,7 @@ main {
     /* 当前选中项的边框 */
     background-color: transparent;
     /* 当前选中项的背景色 */
-    color: #ffffff;
+    color: #2c2c2c;
 
 }
 
