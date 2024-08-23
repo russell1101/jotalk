@@ -326,9 +326,11 @@ main {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    max-width: 920px;
+    max-width: 1240px;
     padding: 20px;
     flex-direction: column;
+    align-self: flex-start;
+    height: 900px;
 }
 
 /* 上區標籤 */
@@ -378,19 +380,16 @@ html {
     padding: 20px 0;
     display: flex;
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    /* justify-content: center; */
-    align-items: center;
-    /* height: 100vh; */
+    max-width: 1240px;
+    align-items: flex-start;
     position: relative;
 }
 
 .teach_atc .teach_picBase,
 .teach_atc .teach_picBartend,
 .teach_atc .teach_picTeach {
-    width: 80%;
-    height: 500px;
+    width: 85%;
+    height: 700px;
     /* height: 100vh; */
     position: relative;
     overflow: hidden;
