@@ -484,75 +484,65 @@ main {
 
 /* 熱門標籤與熱門影片的容器 */
 .body_tagVdo {
-    width: 350px;
-    /* 與布告欄同寬 */
+    margin-top: 60px;
     display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding-top: 20px;
-    position: relative;
-    /* 添加相對定位 */
-    z-index: 1;
-    /* 確保在最上層 */
+    flex-direction: row;
+    align-items: flex-start;
 }
+
 
 
 /* 類別區域 */
 .body_tagVdo .tagVdo_categories {
+    color: #155569;
     display: flex;
-    justify-content: space-around;
-    /* 水平排列並居中 */
-    margin-bottom: 10px;
-    /* 與內容區域的間距 */
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    width: 30px; /* 側邊欄的寬度 */
+    margin-right: 10px; /* 與內容區域的距離 */
 }
 
 /* 類別項目 */
 .body_tagVdo .tagVdo_categories div {
+    writing-mode: vertical-rl;
     text-align: center;
-    flex-grow: 1;
     cursor: pointer;
+    font-size: 14px;
+    padding: 20px 2px;
+    border-radius: 10px;
+    border: 1px solid transparent;
 }
 
 /* 當前選中的類別 */
 .body_tagVdo .tagVdo_categories .active {
-    border: 1px solid #585858;
-    /* 當前選中項的底邊框 */
-    border-radius: 10px;
+    pointer-events: none;
+    border: 1px solid transparent;
+    background-color: #155569;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.body_tagVdo .tagVdo_categories div:hover {
+    border: 1px solid #155569;
+    /* background-color: transparent; */
+    /* 悬停时的背景色 */
 }
 
 /* 熱門標籤與熱門影片的內容 */
 .body_tagVdo .tagVdo_content {
-    position: relative;
-    /* 改為相對定位 */
-    border-top: 1px solid #585858;
-    padding: 20px 19px;
-    /* 與上邊框的距離為 20px */
     width: 100%;
-    /* 固定內容區域寬度 */
-    height: 240px;
-    /* 固定內容區域高度 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 水平居中 */
-    justify-content: center;
-    box-sizing: border-box;
-    z-index: 1;
-    /* 確保內容區域在標籤區域上方 */
+    padding-left: 10px;
+    height: 350px; /* 根據內容自適應高度 */
 }
 
 .body_tagVdo .body_hotTag_content,
 .body_tagVdo .body_hotVdo_content {
-    position: absolute;
-    /* 使內容區域可以正確堆疊 */
     top: 0;
-    /* 調整為適當的位置 */
     left: 0;
-    /* 調整為適當的位置 */
     width: 100%;
     height: 100%;
-    z-index: 0;
-    /* 確保內容區域在標籤區域之下 */
+
 }
 
 /* 標籤內容區域 */
@@ -580,21 +570,7 @@ main {
     display: none;
 }
 
-/* 標籤和影片的橫向排列 */
-.body_tagVdo .body_hotTag_content.active .grid {
-    display: grid;
-    /* 使用 Grid 進行佈局 */
-    grid-template-columns: repeat(3, 1fr);
-    /* 三列 */
-    grid-template-rows: repeat(5, 1fr);
-    /* 五行 */
-    gap: 10px;
-    /* 單元格之間的間距 */
-    justify-content: center;
-    /* 元素居中對齊 */
-    width: 100%;
-    text-align: center;
-}
+
 
 /* 每個標籤或影片的樣式 */
 .body_tagVdo .tagVdo_content .grid div {
@@ -608,6 +584,31 @@ main {
     margin-top: 10px;
     text-align: center;
     width: 100%;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center; /* 垂直對齊 */
+    margin-bottom: 20px; /* 元素之間的間距 */
+}
+
+.rank-number, .tag-name, .user-icons {
+    flex-basis: 33.33%; /* 每個元素占據三分之一的寬度 */
+    text-align: center; /* 文字和圖片居中對齊 */
+}
+
+.rank-number {
+    font-weight: bold;
+    color: #004850;
+}
+
+.tag-name {
+    color: #000000;
+}
+
+.user-icons img {
+    width: 40px;
+    height: 40px;
 }
 
 .body_tagVdo .tagVdo_content .more-link a {
@@ -626,6 +627,7 @@ main {
     gap: 10px;
     width: 100%;
     text-align: center;
+    height: 350px;
 }
 
 .body_hotVdo_content .video-item {
