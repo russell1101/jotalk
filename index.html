@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/home_mouse.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:100">
     <link rel="stylesheet" href="./css/styles.css">
 
     <!-- 步驟一：載入React, Bable -->
@@ -37,11 +36,11 @@
             </div>
         </div>
     </header>
+    
     <main>
         <section id="home">
             <video autoplay loop muted>
                 <source src="./img/index/home_bg.mp4" type="video/mp4">
-                您的浏览器不支持HTML5视频标签。
             </video>
             <div class="text">
                 <h1>JOTALK</h1>
@@ -51,6 +50,23 @@
                 <div class="mousey">
                     <div class="scroller"></div>
                 </div>
+            </div>
+        </section>
+        <section id="cutScene">
+            <div class="content">
+                <div class="txt-1">我們相信每一次的酒吧之旅，都應該是一次美好的體驗</div>
+                <div class="msgCol">
+                    <ul class="msg-1">今天晚上要不要喝一杯?</ul>
+                    <ul class="msg-2">發薪水啦 開喝!</ul>
+                    <ul class="msg-3">+1</ul>
+                    <ul class="msg-4">Friday night 一個都不準跑</ul>
+                    <ul class="msg-5">我有個驚天大八卦 老地方碰面 :smirk:</ul>
+                    <ul class="msg-6">我失戀了求安慰QQ</ul>
+                    <ul class="msg-7">不醉不歸!!!</ul>
+                    <ul class="msg-8">走啦走啦約起來</ul>
+                    <ul class="msg-9">不醉不歸!!!</ul>
+                </div>
+                <div class="txt-2">在這裡，你可以探索最適合自己的酒吧，還能分享心得、累積積分、兌換優惠，享受更多福利</div>
             </div>
         </section>
         <section id="forum">
@@ -82,59 +98,30 @@
             <div class="space"> </div>
         </section>
         <section id="barlist">
-            <!-- 套件部分 -->
-            <div class="split-slideshow">
-                <div class="slideshow">
-                    <div class="slider">
-                        <div class="item">
-                            <img src="./img/index/test-1.jpg" />
-                        </div>
-                        <div class="item">
-                            <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-3.jpg" />
-                        </div>
-                        <div class="item">
-                            <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-4.jpg" />
-                        </div>
-                        <div class="item">
-                            <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-1.jpg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="slideshow-text">
-                    <div class="item">Canyon</div>
-                    <div class="item">Desert</div>
-                    <div class="item">Erosion</div>
-                    <div class="item">Shape</div>
-                </div>
+            <div class="slideshow">
+                <div class="slide" data-bar="barA barB"><img src="./img/index/index-3-1.jpg"></div>
+                <div class="slide" data-bar="barC barD"><img src="./img/index/index-3-2.jpg"></div>
+                <div class="slide" data-bar="barE barF"><img src="./img/index/index-3-3.jpg"></div>
+                <div class="slide" data-bar="barG barH"><img src="./img/index/index-3-4.jpg"></div>
+                <div class="slide" data-bar="barI barJ"><img src="./img/index/index-3-5.jpg"></div>
             </div>
-            <!-- 套件結束 -->
+            <div class="bar-names">
+                <div class="bar-name-left"></div>
+                <div class="bar-name-right"></div>
+            </div>
+            <div class="center-text">
+                <h1>BAR LIST</h1>
+                <p>選出你心中的那間酒吧</p>
+                <button onclick="location.href='barlist.html'">立即前往</button>
+            </div>
         </section>
-        <section id="about">
-            <video autoplay loop muted>
-                <source src="./img/index/index-4-test.mp4" type="video/mp4">
-                您的浏览器不支持HTML5视频标签。
-            </video>
-            <div class="goal">
-                <div class="title">
-                    <h2>ABOUT JOTALK</h2>
-                    <p>我們相信每一次的酒吧之旅，都應該是一次美好的體驗。<br>
-                        我們致力於建立一個充滿信任和互助的社群平台，讓消費者和酒吧業者都能受益。<br>
-                        在這裡，你不僅可以探索最適合自己的酒吧，還能分享心得、累積積分、兌換優惠，享受更多福利。<br>
-                        我們希望能成為你親近的朋友，無論是尋找放鬆的地方，或是獲取更多酒吧資訊，JOTALK都能隨時為你服務。</p>
-                </div>
-                <div class="bubble">
-                    <div class="upper">
-                        <a rel="pop" class="pop">加入 Jotalk 後，我們與顧客的互動</a>
-                        <a rel="pop" class="pop">在 Jotalk 上架後，我們的客流量明顯增加，感謝</a>
-                    </div>
-                    <div class="down">
-                        <a rel="pop" class="pop">這個平台真的很方便，積分兌換的優</a>
-                        <a rel="pop" class="pop">AI 小幫手超方便，讓我快速找到符合我口味的酒吧。</a>
-                        <a rel="pop" class="pop">這個平台的社群真的很友好，大</a>
-                    </div>
-                </div>
-                <h3>探索酒吧的最佳夥伴，與我們一起享受每一刻！</h3>
+        <section id="last">
+            <div class="content">
+                <p class="txt-1">無論是尋找放鬆的地方，或是獲取更多酒吧資訊，JOTALK都能隨時為你服務</p>
+                <p class="txt-2">探索酒吧的最佳夥伴，與我們一起享受每一刻！</p>
+                <button>加入會員 開始體驗</button>
             </div>
+            <video src="./img/index/idex-4.mp4" autoplay loop muted></video>
         </section>
     </main>
 
@@ -142,9 +129,7 @@
     <div id="root"></div>
     <script type="text/babel">
         // 步驟三：建立 React 元件
-        // 元件字首要大寫 而且有回傳值return
         function App() {
-            // jsx語法
             return (
                 <Footer />
             )
@@ -159,7 +144,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
-    <script src="./js/home__barlist.js"></script>
+    <script src="./js/index-barlist.js"></script>
     <script src="./js/script.js"></script>
 </body>
 
