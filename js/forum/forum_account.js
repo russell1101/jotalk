@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 // 愛心點擊增加
 document.addEventListener('DOMContentLoaded', function () {
     // 獲取所有的 heart 和 bookMark 容器
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
+// 點擊文章出現彈出視窗
 let articles = document.querySelectorAll(".article");
 let overlay = document.getElementById("overlay");
 let closeButtons = document.querySelectorAll(".closebtn");
@@ -136,7 +137,7 @@ articles.forEach(article => {
         let targetContent = document.getElementById(targetId);
 
         overlay.style.display = "block"; // 顯示遮罩層
-        targetContent.style.display = "block"; // 顯示對應內容
+        targetContent.style.display = "flex"; // 顯示對應內容
 
         setTimeout(() => {
             overlay.style.opacity = "1"; // 遮罩層漸變顯示
@@ -162,3 +163,63 @@ closeButtons.forEach(button => {
 overlay.onclick = function () {
     closeButtons.forEach(button => button.onclick());
 };
+
+
+let sortHot = document.getElementById('sort-hot')
+let sortNewest = document.getElementById('sort-newest')
+let sortOldest = document.getElementById('sort-oldest')
+let sortButtons = [sortHot, sortNewest, sortOldest];
+
+function resetColor() {
+    sortButtons.forEach(reset => {
+        reset.style.backgroundColor = 'white';
+        reset.style.color= 'black';
+    })
+
+}
+// 依時間順序排序評論
+document.addEventListener('DOMContentLoaded', function () {
+    // 監聽熱門留言按鈕的點擊事件
+    sortHot.addEventListener('click', function () {
+        sortComments('hot');
+        resetColor();
+        sortHot.style.backgroundColor = '#155569';
+        sortHot.style.color= 'white';
+    });
+
+    // 監聽由新至舊留言按鈕的點擊事件
+    sortNewest.addEventListener('click', function () {
+        sortComments('newest');
+        resetColor();
+        sortNewest.style.backgroundColor = '#155569';
+        sortNewest.style.color= 'white';
+    });
+
+    // 監聽由舊至新留言按鈕的點擊事件
+    sortOldest.addEventListener('click', function () {
+        sortComments('oldest');
+        resetColor();
+        sortOldest.style.backgroundColor = '#155569';
+        sortOldest.style.color= 'white';
+    });
+
+
+
+    // 定義排序函式
+    function sortComments(order) {
+        let comments = Array.from(document.querySelectorAll('.comment'));
+        let commentsContainer = document.getElementById('comments');
+
+        if (order === 'newest') {
+            comments.sort((a, b) => new Date(b.getAttribute('data-timestamp')) - new Date(a.getAttribute('data-timestamp')));
+        } else if (order === 'oldest') {
+            comments.sort((a, b) => new Date(a.getAttribute('data-timestamp')) - new Date(b.getAttribute('data-timestamp')));
+        } else if (order === 'hot') {
+            comments.sort((a, b) => Math.random() - 0.5);
+        }
+
+        // 清空並重新插入排序好的評論
+        commentsContainer.innerHTML = '';
+        comments.forEach(comment => commentsContainer.appendChild(comment));
+    }
+});
