@@ -209,7 +209,6 @@ section {
     top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    /*變垂直排*/
     flex-direction: column;
     align-items: center;
 }
@@ -226,7 +225,7 @@ section {
     font-family: "Mallanna", sans-serif;
     font-size: clamp(10rem, 15vw, 15rem);
     letter-spacing: .3rem;
-    color: rgba(225, 225, 225, 0.5);
+    color: rgba(225, 225, 225, 0.7);
 }
 
 #home h2 {
@@ -244,24 +243,131 @@ section {
     width: 100%;
     height: 100%;
     z-index: -999;
-    /* 使視頻在內容之後 */
+}
+
+.background {
+    background-image: url(../img/index/bg-index-2.jpg);
+    background-size: cover;
+    background-position: left, bottom;
+    background-repeat: no-repeat;
 }
 
 /* 過場區 */
 #cutScene {
     position: relative;
-    height: 200vh;
+    height: 250vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-#about .content {
-    position: absolute;
-    z-index: 1;
-    width: 65%;
+#cutScene .content {
+    position: relative;
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+}
+
+#cutScene .txt-1 {
+    text-align: center;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    letter-spacing: .4rem;
+    font-weight: 600;
+    color: var(--darkgrey);
+    margin-top: 10%;
+}
+
+#cutScene .msgCol {
+    margin: 10% 0;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
+}
+
+#cutScene .msgCol ul {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: .6rem 2rem;
+    border-radius: 50px;
+    margin: 5% 0;
+    color: var(--darkgrey);
+    font-size: clamp(.8rem, 1.5vw, 1.4rem);
+    letter-spacing: .1rem;
+    list-style-type: none;
+    width: fit-content;
+
+}
+
+.msg-1 {
+    /* transform: translate(-10%, 0); */
+}
+
+.msg-2 {
+    transform: translate(-150%, 50%);
+}
+
+.msg-3 {
+    transform: translate(280%, 30%);
+}
+
+.msg-4 {
+    transform: translate(-50%, 50%);
+}
+
+.msg-5 {
+    transform: translate(50%, 150%);
+}
+
+.msg-6 {
+    transform: translate(-120%, 180%);
+}
+
+.msg-7 {
+    transform: translate(90%, 190%);
+}
+
+.msg-8 {
+    transform: translate(-90%, 180%);
+}
+
+.msg-9 {
+    transform: translate(0%, 600%);
+}
+
+#cutScene .txt-2 {
+    font-size: clamp(.9rem, 1.6vw, 1.5rem);
+    letter-spacing: .3rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-top: 25%;
+}
+
+
+
+@media (max-width:1280px) {
+    #cutScene {
+        height: 230vh;
+    }
+}
+
+@media (max-width:1025px) {
+    #cutScene {
+        height: 200vh;
+    }
+}
+
+@media (min-width:1620px) {
+    #cutScene {
+        height: 290vh;
+    }
 }
 
 /* 論壇區 */
@@ -270,12 +376,6 @@ section {
     flex-direction: row;
     /* position 專門給absolute的定位依據 */
     overflow: hidden;
-    background-image: url(../img/index/bg-index-2.jpg);
-    background-size: cover;
-    /* 定住左上方 短邊維持 長邊自動剪裁 不會重複拼貼 */
-    background-position: left, bottom;
-    background-repeat: no-repeat;
-    /* 重複保證不會重複拼貼 */
     justify-content: center;
     /* 水平居中 */
     align-items: center;
@@ -347,16 +447,14 @@ section {
     /* 垂直居中 */
 }
 
+#forum .btn:hover {
+    background-color: var(--darkgrey);
+}
 
 .container {
     display: flex;
     width: 33%;
     overflow: hidden;
-}
-
-.space {
-    display: flex;
-    width: 12%;
 }
 
 .column {
@@ -496,26 +594,45 @@ section {
     color: white;
 }
 
-.center-text h1 {
-    font-size: 48px;
-    margin: 0;
+.center-text h2 {
+    font-family: "Mallanna", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: clamp(8rem, 10vw, 15rem);
+    letter-spacing: .3rem;
+    color: var(--white);
 }
 
 .center-text p {
-    font-size: 16px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    letter-spacing: .9rem;
+    text-align: center;
+    color: var(--white);
 }
 
-button {
-    margin-top: 20px;
+.toBarList {
+    margin-top: 10%;
     padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
     border: none;
     cursor: pointer;
+    background-color: var(--alpha-b-40);
+    color: #fff;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fff;
+    border-radius: 50px;
+    width: auto;
+    letter-spacing: .2rem;
+    font-size: clamp(.5rem, 2.5vw, .9rem);
+    white-space: nowrap;
+    transition: 0.35s ease-in-out;
 }
 
-button:hover {
-    background-color: #555;
+.toBarList:hover {
+    background-color: var(--darkgrey);
 }
 
 /* index-4 */

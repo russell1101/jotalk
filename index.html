@@ -36,7 +36,7 @@
             </div>
         </div>
     </header>
-    
+
     <main>
         <section id="home">
             <video autoplay loop muted>
@@ -52,51 +52,52 @@
                 </div>
             </div>
         </section>
-        <section id="cutScene">
-            <div class="content">
-                <div class="txt-1">我們相信每一次的酒吧之旅，都應該是一次美好的體驗</div>
-                <div class="msgCol">
-                    <ul class="msg-1">今天晚上要不要喝一杯?</ul>
-                    <ul class="msg-2">發薪水啦 開喝!</ul>
-                    <ul class="msg-3">+1</ul>
-                    <ul class="msg-4">Friday night 一個都不準跑</ul>
-                    <ul class="msg-5">我有個驚天大八卦 老地方碰面 :smirk:</ul>
-                    <ul class="msg-6">我失戀了求安慰QQ</ul>
-                    <ul class="msg-7">不醉不歸!!!</ul>
-                    <ul class="msg-8">走啦走啦約起來</ul>
-                    <ul class="msg-9">不醉不歸!!!</ul>
+        <div class="background">
+            <section id="cutScene">
+                <div class="content">
+                    <div class="txt-1 smoove" data-move-z="-50px">我們相信每一次的酒吧之旅，都應該是一次美好的體驗</div>
+                    <div class="msgCol">
+                        <ul class="msg-1 smoove" data-move-z="-100px">今天晚上要不要喝一杯?</ul>
+                        <ul class="msg-2 smoove" data-move-x="-220px" data-move-y="10px" data-move-z="-100px">發薪水啦 開喝!</ul>
+                        <ul class="msg-3 smoove" data-move-x="150px"  data-move-y="50px" data-move-z="-50px">+1</ul>
+                        <ul class="msg-4 smoove" data-move-x="-100px" data-move-y="-50px" data-move-z="-100px">Friday night 一個都不準跑</ul>
+                        <ul class="msg-5 smoove" data-move-x="150px"  data-move-y="50px" data-move-z="-50px">我有個驚天大八卦 老地方碰面 :smirk:</ul>
+                        <ul class="msg-6 smoove" data-move-x="-250px"  data-move-y="100px" data-move-z="-50px">我失戀了求安慰QQ</ul>
+                        <ul class="msg-7 smoove" data-move-x="150px"  data-move-y="100px" data-move-z="-50px">走啦走啦約起來</ul>
+                        <ul class="msg-8 smoove" data-move-x="-50px"  data-move-y="100px" data-move-z="-50px">不醉不歸!!!</ul>
+                        <ul class="msg-9 smoove" data-move-y="400px" data-move-z="-150px">那個...要去哪一間酒吧?</ul>
+                    </div>
+                    <div class="txt-2 smoove">在這裡，你可以探索最適合自己的酒吧，還能分享心得、累積積分、兌換優惠，享受更多福利</div>
                 </div>
-                <div class="txt-2">在這裡，你可以探索最適合自己的酒吧，還能分享心得、累積積分、兌換優惠，享受更多福利</div>
-            </div>
-        </section>
-        <section id="forum">
-            <div class="title">
-                <div id="text">
-                    <h2>FORUM</h2>
-                    <h3>你的交流酒吧社區</h3>
-                    <a class="btn" href="#">立即前往</a>
+            </section>
+            <section id="forum">
+                <div class="title">
+                    <div id="text">
+                        <h2>FORUM</h2>
+                        <h3>你的交流酒吧社區</h3>
+                        <a class="btn" href="#">立即前往</a>
+                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="column column-left">
-                    <div class="card">Card 1</div>
-                    <div class="card">Card 2</div>
-                    <div class="card">Card 3</div>
-                    <div class="card">Card 4</div>
-                    <div class="card">Card 5</div>
-                    <div class="card">Card 6</div>
+                <div class="container">
+                    <div class="column column-left">
+                        <div class="card">Card 1</div>
+                        <div class="card">Card 2</div>
+                        <div class="card">Card 3</div>
+                        <div class="card">Card 4</div>
+                        <div class="card">Card 5</div>
+                        <div class="card">Card 6</div>
+                    </div>
+                    <div class="column column-right">
+                        <div class="card">Card 7</div>
+                        <div class="card">Card 8</div>
+                        <div class="card">Card 9</div>
+                        <div class="card">Card 10</div>
+                        <div class="card">Card 11</div>
+                        <div class="card">Card 12</div>
+                    </div>
                 </div>
-                <div class="column column-right">
-                    <div class="card">Card 7</div>
-                    <div class="card">Card 8</div>
-                    <div class="card">Card 9</div>
-                    <div class="card">Card 10</div>
-                    <div class="card">Card 11</div>
-                    <div class="card">Card 12</div>
-                </div>
-            </div>
-            <div class="space"> </div>
-        </section>
+            </section>
+        </div>
         <section id="barlist">
             <div class="slideshow">
                 <div class="slide" data-bar="barA barB"><img src="./img/index/index-3-1.jpg"></div>
@@ -110,9 +111,9 @@
                 <div class="bar-name-right"></div>
             </div>
             <div class="center-text">
-                <h1>BAR LIST</h1>
+                <h2>BAR LIST</h2>
                 <p>選出你心中的那間酒吧</p>
-                <button onclick="location.href='barlist.html'">立即前往</button>
+                <button class="toBarList" onclick="location.href='barlist.html'">立即前往</button>
             </div>
         </section>
         <section id="last">
@@ -140,11 +141,15 @@
             .createRoot(document.getElementById('root'))
             .render(<App />)
     </script>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     <script src="./js/index-barlist.js"></script>
+    <!-- 需先載入jquery原始碼，讓瀏覽器讀懂 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jquery官網CDN -->
+    <!-- jquery smooth -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 
