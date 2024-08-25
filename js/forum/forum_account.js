@@ -146,6 +146,12 @@ articles.forEach(article => {
     }
 });
 
+document.querySelectorAll('#like').forEach(function (likeDiv) {
+    likeDiv.addEventListener('click', function (event) {
+        event.stopPropagation(); // 阻止事件冒泡到父元素 .article
+    });
+});
+
 closeButtons.forEach(button => {
     button.onclick = function () {
         let content = this.parentElement;
@@ -173,10 +179,11 @@ let sortButtons = [sortHot, sortNewest, sortOldest];
 function resetColor() {
     sortButtons.forEach(reset => {
         reset.style.backgroundColor = 'white';
-        reset.style.color= 'black';
+        reset.style.color = 'black';
     })
-
 }
+
+
 // 依時間順序排序評論
 document.addEventListener('DOMContentLoaded', function () {
     // 監聽熱門留言按鈕的點擊事件
@@ -184,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sortComments('hot');
         resetColor();
         sortHot.style.backgroundColor = '#155569';
-        sortHot.style.color= 'white';
+        sortHot.style.color = 'white';
     });
 
     // 監聽由新至舊留言按鈕的點擊事件
@@ -192,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sortComments('newest');
         resetColor();
         sortNewest.style.backgroundColor = '#155569';
-        sortNewest.style.color= 'white';
+        sortNewest.style.color = 'white';
     });
 
     // 監聽由舊至新留言按鈕的點擊事件
@@ -200,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sortComments('oldest');
         resetColor();
         sortOldest.style.backgroundColor = '#155569';
-        sortOldest.style.color= 'white';
+        sortOldest.style.color = 'white';
     });
 
 

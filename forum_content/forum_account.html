@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>forum-Atc</title>
     <link rel="stylesheet" href="../css/forum/forum_account.css">
+
+    <!-- react -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 
 <body>
@@ -25,7 +30,7 @@
             <div class="menu">
                 <a href="../forum.html">綜合論壇</a>
                 <a href="../barlist.html">酒吧清單</a>
-                <a href="#">關於我們</a>
+                <a href="../about.html">關於我們</a>
             </div>
         </div>
 
@@ -233,20 +238,112 @@
                     <button id="sort-newest">由新至舊留言</button>
                     <button id="sort-oldest">由舊至新留言</button>
                 </div>
+
+
                 <!-- 留言區域 -->
                 <div id="comments">
+                    <div id="root"></div>
+                    <script type="text/babel">
+                        function Comment(props) {
+                            const { time, user_url, userName, user_time, floor, content, heart_num, comment_num } = props;
+                            return (
+                                <div className="comment" data-timestamp={time}>
+                                    <div className="comment_user">
+                                        <figure><img src={user_url} alt="" /></figure>
+                                        <h2>{userName}</h2>
+                                        <small>{user_time}</small>
+                                        <small>{floor}</small>
+                                    </div>
+                                    <p>{content}</p>
+                                    <div id="like">
+                                        <div id="heart">
+                                            <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
+                                            <p id="heart_num">{heart_num}</p>
+                                        </div>
+                                        <div id="comment">
+                                            <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
+                                            <p id="comment_num">{comment_num}</p>
+                                        </div>
+                                        <small>查看更多回覆>></small>
+                                    </div>
+                                    <hr></hr>
+                                </div>
+                            )
+                        }
+    
+                        const App = () => {
+                            const comment = [
+                                {
+                                    id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                    time: '2024-08-22T14:20:00',
+                                    user_url:'../img/forum/account/user/user1.jpg',
+                                    userName:'信義王陽明',
+                                    user_time:'8月22日 14:20',
+                                    floor:'B1',
+                                    content:'真假號讚喔!!',
+                                    heart_num:966, 
+                                    comment_num:660
+                                },
+                                {
+                                    id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                    time: '2024-08-20T14:20:00',
+                                    user_url:'../img/forum/account/user/user1.jpg',
+                                    userName:'信義王陽明',
+                                    user_time:'8月20日 14:20',
+                                    floor:'B2',
+                                    content:'真假號讚喔!!',
+                                    heart_num:966, 
+                                    comment_num:660
+                                },
+                                {
+                                    id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                    time: '2024-08-18T10:20:00',
+                                    user_url:'../img/forum/account/user/user1.jpg',
+                                    userName:'信義王陽明',
+                                    user_time:'8月18日 10:20',
+                                    floor:'B3',
+                                    content:'真假號讚喔!!',
+                                    heart_num:966, 
+                                    comment_num:660
+                                },
+                            ]
+                            return (
+                                <>
+                                {
+                                comment.map((item) => {
+                                        // 呼叫卡片元件
+                                        // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                        // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                        return <Comment key={item.id} time={item.time} user_url={item.user_url} userName={item.userName} user_time={item.user_time} floor={item.floor} content={item.content} heart_num={item.heart_num} comment_num={item.comment_num}/>
+                                    })
+                                }
+                                </>
+                            )
+                        }
+    
+                        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+                    </script>
                     <!-- 每一個留言的結構 -->
                     <div class="comment" data-timestamp="2024-08-22T14:20:00">
-                        <p>這是最新的留言。</p>
-                        <small>2024-08-22 14:20</small>
-                    </div>
-                    <div class="comment" data-timestamp="2024-08-21T10:15:00">
-                        <p>這是第二新的留言。</p>
-                        <small>2024-08-21 10:15</small>
-                    </div>
-                    <div class="comment" data-timestamp="2024-08-20T18:00:00">
-                        <p>這是最舊的留言。</p>
-                        <small>2024-08-20 18:00</small>
+                        <div class="comment_user">
+                            <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
+                            <h2>信義王陽明</h2>
+                            <small>8月22日 14:20</small>
+                            <small>B1</small>
+                        </div>
+                        <p>真假號讚喔!!</p>
+                        <div id="like">
+                            <div id="heart">
+                                <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="">
+                                <p id="heart_num">987</p>
+                            </div>
+                            <div id="comment">
+                                <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="">
+                                <p id="comment_num">987</p>
+                            </div>
+                            <small>查看更多回覆>></small>
+                        </div>
+                        <hr>
                     </div>
                 </div>
             </div>
