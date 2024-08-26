@@ -705,6 +705,71 @@ section {
     background-color: var(--black);
 }
 
+/* 跑馬燈 */
+.index-4-feedBack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-color: var(--alpha-b-40);
+}
+
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 120s linear infinite;
+}
+
+.marquee span {
+    display: inline-block;
+    padding: 0 1rem;
+    font-family: "Mallanna", sans-serif;
+    font-weight: 400;
+    color: var(--alpha-w-60);
+}
+
+.feedback-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.feedback-cards {
+    display: flex;
+    transition: transform 3s ease;
+}
+
+.feedback-card {
+    background: #ffffffac;
+    padding: 20px;
+    margin: 10px 10px;
+    flex-shrink: 0;
+    width: 300px;
+    height: 150px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-30%);
+    }
+}
+
+
+
 /* 登入按鈕表單 */
 /* 遮罩層樣式 */
 .overlay {
