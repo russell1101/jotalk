@@ -58,28 +58,6 @@ a {
     text-decoration: none;
 }
 
-
-
-/* 設置 body 背景圖 */
-body {
-    background-image: url(../../img/jotalk_background.jpg);
-    /* 背景圖 URL */
-    background-size: cover;
-    /*使背景圖覆蓋整個頁面*/
-    /* background-position: center; 背景圖置中 */
-    background-repeat: no-repeat;
-    /* 防止背景圖重複 */
-    background-attachment: fixed;
-    /* 確保背景圖固定不隨內容滾動 */
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    /* 確保 body 高度為視窗高度 */
-    overflow-x: hidden;
-    /* 防止水平滾動條 */
-}
-
-
 .overlay {
     position: fixed;
     /* 固定位置，覆蓋在背景圖上 */
@@ -98,10 +76,8 @@ body {
 
 /* ----------頁首區---------- */
 
-
-/* topbar 要補遮色片*/
 #topbar {
-    background-image: url(../../img/forum/teach_head_pic.jpg);
+    background-image: url(../../img/forum/teach/teach_head_pic.jpg);
     /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
@@ -319,6 +295,10 @@ body {
 main {
     display: flex;
     justify-content: center;
+    background-image: url(../../img/forum/teach/teach-bg-pic.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* 大區標籤 */
