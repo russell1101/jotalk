@@ -309,20 +309,3 @@ section{
     justify-content: flex-end; /* 将内容靠右对齐 */
     align-items: center; /* 在垂直方向上居中 */
 }
-
-.button-container {
-    display: flex;
-    flex-direction: column; /* 纵向排列按钮 */
-    gap: 15px; /* 按钮之间的间距 */
-    margin:0 0 5% 10% ;
-}
-
-.circle-btn {
-    width: 15px; /* 缩小按钮宽度 */
-    height: 15px; /* 缩小按钮高度 */
-    border-radius: 50%; /* 使按钮成为圆形 */
-    background-color: white; /* 按钮的背景颜色 */
-    border: none; /* 移除按钮的边框 */
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-}
