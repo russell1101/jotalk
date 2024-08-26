@@ -44,13 +44,12 @@
         <!-- 標題及搜尋區 -->
         <div class="forum_slogan">
             <h1>Let's Jotalk</h1>
-            <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容">
-                <!-- <label for="">產品搜尋:</label> -->
-                <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
-                    placeholder="搜尋所有內容">
-                <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋">
-            </form>
-            <p>9999 會員 987 online 12345 文章</p>
+            <!-- <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容">
+                <label for=""></label> -->
+                <!-- <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位" -->
+                    <!-- placeholder="搜尋所有內容"> -->
+                <!-- <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋"> -->
+            <!-- </form> -->
         </div>
     </header>
 
@@ -459,6 +458,25 @@
 
             </div>
         </section>
+
+        <div class="helper-wrapper">
+            <!-- 小幫手按鈕 -->
+            <button id="helperBtn" class="helper-btn">
+                <img src="./img/helperbear.jpg" alt="小幫手" class="helper-icon">
+            </button>
+    
+            <!-- 小幫手對話框 -->
+            <div id="helperBox" class="helper-box">
+                <div id="helperText" class="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="helperInput" placeholder="輸入您的問題...">
+                    <button id="helperSendButton">發送</button>
+                </div>
+            </div>
+    
+            <!-- 書籤的文字部分 -->
+            <div class="helper-label">LET ME<br>HELP!</div>
+        </div>
     </main>
     <script src="./js/forum-script.js"></script>
 </body>
