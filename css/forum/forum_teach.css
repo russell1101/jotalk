@@ -58,28 +58,6 @@ a {
     text-decoration: none;
 }
 
-
-
-/* 設置 body 背景圖 */
-body {
-    background-image: url(../../img/jotalk_background.jpg);
-    /* 背景圖 URL */
-    background-size: cover;
-    /*使背景圖覆蓋整個頁面*/
-    /* background-position: center; 背景圖置中 */
-    background-repeat: no-repeat;
-    /* 防止背景圖重複 */
-    background-attachment: fixed;
-    /* 確保背景圖固定不隨內容滾動 */
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    /* 確保 body 高度為視窗高度 */
-    overflow-x: hidden;
-    /* 防止水平滾動條 */
-}
-
-
 .overlay {
     position: fixed;
     /* 固定位置，覆蓋在背景圖上 */
@@ -98,10 +76,8 @@ body {
 
 /* ----------頁首區---------- */
 
-
-/* topbar 要補遮色片*/
 #topbar {
-    background-image: url(../../img/forum_pics/teach_head_pic.jpg);
+    background-image: url(../../img/forum/teach/teach_head_pic.jpg);
     /* 圖片要壓縮 */
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
@@ -319,6 +295,10 @@ body {
 main {
     display: flex;
     justify-content: center;
+    background-image: url(../../img/forum/teach/teach-bg-pic.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* 大區標籤 */
@@ -326,9 +306,11 @@ main {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    max-width: 920px;
+    max-width: 1240px;
     padding: 20px;
     flex-direction: column;
+    align-self: flex-start;
+    height: 900px;
 }
 
 /* 上區標籤 */
@@ -336,11 +318,12 @@ main {
 
 .top-section {
     margin-top: 80px;
+    padding: 10px 0;
 }
 
 
 .top-section .categories {
-    color: #ffffff;
+    color: #2c2c2c;
     width: 100%;
     display: flex;
 
@@ -353,17 +336,223 @@ main {
     border: 1px solid transparent;
 }
 
-.top-section .categories .active {
+.top-section .categories div.active {
     pointer-events: none;
     border: 1px solid #ffffff;
     /* 当前选中项的边框 */
     background-color: transparent;
     /* 当前选中项的背景色 */
-    color: #ffffff;
+    color: #2c2c2c;
 
 }
 
 .top-section .categories div:hover {
     border: 1px solid #ffffff;
     /* background-color: transparent; */
+}
+
+/* 下區圖片區 */
+html {
+    scroll-snap-type: y mandatory;
+}
+
+.teach_atc {
+    padding: 20px 0;
+    display: flex;
+    width: 100%;
+    max-width: 1240px;
+    align-items: flex-start;
+    position: relative;
+}
+
+.teach_atc .teach_picBase,
+.teach_atc .teach_picBartend,
+.teach_atc .teach_picTeach {
+    width: 85%;
+    height: 700px;
+    /* height: 100vh; */
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.teach_atc .teach_picBase.active,
+.teach_atc .teach_picBartend.active,
+.teach_atc .teach_picTeach.active {
+    display: block;
+    /* 顯示當前選中的區域 */
+}
+
+.teach_atc .section {
+    position: absolute;
+    /* 使圖片可以重疊 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* 預設隱藏 */
+    visibility: hidden;
+    /* 預設隱藏 */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    background-size: cover;
+    /* 背景圖片自動調整大小以覆蓋整個區域 */
+    background-position: center;
+    /* 背景圖片居中 */
+}
+
+.teach_atc .section.active {
+    opacity: 1;
+    visibility: visible;
+    animation: zoom-scroll 0.3s ease-in-out;
+}
+
+/* 為不同的 section 設置背景圖片 */
+#pic1-1 {
+    background-image: url('../../img/forum/teach/base-brandy.png');
+}
+
+#pic1-2 {
+    background-image: url('../../img/forum/teach/base-gin.png');
+}
+
+#pic1-3 {
+    background-image: url('../../img/forum/teach/base-tequila.png');
+}
+
+#pic1-4 {
+    background-image: url('../../img/forum/teach/base-rum.png');
+}
+
+#pic1-5 {
+    background-image: url('../../img/forum/teach/base-vodka.png');
+}
+
+#pic1-6 {
+    background-image: url('../../img/forum/teach/base-whisky.png');
+}
+
+/* 為經典調酒 sections 設置背景圖片 */
+#pic2-1 {
+    background-image: url('../../img/forum/teach/sidecar.png');
+}
+
+#pic2-2 {
+    background-image: url('../../img/forum/teach/ginfizz.png');
+}
+
+#pic2-3 {
+    background-image: url('../../img/forum/teach/margarita.png');
+}
+
+#pic2-4 {
+    background-image: url('../../img/forum/teach/lonisland.png');
+}
+
+#pic2-5 {
+    background-image: url('../../img/forum/teach/cosmopo.png');
+}
+
+#pic2-6 {
+    background-image: url('../../img/forum/teach/oldfashion.png');
+}
+
+/* 調酒教學 sections */
+#pic3-1 {
+    background-image: url('../../img/forum/teach/barlist8.jpg');
+}
+
+#pic3-2 {
+    background-image: url('../../img/forum/teach/barlist9.jpg');
+}
+
+#pic3-3 {
+    background-image: url('../../img/forum/teach/barlist10.jpg');
+}
+
+#pic3-4 {
+    background-image: url('../../img/forum/teach/barlist11.jpg');
+}
+
+#pic3-5 {
+    background-image: url('../../img/forum/teach/barlist12.jpg');
+}
+
+.teach_atc .text img {
+    width: 100%;
+    height: 100%;
+    /* 確保圖片長寬一樣 */
+    object-fit: cover;
+    object-position: center;
+    /* 確保圖片置中 */
+}
+
+@keyframes zoom-scroll {
+    0% {
+        filter: blur(5rem);
+        transform: scale(0);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    50% {
+        filter: blur(0);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.teach_atc .site-headerBase,
+.teach_atc .site-headerBartend,
+.teach_atc .site-headerTeach {
+    width: 20%;
+    max-width: 160px;
+    background-color: transparent;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    visibility: hidden;
+    /* 可選，確保元素隱藏 */
+}
+
+.teach_atc .site-headerBase.active,
+.teach_atc .site-headerBartend.active,
+.teach_atc .site-headerTeach.active {
+    display: block;
+    /* 或者使用 flex 根據需求 */
+    visibility: visible;
+    /* 確保元素可見 */
+}
+
+.teach_atc .indicator {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.teach_atc .indicator li {
+    margin: 10px 0;
+}
+
+
+.teach_atc .indicator a.active {
+    font-weight: bold;
+    color: #ffcc00;
+    /* 可以根據需求更改顏色 */
+}
+
+/* 指示器的基本樣式 */
+.teach_atc .indicator a {
+    text-decoration: none;
+    color: #2c2c2c;
+    font-weight: normal;
 }

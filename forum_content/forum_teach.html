@@ -41,32 +41,89 @@
         <!-- 標題及搜尋區 -->
         <div class="forum_slogan">
             <h1>Let's Jotalk</h1>
-            <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容">
+            <!-- <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容"> -->
                 <!-- <label for="">產品搜尋:</label> -->
-                <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
+                <!-- <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
                     placeholder="搜尋所有內容">
                 <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋">
-            </form>
-            <p>9999 會員 987 online 12345 文章</p>
+            </form> -->
         </div>
     </header>
     <main>
+
         <div class="teach_content">
-        <!-- 上區 -->
-        <div class="top-section">
-            <div class="categories">
-                <div class="category active" data-target="teach_baseWine">六大基酒</div>
-                <div class="category" data-target="teach_bartendWine">經典調酒</div>
-                <div class="category" data-target="teach_teachWine">調酒教學</div>
+            <!-- 上區 -->
+            <div class="top-section">
+                <div class="categories">
+                    <div class="category active" data-target="teach_baseWine">六大基酒</div>
+                    <div class="category" data-target="teach_bartendWine">經典調酒</div>
+                    <div class="category" data-target="teach_teachWine">調酒教學</div>
+                </div>
+            </div>
+            <!-- 下區 -->
+            <div class="teach_atc">
+                <!-- 六大基酒 -->
+                <div class="teach_picBase active" id="teach_baseWine">
+                    <section id="pic1-1" class="section"></section>
+                    <section id="pic1-2" class="section"></section>
+                    <section id="pic1-3" class="section"></section>
+                    <section id="pic1-4" class="section"></section>
+                    <section id="pic1-5" class="section"></section>
+                    <section id="pic1-6" class="section"></section>
+                </div>
+                <div class="site-headerBase active">
+                    <ul class="indicator">
+                        <li><a href="#pic1-1">白蘭地</a></li>
+                        <li><a href="#pic1-2">琴 酒</a></li>
+                        <li><a href="#pic1-3">龍舌蘭</a></li>
+                        <li><a href="#pic1-4">蘭姆酒</a></li>
+                        <li><a href="#pic1-5">伏特加</a></li>
+                        <li><a href="#pic1-6">威士忌</a></li>
+                    </ul>
+                </div>
+
+                <!-- 經典調酒 -->
+                <div class="teach_picBartend" id="teach_bartendWine">
+                    <section id="pic2-1" class="section"></section>
+                    <section id="pic2-2" class="section"></section>
+                    <section id="pic2-3" class="section"></section>
+                    <section id="pic2-4" class="section"></section>
+                    <section id="pic2-5" class="section"></section>
+                    <section id="pic2-6" class="section"></section>
+                </div>
+                <div class="site-headerBartend">
+                    <ul class="indicator">
+                        <li><a href="#pic2-1">側車</a></li>
+                        <li><a href="#pic2-2">琴費司</a></li>
+                        <li><a href="#pic2-3">瑪格莉特</a></li>
+                        <li><a href="#pic2-4">長島冰茶</a></li>
+                        <li><a href="#pic2-5">柯夢波丹</a></li>
+                        <li><a href="#pic2-5">古典雞尾酒</a></li>
+                    </ul>
+                </div>
+
+                <!-- 調酒教學 -->
+                <div class="teach_picTeach" id="teach_teachWine">
+                    <section id="pic3-1" class="section"></section>
+                    <section id="pic3-2" class="section"></section>
+                    <section id="pic3-3" class="section"></section>
+                    <section id="pic3-4" class="section"></section>
+                    <section id="pic3-5" class="section"></section>
+                </div>
+                <div class="site-headerTeach">
+                    <ul class="indicator">
+                        <li><a href="#pic3-1">video-1</a></li>
+                        <li><a href="#pic3-2">video-2</a></li>
+                        <li><a href="#pic3-3">video-3</a></li>
+                        <li><a href="#pic3-4">video-4</a></li>
+                        <li><a href="#pic3-5">video-5</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <!-- 下區 -->
-
-        <div class="teach_atc">
-
-        </div>
-        </div>
     </main>
+
+    <script src="../js/forum/forum_teach.js"></script>
 </body>
 
 </html>
