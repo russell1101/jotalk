@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
     <link rel="stylesheet" href="./css/styles.css">
-
-    <!-- 步驟一：載入React, Bable -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -58,13 +56,13 @@
                     <div class="txt-1 smoove" data-move-z="-50px">我們相信每一次的酒吧之旅，都應該是一次美好的體驗</div>
                     <div class="msgCol">
                         <ul class="msg-1 smoove" data-move-z="-100px">今天晚上要不要喝一杯?</ul>
-                        <ul class="msg-2 smoove" data-move-x="-220px" data-move-y="10px" data-move-z="-100px">發薪水啦 開喝!</ul>
+                        <ul class="msg-2 smoove" data-move-x="-220px" data-move-y="10px" data-move-z="-100px">發薪水啦 開喝&#129321</ul>
                         <ul class="msg-3 smoove" data-move-x="150px"  data-move-y="50px" data-move-z="-50px">+1</ul>
                         <ul class="msg-4 smoove" data-move-x="-100px" data-move-y="-50px" data-move-z="-100px">Friday night 一個都不準跑</ul>
-                        <ul class="msg-5 smoove" data-move-x="150px"  data-move-y="50px" data-move-z="-50px">我有個驚天大八卦 老地方碰面 :smirk:</ul>
-                        <ul class="msg-6 smoove" data-move-x="-250px"  data-move-y="100px" data-move-z="-50px">我失戀了求安慰QQ</ul>
+                        <ul class="msg-5 smoove" data-move-x="150px"  data-move-y="50px" data-move-z="-50px">我有個驚天大八卦 老地方碰面&#128536</ul>
+                        <ul class="msg-6 smoove" data-move-x="-250px"  data-move-y="100px" data-move-z="-50px">我失戀了求安慰&#128557</ul>
                         <ul class="msg-7 smoove" data-move-x="150px"  data-move-y="100px" data-move-z="-50px">走啦走啦約起來</ul>
-                        <ul class="msg-8 smoove" data-move-x="-50px"  data-move-y="100px" data-move-z="-50px">不醉不歸!!!</ul>
+                        <ul class="msg-8 smoove" data-move-x="-50px"  data-move-y="100px" data-move-z="-50px">不醉不歸 &#129304</ul>
                         <ul class="msg-9 smoove" data-move-y="400px" data-move-z="-150px">那個...要去哪一間酒吧?</ul>
                     </div>
                     <div class="txt-2 smoove">在這裡，你可以探索最適合自己的酒吧，還能分享心得、累積積分、兌換優惠，享受更多福利</div>
@@ -100,11 +98,11 @@
         </div>
         <section id="barlist">
             <div class="slideshow">
-                <div class="slide" data-bar="barA barB"><img src="./img/index/index-3-1.jpg"></div>
-                <div class="slide" data-bar="barC barD"><img src="./img/index/index-3-2.jpg"></div>
-                <div class="slide" data-bar="barE barF"><img src="./img/index/index-3-3.jpg"></div>
-                <div class="slide" data-bar="barG barH"><img src="./img/index/index-3-4.jpg"></div>
-                <div class="slide" data-bar="barI barJ"><img src="./img/index/index-3-5.jpg"></div>
+                <div class="slide" data-bar="Ludwig Milotic"><img src="./img/index/index-3-1.jpg"></div>
+                <div class="slide" data-bar="Oask WineBucket"><img src="./img/index/index-3-2.jpg"></div>
+                <div class="slide" data-bar="Blastoise MiddleTwo"><img src="./img/index/index-3-3.jpg"></div>
+                <div class="slide" data-bar="RiverNight Britain"><img src="./img/index/index-3-4.jpg"></div>
+                <div class="slide" data-bar="Darwin NightFall"><img src="./img/index/index-3-5.jpg"></div>
             </div>
             <div class="bar-names">
                 <div class="bar-name-left"></div>
@@ -118,9 +116,12 @@
         </section>
         <section id="last">
             <div class="content">
-                <p class="txt-1">無論是尋找放鬆的地方，或是獲取更多酒吧資訊，JOTALK都能隨時為你服務</p>
-                <p class="txt-2">探索酒吧的最佳夥伴，與我們一起享受每一刻！</p>
-                <button>加入會員 開始體驗</button>
+                <p class="txt-3 smoove" data-move-z="-50px">無論是尋找放鬆的地方，或是獲取更多酒吧資訊，JOTALK都能隨時為你服務</p>
+                <p class="txt-4 smoove" data-move-z="-50px">探索酒吧的最佳夥伴，與我們一起享受每一刻！</p>
+                <button class="joinBtn">加入會員 開始體驗</button>
+            </div>
+            <div>
+
             </div>
             <video src="./img/index/idex-4.mp4" autoplay loop muted></video>
         </section>
@@ -146,9 +147,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     <script src="./js/index-barlist.js"></script>
-    <!-- 需先載入jquery原始碼，讓瀏覽器讀懂 -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jquery官網CDN -->
-    <!-- jquery smooth -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
