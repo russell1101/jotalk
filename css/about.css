@@ -252,6 +252,7 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 0 2rem;
 }
 
 h2 {
