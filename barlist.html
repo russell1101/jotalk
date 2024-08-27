@@ -10,58 +10,53 @@
 </head>
 
 <body>
-    <!-- 壓在背景的透明板 -->
-    <div class="overlay"></div>
-
     <!-- 頁首區 -->
-    <header id="topbar">
-        <!-- logo區 -->
-        <div class="forum_head">
+    <header id="barlist_head">
+        <div class="topbar">
+            <!-- logo區 -->
             <h1 class="logo">
                 <a href="./index.html">
                     <img src="./img/logo.svg" alt="jotalkLogo">
                 </a>
             </h1>
-
             <div class="menu">
                 <a href="./forum.html">綜合論壇</a>
                 <a href="./barlist.html">酒吧清單</a>
-                <a href="#">關於我們</a>
+                <a href="./about.html">關於我們</a>
             </div>
         </div>
-
         <!-- 會員登入區 -->
-
         <div class="account_login">
             <button>
                 <a href="">會員登入</a>
             </button>
         </div>
-
-        <!-- 標題及搜尋區 -->
-        <div class="forum_slogan">
+        <div class="barlist_slogan">
             <h1>BAR LIST</h1>
             <p>酒吧清單</p>
         </div>
     </header>
-    <main>
-        <!-- 左邊標籤 -->
-        <div class="barlist_tag">
-            <div class="tag_category active">
-                <div class="tag_title">熱門店家</div>
-                <div class="tag_items">
-                    <div class="tag_item">#得獎店家</div>
-                    <div class="tag_item">#特色調酒</div>
-                    <div class="tag_item">#新手友善</div>
-                    <div class="tag_item">#帥調酒師</div>
-                    <div class="tag_item">#火熱之夜</div>
-                </div>
-            </div>
 
-            <div class="tag_category">
-                <div class="tag_title">地區</div>
-                <div class="tag_items hidden">
-                    <!-- 北部 -->
+    <main>
+        <img class="barlist-bg" src="./img/barlist/bg-tree.jpg">
+        <div class="barlist-cont">
+            <!-- 左邊標籤 -->
+            <div class="barlist_tag">
+                <div class="tag_category active">
+                    <div class="tag_title">熱門店家</div>
+                    <div class="tag_items">
+                        <div class="tag_item">#得獎店家</div>
+                        <div class="tag_item">#特色調酒</div>
+                        <div class="tag_item">#新手友善</div>
+                        <div class="tag_item">#帥調酒師</div>
+                        <div class="tag_item">#火熱之夜</div>
+                    </div>
+                </div>
+
+                <div class="tag_category">
+                    <div class="tag_title">地區</div>
+                    <div class="tag_items hidden">
+                        <!-- 北部 -->
                         <div class="tag_item north">#大安區</div>
                         <div class="tag_item north">#中山區</div>
                         <div class="tag_item north">#信義區</div>
@@ -71,129 +66,129 @@
                         <div class="tag_item south">#鹽埕區</div>
                         <div class="tag_item south">#前金區</div>
                         <div class="tag_item south">#三民區</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tag_category">
-                <div class="tag_title">店內環境</div>
-                <div class="tag_items hidden">
-                    <div class="tag_item">#小聲交談</div>
-                    <div class="tag_item">#夜店狂歡</div>
-                    <div class="tag_item">#熱情店家</div>
+                <div class="tag_category">
+                    <div class="tag_title">店內環境</div>
+                    <div class="tag_items hidden">
+                        <div class="tag_item">#小聲交談</div>
+                        <div class="tag_item">#夜店狂歡</div>
+                        <div class="tag_item">#熱情店家</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tag_category">
-                <div class="tag_title">風格</div>
-                <div class="tag_items hidden">
-                    <div class="tag_item">#美式</div>
-                    <div class="tag_item">#中式</div>
-                    <div class="tag_item">#日式</div>
-                    <div class="tag_item">#英式</div>
+                <div class="tag_category">
+                    <div class="tag_title">風格</div>
+                    <div class="tag_items hidden">
+                        <div class="tag_item">#美式</div>
+                        <div class="tag_item">#中式</div>
+                        <div class="tag_item">#日式</div>
+                        <div class="tag_item">#英式</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tag_category">
-                <div class="tag_title">營業時間</div>
-                <div class="tag_items hidden">
-                    <div class="tag_item">#18:00-00:00</div>
-                    <div class="tag_item">#20:00-04:00</div>
-                    <div class="tag_item">#19:00-01:00</div>
+                <div class="tag_category">
+                    <div class="tag_title">營業時間</div>
+                    <div class="tag_items hidden">
+                        <div class="tag_item">#18:00-00:00</div>
+                        <div class="tag_item">#20:00-04:00</div>
+                        <div class="tag_item">#19:00-01:00</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tag_category">
-                <div class="tag_title">吸菸區</div>
-                <div class="tag_items hidden">
-                    <div class="tag_item">#可吸菸</div>
-                    <div class="tag_item">#不可吸菸</div>
+                <div class="tag_category">
+                    <div class="tag_title">吸菸區</div>
+                    <div class="tag_items hidden">
+                        <div class="tag_item">#可吸菸</div>
+                        <div class="tag_item">#不可吸菸</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tag_category">
-                <div class="tag_title">人均消費</div>
-                <div class="tag_items hidden">
-                    <div class="tag_item">#500-1000元</div>
-                    <div class="tag_item">#600-800元</div>
-                    <div class="tag_item">#400-800元</div>
+                <div class="tag_category">
+                    <div class="tag_title">人均消費</div>
+                    <div class="tag_items hidden">
+                        <div class="tag_item">#500-1000元</div>
+                        <div class="tag_item">#600-800元</div>
+                        <div class="tag_item">#400-800元</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tag_category">
-                <div class="tag_title">接待人數</div>
-                <div class="tag_items hidden">
-                    <div class="tag_item">#2-4人</div>
-                    <div class="tag_item">#4-6人</div>
-                    <div class="tag_item">#6-8人</div>
-                    <div class="tag_item">#8-10人</div>
+                <div class="tag_category">
+                    <div class="tag_title">接待人數</div>
+                    <div class="tag_items hidden">
+                        <div class="tag_item">#2-4人</div>
+                        <div class="tag_item">#4-6人</div>
+                        <div class="tag_item">#6-8人</div>
+                        <div class="tag_item">#8-10人</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tag_category">
-                <div class="tag_title">特殊標籤</div>
-                <div class="tag_items hidden">
-                    <div class="tag_item">#保證爛醉</div>
-                    <div class="tag_item">#瘋狂暢飲</div>
+                <div class="tag_category">
+                    <div class="tag_title">特殊標籤</div>
+                    <div class="tag_items hidden">
+                        <div class="tag_item">#保證爛醉</div>
+                        <div class="tag_item">#瘋狂暢飲</div>
+                    </div>
                 </div>
+
+
             </div>
+            <!-- 右邊酒吧 -->
+            <div class="barlist_content">
+
+                <!-- 上面分類 -->
+                <div class="barlist_filters">
+                    <div class="filter_item active" data-filter="all">全部</div>
+                    <div class="filter_item" data-filter="north">北部</div>
+                    <div class="filter_item" data-filter="central">中部</div>
+                    <div class="filter_item" data-filter="south">南部</div>
+                </div>
+
+                <!-- 中間放標籤的地方 -->
+                <div class="tags_box"></div>
 
 
-        </div>
-        <!-- 右邊酒吧 -->
-        <div class="barlist_content">
+                <!-- 下面清單 -->
+                <section class="barlist_list">
 
-            <!-- 上面分類 -->
-            <div class="barlist_filters">
-                <div class="filter_item active" data-filter="all">全部</div>
-                <div class="filter_item" data-filter="north">北部</div>
-                <div class="filter_item" data-filter="central">中部</div>
-                <div class="filter_item" data-filter="south">南部</div>
-            </div>
-            
-            <!-- 中間放標籤的地方 -->
-            <div class="tags_box"></div>
+                    <!-- 1 -->
+                    <div class="list_item" data-region="north">
+                        <article class="item_content">
 
-
-            <!-- 下面清單 -->
-            <section class="barlist_list">
-
-                <!-- 1 -->
-                <div class="list_item" data-region="north">
-                    <article class="item_content">
-
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.5★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#得獎店家</a></li>
-                                    <li><a href="#" class="tag">#特色調酒</a></li>
-                                    <li><a href="#" class="tag">#帥調酒師</a></li>
-                                    <li><a href="#" class="tag">#大安區</a></li>
-                                    <li><a href="#" class="tag">#熱情店家</a></li>
-                                    <li><a href="#" class="tag">#日式</a></li>
-                                    <li><a href="#" class="tag">#20:00-04:00</a></li>
-                                    <li><a href="#" class="tag">#400-800元</a></li>
-                                    <li><a href="#" class="tag">#2-4人</a></li>
-                                    <li><a href="#" class="tag">#北部</a></li>
-                                    <!-- <li><a href="#" class="tag ellipsis"><i class="far fa-ellipsis-h"></i></a></li> -->
-                                </ul>
-                            </div>
-
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.5★</a>
                                 </div>
-                                <!-- <a href="#" class="series button">
+
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#得獎店家</a></li>
+                                        <li><a href="#" class="tag">#特色調酒</a></li>
+                                        <li><a href="#" class="tag">#帥調酒師</a></li>
+                                        <li><a href="#" class="tag">#大安區</a></li>
+                                        <li><a href="#" class="tag">#熱情店家</a></li>
+                                        <li><a href="#" class="tag">#日式</a></li>
+                                        <li><a href="#" class="tag">#20:00-04:00</a></li>
+                                        <li><a href="#" class="tag">#400-800元</a></li>
+                                        <li><a href="#" class="tag">#2-4人</a></li>
+                                        <li><a href="#" class="tag">#北部</a></li>
+                                        <!-- <li><a href="#" class="tag ellipsis"><i class="far fa-ellipsis-h"></i></a></li> -->
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
+                                    <!-- <a href="#" class="series button">
                                     <span class="icon-title"><i class="fad fa-books"></i> Series</span>
                                     <span class="new-tab"><i class="fas fa-arrow-circle-right"></i></span>
                                 </a>
@@ -204,453 +199,453 @@
                                 </a>
             
                                 <a href="#" class="follow button"><i class="fas fa-plus"></i></a> -->
-                            </div>
-                        </div>
-
-                    </article>
-                </div>
-
-                <!-- 2 -->
-                <div class="list_item" data-region="central">
-                    <article class="item_content">
-
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.1★</a>
-                            </div>
-
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#得獎店家</a></li>
-                                    <li><a href="#" class="tag">#新手友善</a></li>
-                                    <li><a href="#" class="tag">#逢甲區</a></li>
-                                    <li><a href="#" class="tag">#中式</a></li>
-                                    <li><a href="#" class="tag">#19:00-01:00</a></li>
-                                    <li><a href="#" class="tag">#不可吸菸</a></li>
-                                    <li><a href="#" class="tag">#500-1000元</a></li>
-                                    <li><a href="#" class="tag">#6-8人</a></li>
-                                    <li><a href="#" class="tag">#中部</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
 
-                <!-- 3 -->
-                <div class="list_item" data-region="south">
-                    <article class="item_content">
+                    <!-- 2 -->
+                    <div class="list_item" data-region="central">
+                        <article class="item_content">
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.0★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#火熱之夜</a></li>
-                                    <li><a href="#" class="tag">#鹽埕區</a></li>
-                                    <li><a href="#" class="tag">#夜店狂歡</a></li>
-                                    <li><a href="#" class="tag">#美式</a></li>
-                                    <li><a href="#" class="tag">#20:00-04:00</a></li>
-                                    <li><a href="#" class="tag">#可吸菸</a></li>
-                                    <li><a href="#" class="tag">#600-800元</a></li>
-                                    <li><a href="#" class="tag">#8-10人</a></li>
-                                    <li><a href="#" class="tag">#南部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.1★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#得獎店家</a></li>
+                                        <li><a href="#" class="tag">#新手友善</a></li>
+                                        <li><a href="#" class="tag">#逢甲區</a></li>
+                                        <li><a href="#" class="tag">#中式</a></li>
+                                        <li><a href="#" class="tag">#19:00-01:00</a></li>
+                                        <li><a href="#" class="tag">#不可吸菸</a></li>
+                                        <li><a href="#" class="tag">#500-1000元</a></li>
+                                        <li><a href="#" class="tag">#6-8人</a></li>
+                                        <li><a href="#" class="tag">#中部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
 
-                <!-- 4 -->
-                <div class="list_item" data-region="north">
-                    <article class="item_content">
+                    <!-- 3 -->
+                    <div class="list_item" data-region="south">
+                        <article class="item_content">
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.8★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#帥調酒師</a></li>
-                                    <li><a href="#" class="tag">#中山區</a></li>
-                                    <li><a href="#" class="tag">#小聲交談</a></li>
-                                    <li><a href="#" class="tag">#英式</a></li>
-                                    <li><a href="#" class="tag">#18:00-00:00</a></li>
-                                    <li><a href="#" class="tag">#不可吸菸</a></li>
-                                    <li><a href="#" class="tag">#400-800元</a></li>
-                                    <li><a href="#" class="tag">#2-4人</a></li>
-                                    <li><a href="#" class="tag">#北部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.0★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#火熱之夜</a></li>
+                                        <li><a href="#" class="tag">#鹽埕區</a></li>
+                                        <li><a href="#" class="tag">#夜店狂歡</a></li>
+                                        <li><a href="#" class="tag">#美式</a></li>
+                                        <li><a href="#" class="tag">#20:00-04:00</a></li>
+                                        <li><a href="#" class="tag">#可吸菸</a></li>
+                                        <li><a href="#" class="tag">#600-800元</a></li>
+                                        <li><a href="#" class="tag">#8-10人</a></li>
+                                        <li><a href="#" class="tag">#南部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
 
-                <!-- 5 -->
-                <div class="list_item" data-region="central">
-                    <article class="item_content">
+                    <!-- 4 -->
+                    <div class="list_item" data-region="north">
+                        <article class="item_content">
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.3★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#新手友善</a></li>
-                                    <li><a href="#" class="tag">#西屯區</a></li>
-                                    <li><a href="#" class="tag">#熱情店家</a></li>
-                                    <li><a href="#" class="tag">#美式</a></li>
-                                    <li><a href="#" class="tag">#20:00-04:00</a></li>
-                                    <li><a href="#" class="tag">#不可吸菸</a></li>
-                                    <li><a href="#" class="tag">#500-1000元</a></li>
-                                    <li><a href="#" class="tag">#6-8人</a></li>
-                                    <li><a href="#" class="tag">#中部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.8★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#帥調酒師</a></li>
+                                        <li><a href="#" class="tag">#中山區</a></li>
+                                        <li><a href="#" class="tag">#小聲交談</a></li>
+                                        <li><a href="#" class="tag">#英式</a></li>
+                                        <li><a href="#" class="tag">#18:00-00:00</a></li>
+                                        <li><a href="#" class="tag">#不可吸菸</a></li>
+                                        <li><a href="#" class="tag">#400-800元</a></li>
+                                        <li><a href="#" class="tag">#2-4人</a></li>
+                                        <li><a href="#" class="tag">#北部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
-                <!-- 6 -->
-                <div class="list_item" data-region="south">
-                    <article class="item_content">
+                        </article>
+                    </div>
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
+                    <!-- 5 -->
+                    <div class="list_item" data-region="central">
+                        <article class="item_content">
 
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">3.9★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#特色調酒</a></li>
-                                    <li><a href="#" class="tag">#前金區</a></li>
-                                    <li><a href="#" class="tag">#夜店狂歡</a></li>
-                                    <li><a href="#" class="tag">#日式</a></li>
-                                    <li><a href="#" class="tag">#19:00-01:00</a></li>
-                                    <li><a href="#" class="tag">#可吸菸</a></li>
-                                    <li><a href="#" class="tag">#500-1000元</a></li>
-                                    <li><a href="#" class="tag">#4-6人</a></li>
-                                    <li><a href="#" class="tag">#南部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.3★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#新手友善</a></li>
+                                        <li><a href="#" class="tag">#西屯區</a></li>
+                                        <li><a href="#" class="tag">#熱情店家</a></li>
+                                        <li><a href="#" class="tag">#美式</a></li>
+                                        <li><a href="#" class="tag">#20:00-04:00</a></li>
+                                        <li><a href="#" class="tag">#不可吸菸</a></li>
+                                        <li><a href="#" class="tag">#500-1000元</a></li>
+                                        <li><a href="#" class="tag">#6-8人</a></li>
+                                        <li><a href="#" class="tag">#中部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
-                <!-- 7 -->
-                <div class="list_item" data-region="north">
-                    <article class="item_content">
+                        </article>
+                    </div>
+                    <!-- 6 -->
+                    <div class="list_item" data-region="south">
+                        <article class="item_content">
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.7★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#得獎店家</a></li>
-                                    <li><a href="#" class="tag">#信義區</a></li>
-                                    <li><a href="#" class="tag">#熱情店家</a></li>
-                                    <li><a href="#" class="tag">#美式</a></li>
-                                    <li><a href="#" class="tag">#18:00-00:00</a></li>
-                                    <li><a href="#" class="tag">#可吸菸</a></li>
-                                    <li><a href="#" class="tag">#400-800元</a></li>
-                                    <li><a href="#" class="tag">#2-4人</a></li>
-                                    <li><a href="#" class="tag">#北部</a></li>
-                                    <li><a href="#" class="tag">#保證爛醉</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">3.9★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#特色調酒</a></li>
+                                        <li><a href="#" class="tag">#前金區</a></li>
+                                        <li><a href="#" class="tag">#夜店狂歡</a></li>
+                                        <li><a href="#" class="tag">#日式</a></li>
+                                        <li><a href="#" class="tag">#19:00-01:00</a></li>
+                                        <li><a href="#" class="tag">#可吸菸</a></li>
+                                        <li><a href="#" class="tag">#500-1000元</a></li>
+                                        <li><a href="#" class="tag">#4-6人</a></li>
+                                        <li><a href="#" class="tag">#南部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                    <!-- 7 -->
+                    <div class="list_item" data-region="north">
+                        <article class="item_content">
 
-                <!-- 8 -->
-                <div class="list_item" data-region="central">
-                    <article class="item_content">
-
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.8★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#帥調酒師</a></li>
-                                    <li><a href="#" class="tag">#北屯區</a></li>
-                                    <li><a href="#" class="tag">#瘋狂暢飲</a></li>
-                                    <li><a href="#" class="tag">#日式</a></li>
-                                    <li><a href="#" class="tag">#20:00-04:00</a></li>
-                                    <li><a href="#" class="tag">#可吸菸</a></li>
-                                    <li><a href="#" class="tag">#600-800元</a></li>
-                                    <li><a href="#" class="tag">#8-10人</a></li>
-                                    <li><a href="#" class="tag">#中部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.7★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#得獎店家</a></li>
+                                        <li><a href="#" class="tag">#信義區</a></li>
+                                        <li><a href="#" class="tag">#熱情店家</a></li>
+                                        <li><a href="#" class="tag">#美式</a></li>
+                                        <li><a href="#" class="tag">#18:00-00:00</a></li>
+                                        <li><a href="#" class="tag">#可吸菸</a></li>
+                                        <li><a href="#" class="tag">#400-800元</a></li>
+                                        <li><a href="#" class="tag">#2-4人</a></li>
+                                        <li><a href="#" class="tag">#北部</a></li>
+                                        <li><a href="#" class="tag">#保證爛醉</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
 
-                <!-- 9 -->
-                <div class="list_item" data-region="south">
-                    <article class="item_content">
+                    <!-- 8 -->
+                    <div class="list_item" data-region="central">
+                        <article class="item_content">
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">5.0★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#新手友善</a></li>
-                                    <li><a href="#" class="tag">#三民區</a></li>
-                                    <li><a href="#" class="tag">#小聲交談</a></li>
-                                    <li><a href="#" class="tag">#日式</a></li>
-                                    <li><a href="#" class="tag">#20:00-04:00</a></li>
-                                    <li><a href="#" class="tag">#可吸菸</a></li>
-                                    <li><a href="#" class="tag">#600-800元</a></li>
-                                    <li><a href="#" class="tag">#4-6人</a></li>
-                                    <li><a href="#" class="tag">#南部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.8★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#帥調酒師</a></li>
+                                        <li><a href="#" class="tag">#北屯區</a></li>
+                                        <li><a href="#" class="tag">#瘋狂暢飲</a></li>
+                                        <li><a href="#" class="tag">#日式</a></li>
+                                        <li><a href="#" class="tag">#20:00-04:00</a></li>
+                                        <li><a href="#" class="tag">#可吸菸</a></li>
+                                        <li><a href="#" class="tag">#600-800元</a></li>
+                                        <li><a href="#" class="tag">#8-10人</a></li>
+                                        <li><a href="#" class="tag">#中部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
 
-                <!-- 10 -->
-                <div class="list_item" data-region="north">
-                    <article class="item_content">
+                    <!-- 9 -->
+                    <div class="list_item" data-region="south">
+                        <article class="item_content">
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.5★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#新手友善</a></li>
-                                    <li><a href="#" class="tag">#大安區</a></li>
-                                    <li><a href="#" class="tag">#熱情店家</a></li>
-                                    <li><a href="#" class="tag">#美式</a></li>
-                                    <li><a href="#" class="tag">#18:00-00:00</a></li>
-                                    <li><a href="#" class="tag">#不可吸菸</a></li>
-                                    <li><a href="#" class="tag">#600-800元</a></li>
-                                    <li><a href="#" class="tag">#2-4人</a></li>
-                                    <li><a href="#" class="tag">#北部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">5.0★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#新手友善</a></li>
+                                        <li><a href="#" class="tag">#三民區</a></li>
+                                        <li><a href="#" class="tag">#小聲交談</a></li>
+                                        <li><a href="#" class="tag">#日式</a></li>
+                                        <li><a href="#" class="tag">#20:00-04:00</a></li>
+                                        <li><a href="#" class="tag">#可吸菸</a></li>
+                                        <li><a href="#" class="tag">#600-800元</a></li>
+                                        <li><a href="#" class="tag">#4-6人</a></li>
+                                        <li><a href="#" class="tag">#南部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
 
-                <!-- 11 -->
-                <div class="list_item" data-region="central">
-                    <article class="item_content">
+                    <!-- 10 -->
+                    <div class="list_item" data-region="north">
+                        <article class="item_content">
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
-
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.1★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#保證爛醉</a></li>
-                                    <li><a href="#" class="tag">##逢甲區</a></li>
-                                    <li><a href="#" class="tag">##夜店狂歡</a></li>
-                                    <li><a href="#" class="tag">#英式</a></li>
-                                    <li><a href="#" class="tag">#20:00-04:00</a></li>
-                                    <li><a href="#" class="tag">#可吸菸</a></li>
-                                    <li><a href="#" class="tag">#600-800元</a></li>
-                                    <li><a href="#" class="tag">#6-8人</a></li>
-                                    <li><a href="#" class="tag">#中部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.5★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#新手友善</a></li>
+                                        <li><a href="#" class="tag">#大安區</a></li>
+                                        <li><a href="#" class="tag">#熱情店家</a></li>
+                                        <li><a href="#" class="tag">#美式</a></li>
+                                        <li><a href="#" class="tag">#18:00-00:00</a></li>
+                                        <li><a href="#" class="tag">#不可吸菸</a></li>
+                                        <li><a href="#" class="tag">#600-800元</a></li>
+                                        <li><a href="#" class="tag">#2-4人</a></li>
+                                        <li><a href="#" class="tag">#北部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
-                <!-- 12 -->
-                <div class="list_item" data-region="south">
-                    <article class="item_content">
+                        </article>
+                    </div>
 
-                        <div class="preview--container">
-                            <a href="#" class="preview-image--container">
-                                <div class="preview-image"></div>
-                            </a>
-                        </div>
+                    <!-- 11 -->
+                    <div class="list_item" data-region="central">
+                        <article class="item_content">
 
-                        <div class="content--container">
-                            <div class="title--container">
-                                <a class="title--text" href="#">酒吧名字放這裡</a>
-                                <a class="title--text" href="#">4.6★</a>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
                             </div>
 
-                            <div class="tags--overflow-container">
-                                <ul class="tags--container">
-                                    <li><a href="#" class="tag">#得獎店家</a></li>
-                                    <li><a href="#" class="tag">#鹽埕區</a></li>
-                                    <li><a href="#" class="tag">#瘋狂暢飲</a></li>
-                                    <li><a href="#" class="tag">#中式</a></li>
-                                    <li><a href="#" class="tag">#19:00-01:00</a></li>
-                                    <li><a href="#" class="tag">#可吸菸</a></li>
-                                    <li><a href="#" class="tag">#400-800元</a></li>
-                                    <li><a href="#" class="tag">#8-10人</a></li>
-                                    <li><a href="#" class="tag">#南部</a></li>
-                                </ul>
-                            </div>
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.1★</a>
+                                </div>
 
-                            <div class="hover--options">
-                                <div>
-                                    <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#保證爛醉</a></li>
+                                        <li><a href="#" class="tag">##逢甲區</a></li>
+                                        <li><a href="#" class="tag">##夜店狂歡</a></li>
+                                        <li><a href="#" class="tag">#英式</a></li>
+                                        <li><a href="#" class="tag">#20:00-04:00</a></li>
+                                        <li><a href="#" class="tag">#可吸菸</a></li>
+                                        <li><a href="#" class="tag">#600-800元</a></li>
+                                        <li><a href="#" class="tag">#6-8人</a></li>
+                                        <li><a href="#" class="tag">#中部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                    <!-- 12 -->
+                    <div class="list_item" data-region="south">
+                        <article class="item_content">
 
-            </section>
+                            <div class="preview--container">
+                                <a href="#" class="preview-image--container">
+                                    <div class="preview-image"></div>
+                                </a>
+                            </div>
+
+                            <div class="content--container">
+                                <div class="title--container">
+                                    <a class="title--text" href="#">酒吧名字放這裡</a>
+                                    <a class="title--text" href="#">4.6★</a>
+                                </div>
+
+                                <div class="tags--overflow-container">
+                                    <ul class="tags--container">
+                                        <li><a href="#" class="tag">#得獎店家</a></li>
+                                        <li><a href="#" class="tag">#鹽埕區</a></li>
+                                        <li><a href="#" class="tag">#瘋狂暢飲</a></li>
+                                        <li><a href="#" class="tag">#中式</a></li>
+                                        <li><a href="#" class="tag">#19:00-01:00</a></li>
+                                        <li><a href="#" class="tag">#可吸菸</a></li>
+                                        <li><a href="#" class="tag">#400-800元</a></li>
+                                        <li><a href="#" class="tag">#8-10人</a></li>
+                                        <li><a href="#" class="tag">#南部</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="hover--options">
+                                    <div>
+                                        <a class="title--text" href="#">台北市信義區XXXXXX</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </article>
+                    </div>
+
+                </section>
+            </div>
         </div>
-
     </main>
 
     <script src="./js/barlist.js"></script>

@@ -23,13 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// // smoove特效
-// $(document).ready(function() {
-//     $('.smoove').smoove({
-//         offset: '40%'
-//     });
-// });
-
 
 // 會員頁面
 document.addEventListener('DOMContentLoaded', function () {

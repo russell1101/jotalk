@@ -1,30 +1,3 @@
-const slides = document.querySelectorAll('.slide');
-const leftName = document.querySelector('.bar-name-left');
-const rightName = document.querySelector('.bar-name-right');
-let currentSlide = 0;
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.style.transform = `translate(${i === index ? '0%' : '-100%'}, 0)`;
-    });
-
-    const barName = slides[index].getAttribute('data-bar').split(' ');
-    leftName.textContent = barName[0];
-    rightName.textContent = barName[1];
-}
-
-function splitImageAnimation() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-setInterval(splitImageAnimation, 2500);
-
-document.addEventListener('DOMContentLoaded', () => {
-    showSlide(currentSlide);
-});
-
-// index-4 跑馬燈
 document.addEventListener("DOMContentLoaded", () => {
     // 遍歷每個跑馬燈容器
     document.querySelectorAll('.marquee-container').forEach(container => {
@@ -154,12 +127,5 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (feedbackCardsContainer.scrollLeft <= 0) {
             feedbackCardsContainer.scrollLeft = 0; // 不超過左邊界
         }
-    });
-});
-
-// smoove特效
-$(document).ready(function() {
-    $('.smoove').smoove({
-        offset: '5%'
     });
 });
