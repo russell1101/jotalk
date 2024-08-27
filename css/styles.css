@@ -20,6 +20,7 @@
     --alpha-w-80: rgba(255, 255, 255, .8);
     --alpha-b-20: rgba(0, 0, 0, .2);
     --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
     --alpha-lg-10: rgba(88, 88, 88, 0.1);
 }
 
@@ -448,7 +449,7 @@ section {
 }
 
 #forum .btn:hover {
-    background-color: var(--darkgrey);
+    background-color: var(--black);
 }
 
 .container {
@@ -568,24 +569,24 @@ section {
     top: 0;
     bottom: 0;
     pointer-events: none;
+    font-family: "Mallanna", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: clamp(.9rem, 3vw, 1.8rem);
+    letter-spacing: .1rem;
+    color: var(--white);
 }
 
 .bar-name-left {
     position: absolute;
-    left: 20px;
-    bottom: 20px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+    left: 5%;
+    bottom: 4%;
 }
 
 .bar-name-right {
     position: absolute;
-    right: 20px;
-    top: 20px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+    right: 5%;
+    top: 4%;
 }
 
 .center-text {
@@ -632,7 +633,7 @@ section {
 }
 
 .toBarList:hover {
-    background-color: var(--darkgrey);
+    background-color: var(--black);
 }
 
 /* index-4 */
@@ -657,7 +658,117 @@ section {
     justify-content: center;
     height: 80vh;
     width: 80%;
+    margin-bottom: 15%;
 }
+
+.content .txt-3{
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: clamp(.8rem, 1.1vw, 1.5rem);
+    letter-spacing: .2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--darkgrey);
+    margin-bottom: 6%;
+} 
+
+.content .txt-4{
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: clamp(1rem, 1.6vw, 1.8rem);
+    letter-spacing: .2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--darkgrey);
+    margin-bottom: 5%;
+} 
+
+.joinBtn{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--alpha-b-60);
+    color: #fff;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
+        inset -2px -2px rgba(0, 0, 0, 0.027);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fff;
+    border-radius: 50px;
+    width: auto;
+    letter-spacing: .2rem;
+    font-size: clamp(.5rem, 2.5vw, .9rem);
+    white-space: nowrap;
+    transition: 0.35s ease-in-out;
+}
+
+.joinBtn:hover {
+    background-color: var(--black);
+}
+
+/* 跑馬燈 */
+.index-4-feedBack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-color: var(--alpha-b-40);
+}
+
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 120s linear infinite;
+}
+
+.marquee span {
+    display: inline-block;
+    padding: 0 1rem;
+    font-family: "Mallanna", sans-serif;
+    font-weight: 400;
+    color: var(--alpha-w-60);
+}
+
+.feedback-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.feedback-cards {
+    display: flex;
+    transition: transform 3s ease;
+}
+
+.feedback-card {
+    background: #ffffffac;
+    padding: 20px;
+    margin: 10px 10px;
+    flex-shrink: 0;
+    width: 300px;
+    height: 150px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-30%);
+    }
+}
+
+
 
 /* 登入按鈕表單 */
 /* 遮罩層樣式 */
