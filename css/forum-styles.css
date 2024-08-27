@@ -1,12 +1,28 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
 /* utf8一定要在行數1 */
 /* import 一定要在第二行 */
-/* 重置所有標籤的樣式 */
 
 /* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
 
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
 
 * {
     margin: 0;
@@ -421,7 +437,7 @@ main {
 
 /* 布告欄內容區域 */
 .body_bulletin .bulletin_content {
-    padding: 16px 19px 36px 19px;
+    padding: 25px 20px 25px 20px;
     /* 內容區域的內邊距，上下36px，左右19px */
     flex-grow: 1;
     /* 填充剩餘空間 */
@@ -460,10 +476,10 @@ main {
 }
 
 /* 每個內容區域的樣式 */
-.bulletin_content div {
+/* .bulletin_content div {
     padding: 20px;
     /* 調整內容區域的內邊距 */
-}
+/* } */ 
 
 /* 標題和段落的行距 */
 .bulletin_content h2 {
@@ -472,12 +488,59 @@ main {
     /* 標題字體大小 */
 }
 
-.bulletin_content p {
+.bulletin_content h3 {
     margin-top: 5px;
     font-size: 12px;
     /* 段落字體大小 */
     line-height: 1;
     /* 行距 */
+}
+
+.bulletin_content p {
+    margin-top: 5px;
+    font-size: 12px;
+    /* 段落字體大小 */
+    line-height: 1.3;
+    /* 行距 */
+}
+
+.bulletin_content .body_special_content p {
+    margin: 10px 0;
+    font-size: 12px;
+    /* 段落字體大小 */
+    line-height: 1.3;
+    /* 行距 */
+}
+
+/* 針對 .body_special_content 下的 h3 和 p */
+.body_special_content h3 + p {
+    text-indent: 1em;
+    /* 段落縮排，增加空格 */
+}
+
+/* 調整“前往兌換福利>>”的位置 */
+.special_more-link {
+    position: relative;
+    /* 相對定位，讓子元素以這個區域為基準 */
+    text-align: right;
+    margin-top: 20px;
+    /* 與上方內容保持距離 */
+}
+
+.special_more-link a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.bulletin_content .body_rank_content {
+    font-size: 12px; /* 這裡設定想要的文字大小 */
+}
+
+.bulletin_content .body_rank_content h2 {
+    margin-bottom: 10px;
 }
 
 /* ----------body(左側) 熱門標籤影片---------- */
@@ -534,7 +597,8 @@ main {
 .body_tagVdo .tagVdo_content {
     width: 100%;
     padding-left: 10px;
-    height: 350px; /* 根據內容自適應高度 */
+    height: 350px;
+    font-size: 12px;
 }
 
 .body_tagVdo .body_hotTag_content,
@@ -543,7 +607,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-
+    font-weight: bold; /* 將區域內所有文字加粗 */
 }
 
 /* 標籤內容區域 */
@@ -611,7 +675,6 @@ main {
 
 .user-icons img {
     width: 100%;
-    height: 30px;
     margin-left: 5px;
 }
 
@@ -673,36 +736,48 @@ main {
     /* 确保在最上层 */
 }
 
-/* 类别标签区域 */
-.body_news .news_categories {
-    /* border: 1px solid transparent; */
-    color: #155569;
+/* 容器样式 */
+.news_container,
+.news_container,
+.teach_container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* 确保容器占满父容器宽度 */
+    font-size: 14px;
 }
 
+.news_categories,
+.atc_categories,
+.teach_categories {
+    display: flex;
+    gap: 20px; /* 类别之间的间距 */
+}
+
+.news_more-link,
+.atc_more-link,
+.teachs_more-link {
+    margin-left: auto; /* 将按钮推到右边 */
+    height: 34px;
+}
+
+/* 类别标签样式 */
 .body_news .news_categories div {
     padding: 1px 10px;
     cursor: pointer;
     border-radius: 10px;
     border: 1px solid transparent;
-    /* transition: border-color 0.3s ease, background-color 0.3s ease; */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .body_news .news_categories .active {
-    pointer-events: none;
-    border: 1px solid transparent;
-    /* 当前选中项的边框 */
     background-color: #155569;
-    /* 当前选中项的背景色 */
     color: #ffffff;
-
+    border: 1px solid transparent;
 }
 
 .body_news .news_categories div:hover {
     border: 1px solid #155569;
-    /* background-color: transparent; */
-    /* 悬停时的背景色 */
 }
 
 /* 内容区域样式 */
@@ -710,36 +785,19 @@ main {
 .limitEvt_content,
 .normalEvt_content {
     display: none;
-    /* 默认隐藏 */
     grid-template-columns: repeat(2, 1fr);
-    /* 两列布局 */
     grid-template-rows: repeat(2, 1fr);
-    /* 两行布局 */
     gap: 10px;
-    /* 单元格之间的间距 */
     height: 100%;
-    /* 占满父容器高度 */
-    margin: 10px 0;
-    /* 外边距 */
     box-sizing: border-box;
-    /* 包括边框和内边距 */
     overflow: hidden;
-    /* 确保内容不溢出 */
 }
 
 .news_content.active,
 .limitEvt_content.active,
 .normalEvt_content.active {
+    display: grid; /* 使用 grid 显示内容 */
     padding-top: 10px;
-    /* border-top: solid 1px #000; */
-    display: grid;
-    /* 使用 grid 顯示內容 */
-    grid-template-columns: repeat(2, 1fr);
-    /* 兩列佈局 */
-    grid-template-rows: repeat(2, 1fr);
-    /* 兩行佈局 */
-    gap: 10px;
-    /* 單元格之間的間距 */
 }
 
 /* 每个内容项的样式 */
@@ -753,9 +811,7 @@ main {
     background-size: cover;
     background-position: center;
     position: relative;
-    /* 使标题区域在底部 */
-    height: 100%;
-    /* 占满父容器的高度 */
+    height: 100%; /* 占满父容器的高度 */
     overflow: hidden;
 }
 
@@ -764,36 +820,48 @@ main {
 .limitEvt_content .limitEvt h2,
 .normalEvt_content .normalEvt h2 {
     padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* 半透明背景 */
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
     color: white;
-    /* 文字颜色 */
     width: 100%;
-    /* 占满宽度 */
     text-align: center;
-    bottom: 0;
-    /* 靠底部对齐 */
-    box-sizing: border-box;
-    /* 包括边框和内边距 */
-    z-index: 1;
-    /* 确保在图片之上 */
+    bottom: 0; /* 靠底部对齐 */
+    box-sizing: border-box; /* 包括边框和内边距 */
+    z-index: 1; /* 确保在图片之上 */
     font-size: 12px;
 }
 
-/* 其他样式 */
-.news_more-link {
-    display: none;
-    /* 默认隐藏 */
-    text-align: right;
-}
-
-.news_more-link a {
+/* 按钮样式 */
+.news_more-link button,
+.atc_more-link button,
+.teachs_more-link button{
+    width: 140px;
     font-size: 12px;
+    padding: 5px 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 20px 0 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.active-link {
-    display: block;
-    /* 显示活动链接 */
+.news_more-link button:hover,
+.atc_more-link button:hover,
+.teachs_more-link button:hover {
+    background-color: #e6b800; /* 按钮的悬停背景色 */
+}
+
+/* 图片背景样式 */
+.pic1,
+.pic2,
+.pic3,
+.pic4 {
+    background-position: center;
+    background-size: cover; /* 确保图片占满容器 */
+    height: 100%; /* 占满父容器高度 */
+    width: 100%; /* 占满父容器宽度 */
+    border-radius: 10px; /* 圆角 */
+    overflow: hidden;
 }
 
 .pic1 {
@@ -812,22 +880,6 @@ main {
     background-image: url('../img/forum/news_pic4.jpg');
 }
 
-/* 活动栏图片样式 */
-.pic1,
-.pic2,
-.pic3,
-.pic4 {
-    background-position: center;
-    background-size: cover;
-    /* 确保图片占满容器 */
-    height: 100%;
-    /* 占满父容器高度 */
-    width: 100%;
-    /* 占满父容器宽度 */
-    border-radius: 10px;
-    /* 圆角 */
-    overflow: hidden;
-}
 
 
 /* 右侧文章欄容器 */
@@ -841,6 +893,7 @@ main {
     position: relative;
     z-index: 1;
     /* 确保在最上层 */
+    margin-top: 20px;
 }
 
 /* 类别标签区域 */
@@ -952,8 +1005,6 @@ main {
 
 /* "更多" 链接样式 */
 .atc_more-link {
-    display: none;
-    /* 默认隐藏 */
     text-align: right;
 }
 
@@ -972,6 +1023,7 @@ main {
     box-sizing: border-box;
     position: relative;
     z-index: 1;
+    margin-top: 20px;
 }
 
 /* 教學類別標籤 */
@@ -1036,61 +1088,41 @@ main {
 
 /* 六大基酒圖片 */
 .baseWinePic1 {
-    background-image: url('../img/forum/teach_1.jpg');
+    background-image: url('../img/forum/forum_right_pic/base1.jpg');
     cursor: pointer;
 }
 
 .baseWinePic2 {
-    background-image: url('../img/forum/teach_1.jpg');
+    background-image: url('../img/forum/forum_right_pic/base2.jpg');
     cursor: pointer;
 }
 
 .baseWinePic3 {
-    background-image: url('../img/forum/teach_1.jpg');
+    background-image: url('../img/forum/forum_right_pic/base3.jpg');
 }
 
 .baseWinePic4 {
-    background-image: url('../img/forum/teach_1.jpg');
+    background-image: url('../img/forum/forum_right_pic/base4.jpg');
     cursor: pointer;
 }
 
 /* 經典調酒圖片 */
 .bartendWinePic1 {
-    background-image: url('../img/forum/news_pic1.jpg');
+    background-image: url('../img/forum/forum_right_pic/bartend1.jpg');
     cursor: pointer;
 }
 
 .bartendWinePic2 {
-    background-image: url('../img/forum/news_pic1.jpg');
+    background-image: url('../img/forum/forum_right_pic/bartend2.jpg');
     cursor: pointer;
 }
 
 .bartendWinePic3 {
-    background-image: url('../img/forum/news_pic1.jpg');
+    background-image: url('../img/forum/forum_right_pic/bartend3.jpg');
 }
 
 .bartendWinePic4 {
-    background-image: url('../img/forum/news_pic1.jpg');
-    cursor: pointer;
-}
-
-/* 調酒教學圖片 */
-.teachWinePic1 {
-    background-image: url('../img/forum/news_pic2.jpg');
-    cursor: pointer;
-}
-
-.teachWinePic2 {
-    background-image: url('../img/forum/news_pic2.jpg');
-    cursor: pointer;
-}
-
-.teachWinePic3 {
-    background-image: url('../img/forum/news_pic2.jpg');
-}
-
-.teachWinePic4 {
-    background-image: url('../img/forum/news_pic2.jpg');
+    background-image: url('../img/forum/forum_right_pic/bartend4.jpg');
     cursor: pointer;
 }
 
@@ -1102,11 +1134,7 @@ main {
 .bartendWinePic1,
 .bartendWinePic2,
 .bartendWinePic3,
-.bartendWinePic4,
-.teachWinePic1,
-.teachWinePic2,
-.teachWinePic3,
-.teachWinePic4 {
+.bartendWinePic4 {
     background-position: center;
     background-size: cover;
     /* 确保图片占满容器 */
@@ -1122,8 +1150,6 @@ main {
 
 /* "更多" 链接样式 */
 .teachs_more-link {
-    display: none;
-    /* 默认隐藏 */
     text-align: right;
 }
 
