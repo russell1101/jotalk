@@ -62,7 +62,7 @@ a {
 
 /* 設置 body 背景圖 */
 body {
-    background-image: url(../../img/jotalk_background.jpg);
+    background-image: url(../../img/member/member-bg.png);
     /* 背景圖 URL */
     background-size: cover;
     /*使背景圖覆蓋整個頁面*/
@@ -271,6 +271,13 @@ main {
     justify-content: center;
     
 }
+.container {
+    display: flex;
+    flex-direction: column; /* 確保 section 垂直排列 */
+    justify-content: center; /* 在垂直方向上居中 */
+    align-items: center; /* 水平居中 */
+    gap: 5%; /* 设置垂直间距 */
+}
 
 .title {
     align-self: flex-start;
@@ -291,7 +298,7 @@ section{
     align-items: center;
 }
 
-#level {
+#level,#new,#other{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -303,8 +310,8 @@ section{
 }
 
 .wrap {
-    width: 80%;
-    margin-bottom: 2%;
+    width: 75%;
+    margin: 5% 0 5% 0;
     display: flex;
     justify-content: flex-end; /* 将内容靠右对齐 */
     align-items: center; /* 在垂直方向上居中 */
