@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>forum-Teach</title>
     <link rel="stylesheet" href="../css/forum/forum_teach.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="../Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="../Footer_element/Footer.css">
 </head>
 
 <body>
@@ -42,8 +47,8 @@
         <div class="forum_slogan">
             <h1>Let's Jotalk</h1>
             <!-- <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容"> -->
-                <!-- <label for="">產品搜尋:</label> -->
-                <!-- <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
+            <!-- <label for="">產品搜尋:</label> -->
+            <!-- <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
                     placeholder="搜尋所有內容">
                 <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋">
             </form> -->
@@ -104,26 +109,90 @@
 
                 <!-- 調酒教學 -->
                 <div class="teach_picTeach" id="teach_teachWine">
-                    <section id="pic3-1" class="section"></section>
-                    <section id="pic3-2" class="section"></section>
-                    <section id="pic3-3" class="section"></section>
-                    <section id="pic3-4" class="section"></section>
-                    <section id="pic3-5" class="section"></section>
+                    <section id="pic3-1" class="section">
+                        <div>
+                            <iframe width="900" height="560"
+                                src="https://www.youtube.com/embed/b0IuTL3Z-kk?si=uJstMqM7FLM_X30B"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </section>
+                    <section id="pic3-2" class="section">
+                        <div>
+                            <iframe width="900" height="560"
+                                src="https://www.youtube.com/embed/ytSyvTKgKO8?si=GbB-V7_zckeFAQz9"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </section>
+                    <section id="pic3-3" class="section">
+                        <div>
+                            <iframe width="900" height="560"
+                                src="https://www.youtube.com/embed/AWnIqpsfyPU?si=JO_n8th_oibJMg1e"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </section>
+                    <section id="pic3-4" class="section">
+                        <div>
+                            <iframe width="900" height="560"
+                                src="https://www.youtube.com/embed/IRkM8jsG-hY?si=pM5qk5AC37ELK4sF"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </section>
+                    <section id="pic3-5" class="section">
+                        <div>
+                            <iframe width="900" height="560"
+                                src="https://www.youtube.com/embed/MRcXtKSk7lo?si=vxGyp9pKGcIdJ3nm"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </section>
                 </div>
                 <div class="site-headerTeach">
                     <ul class="indicator">
-                        <li><a href="#pic3-1">video-1</a></li>
-                        <li><a href="#pic3-2">video-2</a></li>
-                        <li><a href="#pic3-3">video-3</a></li>
-                        <li><a href="#pic3-4">video-4</a></li>
-                        <li><a href="#pic3-5">video-5</a></li>
+                        <li><a href="#pic3-1">入門款介紹</a></li>
+                        <li><a href="#pic3-2">在家也能調</a></li>
+                        <li><a href="#pic3-3">器材大哉問</a></li>
+                        <li><a href="#pic3-4">客製化研發</a></li>
+                        <li><a href="#pic3-5">把酒入菜中</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
+    <!-- 步驟二：載入root元素 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // 步驟三：建立 React 元件
+        function App() {
+            return (
+                <Footer />
+            )
+        }
 
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />)
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     <script src="../js/forum/forum_teach.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

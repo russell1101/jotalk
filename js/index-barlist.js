@@ -26,13 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // index-4 跑馬燈
 document.addEventListener("DOMContentLoaded", () => {
-    // 設定跑馬燈
+    initMarquee();  // 初始化跑馬燈
+    initFeedbackCards();  // 初始化字卡移動
+});
+
+function initMarquee() {
     document.querySelectorAll('.marquee-container').forEach(container => {
         const marquee = container.querySelector('.marquee');
         const spanWidth = marquee.firstElementChild.offsetWidth;
         const containerWidth = container.offsetWidth;
 
-        // 確保有足夠的克隆
         const repeatCount = Math.ceil(containerWidth / spanWidth) * 3;
         for (let i = 0; i < repeatCount; i++) {
             marquee.appendChild(marquee.firstElementChild.cloneNode(true));
@@ -40,12 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         marquee.style.animationPlayState = 'running';
     });
+}
 
-    // 控制字卡的移動和拖曳
+function initFeedbackCards() {
     const feedbackCardsContainer = document.getElementById("feedbackCards");
     const feedbackCards = document.querySelectorAll(".feedback-card");
 
-    // 克隆字卡以實現無縫循環
     function cloneFeedbackCards() {
         const totalCards = feedbackCards.length;
 
@@ -55,11 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 初始化字卡位置
     let currentIndex = 0;
     const cardWidth = feedbackCards[0].offsetWidth + 20; // 20是邊距
 
-    // 初始化克隆字卡四次
     for (let i = 0; i < 4; i++) {
         cloneFeedbackCards();
     }
@@ -67,23 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
     function moveFeedbackCards() {
         const offset = currentIndex * cardWidth;
 
-        // 移動字卡
         feedbackCardsContainer.style.transition = 'transform 0.5s ease';
         feedbackCardsContainer.style.transform = `translateX(-${offset}px)`;
 
-        // 檢查第10張字卡是否出現在最右側
         if (currentIndex >= feedbackCards.length) {
             setTimeout(() => {
                 feedbackCardsContainer.style.transition = 'none';
                 feedbackCardsContainer.style.transform = 'translateX(0)';
                 currentIndex = 0;
-            }, 500); // 在動畫結束後重置位置
+            }, 500);
         } else {
             currentIndex++;
         }
     }
 
-    // 設定字卡移動的間隔
     setInterval(moveFeedbackCards, 2000);
-});
+}
 
