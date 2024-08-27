@@ -23,17 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-<<<<<<< HEAD
-=======
-// smoove特效
-$(document).ready(function() {
-    $('.smoove').smoove({
-        offset: '40%'
-    });
-});
-
->>>>>>> 37fc8fa3c024fe588ace150f78128093c9081aae
-
 // 會員頁面
 document.addEventListener('DOMContentLoaded', function () {
     // 初始化时设置默认收合的 .store_month 背景色为 #585858

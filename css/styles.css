@@ -295,7 +295,7 @@ section {
 }
 
 #cutScene .msgCol ul {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: .6rem 2rem;
     border-radius: 50px;
     margin: 5% 0;
@@ -371,12 +371,9 @@ section {
 #forum {
     display: flex;
     flex-direction: row;
-    /* position 專門給absolute的定位依據 */
     overflow: hidden;
     justify-content: center;
-    /* 水平居中 */
     align-items: center;
-    /* 垂直居中 */
 }
 
 #forum .title {
@@ -407,17 +404,17 @@ section {
     letter-spacing: 0.2rem;
     line-height: 3.5rem;
     color: var(--alpha-w-80);
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 #forum h3 {
     font-weight: 350;
-    font-size: clamp(.7rem, 1.5vw, 2rem);
+    font-size: clamp(.8rem, 1.5vw, 1.5rem);
     white-space: nowrap;
-    letter-spacing: 0.4rem;
+    letter-spacing: 0.6rem;
     line-height: 2.5rem;
     color: var(--alpha-w-80);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #forum .btn {

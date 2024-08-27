@@ -293,8 +293,10 @@ main {
 
 /*-------------------- 左側 ------------------*/
 .barlist_tag {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
     display: flex;
-    margin-top: 102px;
+    margin-top: 10rem;
     width: 20%;
     max-width: 160px;
     align-items: center;
@@ -308,14 +310,16 @@ main {
 }
 
 .tag_category.selected {
-    border: 1px solid #000000;
-    /* 被選取時加上外框線 */
+    border: 1px solid var(--darkgrey);
 }
 
 .tag_title {
     font-weight: bold;
     cursor: pointer;
-    margin-bottom: 5px;
+    margin: .5rem;
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: .1rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -325,12 +329,22 @@ main {
     display: none;
 }
 
+
+.tag_items {
+    margin: .5rem 0;
+    white-space: nowrap;
+}
+
 .tag_item,
 .tag_item .north,
 .tag_item .south,
 .tag_item .central {
-    margin-bottom: 3px;
-    font-size: 0.9em;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    margin: 5px 5px;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: .1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -340,62 +354,81 @@ main {
 
 /* 選中大標籤+小標籤的外框線 */
 .selected {
-    border: 1px solid #000;
     border-radius: 10px;
-    width: 120px;
+    width: 130px;
 }
 
 .tag_item.active,
 .tag_item .north.active,
 .tag_item .south.active,
 .tag_item .central.active {
-    font-weight: bold;
+    color: var(--primary);
+    font-weight: 800;
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    transition-duration: transform 0.08s ease;
 
 }
 
 /* 選中的小標籤的樣式 */
-.tag_item.active,
-.tag_item .north.active,
-.tag_item .south.active,
-.tag_item .central.active {
-    font-weight: bold;
+.tag_item:hover,
+.tag_item .north:hover,
+.tag_item .south:hover,
+.tag_item .central:hover {
+    color: var(--primary);
+    font-weight: 600;
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    transition-duration: transform 0.08s ease;
 }
 
 /* ------------- 右邊背景 -------------*/
 .barlist_content {
     width: 80%;
     max-width: 900;
-    margin: 20px 0 0 80px;
+    margin: 4rem 0 0 2rem;
 }
 
 /* ------------- 響應式設計 -------------*/
 @media screen and (max-width: 1024px) {
     .barlist_content {
         margin: 20px 0 0 0;
-        /* 在小解析度下去掉左邊距 */
     }
+}
+
+.barlist_filters {
+    height: 2rem;
+    display: flex;
+}
+
+.filter_item {
+    margin-right: 1rem;
+    padding: 15px;
+    letter-spacing: .3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: center;
 }
 
 /* ------------- 右上類別切換 -------------*/
 .barlist_content .barlist_filters {
-    /* border: 1px solid transparent; */
-    color: #000000;
+    color: var(--darkgrey);
     display: flex;
     justify-content: flex-start;
 }
 
 .barlist_content .barlist_filters div {
-    padding: 1px 10px;
+    padding: 0 10px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 30px;
     border: 1px solid transparent;
     /* transition: border-color 0.3s ease, background-color 0.3s ease; */
     padding: 0 20px;
@@ -404,18 +437,14 @@ main {
 .barlist_content .barlist_filters .active {
     pointer-events: none;
     border: 1px solid transparent;
-    /* 当前选中项的边框 */
-    background-color: #000000;
-    /* 当前选中项的背景色 */
+    background-color: var(--darkgrey);
     color: #ffffff;
     padding: 0 20px;
 
 }
 
 .barlist_content .barlist_filters div:hover {
-    border: 1px solid #000000;
-    /* background-color: transparent; */
-    /* 悬停时的背景色 */
+    border: 1px solid var(--darkgrey);
 }
 
 /* ------------- 右中標籤儲存格 -------------*/
@@ -435,18 +464,34 @@ main {
 .tag_item_in_box {
     display: flex;
     align-items: center;
-    background: #155569;
-    margin-right: 4px;
+    background: var(--lightgrey);
+    height: 2rem;
+    margin-right: .5rem;
     padding: 4px;
-    border-radius: 4px;
+    border-radius: 30px;
     position: relative;
+    display: flex;
 }
 
-.tag_item_in_box .remove-tag {
-    margin-left: 8px;
+.tag_item_in_box {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    padding: 0 .5rem 0 1rem;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: .1rem;
     cursor: pointer;
-    font-size: 12px;
     color: rgb(255, 255, 255);
+    
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-justify: center;
+}
+
+.remove-tag{
+    margin-left: 10px;
+    font-weight: 300;
 }
 
 
@@ -497,11 +542,6 @@ a:visited {
     /* 繼承父元素的顏色 */
 }
 
-/* a.button,
-a.tag {
-    text-decoration: none;
-    transition-property: background, color;
-} */
 
 .tags--overflow-container {
     padding-inline: calc(var(--content-padding) + 4px);
@@ -562,7 +602,7 @@ a.tag {
     grid-auto-flow: dense;
     /* remove altogether when grid span can be clamped */
     gap: var(--grid-gap);
-    margin: 50px auto;
+    margin: 2rem auto;
 }
 
 
