@@ -1,12 +1,28 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
 /* utf8一定要在行數1 */
 /* import 一定要在第二行 */
-/* 重置所有標籤的樣式 */
 
 /* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
 
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
 
 * {
     margin: 0;
@@ -421,7 +437,7 @@ main {
 
 /* 布告欄內容區域 */
 .body_bulletin .bulletin_content {
-    padding: 16px 19px 36px 19px;
+    padding: 25px 20px 25px 20px;
     /* 內容區域的內邊距，上下36px，左右19px */
     flex-grow: 1;
     /* 填充剩餘空間 */
@@ -472,12 +488,59 @@ main {
     /* 標題字體大小 */
 }
 
-.bulletin_content p {
+.bulletin_content h3 {
     margin-top: 5px;
     font-size: 12px;
     /* 段落字體大小 */
     line-height: 1;
     /* 行距 */
+}
+
+.bulletin_content p {
+    margin-top: 5px;
+    font-size: 12px;
+    /* 段落字體大小 */
+    line-height: 1.3;
+    /* 行距 */
+}
+
+.bulletin_content .body_special_content p {
+    margin: 10px 0;
+    font-size: 12px;
+    /* 段落字體大小 */
+    line-height: 1.3;
+    /* 行距 */
+}
+
+/* 針對 .body_special_content 下的 h3 和 p */
+.body_special_content h3 + p {
+    text-indent: 1em;
+    /* 段落縮排，增加空格 */
+}
+
+/* 調整“前往兌換福利>>”的位置 */
+.special_more-link {
+    position: relative;
+    /* 相對定位，讓子元素以這個區域為基準 */
+    text-align: right;
+    margin-top: 20px;
+    /* 與上方內容保持距離 */
+}
+
+.special_more-link a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.bulletin_content .body_rank_content {
+    font-size: 12px; /* 這裡設定想要的文字大小 */
+}
+
+.bulletin_content .body_rank_content h2 {
+    margin-bottom: 10px;
 }
 
 /* ----------body(左側) 熱門標籤影片---------- */
@@ -534,7 +597,8 @@ main {
 .body_tagVdo .tagVdo_content {
     width: 100%;
     padding-left: 10px;
-    height: 350px; /* 根據內容自適應高度 */
+    height: 350px;
+    font-size: 12px;
 }
 
 .body_tagVdo .body_hotTag_content,
@@ -543,7 +607,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-
+    font-weight: bold; /* 將區域內所有文字加粗 */
 }
 
 /* 標籤內容區域 */
@@ -611,7 +675,6 @@ main {
 
 .user-icons img {
     width: 100%;
-    height: 30px;
     margin-left: 5px;
 }
 
@@ -681,6 +744,7 @@ main {
     justify-content: space-between;
     align-items: center;
     width: 100%; /* 确保容器占满父容器宽度 */
+    font-size: 14px;
 }
 
 .news_categories,
@@ -1024,61 +1088,41 @@ main {
 
 /* 六大基酒圖片 */
 .baseWinePic1 {
-    background-image: url('../img/forum/teach_1.jpg');
+    background-image: url('../img/forum/forum_right_pic/base1.jpg');
     cursor: pointer;
 }
 
 .baseWinePic2 {
-    background-image: url('../img/forum/teach_1.jpg');
+    background-image: url('../img/forum/forum_right_pic/base2.jpg');
     cursor: pointer;
 }
 
 .baseWinePic3 {
-    background-image: url('../img/forum/teach_1.jpg');
+    background-image: url('../img/forum/forum_right_pic/base3.jpg');
 }
 
 .baseWinePic4 {
-    background-image: url('../img/forum/teach_1.jpg');
+    background-image: url('../img/forum/forum_right_pic/base4.jpg');
     cursor: pointer;
 }
 
 /* 經典調酒圖片 */
 .bartendWinePic1 {
-    background-image: url('../img/forum/news_pic1.jpg');
+    background-image: url('../img/forum/forum_right_pic/bartend1.jpg');
     cursor: pointer;
 }
 
 .bartendWinePic2 {
-    background-image: url('../img/forum/news_pic1.jpg');
+    background-image: url('../img/forum/forum_right_pic/bartend2.jpg');
     cursor: pointer;
 }
 
 .bartendWinePic3 {
-    background-image: url('../img/forum/news_pic1.jpg');
+    background-image: url('../img/forum/forum_right_pic/bartend3.jpg');
 }
 
 .bartendWinePic4 {
-    background-image: url('../img/forum/news_pic1.jpg');
-    cursor: pointer;
-}
-
-/* 調酒教學圖片 */
-.teachWinePic1 {
-    background-image: url('../img/forum/news_pic2.jpg');
-    cursor: pointer;
-}
-
-.teachWinePic2 {
-    background-image: url('../img/forum/news_pic2.jpg');
-    cursor: pointer;
-}
-
-.teachWinePic3 {
-    background-image: url('../img/forum/news_pic2.jpg');
-}
-
-.teachWinePic4 {
-    background-image: url('../img/forum/news_pic2.jpg');
+    background-image: url('../img/forum/forum_right_pic/bartend4.jpg');
     cursor: pointer;
 }
 
@@ -1090,11 +1134,7 @@ main {
 .bartendWinePic1,
 .bartendWinePic2,
 .bartendWinePic3,
-.bartendWinePic4,
-.teachWinePic1,
-.teachWinePic2,
-.teachWinePic3,
-.teachWinePic4 {
+.bartendWinePic4 {
     background-position: center;
     background-size: cover;
     /* 确保图片占满容器 */
