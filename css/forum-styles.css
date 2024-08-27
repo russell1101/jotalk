@@ -837,7 +837,7 @@ main {
     width: 140px;
     font-size: 12px;
     padding: 5px 10px;
-    background-color: #ffcc00;
+    background-color: #FFA800;
     border: none;
     border-radius: 20px 0 10px 20px;
     color: white;
@@ -848,7 +848,7 @@ main {
 .news_more-link button:hover,
 .atc_more-link button:hover,
 .teachs_more-link button:hover {
-    background-color: #e6b800; /* 按钮的悬停背景色 */
+    background-color: #d68f01; /* 按钮的悬停背景色 */
 }
 
 /* 图片背景样式 */
