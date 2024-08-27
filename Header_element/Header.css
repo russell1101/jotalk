@@ -279,6 +279,12 @@ body {
 
 
 /* login按鈕位置 */
+#header .account_write {
+    position: absolute;
+    top: 40px;
+    right: 160px;
+}
+
 #header .account_login,
 #header .account_logout {
     position: absolute;
@@ -287,7 +293,8 @@ body {
 }
 
 #header .account_login button,
-.account_logout button {
+.account_logout button,
+.account_write button {
     background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
             rgba(225, 225, 225, 0.8));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
@@ -298,7 +305,14 @@ body {
     border-radius: 99px;
     opacity: 0.7;
     cursor: pointer;
+    transition: 0.2s ease-in-out;
     /* 如果需要更改按鈕的透明度，可以使用 opacity */
+}
+
+#header .account_login button:hover,
+.account_logout :hover,
+.account_write button:hover {
+    background-color: #ffffff;
 }
 
 #header .account_login a {

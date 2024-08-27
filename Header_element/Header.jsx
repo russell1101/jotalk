@@ -1,4 +1,11 @@
 function Header(props) {
+    const sloganNone = {
+        display: props.search ? 'none' : 'block'
+    };
+    const btnNone = {
+        display: props.btn ? 'block' : 'none'
+    };
+
     return (
         <>
             <header id="header" style={{ backgroundImage: `url(${props.bg})` }}>
@@ -17,11 +24,14 @@ function Header(props) {
                 </div>
 
 
-                <div className="forum_slogan">
+                <div className="forum_slogan" style={sloganNone}>
                     <h1>{props.h1}</h1>
                     <p>{props.p}</p>
                 </div>
 
+                <div className="account_write" style={btnNone}>
+                    <button id="writeBtn">發表文章</button>
+                </div>
 
                 <div className="account_login">
                     <button id="loginBtn">會員登入</button>
