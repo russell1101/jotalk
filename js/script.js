@@ -63,14 +63,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-function aaa() {
+function login() {
     // 會員登入頁
     // 取得按鈕、彈出視窗和遮罩層的元素
     let loginBtn = document.getElementById("loginBtn");
     let myWindow = document.getElementById("loginWindow");
     let overlay = document.getElementById("overlay");
     let close = document.getElementById("closebtn");
+    let logoutBtn = document.getElementById("logoutBtn");
 
+// 登出按鈕
+    logoutBtn.onclick = function () {
+        alert('登出成功');
+        window.localStorage.removeItem('isLoggedIn');
+    }
 
     // 當使用者點擊登入按鈕時，顯示彈出視窗和遮罩層，並添加漸變效果
     loginBtn.onclick = function () {
@@ -98,6 +104,7 @@ function aaa() {
     };
 
 
+
     // 表單寫入localstorage
     // 登入 button要設定跳轉指令
     let btn1 = document.getElementById('btn_login');
@@ -109,6 +116,7 @@ function aaa() {
         let upw = document.getElementById('password');
         // 寫入到localStorage
         window.localStorage.setItem('password', password.value);
+        window.localStorage.setItem('isLoggedIn', 'true');  // 設置登入狀態為已登入
         if (email.value === '') {
             alert('未登錄用户');
         } else {
@@ -126,6 +134,7 @@ function aaa() {
         let upw = document.getElementById('password');
         // 寫入到localStorage
         window.localStorage.setItem('password', password.value);
+        window.localStorage.setItem('isLoggedIn', 'true');  // 設置登入狀態為已登入
         if (email.value == '') {
             alert(未登錄用户)
         } else {
@@ -145,9 +154,27 @@ function aaa() {
             element.addEventListener('click', function () {
 
                 alert(id + '登入成功');
+                window.localStorage.setItem('isLoggedIn', 'true');  // 設置登入狀態為已登入
                 window.location.href = './member.html';
             });
         }
     });
-
 }
+
+
+
+window.addEventListener('load', function () {
+    window.setInterval(function () {
+        // const loginBtn = document.getElementById("loginBtn");
+        const isLoggedIn = window.localStorage.getItem('isLoggedIn');
+        if (isLoggedIn === 'true') {
+            loginBtn.textContent = '會員登出';
+            loginBtn.style.display = 'none';
+            logoutBtn.style.display = 'block';
+        } else {
+            loginBtn.textContent = '會員登入';
+            loginBtn.style.display = 'block';
+            logoutBtn.style.display = 'none';
+        }
+    }, 10)
+});

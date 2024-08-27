@@ -1,8 +1,8 @@
-function Topbar(props) {
+function Header(props) {
     return (
         <>
-            <header id="topbar" style={{ backgroundImage: `url(${props.bg})` }}>
-                <div className="forum_head">
+            <header id="header" style={{ backgroundImage: `url(${props.bg})` }}>
+                <div className="topbar">
                     <h1 className="logo">
                         <a href="./index.html">
                             <img src="./img/logo.svg" alt="jotalkLogo" />
@@ -25,6 +25,10 @@ function Topbar(props) {
 
                 <div className="account_login">
                     <button id="loginBtn">會員登入</button>
+                </div>
+
+                <div className="account_logout">
+                    <button id="logoutBtn">會員登出</button>
                 </div>
 
                 <div id="overlay" className="overlay"></div>

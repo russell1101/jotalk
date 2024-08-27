@@ -17,9 +17,9 @@
     <!-- footer元件 -->
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
-    <!-- topbar元件 -->
-    <script type="text/babel" src="./Topbar_element/Topbar.jsx"></script>
-    <link rel="stylesheet" href="./Topbar_element/Topbar.css">
+    <!-- Header元件 -->
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
 </head>
 
 <body>
@@ -35,12 +35,12 @@
         function App() {
 
             React.useEffect(() => {
-                aaa();
+                login();
             }, []);
 
             // jsx語法
             return (
-                <Topbar h1='BAR LIST' p='酒吧清單' bg='./img/member/member-head-pic.jpg' />
+                <Header h1='BAR LIST' p='酒吧清單' bg='./img/member/member-head-pic.jpg' />
             )
 
         }
