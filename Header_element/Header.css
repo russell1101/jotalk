@@ -76,7 +76,7 @@ a {
 }
 
 /* 玻璃擬態 */
-#topbar .forum_head,
+#header .topbar,
 #badge,
 .points_history,
 #history {
@@ -126,13 +126,13 @@ body {
 /* ----------頁首區---------- */
 
 
-#topbar {
+#header {
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
     width: 100%;
-    /* 使 topbar 撐滿全寬 */
+    /* 使 header 撐滿全寬 */
     height: 400px;
-    /* 設置 topbar 高度 */
+    /* 設置 header 高度 */
     padding: 0;
     /* 確保沒有額外的 padding */
     margin: 0;
@@ -147,7 +147,7 @@ body {
     z-index: 1000;
 }
 
-#topbar .forum_head section {
+#header .topbar section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,13 +155,13 @@ body {
     height: 100vh;
 }
 
-#topbar .forum_head {
+#header .topbar {
     position: fixed;
     width: 90px;
     max-width: 550px;
     height: 90px;
     padding: 14px;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-left: 50px;
     display: flex;
     align-items: center;
@@ -173,7 +173,14 @@ body {
     z-index: 999;
 }
 
-#topbar .forum_head .logo {
+@media (max-width:1439px) {
+    #header .topbar {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+}
+
+#header .topbar .logo {
     width: 60px;
     height: 60px;
     display: flex;
@@ -183,17 +190,17 @@ body {
     /* 垂直居中 */
 }
 
-#topbar .forum_head .logo a {
+#header .topbar .logo a {
     width: 60px;
 }
 
-#topbar .forum_head.collapsed {
+#header .topbar.collapsed {
     width: 90px;
     border-radius: 99px;
     overflow: hidden;
 }
 
-#topbar .forum_head:hover {
+#header .topbar:hover {
     width: 40%;
     max-width: 550px;
     /* 滑鼠觸碰時擴展 */
@@ -205,7 +212,7 @@ body {
 
 
 
-#topbar .forum_head .menu {
+#header .topbar .menu {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
@@ -219,8 +226,8 @@ body {
     /* 菜單顯隱 */
 }
 
-/* topbar .forum_head 選項 hover效果 */
-#topbar .forum_head .menu a {
+/* header .topbar 選項 hover效果 */
+#header .topbar .menu a {
     display: block;
     color: var(--darkgrey);
     font-weight: 900;
@@ -230,9 +237,10 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
+    padding-bottom: 5px;
 }
 
-#topbar .forum_head .menu a::after {
+#header .topbar .menu a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -246,7 +254,7 @@ body {
     /* 改變 transition 參數 */
 }
 
-#topbar .forum_head .menu a:hover::after {
+#header .topbar .menu a:hover::after {
     left: 0;
     /* 展開到左邊界 */
     right: 0;
@@ -254,14 +262,14 @@ body {
 }
 
 
-#topbar .forum_head.collapsed .menu {
+#header .topbar.collapsed .menu {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease, visibility 0s 0.2s;
 }
 
 
-#topbar .forum_head:hover .menu {
+#header .topbar:hover .menu {
     opacity: 1;
     visibility: visible;
     transition: opacity 4s ease, visibility 0s 0.2s;
@@ -271,13 +279,15 @@ body {
 
 
 /* login按鈕位置 */
-#topbar .account_login {
+#header .account_login,
+#header .account_logout {
     position: absolute;
     top: 40px;
     right: 50px;
 }
 
-#topbar .account_login button {
+#header .account_login button,
+.account_logout button {
     background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
             rgba(225, 225, 225, 0.8));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
@@ -287,35 +297,36 @@ body {
     padding: 10px 20px;
     border-radius: 99px;
     opacity: 0.7;
+    cursor: pointer;
     /* 如果需要更改按鈕的透明度，可以使用 opacity */
 }
 
-#topbar .account_login a {
+#header .account_login a {
     color: #000000;
     padding: 10px 10px;
     text-align: center;
 }
 
-#topbar .forum_slogan {
+#header .forum_slogan {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: absolute;
-    /* 設置為 absolute 以便於在 topbar 中定位 */
+    /* 設置為 absolute 以便於在 header 中定位 */
     top: 50%;
-    /* 將其定位到 topbar 底部 */
+    /* 將其定位到 header 底部 */
     left: 30%;
     transform: translate(-50%, -50%);
     /* 水平居中 */
     padding: 20px;
 }
 
-#topbar .forum_slogan h1 {
+#header .forum_slogan h1 {
     color: #ffffff;
 }
 
-#topbar .forum_slogan p {
+#header .forum_slogan p {
     color: #ffffff;
 }
