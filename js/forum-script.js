@@ -73,42 +73,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 右上活動切換
 document.addEventListener('DOMContentLoaded', () => {
-    // 获取所有类别标签
+    // 獲取所有類別標籤
     const categories = document.querySelectorAll('.news_categories div');
-    // 获取所有内容区域
-    const contentSections = document.querySelectorAll('.body_news ul');
-    // 获取所有的 "更多" 链接
-    const moreLinks = document.querySelectorAll('.news_more-link');
+    // 獲取所有內容區域
+    const contentSections = document.querySelectorAll('.news_content, .limitEvt_content, .normalEvt_content');
+    // 獲取 "更多" 按鈕的父容器
+    const moreLinkContainer = document.querySelector('.news_more-link');
 
+    // 處理類別標籤點擊事件
     categories.forEach((category) => {
         category.addEventListener('click', () => {
-            // 移除所有类别标签的 active 类
+            // 移除所有類別標籤的 active 類
             categories.forEach((cat) => cat.classList.remove('active'));
-            // 添加 active 类到当前被点击的标签
+            // 添加 active 類到當前被點擊的標籤
             category.classList.add('active');
 
-            // 获取当前被点击标签的 data-target 属性
+            // 獲取當前被點擊標籤的 data-target 屬性
             const target = category.getAttribute('data-target');
 
-            // 隐藏所有内容区域
-            contentSections.forEach((section) => {
-                section.classList.remove('active');
-            });
+            // 隱藏所有內容區域
+            contentSections.forEach((section) => section.classList.remove('active'));
 
-            // 隐藏所有 "更多" 链接
-            moreLinks.forEach((link) => {
-                link.classList.remove('active-link');
-            });
+            // 顯示對應的內容區域
+            const activeSection = document.querySelector(`.${target}`);
+            activeSection.classList.add('active');
 
-            // 显示对应的内容区域和链接
-            document.querySelector(`.${target}`).classList.add('active');
-            document.querySelector(`.${target} ~ .news_more-link`).classList.add('active-link');
+            // 顯示 "更多" 按鈕
+            moreLinkContainer.classList.add('active-link');
         });
     });
 
-    // 默认显示热门活动内容
+    // 預設顯示熱門活動內容
     document.querySelector('.news_hotEvt').click();
 });
+
+
 
 // 右中文章欄切換
 document.addEventListener('DOMContentLoaded', () => {
