@@ -298,7 +298,7 @@ section{
     align-items: center;
 }
 
-#level,#new,#other{
+#level,#new{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -315,4 +315,14 @@ section{
     display: flex;
     justify-content: flex-end; /* 将内容靠右对齐 */
     align-items: center; /* 在垂直方向上居中 */
+}
+
+#other{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.844);
+    border-radius: 20px;
+    margin: 3% 0 3% 0;
 }
