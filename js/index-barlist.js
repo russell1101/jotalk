@@ -38,14 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
             marquee.appendChild(marquee.firstElementChild.cloneNode(true));
         }
 
+        // 讓文字從網頁加載時就開始滾動
         marquee.style.animationPlayState = 'running';
     });
+}
 
-    // 控制字卡的移動和拖曳
+function initFeedbackCards() {
     const feedbackCardsContainer = document.getElementById("feedbackCards");
     const feedbackCards = document.querySelectorAll(".feedback-card");
+    const cardsWrapper = document.querySelector('.feedback-cards-container');
 
-    // 克隆字卡以實現無縫循環
     function cloneFeedbackCards() {
         const totalCards = feedbackCards.length;
 
@@ -55,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 初始化字卡位置
     let currentIndex = 0;
     const cardWidth = feedbackCards[0].offsetWidth + 20; // 20是邊距
 
@@ -67,11 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function moveFeedbackCards() {
         const offset = currentIndex * cardWidth;
 
-        // 移動字卡
         feedbackCardsContainer.style.transition = 'transform 0.5s ease';
         feedbackCardsContainer.style.transform = `translateX(-${offset}px)`;
 
-        // 檢查第10張字卡是否出現在最右側
         if (currentIndex >= feedbackCards.length) {
             setTimeout(() => {
                 feedbackCardsContainer.style.transition = 'none';
@@ -83,7 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 設定字卡移動的間隔
+    // 初始化克隆字卡
+    cloneFeedbackCards();
+
     setInterval(moveFeedbackCards, 2000);
 });
 

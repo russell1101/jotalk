@@ -1,12 +1,28 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
 /* utf8一定要在行數1 */
 /* import 一定要在第二行 */
-/* 重置所有標籤的樣式 */
 
 /* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
 
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
 
 * {
     margin: 0;
@@ -25,6 +41,7 @@ body {
     font-size: 100%;
     line-height: 1.5;
 }
+
 
 /* 重置標題 */
 h1,
@@ -334,20 +351,22 @@ main {
     cursor: pointer;
     border-radius: 10px;
     border: 1px solid transparent;
+    letter-spacing: .2rem;
+    margin-right: 20px;
 }
 
 .top-section .categories div.active {
     pointer-events: none;
-    border: 1px solid #ffffff;
+    border: 1px solid #2c2c2c;
     /* 当前选中项的边框 */
     background-color: transparent;
     /* 当前选中项的背景色 */
     color: #2c2c2c;
-
+    letter-spacing: .2rem;
 }
 
 .top-section .categories div:hover {
-    border: 1px solid #ffffff;
+    border: 1px solid #2c2c2c;
     /* background-color: transparent; */
 }
 
@@ -363,7 +382,11 @@ html {
     max-width: 1240px;
     align-items: flex-start;
     position: relative;
+
+
 }
+
+
 
 .teach_atc .teach_picBase,
 .teach_atc .teach_picBartend,
@@ -414,6 +437,7 @@ html {
 
 #pic1-2 {
     background-image: url('../../img/forum/teach/base-gin.png');
+    height: 675px;
 }
 
 #pic1-3 {
@@ -422,61 +446,51 @@ html {
 
 #pic1-4 {
     background-image: url('../../img/forum/teach/base-rum.png');
+    height: 675px;
 }
 
 #pic1-5 {
     background-image: url('../../img/forum/teach/base-vodka.png');
+    height: 660px;
 }
 
 #pic1-6 {
     background-image: url('../../img/forum/teach/base-whisky.png');
+    height: 640px;
 }
 
 /* 為經典調酒 sections 設置背景圖片 */
 #pic2-1 {
     background-image: url('../../img/forum/teach/sidecar.png');
+    height: 675px;
 }
 
 #pic2-2 {
     background-image: url('../../img/forum/teach/ginfizz.png');
+    height: 663px;
 }
 
 #pic2-3 {
     background-image: url('../../img/forum/teach/margarita.png');
+    height: 665px;
 }
 
 #pic2-4 {
     background-image: url('../../img/forum/teach/lonisland.png');
+    height: 665px;
 }
 
 #pic2-5 {
     background-image: url('../../img/forum/teach/cosmopo.png');
+    height: 660px;
 }
 
 #pic2-6 {
     background-image: url('../../img/forum/teach/oldfashion.png');
+    height: 660px;
 }
 
 /* 調酒教學 sections */
-#pic3-1 {
-    background-image: url('../../img/forum/teach/barlist8.jpg');
-}
-
-#pic3-2 {
-    background-image: url('../../img/forum/teach/barlist9.jpg');
-}
-
-#pic3-3 {
-    background-image: url('../../img/forum/teach/barlist10.jpg');
-}
-
-#pic3-4 {
-    background-image: url('../../img/forum/teach/barlist11.jpg');
-}
-
-#pic3-5 {
-    background-image: url('../../img/forum/teach/barlist12.jpg');
-}
 
 .teach_atc .text img {
     width: 100%;
@@ -513,16 +527,17 @@ html {
     width: 20%;
     max-width: 160px;
     background-color: transparent;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-end;
+    /* justify-content: center; */
+    /* flex-direction: column; */
+    /* align-items: flex-end; */
     position: absolute;
     right: 0;
-    top: 0;
+    top: 150px;
     display: none;
     visibility: hidden;
-    /* 可選，確保元素隱藏 */
 }
+
+
 
 .teach_atc .site-headerBase.active,
 .teach_atc .site-headerBartend.active,
@@ -546,7 +561,7 @@ html {
 
 .teach_atc .indicator a.active {
     font-weight: bold;
-    color: #ffcc00;
+    color: #155569;
     /* 可以根據需求更改顏色 */
 }
 
@@ -554,5 +569,42 @@ html {
 .teach_atc .indicator a {
     text-decoration: none;
     color: #2c2c2c;
-    font-weight: normal;
+    font-weight: bold;
+}
+
+@media (max-width:1024px) {
+    .teach_atc {
+        width: 100%;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .teach_atc .site-headerBase,
+    .teach_atc .site-headerBartend,
+    .teach_atc .site-headerTeach,
+    .teach_atc .site-headerBase.active,
+    .teach_atc .site-headerBartend.active,
+    .teach_atc .site-headerTeach.active {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media (max-width:1024px) {
+    #pic1-1,
+    #pic1-2,
+    #pic1-3,
+    #pic1-4,
+    #pic1-5,
+    #pic1-6,
+    #pic2-1,
+    #pic2-2,
+    #pic2-3,
+    #pic2-4,
+    #pic2-5,
+    #pic2-6 {
+        width: 100%;
+        height: 78%;
+    }
 }

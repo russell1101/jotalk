@@ -7,6 +7,12 @@
     <title>Jotalk – 論壇首頁</title>
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/forum-styles.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
 </head>
 
 <body>
@@ -224,9 +230,9 @@
                                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <div class="more-link">
+                            <!-- <div class="more-link">
                                 <a href="#">更多熱門影片>></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -348,7 +354,41 @@
                     <!-- 熱門文章區域 -->
                     <ul class="hotAtc_content active">
                         <li class="hotAtc_inner">
-                            <a href="#" class="inner">文章1</a>
+                            <a href="#" class="inner">
+                                <div class="text">
+                                    <div class="user">
+                                        <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
+                                        <h2>信義王陽明</h2>
+                                        <small>4 hour ago</small>
+                                    </div>
+                                    <h2 id="article_title">酒吧評比</h2>
+                                    <div id="hashtag">
+                                        <small>#標籤放這邊</small>
+                                        <small>#標籤放這邊</small>
+                                    </div>
+                                    <!-- <p> 「xxx酒吧」
+                                        ❤️（十分頂級，妹多帥哥多酒好喝）
+                                        ⛽️（不差，偶爾會跟朋友去玩玩）
+                                        😮（普普通通沒啥感覺）
+                                        😭（沒啥料，音樂一般酒也一般）
+                                        😆（一堆89🐒+🐲誰愛去誰去）</p> -->
+                                    <!-- <div id="like">
+                                        <div id="heart">
+                                            <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="">
+                                            <p id="heart_num">987</p>
+                                        </div>
+                                        <div id="comment">
+                                            <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg"
+                                                alt="">
+                                            <p id="comment_num">987</p>
+                                        </div>
+                                        <div id="bookMark">
+                                            <img id="bookMark_img" src="../img/forum/account/like/icon _bookmark_.svg" alt="">
+                                            <p id="bookMark_num">987</p>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </a>
                         </li>
                         <li class="hotAtc_inner">
                             <a href="#" class="inner">文章2</a>
@@ -540,7 +580,28 @@
             <div class="helper-label">LET ME<br>HELP!</div>
         </div>
     </main>
+    <!-- 步驟二：載入root元素 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // 步驟三：建立 React 元件
+        function App() {
+            return (
+                <Footer />
+            )
+        }
+
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />)
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
     <script src="./js/forum-script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

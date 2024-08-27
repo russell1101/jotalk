@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: white;
+    overflow: hidden;
+}
+
+.marquee-container {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 50px;
+}
+
+.marquee {
+    position: absolute;
+    display: flex;
+    animation: marquee 100s linear infinite;
+}
+
+.marquee span {
+    padding: 0 20px;
+}
+
+.feedback-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.feedback-cards {
+    display: flex;
+    transition: transform 3s ease;
+}
+
+.feedback-card {
+    background: #444;
+    border: 1px solid #666;
+    padding: 20px;
+    margin: 0 10px;
+    flex-shrink: 0;
+    width: 200px;
+    height:50px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
