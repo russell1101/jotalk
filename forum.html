@@ -7,6 +7,12 @@
     <title>Jotalk – 論壇首頁</title>
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/forum-styles.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
 </head>
 
 <body>
@@ -224,9 +230,9 @@
                                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <div class="more-link">
+                            <!-- <div class="more-link">
                                 <a href="#">更多熱門影片>></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -540,7 +546,28 @@
             <div class="helper-label">LET ME<br>HELP!</div>
         </div>
     </main>
+    <!-- 步驟二：載入root元素 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // 步驟三：建立 React 元件
+        function App() {
+            return (
+                <Footer />
+            )
+        }
+
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />)
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
     <script src="./js/forum-script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

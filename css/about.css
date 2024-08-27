@@ -240,15 +240,25 @@ main {
     margin: 0 auto;
 }
 
+.about-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
 .about_content {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 0 2rem;
 }
 
 h2 {
     margin: 3rem 0 2rem 0;
-    align-self: flex-start;    /* 靠左對齊 */
+    align-self: flex-start;
+    /* 靠左對齊 */
     width: 100%;
     text-align: left;
     font-family: "Noto Sans TC", sans-serif;
@@ -258,13 +268,13 @@ h2 {
     letter-spacing: .2rem;
 }
 
-h2 .engFont{
+h2 .engFont {
     font-family: "Mallanna", sans-serif;
     font-size: 24px;
     letter-spacing: .1rem;
 }
 
-.about_txt{
+.about_txt {
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     font-size: 16px;
@@ -274,7 +284,7 @@ h2 .engFont{
     margin-bottom: 5rem;
 }
 
-.about_txt .engFont{
+.about_txt .engFont {
     font-family: "Mallanna", sans-serif;
     font-size: 18px;
     font-weight: 550;
