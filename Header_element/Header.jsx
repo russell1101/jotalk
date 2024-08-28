@@ -1,6 +1,9 @@
 function Header(props) {
     const sloganNone = {
-        display: props.search ? 'none' : 'block'
+        display: props.leftSlogan ? 'block' : 'none'
+    };
+    const slogan = {
+        display: props.slogan ? 'block' : 'none'
     };
     const btnNone = {
         display: props.btn ? 'block' : 'none'
@@ -27,6 +30,10 @@ function Header(props) {
                 <div className="forum_slogan" style={sloganNone}>
                     <h1>{props.h1}</h1>
                     <p>{props.p}</p>
+                </div>
+
+                <div class="slogan" style={slogan}>
+                    <h1>Let's Jotalk</h1>
                 </div>
 
                 <div className="account_write" style={btnNone}>

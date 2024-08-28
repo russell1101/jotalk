@@ -305,6 +305,27 @@ a {
 }
 
 
+#header .slogan {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    /* 設置為 absolute 以便於在 topbar 中定位 */
+    bottom: 0;
+    /* 將其定位到 topbar 底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 水平居中 */
+    padding: 20px;
+}
+
+#header .slogan h1 {
+    color: #ffffff;
+}
+
 
 
 
