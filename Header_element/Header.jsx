@@ -51,7 +51,7 @@ function Header(props) {
                 <div id="overlay" className="overlay"></div>
 
                 <div id="loginWindow" className="window">
-                    <span id="closebtn">X</span>
+                    <figure id="closebtn"><img src="../img/member/iconmonstr-x.svg" alt="" /></figure>
                     <div className="contant">
                         <div className="login_border">
                             <h2>LOGIN</h2>
