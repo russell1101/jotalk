@@ -345,7 +345,7 @@ a {
     /* 初始狀態隱藏 */
     opacity: 0;
     /* 初始透明度為0 */
-    transition: opacity .8s ease;
+    transition: opacity .35s ease;
     /* 添加漸變效果，持續時間0.3秒 */
 }
 
@@ -394,7 +394,7 @@ a {
     /* 初始狀態隱藏 */
     opacity: 0;
     /* 初始透明度為0 */
-    transition: opacity .8s ease;
+    transition: opacity .35s ease;
     /* 添加漸變效果，持續時間0.3秒 */
 }
 
