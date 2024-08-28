@@ -938,8 +938,6 @@ main {
     /* 四列布局 */
     grid-template-rows: repeat(2, 1fr);
     /* 两行布局 */
-    gap: 10px;
-    /* 单元格之间的间距 */
     width: 100%;
     /* 占满父容器宽度 */
     height: 100%;
@@ -964,43 +962,101 @@ main {
 }
 
 /* 每个文章项的样式 */
-.hotAtc_inner,
-.niceAtc_inner,
-.normalAtc_inner {
+.hotAtc_content.active .hotAtc_inner,
+.niceAtc_content.active .niceAtc_inner,
+.normalAtc_content.active .normalAtc_inner {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     border-radius: 10px;
-    background-color: #f8f8f8;
     height: 100%;
     /* 占满父容器的高度 */
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* 增加轻微阴影 */
+
 }
 
-/* 确保文章链接的样式 */
-.hotAtc_inner a,
-.niceAtc_inner a,
-.normalAtc_inner a {
-    color: #333;
-    text-decoration: none;
-    /* 移除下划线 */
-    padding: 15px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
+.hotAtc_inner-pic1{
+    background-image: url(../img/forum/forum_right_pic/atc1.jpg);
+    background-size: cover; /* 或者使用 contain 根據需求 */
+    background-position: center;
+    width: 100%; /* 根據需要調整 */
+    height: 88%; /* 根據需要調整 */
+    transition: .35s ease-in-out;
 }
 
-.hotAtc_inner a:hover,
-.niceAtc_inner a:hover,
-.normalAtc_inner a:hover {
-    background-color: #e0e0e0;
-    /* 悬停时的背景色 */
+.hotAtc_inner-pic2{
+    background-image: url(../img/forum/forum_right_pic/atc2.jpg);
+    background-size: cover; /* 或者使用 contain 根據需求 */
+    background-position: center;
+    width: 100%; /* 根據需要調整 */
+    height: 88%; /* 根據需要調整 */
+    transition: .35s ease-in-out;
+}
+
+.hotAtc_inner-pic3{
+    background-image: url(../img/forum/forum_right_pic/atc3.jpg);
+    background-size: cover; /* 或者使用 contain 根據需求 */
+    background-position: center;
+    width: 100%; /* 根據需要調整 */
+    height: 88%; /* 根據需要調整 */
+    transition: .35s ease-in-out;
+}
+
+.hotAtc_inner-pic4{
+    background-image: url(../img/forum/forum_right_pic/atc4.jpg);
+    background-size: cover; /* 或者使用 contain 根據需求 */
+    background-position: center;
+    width: 100%; /* 根據需要調整 */
+    height: 88%; /* 根據需要調整 */
+    transition: .35s ease-in-out;
+}
+
+.hotAtc_inner-pic5{
+    background-image: url(../img/forum/forum_right_pic/atc5.jpg);
+    background-size: cover; /* 或者使用 contain 根據需求 */
+    background-position: center;
+    width: 100%; /* 根據需要調整 */
+    height: 88%; /* 根據需要調整 */
+    transition: .35s ease-in-out;
+}
+
+.hotAtc_inner-pic6{
+    background-image: url(../img/forum/forum_right_pic/atc6.jpg);
+    background-size: cover; /* 或者使用 contain 根據需求 */
+    background-position: center;
+    width: 100%; /* 根據需要調整 */
+    height: 88%; /* 根據需要調整 */
+    transition: .35s ease-in-out;
+}
+
+.hotAtc_inner-pic7{
+    background-image: url(../img/forum/forum_right_pic/atc7.jpg);
+    background-size: cover; /* 或者使用 contain 根據需求 */
+    background-position: center;
+    width: 100%; /* 根據需要調整 */
+    height: 88%; /* 根據需要調整 */
+    transition: .35s ease-in-out;
+}
+
+.hotAtc_inner-pic8{
+    background-image: url(../img/forum/forum_right_pic/atc8.jpg);
+    background-size: cover; /* 或者使用 contain 根據需求 */
+    background-position: center;
+    width: 100%; /* 根據需要調整 */
+    height: 88%; /* 根據需要調整 */
+    transition: .35s ease-in-out;
+}
+
+.hotAtc_inner-pic1:hover,
+.hotAtc_inner-pic2:hover,
+.hotAtc_inner-pic3:hover,
+.hotAtc_inner-pic4:hover,
+.hotAtc_inner-pic5:hover,
+.hotAtc_inner-pic6:hover,
+.hotAtc_inner-pic7:hover,
+.hotAtc_inner-pic8:hover {
+    scale: 0.95;
 }
 
 /* "更多" 链接样式 */
