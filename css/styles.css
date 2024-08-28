@@ -440,8 +440,7 @@ section {
 #forum .btn:hover {
     background-color: var(--black);
     color: var(--white);
-    border: 1px solid var(--white);
-    transition-duration: transform 0.2s ease;
+    transition-duration: transform 0.1s ease;
 }
 
 .container {
