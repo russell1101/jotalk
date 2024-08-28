@@ -452,7 +452,10 @@ main {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    height: 30px;
+    min-height: 0;
+    /* 設置最小高度為0 */
+    height: auto;
+    /* 高度自適應內容 */
     border: 1px solid transparent;
     padding: 2px;
     box-sizing: border-box;
@@ -482,14 +485,14 @@ main {
     letter-spacing: .1rem;
     cursor: pointer;
     color: rgb(255, 255, 255);
-    
+
     align-items: center;
     justify-content: center;
     text-align: center;
     text-justify: center;
 }
 
-.remove-tag{
+.remove-tag {
     margin-left: 10px;
     font-weight: 300;
 }
@@ -602,7 +605,7 @@ a.tag {
     grid-auto-flow: dense;
     /* remove altogether when grid span can be clamped */
     gap: var(--grid-gap);
-    margin: 2rem auto;
+    margin: 1rem auto;
 }
 
 
@@ -1078,4 +1081,91 @@ a.tag {
     100% {
         transform: translateX(-100%);
     }
+}
+
+/* 登入按鈕表單 */
+/* 遮罩層樣式 */
+#overlay-BL {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1100;
+    /* 提高z-index，確保在最上層 */
+    display: none;
+    /* 初始狀態隱藏 */
+    opacity: 0;
+    /* 初始透明度為0 */
+    transition: opacity .3s ease;
+    /* 添加漸變效果，持續時間0.8秒 */
+}
+
+/* 彈出視窗樣式 */
+#loginWindow-BL {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #F5F5F5;
+    width: 50%;
+    height: 90%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1200;
+    /* 提高z-index，使其在遮罩層之上 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    /* 初始狀態隱藏 */
+    opacity: 0;
+    /* 初始透明度為0 */
+    transition: opacity .3s ease;
+    /* 添加漸變效果，持續時間0.8秒 */
+}
+
+.contant-BL {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* 關閉按鈕樣式 */
+#closebtn-BL {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1300;
+    transition: .3s ease-in-out;
+}
+
+#closebtn-BL:hover {
+    opacity: 60%;
+}
+
+
+/* login字樣 */
+#loginWindow-BL h2 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+    color: #484848;
+}
+
+#loginWindow-BL small {
+    font-size: .5rem;
+    cursor: pointer;
+}
+
+.jump-pic {
+    display: flex;
+    align-items: flex-start;
+    /* 將大圖片和小圖片在垂直方向對齊到上方 */
+    margin-top: 20px;
 }
