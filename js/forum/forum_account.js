@@ -128,19 +128,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 點擊文章出現彈出視窗
 let articles = document.querySelectorAll(".article");
-let overlay = document.getElementById("overlay");
-let closeButtons = document.querySelectorAll(".closebtn");
+let overlay_article = document.getElementById("overlay_article");
+let closeButtons = document.querySelectorAll(".closebtn_article");
 
 articles.forEach(article => {
     article.onclick = function () {
         let targetId = this.getAttribute("data-target");
         let targetContent = document.getElementById(targetId);
 
-        overlay.style.display = "block"; // 顯示遮罩層
+        overlay_article.style.display = "block"; // 顯示遮罩層
         targetContent.style.display = "flex"; // 顯示對應內容
 
         setTimeout(() => {
-            overlay.style.opacity = "1"; // 遮罩層漸變顯示
+            overlay_article.style.opacity = "1"; // 遮罩層漸變顯示
             targetContent.style.opacity = "1"; // 內容漸變顯示
         }, 10);
     }
@@ -156,17 +156,17 @@ closeButtons.forEach(button => {
     button.onclick = function () {
         let content = this.parentElement;
 
-        overlay.style.opacity = "0"; // 遮罩層漸變隱藏
+        overlay_article.style.opacity = "0"; // 遮罩層漸變隱藏
         content.style.opacity = "0"; // 內容漸變隱藏
 
         setTimeout(() => {
-            overlay.style.display = "none";
+            overlay_article.style.display = "none";
             content.style.display = "none";
         }, 800);
     }
 });
 
-overlay.onclick = function () {
+overlay_article.onclick = function () {
     closeButtons.forEach(button => button.onclick());
 };
 
