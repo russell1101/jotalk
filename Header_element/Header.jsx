@@ -11,49 +11,49 @@ function Header(props) {
 
     return (
         <>
-            <header id="header" style={{ backgroundImage: `url(${props.bg})` }}>
-                <div className="topbar">
-                    <h1 className="logo">
+            <header id="header_el" style={{ backgroundImage: `url(${props.bg})` }}>
+                <div className="topbar_el">
+                    <h1 className="logo_el">
                         <a href="./index.html">
                             <img src="./img/logo.svg" alt="jotalkLogo" />
                         </a>
                     </h1>
 
-                    <div className="menu">
+                    <div className="menu_el">
                         <a href="./forum.html">綜合論壇</a>
                         <a href="./barlist.html">酒吧清單</a>
-                        <a href="#">關於我們</a>
+                        <a href="">關於我們</a>
                     </div>
                 </div>
 
 
-                <div className="forum_slogan" style={sloganNone}>
+                <div className="left_slogan_el" style={sloganNone}>
                     <h1>{props.h1}</h1>
                     <p>{props.p}</p>
                 </div>
 
-                <div class="slogan" style={slogan}>
+                <div class="slogan_el" style={slogan}>
                     <h1>Let's Jotalk</h1>
                 </div>
 
-                <div className="account_write" style={btnNone}>
-                    <button id="writeBtn">發表文章</button>
+                <div className="writeBtn_el" style={btnNone}>
+                    <button>發表文章</button>
                 </div>
 
-                <div className="account_login">
-                    <button id="loginBtn">會員登入</button>
+                <div className="account_login_el">
+                    <button id="loginBtn_el">會員登入</button>
                 </div>
 
-                <div className="account_logout">
-                    <button id="logoutBtn">會員登出</button>
+                <div className="account_logout_el">
+                    <button id="logoutBtn_el">會員登出</button>
                 </div>
 
-                <div id="overlay" className="overlay"></div>
+                <div id="account_overlay_el" className="account_overlay_el"></div>
 
-                <div id="loginWindow" className="window">
-                    <figure id="closebtn"><img src="../img/member/iconmonstr-x.svg" alt="" /></figure>
-                    <div className="contant">
-                        <div className="login_border">
+                <div id="loginWindow_el" className="window_el">
+                    <figure id="closebtn_el"><img src="../img/member/iconmonstr-x.svg" alt="" /></figure>
+                    <div className="contant_el">
+                        <div className="login_border_el">
                             <h2>LOGIN</h2>
                         </div>
                         <form action="./member.html" method="post" name="member_form" id="member_form" title="會員登入表單">
@@ -67,7 +67,7 @@ function Header(props) {
                                 <small>忘記密碼?</small>
                             </div>
 
-                            <div className="button">
+                            <div className="button_el">
                                 <button type="button" name="btn_submit" id="btn_login" title="送出按鈕">
                                     <span>登入</span>
                                 </button>
@@ -79,10 +79,10 @@ function Header(props) {
                                 <hr />
                                 <p>快速登入</p>
                             </div>
-                            <ul className="icon">
-                                <li><a className="icon-fb" id="fb" href="#"></a></li>
-                                <li><a className="icon-mail" id="google" href="#"></a></li>
-                                <li><a className="icon-line" id="line" href="#"></a></li>
+                            <ul className="icon_el">
+                                <li><a className="icon_el-fb" id="fb" href="#"></a></li>
+                                <li><a className="icon_el-mail" id="google" href="#"></a></li>
+                                <li><a className="icon_el-line" id="line" href="#"></a></li>
                             </ul>
                         </form>
                     </div>

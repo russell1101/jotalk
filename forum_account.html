@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>forum-Atc</title>
+    <link rel="stylesheet" href="./css/forum/forum_account.css">
 
-
-    <!-- react -->
+    <!-- 步驟一：載入React, Bable -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -15,12 +15,11 @@
     <!-- footer元件 -->
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
-
     <!-- Header元件 -->
     <script type="text/babel" src="./Header_element/Header.jsx"></script>
     <link rel="stylesheet" href="./Header_element/Header.css">
 
-    <link rel="stylesheet" href="./css/forum/forum_account.css">
+
 </head>
 
 <body>
@@ -186,9 +185,9 @@
         </div>
 
         <!-- 文章內頁 -->
-        <div id="overlay-article" class="overlay_article"></div>
+        <div id="overlay" class="overlay"></div>
         <div id="content-1" class="content hidden">
-            <span class="closebtn_article">X</span>
+            <span class="closebtn">X</span>
             <div class="content_user">
                 <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
                 <h2>信義王陽明</h2>
@@ -235,7 +234,7 @@
 
                 <!-- 留言區域 -->
                 <div id="comments">
-                    <div id="root"></div>
+                    <div id="rest"></div>
                     <script type="text/babel">
                         function Comment(props) {
                             const { time, user_url, userName, user_time, floor, content, heart_num, comment_num } = props;
@@ -289,7 +288,7 @@
                                     comment_num: 660
                                 },
                                 {
-                                    id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                    id: 3, //跑迴圈時 需要一個資料不會重複的key值
                                     time: '2024-08-18T10:20:00',
                                     user_url: '../img/forum/account/user/user1.jpg',
                                     userName: '信義王陽明',
@@ -314,7 +313,7 @@
                             )
                         }
 
-                        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+                        ReactDOM.createRoot(document.getElementById('rest')).render(<App />);
                     </script>
                     <!-- 每一個留言的結構 -->
                     <div class="comment" data-timestamp="2024-08-22T14:20:00">
@@ -342,7 +341,7 @@
             </div>
 
             <div id="content-2" class="content hidden">
-                <span class="closebtn_article">X</span>
+                <span class="closebtn">X</span>
                 <h2>文章 2 標題</h2>
                 <p>這是文章 2 的內容。</p>
             </div>
@@ -366,9 +365,9 @@
             .render(<App />)
     </script>
 
-    <script src="./js/forum/forum_account.js"></script>
-    <!-- <script src="./js/script.js"></script> -->
 
+    <script src="./Header_element/login.js"></script>
+    <script src="./js/forum/forum_account.js"></script>
 </body>
 
 </html>

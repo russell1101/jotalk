@@ -571,14 +571,14 @@ main {
 
 
 /* 文章內頁 */
-.overlay_article {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+    z-index: 1000;
     display: none;
     /* 初始狀態隱藏 */
     opacity: 0;
