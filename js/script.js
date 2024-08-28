@@ -95,7 +95,7 @@ function login() {
         setTimeout(() => { // 使用setTimeout來等待漸變完成後隱藏
             overlay.style.display = "none"; // 隱藏遮罩層
             myWindow.style.display = "none"; // 隱藏彈出視窗
-        }, 800); // 漸變時間與transition一致
+        }, 350); // 漸變時間與transition一致
     };
 
     // 當使用者點擊遮罩層時，也隱藏彈出視窗和遮罩層，並添加漸變效果

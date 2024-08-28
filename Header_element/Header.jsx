@@ -1,6 +1,9 @@
 function Header(props) {
     const sloganNone = {
-        display: props.search ? 'none' : 'block'
+        display: props.leftSlogan ? 'block' : 'none'
+    };
+    const slogan = {
+        display: props.slogan ? 'block' : 'none'
     };
     const btnNone = {
         display: props.btn ? 'block' : 'none'
@@ -29,6 +32,10 @@ function Header(props) {
                     <p>{props.p}</p>
                 </div>
 
+                <div class="slogan" style={slogan}>
+                    <h1>Let's Jotalk</h1>
+                </div>
+
                 <div className="account_write" style={btnNone}>
                     <button id="writeBtn">發表文章</button>
                 </div>
@@ -44,7 +51,7 @@ function Header(props) {
                 <div id="overlay" className="overlay"></div>
 
                 <div id="loginWindow" className="window">
-                    <span id="closebtn">X</span>
+                    <figure id="closebtn"><img src="../img/member/iconmonstr-x.svg" alt="" /></figure>
                     <div className="contant">
                         <div className="login_border">
                             <h2>LOGIN</h2>

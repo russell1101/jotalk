@@ -5,12 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>forum-Atc</title>
-    <link rel="stylesheet" href="../css/forum/forum_account.css">
+
 
     <!-- react -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- footer元件 -->
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
+
+    <!-- Header元件 -->
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
+
+    <link rel="stylesheet" href="./css/forum/forum_account.css">
 </head>
 
 <body>
@@ -18,45 +28,28 @@
     <div class="overlay_bg"></div>
 
     <!-- 頁首區 -->
-    <header id="topbar">
-        <!-- logo區 -->
-        <div class="forum_head">
-            <h1 class="logo">
-                <a href="../index.html">
-                    <img src="../img/logo.svg" alt="jotalkLogo">
-                </a>
-            </h1>
+    <!-- 步驟二：載入root元素 -->
+    <div id="test"></div>
+    <script type="text/babel">
 
-            <div class="menu">
-                <a href="../forum.html">綜合論壇</a>
-                <a href="../barlist.html">酒吧清單</a>
-                <a href="../about.html">關於我們</a>
-            </div>
-        </div>
+        // 步驟三：建立 React 元件
+        // 元件字首要大寫 而且有回傳值return
+        function App() {
 
+            React.useEffect(() => {
+                login();
+            }, []);
 
-        <!-- 會員登入區 -->
-        <div class="account_login">
-            <button>
-                <a href="">發表文章</a>
-            </button>
-            <button>
-                <a href="">會員登入</a>
-            </button>
-        </div>
-
-        <!-- 標題及搜尋區 -->
-        <div class="forum_slogan">
-            <h1>Let's Jotalk</h1>
-            <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容">
-                <!-- <label for="">產品搜尋:</label> -->
-                <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
-                    placeholder="搜尋所有內容">
-                <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋">
-            </form>
-            <p>9999 會員 987 online 12345 文章</p>
-        </div>
-    </header>
+            // jsx語法
+            return (
+                <Header h1='BAR LIST' p='酒吧清單' bg='../img/forum/forum_head_pic.jpg' leftSlogan='' slogan={true} btn={true} />
+            )
+        }
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('test'))
+            .render(<App />)
+    </script>
 
 
 
@@ -193,9 +186,9 @@
         </div>
 
         <!-- 文章內頁 -->
-        <div id="overlay" class="overlay"></div>
+        <div id="overlay-article" class="overlay_article"></div>
         <div id="content-1" class="content hidden">
-            <span class="closebtn">X</span>
+            <span class="closebtn_article">X</span>
             <div class="content_user">
                 <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
                 <h2>信義王陽明</h2>
@@ -270,57 +263,57 @@
                                 </div>
                             )
                         }
-    
+
                         const App = () => {
                             const comment = [
                                 {
                                     id: 1, //跑迴圈時 需要一個資料不會重複的key值
                                     time: '2024-08-22T14:20:00',
-                                    user_url:'../img/forum/account/user/user1.jpg',
-                                    userName:'信義王陽明',
-                                    user_time:'8月22日 14:20',
-                                    floor:'B1',
-                                    content:'真假好讚喔!!',
-                                    heart_num:966, 
-                                    comment_num:660
+                                    user_url: '../img/forum/account/user/user1.jpg',
+                                    userName: '信義王陽明',
+                                    user_time: '8月22日 14:20',
+                                    floor: 'B1',
+                                    content: '真假好讚喔!!',
+                                    heart_num: 966,
+                                    comment_num: 660
                                 },
                                 {
                                     id: 2, //跑迴圈時 需要一個資料不會重複的key值
                                     time: '2024-08-20T14:20:00',
-                                    user_url:'../img/forum/account/user/user1.jpg',
-                                    userName:'信義王陽明',
-                                    user_time:'8月20日 14:20',
-                                    floor:'B2',
-                                    content:'真假好讚喔!!',
-                                    heart_num:966, 
-                                    comment_num:660
+                                    user_url: '../img/forum/account/user/user1.jpg',
+                                    userName: '信義王陽明',
+                                    user_time: '8月20日 14:20',
+                                    floor: 'B2',
+                                    content: '真假好讚喔!!',
+                                    heart_num: 966,
+                                    comment_num: 660
                                 },
                                 {
                                     id: 1, //跑迴圈時 需要一個資料不會重複的key值
                                     time: '2024-08-18T10:20:00',
-                                    user_url:'../img/forum/account/user/user1.jpg',
-                                    userName:'信義王陽明',
-                                    user_time:'8月18日 10:20',
-                                    floor:'B3',
-                                    content:'真假好讚喔!!',
-                                    heart_num:966, 
-                                    comment_num:660
+                                    user_url: '../img/forum/account/user/user1.jpg',
+                                    userName: '信義王陽明',
+                                    user_time: '8月18日 10:20',
+                                    floor: 'B3',
+                                    content: '真假好讚喔!!',
+                                    heart_num: 966,
+                                    comment_num: 660
                                 },
                             ]
                             return (
                                 <>
-                                {
-                                comment.map((item) => {
-                                        // 呼叫卡片元件
-                                        // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
-                                        // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
-                                        return <Comment key={item.id} time={item.time} user_url={item.user_url} userName={item.userName} user_time={item.user_time} floor={item.floor} content={item.content} heart_num={item.heart_num} comment_num={item.comment_num}/>
-                                    })
-                                }
+                                    {
+                                        comment.map((item) => {
+                                            // 呼叫卡片元件
+                                            // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                            // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                            return <Comment key={item.id} time={item.time} user_url={item.user_url} userName={item.userName} user_time={item.user_time} floor={item.floor} content={item.content} heart_num={item.heart_num} comment_num={item.comment_num} />
+                                        })
+                                    }
                                 </>
                             )
                         }
-    
+
                         ReactDOM.createRoot(document.getElementById('root')).render(<App />);
                     </script>
                     <!-- 每一個留言的結構 -->
@@ -349,13 +342,33 @@
             </div>
 
             <div id="content-2" class="content hidden">
-                <span class="closebtn">X</span>
+                <span class="closebtn_article">X</span>
                 <h2>文章 2 標題</h2>
                 <p>這是文章 2 的內容。</p>
             </div>
     </main>
 
-    <script src="../js/forum/forum_account.js"></script>
+    <!-- 步驟二：載入root元素 -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // 步驟三：建立 React 元件
+        // 元件字首要大寫 而且有回傳值return
+        function App() {
+            // jsx語法
+            return (
+                <Footer />
+            )
+        }
+
+        // 步驟四：渲染元件到根元件上
+        ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(<App />)
+    </script>
+
+    <script src="./js/forum/forum_account.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
+
 </body>
 
 </html>

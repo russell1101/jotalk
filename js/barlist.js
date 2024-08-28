@@ -127,3 +127,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+function setupPreviewClick() {
+    // 取得所有的 preview--container 元素
+    const previewContainers = document.querySelectorAll('.preview--container');
+    const overlay = document.getElementById("overlay-BL");
+    const myWindow = document.getElementById("loginWindow-BL");
+    const close = document.getElementById("closebtn-BL");
+
+    // 為每個 preview--container 添加點擊事件處理程序
+    previewContainers.forEach(previewContainer => {
+        previewContainer.addEventListener('click', function (event) {
+            event.preventDefault(); // 阻止默認行為，防止自動聚焦
+            overlay.style.display = "block"; // 顯示遮罩層
+            myWindow.style.display = "block"; // 顯示彈出視窗
+            
+            // 禁用頁面滾動
+            document.body.style.overflow = 'hidden';
+            
+            // 使用setTimeout來觸發漸變效果
+            setTimeout(() => {
+                overlay.style.opacity = "1"; // 遮罩層漸變顯示
+                myWindow.style.opacity = "1"; // 彈出視窗漸變顯示
+            }, 10);
+        });
+    });
+
+    // 當使用者點擊關閉按鈕時，隱藏彈出視窗和遮罩層，並添加漸變效果
+    close.onclick = function () {
+        overlay.style.opacity = "0"; // 遮罩層漸變隱藏
+        myWindow.style.opacity = "0"; // 彈出視窗漸變隱藏
+        
+        setTimeout(() => { // 使用setTimeout來等待漸變完成後隱藏
+            overlay.style.display = "none"; // 隱藏遮罩層
+            myWindow.style.display = "none"; // 隱藏彈出視窗
+
+            // 恢復頁面滾動
+            document.body.style.overflow = '';
+        }, 300); // 漸變時間與transition一致
+    };
+
+    // 當使用者點擊遮罩層時，也隱藏彈出視窗和遮罩層，並添加漸變效果
+    overlay.onclick = function () {
+        close.onclick(); // 調用close的onclick事件
+    };
+}
+
+// 在頁面加載後設置點擊事件
+window.addEventListener('load', function() {
+    setupPreviewClick();
+});
+

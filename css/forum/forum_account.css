@@ -571,7 +571,7 @@ main {
 
 
 /* 文章內頁 */
-.overlay {
+.overlay_article {
     position: fixed;
     top: 0;
     left: 0;
@@ -632,7 +632,7 @@ main {
     display: none;
 }
 
-.closebtn {
+.closebtn_article {
     position: absolute;
     /* 確保它相對於 .content 定位 */
     top: 15px;
@@ -645,7 +645,7 @@ main {
     transition: .3s ease-in-out;
 }
 
-#closebtn:hover {
+#closebtn_article:hover {
     opacity: 60%;
 }
 
