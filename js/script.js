@@ -118,7 +118,7 @@ function login() {
         window.localStorage.setItem('password', password.value);
         window.localStorage.setItem('isLoggedIn', 'true');  // 設置登入狀態為已登入
         if (email.value === '') {
-            alert('未登錄用户');
+            alert('訪客登入');
         } else {
             alert(email.value + '登入成功');
         }
