@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOTALK 會員</title>
+    <link rel="icon" href="./favicon.ico">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div id="header"></div>
+    <script type="text/babel">
+        function App() {
+            return (
+                <Header h1='JOTALK MEMBER' p='酒說會員' bg='./img/member/otherMB-head.jpg' />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('header'))
+            .render(<App />)
+    </script>
+
+    <section id="otherMB-content">
+        <div id="omb-left">
+            <ul class="userIfm"></ul>
+            <ul><a href="">追蹤他</a></ul>
+            <ul><a href="">他的文章</a></ul>
+            <ul><a href="">他的收藏</a></ul>
+            <ul><a href="">他的探店</a></ul>
+        </div>
+
+        <div id="omb-right">
+
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script type="text/babel">
+        function App() {
+            return (
+                <Footer />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('footer'))
+            .render(<App />)
+    </script>
+</body>
+
+</html>
