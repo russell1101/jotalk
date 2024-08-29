@@ -174,10 +174,7 @@ function windowout() {
         closeButtons.forEach(button => button.onclick());
     };
 
-
 }
-
-
 
 
 
