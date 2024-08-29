@@ -179,3 +179,23 @@ window.addEventListener('load', function() {
     setupPreviewClick();
 });
 
+
+// 彈跳視窗的內容切換
+document.querySelectorAll('.categories-BL div').forEach(category => {
+    category.addEventListener('click', function() {
+        // 移除所有分類的 active 類別
+        document.querySelectorAll('.categories-BL div').forEach(item => {
+            item.classList.remove('active');
+        });
+        // 為點擊的分類添加 active 類別
+        this.classList.add('active');
+
+        // 隱藏所有內容區域
+        document.querySelectorAll('.infoContant, .menuContant, .newsContant').forEach(content => {
+            content.classList.remove('active');
+        });
+        // 顯示對應的內容區域
+        const target = this.getAttribute('data-target');
+        document.querySelector(`.${target}`).classList.add('active');
+    });
+});
