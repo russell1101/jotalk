@@ -9,8 +9,10 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <script type="text/babel" src="./Header_element/Header.jsx"></script>
     <link rel="stylesheet" href="./Header_element/Header.css">
+
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
 
@@ -21,8 +23,13 @@
     <div id="header"></div>
     <script type="text/babel">
         function App() {
+
+            React.useEffect(() => {
+                login();
+            }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
+
             return (
-                <Header h1='JOTALK MEMBER' p='酒說會員' bg='./img/member/otherMB-head.jpg' />
+                <Header h1='JOTALK MEMBER' p='酒說會員' bg='./img/member/otherMB-head.jpg' leftSlogan={true} slogan='' btn=''/>
             )
         }
         ReactDOM
@@ -30,13 +37,28 @@
             .render(<App />)
     </script>
     <main>
+        <img class="otherMB-bg" src="./img/about/about-bg.jpg">
         <section id="otherMB-content">
             <div id="omb-left">
-                <ul class="userIfm"></ul>
-                <ul class="nav-follow"><a href="">追蹤他</a></ul>
-                <ul class="nav-article" data-target="omb-article"><a href="">他的文章</a></ul>
-                <ul class="nav-collect" data-target="omb-collect"><a href="">他的收藏</a></ul>
-                <ul class="nav-visited" data-target="omb-visited"><a href="">他的探店</a></ul>
+                <ul class="userIfm">
+                    <img src="./img/member/user-pic.png" alt="會員頭像">
+                    <li class="userID">土城亨利</li>
+                    <li class="userLevel">會員等級：酒吧新手</li>
+                    <li class="userPostFollower">23篇文章　56人追蹤</li>
+                </ul>
+                <div class="nav-btn">
+                    <ul class="nav-follow">
+                        <a href="">
+                            <img src="./img/member/Icon-follow.svg">
+                        </a>
+                        <a href="">
+                            <p>追蹤他</p>
+                        </a>
+                    </ul>
+                    <ul class="nav-article" data-target="omb-article"><a href="">他的文章</a></ul>
+                    <ul class="nav-collect" data-target="omb-collect"><a href="">他的收藏</a></ul>
+                    <ul class="nav-visited" data-target="omb-visited"><a href="">他的探店</a></ul>
+                </div>
             </div>
 
             <div id="omb-right">
@@ -45,12 +67,13 @@
                 </div>
                 <div id="omb-collect">
                     <div class="collect-bar">
-                        <ul class=""><img src="./img/member/bar/omb-store-1.png"></ul>
+                        <img src="./img/member/bar/collect-bar-1.png">
+                        <!-- <ul class=""><img src="./img/member/bar/omb-store-1.png"></ul>
                         <ul class=""><img src="./img/member/bar/omb-store-2.png"></ul>
                         <ul class=""><img src="./img/member/bar/omb-store-3.png"></ul>
                         <ul class=""><img src="./img/member/bar/omb-store-4.png"></ul>
                         <ul class=""><img src="./img/member/bar/omb-store-5.png"></ul>
-                        <ul class=""><img src="./img/member/bar/omb-store-6.png"></ul>
+                        <ul class=""><img src="./img/member/bar/omb-store-6.png"></ul> -->
                     </div>
                     <div class="collect-article">
                         <!-- 等文章元件 -->
@@ -60,7 +83,7 @@
                     </div>
                 </div>
                 <div id="omb-visited">
-                    
+
                 </div>
             </div>
         </section>
@@ -77,6 +100,8 @@
             .createRoot(document.getElementById('footer'))
             .render(<App />)
     </script>
+
+    <script src="./Header_element/login.js"></script>
 </body>
 
 </html>

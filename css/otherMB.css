@@ -76,31 +76,99 @@ a {
 /* 內容區 */
 main {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     margin: 0 auto;
+}
+
+.otherMB-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
 }
 
 #otherMB-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start; /* 子元素頂部對齊 */
+    align-items: flex-start;
     max-width: 1040px;
     width: 100%;
     padding: 20px;
     gap: 20px;
+    margin-top: 50px;
 }
 
-#omb-left{
+#omb-left {
     flex: 1;
     max-width: 20%;
     padding: 10px;
     box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-#omb-right{
+.userIfm {
+    margin-right: 30px;
+}
+
+.userIfm li {
+    margin-top: 10px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+
+.userIfm .userID {
+    font-size: 1.3rem;
+    letter-spacing: .1rem;
+}
+
+.nav-btn {
+    margin-top: 50px;
+    margin-right: 30px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.1rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-btn ul {
+    margin-top: 20px;
+}
+
+.nav-btn ul a:hover {
+    color: var(--primary);
+}
+
+.nav-btn ul a:active {
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.nav-follow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-follow img {
+    width: 70%;
+    height: 70%;
+    margin-right: 5px;
+}
+
+#omb-right {
     flex: 2;
     max-width: 80%;
-    background-color: #930000b7;
-    padding: 1rem;
+    background-color: var(--alpha-w-60);
+    border-radius: 10px;
+    padding: 30px;
 }

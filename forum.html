@@ -6,65 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jotalk – 論壇首頁</title>
     <link rel="icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./css/forum-styles.css">
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
+
+    <link rel="stylesheet" href="./css/forum-styles.css">
 </head>
 
 <body>
-    <!-- 壓在背景的透明板 -->
+    <!-- 頁首元件 -->
+    <div id="header"></div>
+    <script type="text/babel">
+        function App() {
+            return (
+                <Header h1="LET'S JOTALK" bg='./img/forum/forum_head_pic.jpg' leftSlogan='' slogan={true} btn={true} />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('header'))
+            .render(<App />)
+    </script>
+
     <div class="overlay"></div>
-
-    <!-- 頁首區 -->
-    <header id="topbar">
-        <!-- logo區 -->
-        <div class="forum_head">
-            <h1 class="logo">
-                <a href="./index.html">
-                    <img src="./img/logo.svg" alt="jotalkLogo">
-                </a>
-            </h1>
-
-            <div class="menu">
-                <a href="./forum.html">綜合論壇</a>
-                <a href="./barlist.html">酒吧清單</a>
-                <a href="./about.html">關於我們</a>
-            </div>
-        </div>
-
-        <!-- 會員登入區 -->
-
-        <div class="account_login">
-            <button>
-                <a href="">發表文章</a>
-            </button>
-            <button>
-                <a href="">會員登入</a>
-            </button>
-        </div>
-
-        <!-- 標題及搜尋區 -->
-        <div class="forum_slogan">
-            <h1>Let's Jotalk</h1>
-            <!-- <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容">
-                <label for=""></label> -->
-            <!-- <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位" -->
-            <!-- placeholder="搜尋所有內容"> -->
-            <!-- <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋"> -->
-            <!-- </form> -->
-        </div>
-    </header>
-
     <main>
         <section class="forum_body">
-
-            <!-- 布告欄&標籤 左側欄位 -->
+            <!-- 左側欄位 -->
             <div class="body_bull_tag">
-
                 <!-- 布告欄 -->
                 <div class="body_bulletin">
                     <div class="categories">
@@ -207,11 +178,7 @@
                                     <img src="./img/forum/tagpic.JPG" alt="User Icon">
                                 </div>
                             </div>
-                            <!-- <div class="more-link">
-                                <a href="#">更多熱門標籤>></a>
-                            </div> -->
                         </div>
-
                         <!-- 影片內容區域 -->
                         <div class="body_hotVdo_content">
                             <div class="grid">
@@ -230,22 +197,14 @@
                                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <!-- <div class="more-link">
-                                <a href="#">更多熱門影片>></a>
-                            </div> -->
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
 
-            <!-- 文章&活動 右側欄位 -->
+            <!-- 右側欄位 -->
             <div class="body_newsAtc">
-
                 <!-- 熱門活動 -->
-
                 <div class="body_news">
                     <div class="news_container">
                         <div class="news_categories">
@@ -253,13 +212,10 @@
                             <div class="news_limitEvt" data-target="limitEvt_content">期間限定</div>
                             <div class="news_normalEvt" data-target="normalEvt_content">常態活動</div>
                         </div>
-
                         <div class="news_more-link">
                             <button onclick="window.location.href='./forum_content/forum_news.html'">前往活動主頁</button>
                         </div>
                     </div>
-                    <!-- 活動內容區域 -->
-
                     <!-- 熱門活動區域 -->
                     <ul class="news_content active">
                         <li class="news pic1">
@@ -283,8 +239,6 @@
                             </a>
                         </li>
                     </ul>
-
-
                     <!-- 期間限定區域 -->
                     <ul class="limitEvt_content">
                         <li class="limitEvt pic1">
@@ -308,8 +262,6 @@
                             </a>
                         </li>
                     </ul>
-
-
                     <!-- 常態活動區域 -->
                     <ul class="normalEvt_content">
                         <li class="normalEvt pic1">
@@ -333,199 +285,177 @@
                             </a>
                         </li>
                     </ul>
-
                 </div>
 
                 <!-- 熱門文章 -->
                 <div class="body_atc">
-                    <div class="news_container">
+                    <div class="atc_container">
                         <div class="atc_categories">
                             <div class="atc_hotAtc active" data-target="hotAtc_content">熱門文章</div>
                             <div class="atc_niceAtc" data-target="niceAtc_content">精選文章</div>
                             <div class="atc_normalAtc" data-target="normalAtc_content">一般文章</div>
                         </div>
                         <div class="atc_more-link">
-                            <button
-                                onclick="window.location.href='./forum_content/forum_account.html'">前往熱門文章主頁</button>
+                            <button onclick="window.location.href='./forum_content/forum_account.html'">前往文章主頁</button>
                         </div>
                     </div>
-                    <!-- 文章內容區域 -->
-
                     <!-- 熱門文章區域 -->
-                    <ul class="hotAtc_content active">
-                        <li class="hotAtc_inner">
-                            <a href="#" class="inner hotAtc_inner-pic1">
-                            </a>
-                        </li>
-                        <li class="hotAtc_inner">
-                            <a href="#" class="inner hotAtc_inner-pic2"></a>
-                        </li>
-                        <li class="hotAtc_inner">
-                            <a href="#" class="inner hotAtc_inner-pic3"></a>
-                        </li>
-                        <li class="hotAtc_inner">
-                            <a href="#" class="inner hotAtc_inner-pic4"></a>
-                        </li>
-                        <li class="hotAtc_inner">
-                            <a href="#" class="inner hotAtc_inner-pic5"></a>
-                        </li>
-                        <li class="hotAtc_inner">
-                            <a href="#" class="inner hotAtc_inner-pic6"></a>
-                        </li>
-                        <li class="hotAtc_inner">
-                            <a href="#" class="inner hotAtc_inner-pic7"></a>
-                        </li>
-                        <li class="hotAtc_inner">
-                            <a href="#" class="inner hotAtc_inner-pic8"></a>
-                        </li>
-                    </ul>
-
-
+                    <div class="hotAtc_content active">
+                        <div class="hotAtc-row1">
+                            <li class="hotAtc_inner">
+                                <a href="#" class="inner hotAtc_inner-pic1"></a>
+                            </li>
+                            <li class="hotAtc_inner">
+                                <a href="#" class="inner hotAtc_inner-pic2"></a>
+                            </li>
+                            <li class="hotAtc_inner">
+                                <a href="#" class="inner hotAtc_inner-pic3"></a>
+                            </li>
+                            <li class="hotAtc_inner">
+                                <a href="#" class="inner hotAtc_inner-pic4"></a>
+                            </li>
+                        </div>
+                        <div class="hotAtc-row2">
+                            <li class="hotAtc_inner">
+                                <a href="#" class="inner hotAtc_inner-pic5"></a>
+                            </li>
+                            <li class="hotAtc_inner">
+                                <a href="#" class="inner hotAtc_inner-pic6"></a>
+                            </li>
+                            <li class="hotAtc_inner">
+                                <a href="#" class="inner hotAtc_inner-pic7"></a>
+                            </li>
+                            <li class="hotAtc_inner">
+                                <a href="#" class="inner hotAtc_inner-pic8"></a>
+                            </li>
+                        </div>
+                    </div>
                     <!-- 精選文章區域 -->
                     <ul class="niceAtc_content">
                         <li class="niceAtc_inner">
-                            <a href="#" class="inner">文章1</a>
+                            <a href="#" class="inner hotAtc_inner-pic8"></a>
                         </li>
                         <li class="niceAtc_inner">
-                            <a href="#" class="inner">文章2</a>
+                            <a href="#" class="inner hotAtc_inner-pic7"></a>
                         </li>
                         <li class="niceAtc_inner">
-                            <a href="#" class="inner">文章3</a>
+                            <a href="#" class="inner hotAtc_inner-pic6"></a>
                         </li>
                         <li class="niceAtc_inner">
-                            <a href="#" class="inner">文章4</a>
+                            <a href="#" class="inner hotAtc_inner-pic5"></a>
                         </li>
                         <li class="niceAtc_inner">
-                            <a href="#" class="inner">文章5</a>
+                            <a href="#" class="inner hotAtc_inner-pic4"></a>
                         </li>
                         <li class="niceAtc_inner">
-                            <a href="#" class="inner">文章6</a>
+                            <a href="#" class="inner hotAtc_inner-pic3"></a>
                         </li>
                         <li class="niceAtc_inner">
-                            <a href="#" class="inner">文章7</a>
+                            <a href="#" class="inner hotAtc_inner-pic2"></a>
                         </li>
                         <li class="niceAtc_inner">
-                            <a href="#" class="inner">文章8</a>
+                            <a href="#" class="inner hotAtc_inner-pic1"></a>
                         </li>
                     </ul>
 
                     <!-- 一般文章區域 -->
                     <ul class="normalAtc_content">
                         <li class="normalAtc_inner">
-                            <a href="#" class="inner">文章1</a>
+                            <a href="#" class="inner hotAtc_inner-pic6"></a>
                         </li>
                         <li class="normalAtc_inner">
-                            <a href="#" class="inner">文章2</a>
+                            <a href="#" class="inner hotAtc_inner-pic4"></a>
                         </li>
                         <li class="normalAtc_inner">
-                            <a href="#" class="inner">文章3</a>
+                            <a href="#" class="inner hotAtc_inner-pic2"></a>
                         </li>
                         <li class="normalAtc_inner">
-                            <a href="#" class="inner">文章4</a>
+                            <a href="#" class="inner hotAtc_inner-pic8"></a>
                         </li>
                         <li class="normalAtc_inner">
-                            <a href="#" class="inner">文章5</a>
+                            <a href="#" class="inner hotAtc_inner-pic3"></a>
                         </li>
                         <li class="normalAtc_inner">
-                            <a href="#" class="inner">文章6</a>
+                            <a href="#" class="inner hotAtc_inner-pic5"></a>
                         </li>
                         <li class="normalAtc_inner">
-                            <a href="#" class="inner">文章7</a>
+                            <a href="#" class="inner hotAtc_inner-pic1"></a>
                         </li>
                         <li class="normalAtc_inner">
-                            <a href="#" class="inner">文章8</a>
+                            <a href="#" class="inner hotAtc_inner-pic7"></a>
                         </li>
                     </ul>
-
-                </div>
-
-
-                <!-- 教學文主頁 -->
-                <div class="body_teach">
-
-                    <div class="teach_container">
-                        <div class="teach_categories">
-                            <div class="teach_baseWine active" data-target="baseWine_content">六大基酒</div>
-                            <div class="teach_bartendWine" data-target="bartendWine_content">經典調酒</div>
-                            <div class="teach_teachWine" data-target="teachWine_content">調酒教學</div>
+                    <!-- 教學文主頁 -->
+                    <div class="body_teach">
+                        <div class="teach_container">
+                            <div class="teach_categories">
+                                <div class="teach_baseWine active" data-target="baseWine_content">六大基酒</div>
+                                <div class="teach_bartendWine" data-target="bartendWine_content">經典調酒</div>
+                                <div class="teach_teachWine" data-target="teachWine_content">調酒教學</div>
+                            </div>
+                            <div class="teachs_more-link">
+                                <button
+                                    onclick="window.location.href='./forum_content/forum_teach.html'">前往教學主頁</button>
+                            </div>
                         </div>
-                        <div class="teachs_more-link">
-                            <button onclick="window.location.href='./forum_content/forum_teach.html'">前往基酒主頁</button>
-                        </div>
+                        <!-- 六大基酒區域 -->
+                        <ul class="baseWine_content active">
+                            <li class="baseWinePic1">
+                                <a href="./forum_content/forum_teach.html" class="content"></a>
+                            </li>
+                            <li class="baseWinePic2">
+                                <a href="./forum_content/forum_teach.html" class="content"></a>
+                            </li>
+                            <li class="baseWinePic3">
+                                <a href="./forum_content/forum_teach.html" class="content"></a>
+                            </li>
+                            <li class="baseWinePic4">
+                                <a href="./forum_content/forum_teach.html" class="content"></a>
+                            </li>
+
+                        </ul>
+                        <!-- 經典調酒區域 -->
+                        <ul class="bartendWine_content ">
+                            <li class="bartendWinePic1">
+                                <a href="./forum_content/forum_teach.html" class="content"></a>
+                            </li>
+                            <li class="bartendWinePic2">
+                                <a href="./forum_content/forum_teach.html" class="content"></a>
+                            </li>
+                            <li class="bartendWinePic3">
+                                <a href="./forum_content/forum_teach.html" class="content"></a>
+                            </li>
+                            <li class="bartendWinePic4">
+                                <a href="./forum_content/forum_teach.html" class="content"></a>
+                            </li>
+                        </ul>
+                        <!-- 調酒教學區域 -->
+                        <ul class="teachWine_content ">
+                            <li class="teachWinePic1">
+                                <a href="#" class="content">
+                                    <div class="video-item">
+                                        <iframe width="390" height="250"
+                                            src="https://www.youtube.com/embed/qH4Cge_ED-4?si=ag5jUerb6mDieJ90"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="teachWinePic2">
+                                <a href="#" class="content">
+                                    <div class="video-item">
+                                        <iframe width="390" height="250"
+                                            src="https://www.youtube.com/embed/W-JKSt5Lg6c?si=uc3VOfm_lLvCCHiH&amp;start=10"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- 教學文章區域 -->
-
-                    <!-- 六大基酒區域 -->
-                    <ul class="baseWine_content active">
-                        <li class="baseWinePic1">
-                            <a href="#" class="content">
-                            </a>
-                        </li>
-                        <li class="baseWinePic2">
-                            <a href="#" class="content">
-                            </a>
-                        </li>
-                        <li class="baseWinePic3">
-                            <a href="#" class="content">
-                            </a>
-                        </li>
-                        <li class="baseWinePic4">
-                            <a href="#" class="content">
-                            </a>
-                        </li>
-                    </ul>
-
-
-
-                    <!-- 經典調酒區域 -->
-                    <ul class="bartendWine_content ">
-                        <li class="bartendWinePic1">
-                            <a href="#" class="content">
-                            </a>
-                        </li>
-                        <li class="bartendWinePic2">
-                            <a href="#" class="content">
-                            </a>
-                        </li>
-                        <li class="bartendWinePic3">
-                            <a href="#" class="content">
-                            </a>
-                        </li>
-                        <li class="bartendWinePic4">
-                            <a href="#" class="content">
-                            </a>
-                        </li>
-                    </ul>
-
-
-                    <!-- 調酒教學區域 -->
-                    <ul class="teachWine_content ">
-                        <li class="teachWinePic1">
-                            <a href="#" class="content">
-                                <div class="video-item">
-                                    <iframe width="320" height="200"
-                                        src="https://www.youtube.com/embed/qH4Cge_ED-4?si=ag5jUerb6mDieJ90"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="teachWinePic2">
-                            <a href="#" class="content">
-                                <div class="video-item">
-                                    <iframe width="320" height="200"
-                                        src="https://www.youtube.com/embed/W-JKSt5Lg6c?si=uc3VOfm_lLvCCHiH&amp;start=10"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
-
-            </div>
         </section>
 
         <div class="helper-wrapper">
@@ -547,28 +477,25 @@
             <div class="helper-label">LET ME<br>HELP!</div>
         </div>
     </main>
-    <!-- 步驟二：載入root元素 -->
-    <div id="root"></div>
+
+    <div id="footer"></div>
     <script type="text/babel">
-        // 步驟三：建立 React 元件
         function App() {
             return (
                 <Footer />
             )
         }
-
-        // 步驟四：渲染元件到根元件上
         ReactDOM
-            .createRoot(document.getElementById('root'))
+            .createRoot(document.getElementById('footer'))
             .render(<App />)
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
-    <script src="./js/forum-script.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/forum-script.js"></script>
 </body>
 
 </html>
