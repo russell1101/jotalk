@@ -76,7 +76,7 @@ a {
 }
 
 /* 玻璃擬態 */
-#header .topbar {
+#header_el .topbar_el {
     background-image: linear-gradient(45deg, rgba(225, 225, 225, 0.4),
             rgba(225, 225, 225, 0.7));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
@@ -85,7 +85,7 @@ a {
 }
 
 /* ----------頁首區---------- */
-#header {
+#header_el {
     position: relative;
     /* 設置為 relative 以便內部元素使用 absolute 定位 */
     width: 100%;
@@ -106,7 +106,7 @@ a {
     z-index: 1000;
 }
 
-#header .topbar section {
+#header_el .topbar_el section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,7 +114,7 @@ a {
     height: 100vh;
 }
 
-#header .topbar {
+#header_el .topbar_el {
     position: fixed;
     width: 90px;
     max-width: 550px;
@@ -133,13 +133,13 @@ a {
 }
 
 @media (max-width:1439px) {
-    #header .topbar {
+    #header_el .topbar_el {
         margin-top: 30px;
         margin-left: 30px;
     }
 }
 
-#header .topbar .logo {
+#header_el .topbar_el .logo_el {
     width: 60px;
     height: 60px;
     display: flex;
@@ -149,17 +149,17 @@ a {
     /* 垂直居中 */
 }
 
-#header .topbar .logo a {
+#header_el .topbar_el .logo_el a {
     width: 60px;
 }
 
-#header .topbar.collapsed {
+#header_el .topbar_el.collapsed {
     width: 90px;
     border-radius: 99px;
     overflow: hidden;
 }
 
-#header .topbar:hover {
+#header_el .topbar_el:hover {
     width: 40%;
     max-width: 550px;
     /* 滑鼠觸碰時擴展 */
@@ -171,7 +171,7 @@ a {
 
 
 
-#header .topbar .menu {
+#header_el .topbar_el .menu_el {
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
@@ -185,8 +185,8 @@ a {
     /* 菜單顯隱 */
 }
 
-/* header .topbar 選項 hover效果 */
-#header .topbar .menu a {
+/* header .topbar_el 選項 hover效果 */
+#header_el .topbar_el .menu_el a {
     display: block;
     color: var(--darkgrey);
     font-weight: 900;
@@ -199,7 +199,7 @@ a {
     padding-bottom: 5px;
 }
 
-#header .topbar .menu a::after {
+#header_el .topbar_el .menu_el a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -213,7 +213,7 @@ a {
     /* 改變 transition 參數 */
 }
 
-#header .topbar .menu a:hover::after {
+#header_el .topbar_el .menu_el a:hover::after {
     left: 0;
     /* 展開到左邊界 */
     right: 0;
@@ -221,14 +221,14 @@ a {
 }
 
 
-#header .topbar.collapsed .menu {
+#header_el .topbar_el.collapsed .menu_el {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease, visibility 0s 0.2s;
 }
 
 
-#header .topbar:hover .menu {
+#header_el .topbar_el:hover .menu_el {
     opacity: 1;
     visibility: visible;
     transition: opacity 4s ease, visibility 0s 0.2s;
@@ -238,22 +238,22 @@ a {
 
 
 /* login按鈕位置 */
-#header .account_write {
+#header_el .writeBtn_el {
     position: absolute;
     top: 40px;
     right: 160px;
 }
 
-#header .account_login,
-#header .account_logout {
+#header_el .account_login_el,
+#header_el .account_logout_el {
     position: absolute;
     top: 40px;
     right: 50px;
 }
 
-#header .account_login button,
-.account_logout button,
-.account_write button {
+#header_el .account_login_el button,
+.account_logout_el button,
+.writeBtn_el button {
     background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
             rgba(225, 225, 225, 0.8));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
@@ -268,19 +268,19 @@ a {
     /* 如果需要更改按鈕的透明度，可以使用 opacity */
 }
 
-#header .account_login button:hover,
-.account_logout :hover,
-.account_write button:hover {
+#header_el .account_login_el button:hover,
+.account_logout_el :hover,
+.writeBtn_el button:hover {
     background-color: #ffffff;
 }
 
-#header .account_login a {
+#header_el .account_login_el a {
     color: #000000;
     padding: 10px 10px;
     text-align: center;
 }
 
-#header .forum_slogan {
+#header_el .left_slogan_el {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -296,16 +296,16 @@ a {
     padding: 20px;
 }
 
-#header .forum_slogan h1 {
+#header_el .left_slogan_el h1 {
     color: #ffffff;
 }
 
-#header .forum_slogan p {
+#header_el .left_slogan_el p {
     color: #ffffff;
 }
 
 
-#header .slogan {
+#header_el .slogan_el {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -322,7 +322,7 @@ a {
     padding: 20px;
 }
 
-#header .slogan h1 {
+#header_el .slogan_el h1 {
     color: #ffffff;
 }
 
@@ -333,7 +333,7 @@ a {
 
 /* 登入按鈕表單 */
 /* 遮罩層樣式 */
-.overlay {
+#account_overlay_el {
     position: fixed;
     top: 0;
     left: 0;
@@ -350,13 +350,13 @@ a {
 }
 
 /* 登入按鈕樣式 */
-.account_login {
+.account_login_el {
     position: absolute;
     top: 40px;
     right: 50px;
 }
 
-.account_login button {
+.account_login_el button {
     background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
             rgba(225, 225, 225, 0.8));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
@@ -369,12 +369,12 @@ a {
     cursor: pointer;
 }
 
-.account_login button:hover {
+.account_login_el button:hover {
     background-color: white;
 }
 
 /* 彈出視窗樣式 */
-#loginWindow {
+#loginWindow_el {
     position: relative;
     position: fixed;
     top: 50%;
@@ -398,7 +398,7 @@ a {
     /* 添加漸變效果，持續時間0.3秒 */
 }
 
-.contant {
+.contant_el {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -407,7 +407,7 @@ a {
 }
 
 /* 關閉按鈕樣式 */
-#closebtn img{
+#closebtn_el img {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -419,12 +419,12 @@ a {
     transition: .25s ease-in-out;
 }
 
-#closebtn img:hover {
+#closebtn_el img:hover {
     opacity: 60%;
 }
 
 /* login底線 */
-.login_border {
+.login_border_el {
     width: 90%;
     display: flex;
     justify-content: center;
@@ -434,7 +434,7 @@ a {
 }
 
 /* login字樣 */
-#loginWindow h2 {
+#loginWindow_el h2 {
     font-size: 3rem;
     font-weight: 400;
     font-size: 2rem;
@@ -484,20 +484,20 @@ a {
     width: 100%;
 }
 
-#loginWindow small {
+#loginWindow_el small {
     font-size: .5rem;
     cursor: pointer;
 }
 
 
 /* 登入註冊按鈕 */
-.button {
+.button_el {
     display: flex;
     width: 90%;
     justify-content: space-between;
 }
 
-.button button {
+.button_el button {
     width: 40%;
     height: 30px;
     background-color: #155569;
@@ -508,7 +508,7 @@ a {
     transition: .5s ease;
 }
 
-.button button:hover {
+.button_el button:hover {
     background-color: #155569c9;
 }
 
@@ -533,14 +533,14 @@ a {
 
 
 
-.icon {
+.icon_el {
     width: 90%;
     height: 15%;
     display: flex;
     justify-content: space-between;
 }
 
-.icon li {
+.icon_el li {
     width: 100%;
     height: 100%;
     display: flex;
@@ -548,9 +548,9 @@ a {
     align-items: center;
 }
 
-.icon-fb,
-.icon-mail,
-.icon-line {
+.icon_el-fb,
+.icon_el-mail,
+.icon_el-line {
     width: 60%;
     height: 60%;
     transition: .5s ease;
@@ -560,20 +560,20 @@ a {
     background-repeat: no-repeat;
 }
 
-.icon-fb {
+.icon_el-fb {
     background-image: url(../img/svg/facebook.svg);
 }
 
-.icon-mail {
+.icon_el-mail {
     background-image: url(../img/svg/google.svg);
 }
 
-.icon-line {
+.icon_el-line {
     background-image: url(../img/svg/line.svg);
 }
 
-.icon-fb:hover,
-.icon-mail:hover,
-.icon-line:hover {
+.icon_el-fb:hover,
+.icon_el-mail:hover,
+.icon_el-line:hover {
     opacity: 0.7;
 }

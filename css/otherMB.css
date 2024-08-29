@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
+/* utf8一定要在行數1 */
+/* import 一定要在第二行 */
+
+/* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加padding */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    color: #444;
+    display: block;
+    /* 預設inline行內元素改為block */
+    text-decoration: none;
+}
+
+/* 內容區 */
+main {
+    display: flex;
+    justify-content: center; 
+    margin: 0 auto;
+}
+
+#otherMB-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start; /* 子元素頂部對齊 */
+    max-width: 1040px;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+#omb-left{
+    flex: 1;
+    max-width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#omb-right{
+    flex: 2;
+    max-width: 80%;
+    background-color: #930000b7;
+    padding: 1rem;
+}
