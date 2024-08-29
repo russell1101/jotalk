@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>forum-Atc</title>
-    <link rel="stylesheet" href="./css/forum/forum_account.css">
+
 
     <!-- 步驟一：載入React, Bable -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -19,7 +19,7 @@
     <script type="text/babel" src="./Header_element/Header.jsx"></script>
     <link rel="stylesheet" href="./Header_element/Header.css">
 
-
+    <link rel="stylesheet" href="./css/forum/forum_account.css">
 </head>
 
 <body>
@@ -82,21 +82,21 @@
                                 <h2>信義王陽明</h2>
                                 <small>4 hour ago</small>
                             </div>
-                            <h2 id="article_title">酒吧評比</h2>
+                            <h2 id="article_title">文章標題</h2>
                             <div id="hashtag">
                                 <small>#標籤放這邊</small>
                                 <small>#標籤放這邊</small>
                             </div>
-                            <p> 「xxx酒吧」
-                                ❤️（十分頂級，妹多帥哥多酒好喝）
-                                ⛽️（不差，偶爾會跟朋友去玩玩）
-                                😮（普普通通沒啥感覺）
-                                😭（沒啥料，音樂一般酒也一般）
-                                😆（一堆89🐒+🐲誰愛去誰去）</p>
+                            <p>熱門文章內文放這邊，自動縮簡1排後變”...”
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste culpa quos
+                                similique at vel obcaecati eveniet deleniti cumque ipsa iure provident saepe, nemo vero?
+                                Totam ipsam reiciendis cupiditate, ducimus eaque ratione officiis expedita ea illum non
+                                quia quas possimus! Tenetur minima distinctio error. Hic repudiandae dolorem vero
+                                doloribus placeat.</p>
                             <div id="like">
                                 <div id="heart">
                                     <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="">
-                                    <p id="heart_num">987</p>
+                                    <p id="heart_num">696</p>
                                 </div>
                                 <div id="comment">
                                     <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg"
@@ -111,6 +111,7 @@
                         </div>
                         <figure class="picture"><img src="../img/forum/news_pic1.jpg" alt=""></figure>
                     </div>
+
                     <div class="article" data-target="content-2">
                         <div class="text">
                             <div class="user">
@@ -156,6 +157,7 @@
                     <div class="article hidden">熱門文章9</div>
                     <div class="article hidden">熱門文章10</div>
                 </div>
+
                 <div class="Atc_content hidden" id="Atc_nice">
                     <div class="article">精選文章1</div>
                     <div class="article">精選文章2</div>
@@ -184,123 +186,189 @@
             </div>
         </div>
 
-        <!-- 文章內頁 -->
+
+
+
+        <!-- 文章遮罩 -->
         <div id="overlay" class="overlay"></div>
-        <div id="content-1" class="content hidden">
-            <span class="closebtn">X</span>
-            <div class="content_user">
-                <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
-                <h2>信義王陽明</h2>
-                <small>7月26日 23:00</small>
-            </div>
-            <h1>熱門文章標題</h1>
-            <div id="hashtag">
-                <small>#標籤放這邊</small>
-                <small>#標籤放這邊</small>
-            </div>
-            <div class="padding">
-                <p id="p">酒吧評比<br>
-                    「xxx酒吧」<br>
-                    ❤️（十分頂級，妹多帥哥多酒好喝）<br>
-                    ⛽️（不差，偶爾會跟朋友去玩玩）<br>
-                    😮（普普通通沒啥感覺）<br>
-                    😭（沒啥料，音樂一般酒也一般）<br>
-                    😆（一堆89🐒+🐲誰愛去誰去）
-                </p>
-                <div id="like">
-                    <div id="heart">
-                        <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="">
-                        <p id="heart_num">987</p>
-                    </div>
-                    <div id="comment">
-                        <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="">
-                        <p id="comment_num">987</p>
-                    </div>
-                    <div id="bookMark">
-                        <img id="bookMark_img" src="../img/forum/account/like/icon _bookmark_.svg" alt="">
-                        <p id="bookMark_num">987</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="comment-section">
-                <!-- 排序按鈕區域 -->
-                <div class="sort-buttons">
-                    <button id="sort-hot">熱門留言</button>
-                    <button id="sort-newest">由新至舊留言</button>
-                    <button id="sort-oldest">由舊至新留言</button>
-                </div>
 
+        <!--文章內頁 -->
+        <div id="rest"></div>
+        <script type="text/babel">
 
-                <!-- 留言區域 -->
-                <div id="comments">
-                    <div id="rest"></div>
-                    <script type="text/babel">
-                        function Comment(props) {
-                            const { time, user_url, userName, user_time, floor, content, heart_num, comment_num } = props;
-                            return (
-                                <div className="comment" data-timestamp={time}>
-                                    <div className="comment_user">
-                                        <figure><img src={user_url} alt="" /></figure>
-                                        <h2>{userName}</h2>
-                                        <small>{user_time}</small>
-                                        <small>{floor}</small>
-                                    </div>
-                                    <p>{content}</p>
-                                    <div id="like">
-                                        <div id="heart">
-                                            <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
-                                            <p id="heart_num">{heart_num}</p>
-                                        </div>
-                                        <div id="comment">
-                                            <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
-                                            <p id="comment_num">{comment_num}</p>
-                                        </div>
-                                        <small>查看更多回覆>></small>
-                                    </div>
-                                    <hr></hr>
+            function Article(props) {
+                return (
+                    <>
+                        <span className="closebtn">X</span>
+                        <div className="content_user">
+                            <figure><img src="../img/forum/account/user/user1.jpg" alt="" /></figure>
+                            <h2>信義王陽明</h2>
+                            <small>7月26日 23:00</small>
+                        </div>
+                        <h1>熱門文章標題</h1>
+                        <div id="hashtag">
+                            <small>#標籤放這邊</small>
+                            <small>#標籤放這邊</small>
+                        </div>
+                        <div className="padding">
+                            <p id="p">酒吧評比<br />
+                                「xxx酒吧」<br />
+                                ❤️（十分頂級，妹多帥哥多酒好喝）<br />
+                                ⛽️（不差，偶爾會跟朋友去玩玩）<br />
+                                😮（普普通通沒啥感覺）<br />
+                                😭（沒啥料，音樂一般酒也一般）<br />
+                                😆（一堆89🐒+🐲誰愛去誰去）
+                            </p>
+                            <div id="like">
+                                <div id="heart">
+                                    <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
+                                    <p id="heart_num">987</p>
                                 </div>
-                            )
-                        }
+                                <div id="comment">
+                                    <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
+                                    <p id="comment_num">987</p>
+                                </div>
+                                <div id="bookMark">
+                                    <img id="bookMark_img" src="../img/forum/account/like/icon _bookmark_.svg" alt="" />
+                                    <p id="bookMark_num">987</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </>
+                )
+            }
 
-                        const App = () => {
-                            const comment = [
-                                {
-                                    id: 1, //跑迴圈時 需要一個資料不會重複的key值
-                                    time: '2024-08-22T14:20:00',
-                                    user_url: '../img/forum/account/user/user1.jpg',
-                                    userName: '信義王陽明',
-                                    user_time: '8月22日 14:20',
-                                    floor: 'B1',
-                                    content: '真假好讚喔!!',
-                                    heart_num: 966,
-                                    comment_num: 660
-                                },
-                                {
-                                    id: 2, //跑迴圈時 需要一個資料不會重複的key值
-                                    time: '2024-08-20T14:20:00',
-                                    user_url: '../img/forum/account/user/user1.jpg',
-                                    userName: '信義王陽明',
-                                    user_time: '8月20日 14:20',
-                                    floor: 'B2',
-                                    content: '真假好讚喔!!',
-                                    heart_num: 966,
-                                    comment_num: 660
-                                },
-                                {
-                                    id: 3, //跑迴圈時 需要一個資料不會重複的key值
-                                    time: '2024-08-18T10:20:00',
-                                    user_url: '../img/forum/account/user/user1.jpg',
-                                    userName: '信義王陽明',
-                                    user_time: '8月18日 10:20',
-                                    floor: 'B3',
-                                    content: '真假好讚喔!!',
-                                    heart_num: 966,
-                                    comment_num: 660
-                                },
-                            ]
-                            return (
-                                <>
+            function Comment(props) {
+                const { time, user_url, userName, user_time, floor, content, heart_num, comment_num } = props;
+                return (
+                    <>
+                        {/*留言區域*/}
+                        <div className="comment" data-timestamp={time}>
+                            <div className="comment_user">
+                                <figure><img src={user_url} alt="" /></figure>
+                                <h2>{userName}</h2>
+                                <small>{user_time}</small>
+                                <small>{floor}</small>
+                            </div>
+                            <p>{content}</p>
+                            <div id="like">
+                                <div id="heart">
+                                    <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
+                                    <p id="heart_num">{heart_num}</p>
+                                </div>
+                                <div id="comment">
+                                    <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
+                                    <p id="comment_num">{comment_num}</p>
+                                </div>
+                                <small>查看更多回覆>></small>
+                            </div>
+                            <hr />
+                        </div>
+                    </>
+                )
+            }
+
+
+
+            const App = () => {
+
+                React.useEffect(() => {
+                    windowout();
+                }, []);
+
+
+                const comment = [
+                    {
+                        id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                        time: '2024-08-22T14:20:00',
+                        user_url: '../img/forum/account/user/user1.jpg',
+                        userName: '信義王陽明',
+                        user_time: '8月22日 14:20',
+                        floor: 'B1',
+                        content: '真假好讚喔!!',
+                        heart_num: 966,
+                        comment_num: 660
+                    },
+                    {
+                        id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                        time: '2024-08-20T14:20:00',
+                        user_url: '../img/forum/account/user/user1.jpg',
+                        userName: '信義王陽明',
+                        user_time: '8月20日 14:20',
+                        floor: 'B2',
+                        content: '真假好讚喔!!',
+                        heart_num: 966,
+                        comment_num: 660
+                    },
+                    {
+                        id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                        time: '2024-08-18T10:20:00',
+                        user_url: '../img/forum/account/user/user1.jpg',
+                        userName: '信義王陽明',
+                        user_time: '8月18日 10:20',
+                        floor: 'B3',
+                        content: '真假好讚喔!!',
+                        heart_num: 966,
+                        comment_num: 660
+                    },
+                ]
+
+
+                const comment2 = [
+                    {
+                        id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                        time: '2024-08-22T14:20:00',
+                        user_url: '../img/forum/account/user/user1.jpg',
+                        userName: '信義878',
+                        user_time: '8月22日 14:20',
+                        floor: 'B1',
+                        content: '真假好讚喔!!',
+                        heart_num: 966,
+                        comment_num: 660
+                    },
+                    {
+                        id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                        time: '2024-08-20T14:20:00',
+                        user_url: '../img/forum/account/user/user1.jpg',
+                        userName: '文山宋江',
+                        user_time: '8月20日 14:20',
+                        floor: 'B2',
+                        content: '真假好讚喔!!',
+                        heart_num: 966,
+                        comment_num: 660
+                    },
+                    {
+                        id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                        time: '2024-08-18T10:20:00',
+                        user_url: '../img/forum/account/user/user1.jpg',
+                        userName: '信義王陽明',
+                        user_time: '8月18日 10:20',
+                        floor: 'B3',
+                        content: '真假好讚喔!!',
+                        heart_num: 966,
+                        comment_num: 660
+                    },
+                ]
+
+                return (
+                    <>
+                        <div id="content-1" class="content hidden">
+
+                            {/*導入Article元件*/}
+                            <Article />
+
+
+                            <div class="comment-section">
+                                {/*排序按鈕區域*/}
+                                <div class="sort-buttons">
+                                    <button id="sort-hot">熱門留言</button>
+                                    <button id="sort-newest">由新至舊留言</button>
+                                    <button id="sort-oldest">由舊至新留言</button>
+                                </div>
+
+
+                                <div id="comments">
                                     {
                                         comment.map((item) => {
                                             // 呼叫卡片元件
@@ -309,43 +377,43 @@
                                             return <Comment key={item.id} time={item.time} user_url={item.user_url} userName={item.userName} user_time={item.user_time} floor={item.floor} content={item.content} heart_num={item.heart_num} comment_num={item.comment_num} />
                                         })
                                     }
-                                </>
-                            )
-                        }
+                                </div>
+                            </div >
+                        </div >
 
-                        ReactDOM.createRoot(document.getElementById('rest')).render(<App />);
-                    </script>
-                    <!-- 每一個留言的結構 -->
-                    <div class="comment" data-timestamp="2024-08-22T14:20:00">
-                        <div class="comment_user">
-                            <figure><img src="../img/forum/account/user/user1.jpg" alt=""></figure>
-                            <h2>信義王陽明</h2>
-                            <small>8月22日 14:20</small>
-                            <small>B1</small>
-                        </div>
-                        <p>真假號讚喔!!</p>
-                        <div id="like">
-                            <div id="heart">
-                                <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="">
-                                <p id="heart_num">987</p>
-                            </div>
-                            <div id="comment">
-                                <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="">
-                                <p id="comment_num">987</p>
-                            </div>
-                            <small>查看更多回覆>></small>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-            </div>
 
-            <div id="content-2" class="content hidden">
-                <span class="closebtn">X</span>
-                <h2>文章 2 標題</h2>
-                <p>這是文章 2 的內容。</p>
-            </div>
+                        <div id="content-2" class="content hidden">
+                            <Article />
+                            <div class="comment-section">
+                                {/*排序按鈕區域*/}
+                                <div class="sort-buttons">
+                                    <button id="sort-hot">熱門留言</button>
+                                    <button id="sort-newest">由新至舊留言</button>
+                                    <button id="sort-oldest">由舊至新留言</button>
+                                </div>
+
+
+                                <div id="comments">
+                                    {
+                                        comment2.map((item) => {
+                                            // 呼叫卡片元件
+                                            // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                            // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                            return <Comment key={item.id} time={item.time} user_url={item.user_url} userName={item.userName} user_time={item.user_time} floor={item.floor} content={item.content} heart_num={item.heart_num} comment_num={item.comment_num} />
+                                        })
+                                    }
+                                </div>
+                            </div >
+                        </div >
+                    </ >
+                )
+            }
+
+            ReactDOM.createRoot(document.getElementById('rest')).render(<App />);
+        </script>
+
     </main>
+
 
     <!-- 步驟二：載入root元素 -->
     <div id="root"></div>
