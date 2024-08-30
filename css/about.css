@@ -254,7 +254,7 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 2rem;
+    padding: 2rem;
     margin: 2rem;
     background-color: var(--alpha-w-60);
     border-radius: 20px;
@@ -263,9 +263,9 @@ main {
 }
 
 h2 {
-    margin: 0 0 2rem 0;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
     align-self: flex-start;
-    /* 靠左對齊 */
     width: 100%;
     text-align: left;
     font-family: "Noto Sans TC", sans-serif;

@@ -6,38 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOTALK – 關於我們</title>
     <link rel="icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./css/about.css">
-
-    <!-- 步驟一：載入React, Bable -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- footer元件 -->
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
+
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
+
+    <link rel="stylesheet" href="./css/about.css">
 </head>
 
 <body>
-    <!-- 頁首區 -->
-    <header id="about_head">
-        <!-- logo區 -->
-        <div class="topbar">
-            <h1 class="logo">
-                <a href="./index.html">
-                    <img src="./img/logo.svg" alt="jotalkLogo">
-                </a>
-            </h1>
-            <div class="menu">
-                <a href="./forum.html">綜合論壇</a>
-                <a href="./barlist.html">酒吧清單</a>
-                <a href="./about.html">關於我們</a>
-            </div>
-        </div>
-        <div class="about_slogan">
-            <h1>ABOUT JOTALK</h1>
-        </div>
-    </header>
+    <!-- 頁首元件 -->
+    <div id="header"></div>
+    <script type="text/babel">
+        function App() {
+            
+            React.useEffect(() => {
+                login();
+            }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
+
+            return (
+                <Header h1="ABOUT JOTALK" bg='./img/about/about-head-pic.jpg' leftSlogan={true} slogan={false} btn={true} />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('header'))
+            .render(<App />)
+    </script>
     <main>
         <img class="about-bg" src="./img/about/about-bg.jpg">
         <div class="about_content">
@@ -63,30 +62,24 @@
                     隨著 <code class="engFont">JOTALK</code> 逐漸成形，我們的願景也變得更加清晰：希望大家每次的酒吧體驗，都能成為一次難忘的放鬆之旅。
                 </p>
             </div>
-            <button class="contactUs">聯絡我們</button>
+            <a class="contactUs" href="https://forms.gle/vF3evQP9kiWntoF27">聯絡我們</a>
         </div>
     </main>
 
-
-    <!-- 步驟二：載入root元素 -->
     <div id="root"></div>
     <script type="text/babel">
-        // 步驟三：建立 React 元件
-        // 元件字首要大寫 而且有回傳值return
         function App() {
             // jsx語法
             return (
                 <Footer />
             )
         }
-
-        // 步驟四：渲染元件到根元件上
         ReactDOM
             .createRoot(document.getElementById('root'))
             .render(<App />)
     </script>
 
-    <script src="./js/script.js"></script>
+    <script src="./Header_element/login.js"></script>
 </body>
 
 </html>

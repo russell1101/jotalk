@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // smoove 特效
-$(document).ready(function() {
+$(document).ready(function () {
     $('.smoove').smoove({
         offset: '30%'
     });
@@ -33,7 +33,6 @@ $(document).ready(function() {
 
 // index-4 跑馬燈
 document.addEventListener("DOMContentLoaded", () => {
-    // 遍歷每個跑馬燈容器
     document.querySelectorAll('.marquee-container').forEach(container => {
         const marquee = container.querySelector('.marquee');
         const spanWidth = marquee.firstElementChild.offsetWidth;
@@ -50,10 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         marquee.style.animationPlayState = 'running';
     });
 
-    // 控制字卡的移動和拖曳
     const feedbackCardsContainer = document.getElementById("feedbackCards");
     const feedbackCards = document.querySelectorAll(".feedback-card");
-    const cardsWrapper = document.querySelector('.feedback-cards-container');
 
     // 克隆字卡以實現無縫循環
     function cloneFeedbackCards() {
@@ -96,71 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 設定字卡移動的間隔
     setInterval(moveFeedbackCards, 2000);
-
-    // 拖曳功能的實作
-    let isDragging = false;
-    let startX, scrollLeft;
-
-    // 確保拖曳功能不影響字卡的移動
-    cardsWrapper.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX - cardsWrapper.offsetLeft;
-        scrollLeft = cardsWrapper.scrollLeft;
-    });
-
-    cardsWrapper.addEventListener('mouseleave', () => {
-        isDragging = false;
-    });
-
-    cardsWrapper.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-
-    cardsWrapper.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - cardsWrapper.offsetLeft;
-        const walk = (x - startX) * 2; // 快速滾動
-        cardsWrapper.scrollLeft = scrollLeft - walk;
-
-        // 控制當前索引，避免空白區域出現
-        const maxScrollLeft = cardsWrapper.scrollWidth - cardsWrapper.clientWidth;
-        if (cardsWrapper.scrollLeft >= maxScrollLeft) {
-            cardsWrapper.scrollLeft = maxScrollLeft; // 不超過右邊界
-        } else if (cardsWrapper.scrollLeft <= 0) {
-            cardsWrapper.scrollLeft = 0; // 不超過左邊界
-        }
-    });
-
-    // 增加字卡容器的拖曳功能
-    feedbackCardsContainer.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX - feedbackCardsContainer.offsetLeft;
-        scrollLeft = feedbackCardsContainer.scrollLeft;
-    });
-
-    feedbackCardsContainer.addEventListener('mouseleave', () => {
-        isDragging = false;
-    });
-
-    feedbackCardsContainer.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-
-    feedbackCardsContainer.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - feedbackCardsContainer.offsetLeft;
-        const walk = (x - startX) * 2; // 快速滾動
-        feedbackCardsContainer.scrollLeft = scrollLeft - walk;
-
-        // 控制當前索引，避免空白區域出現
-        const maxScrollLeft = feedbackCardsContainer.scrollWidth - feedbackCardsContainer.clientWidth;
-        if (feedbackCardsContainer.scrollLeft >= maxScrollLeft) {
-            feedbackCardsContainer.scrollLeft = maxScrollLeft; // 不超過右邊界
-        } else if (feedbackCardsContainer.scrollLeft <= 0) {
-            feedbackCardsContainer.scrollLeft = 0; // 不超過左邊界
-        }
-    });
 });
+
 
