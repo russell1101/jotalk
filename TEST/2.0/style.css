@@ -1,0 +1,49 @@
+.index-4-feedBack {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-container-up, .marquee-container-down {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-up, .marquee-down {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee-up span, .marquee-down span {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+}
+
+.feedback-cards-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.feedback-cards {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.feedback-card {
+    min-width: 300px; /* 卡片寬度 */
+    margin: 0 10px;
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
