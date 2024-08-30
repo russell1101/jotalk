@@ -1131,13 +1131,16 @@ a.tag {
     width: 97%;
     height: 100%;
     overflow-y: auto;
-    padding-right: 20px; /* 加上內邊距以確保滾動條不會覆蓋內容 */
+    padding-right: 20px;
+    /* 加上內邊距以確保滾動條不會覆蓋內容 */
 }
 
 .scroll-container {
-    overflow-y: auto; /* 啟用垂直滾動 */
+    overflow-y: auto;
+    /* 啟用垂直滾動 */
     height: 100%;
-    padding: 20px; /* 根據需要調整內邊距 */
+    padding: 20px;
+    /* 根據需要調整內邊距 */
 }
 
 .contant-BL {
@@ -1304,7 +1307,8 @@ a.tag {
     border: 1px solid #155569;
     margin-left: 10px;
     border-radius: 10px;
-    width: 15%;
+    width: 17%;
+    white-space: nowrap;
 }
 
 .infoContant .info {
@@ -1343,20 +1347,23 @@ a.tag {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    max-width: 100%; /* 根據需要調整最大寬度 */
+    max-width: 100%;
+    /* 根據需要調整最大寬度 */
     margin-top: 10px;
     font-size: 14px;
 }
 
 .tagsTitle li {
     display: inline-block;
-    margin: 5px; /* 根據需要調整間距 */
+    margin: 5px;
+    /* 根據需要調整間距 */
 }
 
 .infoContant .tagsTitle .tag-BL {
     padding: 0 5px;
     border: 1px solid #2c2c2c;
-    white-space: nowrap; /* 確保單個li內部字不要換行 */
+    white-space: nowrap;
+    /* 確保單個li內部字不要換行 */
     border-radius: 10px;
 }
 
@@ -1370,4 +1377,100 @@ a.tag {
     background-color: #155569;
     color: #ffffff;
     border: solid transparent;
+}
+
+.newsConinfo {
+    display: flex;
+    height: auto;
+    margin-top: 25px;
+    margin: 25px 15px 0 15px;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.newsConinfo .news-btn {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    width: 12%;
+    position: relative;
+}
+
+.news-btn .Conbtn {
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    border: solid 0px transparent;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.news-con {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.news-con .con-pic {
+    height: 150px;
+    width: 30%;
+    object-fit: cover;
+    margin: 0 10px 0 5px;
+}
+
+.news-con .con-atc {
+    width: 70%;
+    position: relative;
+}
+
+.news-con h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.news-con p {
+    font-size: 14px;
+}
+
+.date-posted {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    font-size: 14px;
+    color: #2c2c2c;
+}
+
+/* 媒體查詢 */
+@media (max-width: 1024px) {
+
+    .newsConinfo {
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    .news-con {
+        flex-direction: column;
+    }
+
+    .newsConinfo .news-btn {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+
+    .news-con .con-pic {
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+    }
+
+    .news-con .con-atc {
+        width: 100%;
+    }
+
+    .date-posted {
+        position: static;
+        margin: 10px 0 0 0;
+    }
 }

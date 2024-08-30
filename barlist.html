@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOTALK – 酒吧清單</title>
     <link rel="icon" href="./favicon.ico">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
+
+
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
     <link rel="stylesheet" href="./css/barlist.css">
 </head>
 
@@ -660,23 +670,23 @@
                 <div class="categories-BL">
                     <div class="BL-info active" data-target="infoContant">店家資訊</div>
                     <div class="BL-menu" data-target="menuContant">MENU</div>
-                    <div class="BL-news" data-target="newsContant">活動</div>
+                    <div class="BL-news" data-target="newsContant">活動&文章</div>
                 </div>
 
                 <div class="infoContant active">
                     <!-- 酒吧名字 -->
                     <div class="name-BL">
-                        <h2>Nightfall Nook</h2>
+                        <h2>Middle Two</h2>
                         <ul class="icon">
                             <li><a class="icon-ig" id="ig" href="#"></a></li>
                             <li><a class="icon-phone" id="phone" href="#"></a></li>
                             <li><a class="icon-map" id="map" href="#"></a></li>
                         </ul>
                     </div>
-                    <div class="star">4.5★</div>
+                    <div class="star">4.1★</div>
                     <div class="address">
                         <a class="ads-pic" href="#"></a>
-                        台北市大安區和平東路三段341巷1號
+                        台中市西屯區逢甲路西屯路二段297號
                         <button class="ads-btn"><a href="">導航前往</a></button>
                     </div>
 
@@ -707,27 +717,113 @@
                     <div class="tag">
                         <ul class="tagsTitle">
                             <li><a href="#" class="tag-BL">#得獎店家</a></li>
-                            <li><a href="#" class="tag-BL">#特色調酒</a></li>
+                            <li><a href="#" class="tag-BL">#新手友善</a></li>
                             <li><a href="#" class="tag-BL">#帥調酒師</a></li>
-                            <li><a href="#" class="tag-BL">#大安區</a></li>
-                            <li><a href="#" class="tag-BL">#熱情店家</a></li>
-                            <li><a href="#" class="tag-BL">#日式</a></li>
-                            <li><a href="#" class="tag-BL">#20:00-04:00</a></li>
-                            <li><a href="#" class="tag-BL">#400-800元</a></li>
-                            <li><a href="#" class="tag-BL">#2-4人</a></li>
-                            <li><a href="#" class="tag-BL">#北部</a></li>
+                            <li><a href="#" class="tag-BL">#逢甲區</a></li>
+                            <li><a href="#" class="tag-BL">#不可吸菸</a></li>
+                            <li><a href="#" class="tag-BL">#中式</a></li>
+                            <li><a href="#" class="tag-BL">#19:00-01:00</a></li>
+                            <li><a href="#" class="tag-BL">#500-1000元</a></li>
+                            <li><a href="#" class="tag-BL">#6-8人</a></li>
+                            <li><a href="#" class="tag-BL">#中部</a></li>
                         </ul>
                     </div>
 
-                    <button class="collect-BL">收藏店家</button>
+                    <button class="collect-BL"><a href="">收藏店家</a></button>
                 </div>
 
                 <div class="menuContant">
-                    這裡是menu
+                    <div class="menu-pic">
+                        <img src="./img/barlist/barlist_jump_pic/bar_menu.jpg"
+                            alt="https://jiaoxi.orientluxuryhotel.com.tw/fac-detail/skybar/">
+                    </div>
                 </div>
 
                 <div class="newsContant">
-                    這裡是活動
+                    <!-- 活動1 -->
+                    <div class="newsConinfo">
+                        <div class="news-btn">
+                            <button class="Conbtn" style="background-color: #691515;">置頂</button>
+                            <button class="Conbtn" style="background-color: #155569;">活動</button>
+                            <!-- <button class="Conbtn" style="background-color: #155569;">心得</button>
+                            <button class="Conbtn" style="background-color: #6A6A6A;">已結束</button> -->
+                        </div>
+                        <div class="news-con">
+
+                            <img class="con-pic" src="./img/barlist/barlist_jump_pic/con-pic1.jpg" alt="con-pic">
+
+                            <div class="con-atc">
+                                <h3>與世隔離，享受無際大海與美酒的時光。</h3>
+                                <p>來自各地的調酒師將帶來獨具創意的調酒，與海岸風光完美融合，讓你在每一口酒中都能品味到海洋的氣息。無論是夕陽下的浪漫時光，還是夜幕降臨時的寧靜瞬間，都將在這裡得到完美詮釋。這不是一場普通的酒會，而是一場靈魂的洗禮，讓你徹底放鬆，與大自然融為一體。
+                                </p>
+                                <p class="date-posted">2024-10-05 Posted</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 活動2 -->
+                    <div class="newsConinfo">
+                        <div class="news-btn">
+                            <!-- <button class="Conbtn" style="background-color: #691515;">置頂</button> -->
+                            <!-- <button class="Conbtn" style="background-color: #155569;">活動</button> -->
+                            <button class="Conbtn" style="background-color: #155569;">心得</button>
+                            <!-- <button class="Conbtn" style="background-color: #6A6A6A;">已結束</button> -->
+                        </div>
+                        <div class="news-con">
+
+                            <img class="con-pic" src="./img/barlist/barlist_jump_pic/con-pic2.jpg" alt="con-pic">
+
+                            <div class="con-atc">
+                                <h3>與朋友在這裡度過美好的一晚</h3>
+                                <p>因為在網站上看到他的店家擺設很特別，所以約朋友一起來嘗鮮。結果超乎意料，不只酒好喝，老闆的熱炒也是一絕。但是可能是因為一人作業所以速度略慢，建議一次就把餐點點完比較好。
+                                </p>
+                                <p class="date-posted">2024-09-20 Posted</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 活動3 -->
+                    <div class="newsConinfo">
+                        <div class="news-btn">
+                            <!-- <button class="Conbtn" style="background-color: #691515;">置頂</button> -->
+                            <!-- <button class="Conbtn" style="background-color: #155569;">活動</button> -->
+                            <button class="Conbtn" style="background-color: #155569;">心得</button>
+                            <!-- <button class="Conbtn" style="background-color: #6A6A6A;">已結束</button> -->
+                        </div>
+                        <div class="news-con">
+
+                            <img class="con-pic" src="./img/barlist/barlist_jump_pic/con-pic3.jpg" alt="con-pic">
+
+                            <div class="con-atc">
+                                <h3>馬丁尼簡直完美</h3>
+                                <p>聽說這裡的馬丁尼很有名，於是決定來一探究竟。舒適的裝潢和周到的服務讓人倍感愉悅。那杯馬丁尼果然不負盛名，完美平衡的口感令人回味無窮。這是個放鬆心情的理想場所，值得一再光顧。
+
+                                </p>
+                                <p class="date-posted">2024-08-30 Posted</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 活動4 -->
+                    <div class="newsConinfo">
+                        <div class="news-btn">
+                            <!-- <button class="Conbtn" style="background-color: #691515;">置頂</button> -->
+                            <button class="Conbtn" style="background-color: #155569;">活動</button>
+                            <!-- <button class="Conbtn" style="background-color: #155569;">心得</button> -->
+                            <button class="Conbtn" style="background-color: #6A6A6A;">已結束</button>
+                        </div>
+                        <div class="news-con">
+
+                            <img class="con-pic" src="./img/barlist/barlist_jump_pic/con-pic4.jpg" alt="con-pic">
+
+                            <div class="con-atc">
+                                <h3>在山林中迎接晨曦，品味特色精釀啤酒。</h3>
+                                <p>在這片寧靜的山林中，我們將設置多個啤酒品鑑區，讓你逐一品嚐不同風味的精釀啤酒。無論你偏愛濃郁的麥香、清爽的果香，還是特殊的異國風味，這裡都有一款啤酒能打動你的味蕾。
+                                </p>
+                                <p class="date-posted">2024-01-08 Posted</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -735,8 +831,18 @@
             <span id="closebtn-BL">X</span>
         </div>
     </div>
-
-
+    <div id="footer"></div>
+    <script type="text/babel">
+        function App() {
+            return (
+                <Footer />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('footer'))
+            .render(<App />)
+    </script>
+    <script src="./Header_element/login.js"></script>
     <script src="./js/barlist.js"></script>
 </body>
 
