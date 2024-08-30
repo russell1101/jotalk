@@ -9,12 +9,13 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+
     <script type="text/babel" src="./Header_element/Header.jsx"></script>
     <link rel="stylesheet" href="./Header_element/Header.css">
+
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
-    
+
     <link rel="stylesheet" href="./css/about.css">
 </head>
 
@@ -23,6 +24,11 @@
     <div id="header"></div>
     <script type="text/babel">
         function App() {
+            
+            React.useEffect(() => {
+                login();
+            }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
+
             return (
                 <Header h1="ABOUT JOTALK" bg='./img/about/about-head-pic.jpg' leftSlogan={true} slogan={false} btn={true} />
             )
@@ -73,7 +79,7 @@
             .render(<App />)
     </script>
 
-    <script src="./js/script.js"></script>
+    <script src="./Header_element/login.js"></script>
 </body>
 
 </html>
