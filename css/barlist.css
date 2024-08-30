@@ -1127,6 +1127,19 @@ a.tag {
     /* 添加漸變效果，持續時間0.8秒 */
 }
 
+.BL {
+    width: 97%;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 20px; /* 加上內邊距以確保滾動條不會覆蓋內容 */
+}
+
+.scroll-container {
+    overflow-y: auto; /* 啟用垂直滾動 */
+    height: 100%;
+    padding: 20px; /* 根據需要調整內邊距 */
+}
+
 .contant-BL {
     display: flex;
     flex-direction: column;
@@ -1163,18 +1176,18 @@ a.tag {
     cursor: pointer;
 }
 
-.jump-pic {
+.jump-pic img {
     display: flex;
     align-items: flex-start;
     /* 將大圖片和小圖片在垂直方向對齊到上方 */
     margin-top: 20px;
-    width: 97%;
+    width: 100;
 }
 
 
 .categories-BL {
     border-bottom: 1px solid #2c2c2c;
-    width: 97%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
@@ -1222,7 +1235,7 @@ a.tag {
     flex-direction: row;
     justify-content: space-between;
     margin: 10px 0;
-    width: 97%;
+    width: 100%;
 }
 
 .icon {
@@ -1299,28 +1312,7 @@ a.tag {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 97%;
-}
-
-/* 可選：美化滾動條 */
-.infoContant::-webkit-scrollbar,
-.info::-webkit-scrollbar {
-    width: 10px;
-    /* 設置滾動條的寬度 */
-}
-
-.infoContant::-webkit-scrollbar-thumb,
-.info::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* 設置滾動條的顏色 */
-    border-radius: 5px;
-    /* 設置滾動條圓角 */
-}
-
-.infoContant::-webkit-scrollbar-track,
-.info::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1);
-    /* 設置滾動條軌道的顏色 */
+    width: 100%;
 }
 
 .infoContant .info h3 {
@@ -1333,4 +1325,49 @@ a.tag {
     font-size: 14px;
     color: #2c2c2c;
 
+}
+
+.infoContant .intro {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.infoContant .tag {
+    width: 100%;
+}
+
+.infoContant .tagsTitle {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    max-width: 100%; /* 根據需要調整最大寬度 */
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.tagsTitle li {
+    display: inline-block;
+    margin: 5px; /* 根據需要調整間距 */
+}
+
+.infoContant .tagsTitle .tag-BL {
+    padding: 0 5px;
+    border: 1px solid #2c2c2c;
+    white-space: nowrap; /* 確保單個li內部字不要換行 */
+    border-radius: 10px;
+}
+
+.infoContant .collect-BL {
+    padding: 10px 28px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: #155569;
+    color: #ffffff;
+    border: solid transparent;
 }
