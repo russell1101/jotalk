@@ -1442,7 +1442,7 @@ a.tag {
 }
 
 /* 媒體查詢 */
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
 
     .newsConinfo {
         flex-direction: column;
