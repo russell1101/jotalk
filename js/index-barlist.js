@@ -24,6 +24,51 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
 });
 
+// index反饋字卡
+document.addEventListener("DOMContentLoaded", () => {
+    const marqueeContainers = document.querySelectorAll('.marquee-container');
+    
+    marqueeContainers.forEach(container => {
+        const marqueeContent = container.querySelector('.marquee-content');
+        const contentHTML = marqueeContent.innerHTML;
+        
+        for (let i = 0; i < 3; i++) { // 總共複製3次，使得內容總數量為4次
+            marqueeContent.innerHTML += contentHTML;
+        }
+    });
+    
+    const feedbackCardsContainer = document.querySelector('.feedback-cards-container .feedback-cards');
+    const feedbackCards = feedbackCardsContainer.innerHTML;
+
+    for (let i = 0; i < 3; i++) {
+        feedbackCardsContainer.innerHTML += feedbackCards;
+    }
+
+    let currentIndex = 0;
+    const totalCards = document.querySelectorAll('.feedback-card').length;
+    const cardWidth = document.querySelector('.feedback-card').offsetWidth + 20; // 包括 margin
+
+    function moveFeedbackCards() {
+        currentIndex++;
+        feedbackCardsContainer.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+        if (currentIndex >= totalCards / 4) {
+            setTimeout(() => {
+                feedbackCardsContainer.style.transition = 'none';
+                feedbackCardsContainer.style.transform = 'translateX(0)';
+                currentIndex = 0;
+            }, 3000);
+        }
+    }
+
+    setInterval(() => {
+        feedbackCardsContainer.style.transition = 'transform 3s ease';
+        moveFeedbackCards();
+    }, 4000);
+});
+
+
+
 // smoove 特效
 $(document).ready(function () {
     $('.smoove').smoove({
@@ -31,68 +76,7 @@ $(document).ready(function () {
     });
 });
 
-// index-4 跑馬燈
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.marquee-container').forEach(container => {
-        const marquee = container.querySelector('.marquee');
-        const spanWidth = marquee.firstElementChild.offsetWidth;
-        const containerWidth = container.offsetWidth;
 
-        // 計算需要的克隆次數，確保無縫滾動
-        const repeatCount = Math.ceil(containerWidth / spanWidth) * 4;
 
-        for (let i = 0; i < repeatCount; i++) {
-            marquee.appendChild(marquee.firstElementChild.cloneNode(true));
-        }
-
-        // 讓文字從網頁加載時就開始滾動
-        marquee.style.animationPlayState = 'running';
-    });
-
-    const feedbackCardsContainer = document.getElementById("feedbackCards");
-    const feedbackCards = document.querySelectorAll(".feedback-card");
-
-    // 克隆字卡以實現無縫循環
-    function cloneFeedbackCards() {
-        const totalCards = feedbackCards.length;
-
-        for (let i = 0; i < totalCards; i++) {
-            const clone = feedbackCards[i].cloneNode(true);
-            feedbackCardsContainer.appendChild(clone);
-        }
-    }
-
-    // 初始化字卡位置
-    let currentIndex = 0;
-    const cardWidth = feedbackCards[0].offsetWidth + 20; // 20是邊距
-
-    function moveFeedbackCards() {
-        const offset = currentIndex * cardWidth;
-
-        // 移動字卡
-        feedbackCardsContainer.style.transition = 'transform 0.5s ease';
-        feedbackCardsContainer.style.transform = `translateX(-${offset}px)`;
-
-        // 檢查第10張字卡是否出現在最右側
-        if (currentIndex >= feedbackCards.length) {
-            setTimeout(() => {
-                feedbackCardsContainer.style.transition = 'none';
-                feedbackCardsContainer.style.transform = 'translateX(0)';
-                currentIndex = 0;
-
-                // 重新複製字卡
-                cloneFeedbackCards();
-            }, 500); // 在動畫結束後重置位置
-        } else {
-            currentIndex++;
-        }
-    }
-
-    // 初始化克隆字卡
-    cloneFeedbackCards();
-
-    // 設定字卡移動的間隔
-    setInterval(moveFeedbackCards, 2000);
-});
 
 

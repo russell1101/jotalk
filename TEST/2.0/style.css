@@ -1,49 +1,53 @@
 .index-4-feedBack {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-color: var(--alpha-b-40);
+    margin-bottom: 50px;
+    overflow: hidden; /* 隱藏超出部分 */
+}
+
+.marquee-container {
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* 確保超出畫面的部分被隱藏 */
+    white-space: nowrap; /* 保持內容在一行 */
 }
 
-.marquee-container-up, .marquee-container-down {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-}
-
-.marquee-up, .marquee-down {
+.marquee-content {
     display: inline-block;
-    white-space: nowrap;
-    animation: marquee 15s linear infinite;
+    color: var(--alpha-w-80);
+    font-family: "Mallanna", sans-serif;
+    letter-spacing: 1px;
+    animation: marquee 60s linear infinite; /* 60秒滾動完畢 */
 }
 
-.marquee-up span, .marquee-down span {
-    display: inline-block;
-    padding: 0 2rem;
-    font-size: 1.5rem;
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .feedback-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    overflow: hidden;
+    height: 135px;
+    overflow: hidden; /* 確保卡片在邊界外的內容不顯示 */
     position: relative;
 }
 
 .feedback-cards {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 3s ease;
+    will-change: transform; /* 提高動畫性能 */
 }
 
 .feedback-card {
-    min-width: 300px; /* 卡片寬度 */
-    margin: 0 10px;
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+    margin-right: 20px;
+    width: 300px;
 }

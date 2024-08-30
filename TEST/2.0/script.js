@@ -1,31 +1,41 @@
-// 上方跑馬燈設定
-function startMarquee(element, duration) {
-    const marqueeContent = element.innerHTML;
-    element.innerHTML += marqueeContent; // 複製內容以無縫滾動
-    element.style.animationDuration = duration + 's';
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const marqueeContainers = document.querySelectorAll('.marquee-container');
+    
+    marqueeContainers.forEach(container => {
+        const marqueeContent = container.querySelector('.marquee-content');
+        const contentHTML = marqueeContent.innerHTML;
+        
+        for (let i = 0; i < 3; i++) { // 總共複製3次，使得內容總數量為4次
+            marqueeContent.innerHTML += contentHTML;
+        }
+    });
+    
+    const feedbackCardsContainer = document.querySelector('.feedback-cards-container .feedback-cards');
+    const feedbackCards = feedbackCardsContainer.innerHTML;
 
-startMarquee(document.querySelector('.marquee-up'), 15);
-startMarquee(document.querySelector('.marquee-down'), 15);
-
-// 中間回饋卡片設定
-const feedbackCards = document.getElementById('feedbackCards');
-let cardIndex = 0;
-const totalCards = document.querySelectorAll('.feedback-card').length;
-
-function moveCards() {
-    cardIndex++;
-    feedbackCards.style.transform = `translateX(-${cardIndex * 310}px)`;
-    if (cardIndex >= totalCards) {
-        setTimeout(() => {
-            feedbackCards.style.transition = 'none';
-            feedbackCards.style.transform = 'translateX(0)';
-            cardIndex = 0;
-            setTimeout(() => {
-                feedbackCards.style.transition = 'transform 0.5s ease';
-            }, 50);
-        }, 500);
+    for (let i = 0; i < 3; i++) {
+        feedbackCardsContainer.innerHTML += feedbackCards;
     }
-}
 
-setInterval(moveCards, 2000);
+    let currentIndex = 0;
+    const totalCards = document.querySelectorAll('.feedback-card').length;
+    const cardWidth = document.querySelector('.feedback-card').offsetWidth + 20; // 包括 margin
+
+    function moveFeedbackCards() {
+        currentIndex++;
+        feedbackCardsContainer.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+        if (currentIndex >= totalCards / 4) {
+            setTimeout(() => {
+                feedbackCardsContainer.style.transition = 'none';
+                feedbackCardsContainer.style.transform = 'translateX(0)';
+                currentIndex = 0;
+            }, 3000);
+        }
+    }
+
+    setInterval(() => {
+        feedbackCardsContainer.style.transition = 'transform 3s ease';
+        moveFeedbackCards();
+    }, 4000);
+});
