@@ -50,4 +50,8 @@
 .feedback-card {
     margin-right: 20px;
     width: 300px;
+    height: 100px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(49, 65, 124);
+    margin-right: 10px;
 }

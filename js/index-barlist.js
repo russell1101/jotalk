@@ -1,3 +1,36 @@
+// smoove 特效
+$(document).ready(function () {
+    $('.smoove').smoove({
+        offset: '30%'
+    });
+});
+
+// index-2 字卡滾動
+document.addEventListener("DOMContentLoaded", function () {
+    function duplicateCards(columnClass) {
+        const column = document.querySelector(columnClass);
+        const cards = column.innerHTML;
+        column.innerHTML += cards + cards + cards + cards;
+    }
+
+    duplicateCards('.column-left');
+    duplicateCards('.column-right');
+});
+
+// index-2 字卡懸浮停止
+document.addEventListener('DOMContentLoaded', () => {
+    const columns = document.querySelectorAll('.column');
+    columns.forEach(column => {
+        column.addEventListener('mouseover', () => {
+            column.style.animationPlayState = 'paused';
+        });
+        column.addEventListener('mouseout', () => {
+            column.style.animationPlayState = 'running';
+        });
+    });
+});
+
+// index-3 店名切換
 const slides = document.querySelectorAll('.slide');
 const leftName = document.querySelector('.bar-name-left');
 const rightName = document.querySelector('.bar-name-right');
@@ -8,7 +41,7 @@ function showSlide(index) {
         slide.style.transform = `translate(${i === index ? '0%' : '-100%'}, 0)`;
     });
 
-    const barName = slides[index].getAttribute('data-bar').split(' ');
+    const barName = slides[index].getAttribute('data-bar').split('-');
     leftName.textContent = barName[0];
     rightName.textContent = barName[1];
 }
@@ -24,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
 });
 
-// index反饋字卡
+// index-4 反饋字卡
 document.addEventListener("DOMContentLoaded", () => {
     const marqueeContainers = document.querySelectorAll('.marquee-container');
     
@@ -65,15 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
         feedbackCardsContainer.style.transition = 'transform 3s ease';
         moveFeedbackCards();
     }, 4000);
-});
-
-
-
-// smoove 特效
-$(document).ready(function () {
-    $('.smoove').smoove({
-        offset: '30%'
-    });
 });
 
 

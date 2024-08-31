@@ -1,4 +1,3 @@
-// 首頁區
 // topbar
 window.addEventListener("scroll", function () {
     var topbar = document.getElementById("topbar");
@@ -9,28 +8,12 @@ window.addEventListener("scroll", function () {
     }
 });
 
-
-// 滾動卡片 懸浮停止
-document.addEventListener('DOMContentLoaded', () => {
-    const columns = document.querySelectorAll('.column');
-    columns.forEach(column => {
-        column.addEventListener('mouseover', () => {
-            column.style.animationPlayState = 'paused';
-        });
-        column.addEventListener('mouseout', () => {
-            column.style.animationPlayState = 'running';
-        });
-    });
-});
-
 // 會員頁面
 document.addEventListener('DOMContentLoaded', function () {
-    // 初始化时设置默认收合的 .store_month 背景色为 #585858
     document.querySelectorAll('.store_month').forEach(storeMonth => {
         const content = storeMonth.querySelector('.record-content');
         const toggleBtn = storeMonth.querySelector('.toggle-btn');
 
-        // 如果当前 .record-content 没有展开，则设置背景色为深灰色
         if (!content.classList.contains('this')) {
             storeMonth.style.backgroundColor = '#585858';
         }

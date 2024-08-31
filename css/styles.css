@@ -54,7 +54,7 @@ h6 {
 
 /* 重置列表 */
 ul,
-ol {
+li {
     list-style: none;
 }
 
@@ -91,14 +91,13 @@ a {
     max-width: 550px;
     height: 90px;
     padding: 14px;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-left: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 99px;
     transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
-    /* 同步過渡 */
     z-index: 999;
 }
 
@@ -143,7 +142,6 @@ a {
     visibility: visible;
     opacity: 1;
     transition: opacity 4s ease, visibility 0s 0.3s;
-    /* 菜單顯隱 */
 }
 
 #topbar .menu a {
@@ -151,11 +149,10 @@ a {
     color: var(--darkgrey);
     font-weight: 900;
     letter-spacing: .2rem;
-    /* padding: 5px 0px;
-    margin: 0 40px; */
     text-align: center;
     position: relative;
     overflow: hidden;
+    padding-bottom: 5px;
 }
 
 #topbar .menu a::after {
@@ -163,9 +160,7 @@ a {
     position: absolute;
     bottom: 0;
     left: 50%;
-    /* 初始位置在中心 */
     right: 50%;
-    /* 初始位置在中心 */
     height: .6px;
     background-color: var(--lightgrey);
     transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
@@ -174,9 +169,7 @@ a {
 
 #topbar .menu a:hover::after {
     left: 0;
-    /* 展開到左邊界 */
     right: 0;
-    /* 展開到右邊界 */
 }
 
 
@@ -472,11 +465,11 @@ section {
 }
 
 .column-left {
-    animation: scrollUp 10s linear infinite;
+    animation: scrollUp 60s linear infinite;
 }
 
 .column-right {
-    animation: scrollDown 10s linear infinite;
+    animation: scrollDown 60s linear infinite;
 }
 
 .column:hover {
@@ -709,7 +702,6 @@ section {
     background-color: var(--alpha-b-40);
     margin-bottom: 50px;
     overflow: hidden;
-    /* 隱藏超出部分 */
 }
 
 .marquee-container {
@@ -724,7 +716,6 @@ section {
     font-family: "Mallanna", sans-serif;
     letter-spacing: 1px;
     animation: marquee 60s linear infinite;
-    /* 60秒滾動完畢 */
 }
 
 @keyframes marquee {
