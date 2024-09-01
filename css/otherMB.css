@@ -98,6 +98,7 @@ main {
     padding: 20px;
     gap: 20px;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #omb-left {
@@ -178,6 +179,8 @@ main {
     background-color: var(--alpha-w-60);
     border-radius: 10px;
     padding: 30px;
+    height: 100%;
+    min-height: 120vh;
 }
 
 .nav-ombCollect {
@@ -214,4 +217,14 @@ main {
 .nav-omb-collect.active~.collect-article,
 .nav-omb-visited.active~.collect-member {
     display: block;
+}
+
+.visited-bar p{
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 20px;
 }
