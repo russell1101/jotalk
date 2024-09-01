@@ -136,7 +136,7 @@
                                 <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
                                 <p id="comment_num">{comment_num}</p>
                             </div>
-                            <small>查看更多回覆>></small>
+                            <small>查看更多回覆</small>
                         </div>
                         <hr />
                     </div>
@@ -271,32 +271,32 @@
                 <>
 
                     {/*壓在背景的透明板*/}
-                    <div class="overlay_bg"></div>
+                    <div className="overlay_bg"></div>
 
                     <Header h1='BAR LIST' p='酒吧清單' bg='../img/forum/forum_head_pic.jpg' leftSlogan='' slogan={true} btn={true} />
 
                     <main>
-                        <div class="forum-container">
+                        <div className="forum-container">
                             {/*} 左區: 類別與標籤*/}
-                            <div class="left-section">
-                                <div class="categories">
-                                    <div class="category active" data-target="Atc_hot">熱門文章</div>
-                                    <div class="category" data-target="Atc_nice">精選文章</div>
-                                    <div class="category" data-target="Atc_normal">一般文章</div>
+                            <div className="left-section">
+                                <div className="categories">
+                                    <div className="category active" data-target="Atc_hot">熱門文章</div>
+                                    <div className="category" data-target="Atc_nice">精選文章</div>
+                                    <div className="category" data-target="Atc_normal">一般文章</div>
                                 </div>
-                                <div class="tags">
+                                <div className="tags">
                                     <h2 id="tagTitle">熱門標籤</h2>
-                                    <div class="tag" data-target="Atc_drunk">#醉後的事</div>
-                                    <div class="tag" data-target="Atc_goodDrink">#酒超好喝</div>
-                                    <div class="tag" data-target="Atc_search">#探店心得</div>
-                                    <div class="tag" data-target="Atc_bartend">#調酒師帥</div>
-                                    <div class="tag" data-target="Atc_run">#酒精路跑</div>
+                                    <div className="tag" data-target="Atc_drunk">#醉後的事</div>
+                                    <div className="tag" data-target="Atc_goodDrink">#酒超好喝</div>
+                                    <div className="tag" data-target="Atc_search">#探店心得</div>
+                                    <div className="tag" data-target="Atc_bartend">#調酒師帥</div>
+                                    <div className="tag" data-target="Atc_run">#酒精路跑</div>
                                 </div>
                             </div>
 
                             {/*右區: 文章內容*/}
-                            <div class="right-section">
-                                <div class="Atc_content active" id="Atc_hot">
+                            <div className="right-section">
+                                <div className="Atc_content active" id="Atc_hot">
                                     {
                                         list.map((item) => {
                                             // 呼叫卡片元件
@@ -307,39 +307,39 @@
                                     }
 
 
-                                    <div class="article">熱門文章3</div>
-                                    <div class="article">熱門文章4</div>
-                                    <div class="article">熱門文章5</div>
-                                    <div class="article">熱門文章6</div>
-                                    <div class="article">熱門文章7</div>
-                                    <div class="article">熱門文章8</div>
-                                    <div class="article hidden">熱門文章9</div>
-                                    <div class="article hidden">熱門文章10</div>
+                                    <div className="article">熱門文章3</div>
+                                    <div className="article">熱門文章4</div>
+                                    <div className="article">熱門文章5</div>
+                                    <div className="article">熱門文章6</div>
+                                    <div className="article">熱門文章7</div>
+                                    <div className="article">熱門文章8</div>
+                                    <div className="article hidden">熱門文章9</div>
+                                    <div className="article hidden">熱門文章10</div>
                                 </div>
 
-                                <div class="Atc_content hidden" id="Atc_nice">
-                                    <div class="article">精選文章1</div>
-                                    <div class="article">精選文章2</div>
-                                    <div class="article">精選文章3</div>
-                                    <div class="article">精選文章4</div>
-                                    <div class="article">精選文章5</div>
-                                    <div class="article">精選文章6</div>
-                                    <div class="article">精選文章7</div>
-                                    <div class="article">精選文章8</div>
-                                    <div class="article hidden">精選文章9</div>
-                                    <div class="article hidden">精選文章10</div>
+                                <div className="Atc_content hidden" id="Atc_nice">
+                                    <div className="article">精選文章1</div>
+                                    <div className="article">精選文章2</div>
+                                    <div className="article">精選文章3</div>
+                                    <div className="article">精選文章4</div>
+                                    <div className="article">精選文章5</div>
+                                    <div className="article">精選文章6</div>
+                                    <div className="article">精選文章7</div>
+                                    <div className="article">精選文章8</div>
+                                    <div className="article hidden">精選文章9</div>
+                                    <div className="article hidden">精選文章10</div>
                                 </div>
-                                <div class="Atc_content hidden" id="Atc_normal">
-                                    <div class="article">一般文章1</div>
-                                    <div class="article">一般文章2</div>
-                                    <div class="article">一般文章3</div>
-                                    <div class="article">一般文章4</div>
-                                    <div class="article">一般文章5</div>
-                                    <div class="article">一般文章6</div>
-                                    <div class="article">一般文章7</div>
-                                    <div class="article">一般文章8</div>
-                                    <div class="article hidden">一般文章9</div>
-                                    <div class="article hidden">一般文章10</div>
+                                <div className="Atc_content hidden" id="Atc_normal">
+                                    <div className="article">一般文章1</div>
+                                    <div className="article">一般文章2</div>
+                                    <div className="article">一般文章3</div>
+                                    <div className="article">一般文章4</div>
+                                    <div className="article">一般文章5</div>
+                                    <div className="article">一般文章6</div>
+                                    <div className="article">一般文章7</div>
+                                    <div className="article">一般文章8</div>
+                                    <div className="article hidden">一般文章9</div>
+                                    <div className="article hidden">一般文章10</div>
                                 </div>
                                 <button id="load-more">載入更多</button>
                             </div>
@@ -347,20 +347,19 @@
 
 
 
-                        <div id="overlay" class="overlay"></div>
+                        <div id="overlay" className="overlay"></div>
 
-                        <div id="content-1" class="content hidden">
-
+                        <div id="content-1" className="content hidden">
                             {/*導入Article元件*/}
                             <Article />
 
 
-                            <div class="comment-section">
+                            <div className="comment-section">
                                 {/*排序按鈕區域*/}
-                                <div class="sort-buttons">
-                                    <button id="sort-hot">熱門留言</button>
-                                    <button id="sort-newest">由新至舊留言</button>
-                                    <button id="sort-oldest">由舊至新留言</button>
+                                <div className="sort-buttons">
+                                    <button className="sort-button sort-hot">熱門留言</button>
+                                    <button className="sort-button sort-newest">由新至舊留言</button>
+                                    <button className="sort-button sort-oldest">由舊至新留言</button>
                                 </div>
 
 
@@ -378,14 +377,14 @@
                         </div >
 
 
-                        <div id="content-2" class="content hidden">
+                        <div id="content-2" className="content hidden">
                             <Article />
-                            <div class="comment-section">
+                            <div className="comment-section">
                                 {/*排序按鈕區域*/}
-                                <div class="sort-buttons">
-                                    <button id="sort-hot">熱門留言</button>
-                                    <button id="sort-newest">由新至舊留言</button>
-                                    <button id="sort-oldest">由舊至新留言</button>
+                                <div className="sort-buttons">
+                                    <button className="sort-button sort-hot">熱門留言</button>
+                                    <button className="sort-button sort-newest">由新至舊留言</button>
+                                    <button className="sort-button sort-oldest">由舊至新留言</button>
                                 </div>
 
 
