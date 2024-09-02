@@ -79,7 +79,7 @@ a {
 /* 包含小幫手按鈕和書籤的容器 */
 .helper-wrapper {
     position: fixed;
-    bottom: 20px;
+    bottom: 50px;
     right: -90px;
     display: flex;
     align-items: center;
@@ -261,7 +261,7 @@ input {
 }
 
 .chat-message.helper .chat-bubble {
-    background-color: #155569;
+    background-color: #3f8499;
     color: white;
 }
 
@@ -280,19 +280,19 @@ input {
 }
 
 .helper-box .chat-messages::-webkit-scrollbar-track {
-    background: var(--lightgrey); /* 滾輪軌道的背景顏色 */
+    background: var(--alpha-b-20); /* 滾輪軌道的背景顏色 */
     border-radius: 10px; /* 滾輪軌道的圓角 */
     margin: 40px 0; /* 上下添加 margin，縮短垂直滾輪的長度 */
     /* 如果是水平滾輪，則使用 margin: 0 20px; */
 }
 
 .helper-box .chat-messages::-webkit-scrollbar-thumb {
-    background: var(--primary); /* 滾輪滑塊的顏色 */
+    background: #3f8499; /* 滾輪滑塊的顏色 */
     border-radius: 10px; /* 滾輪滑塊的圓角 */
 }
 
 .helper-box .chat-messages::-webkit-scrollbar-thumb:hover {
-    background: #24748c; /* 當滑鼠懸停在滑塊上時的顏色 */
+    background: var(--primary); /* 當滑鼠懸停在滑塊上時的顏色 */
 }
 
 /* 隱藏滾輪的箭頭 */
