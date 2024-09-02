@@ -54,7 +54,7 @@ h6 {
 
 /* 重置列表 */
 ul,
-li {
+ol {
     list-style: none;
 }
 
@@ -643,7 +643,7 @@ section {
     justify-content: center;
     height: auto;
     width: 100%;
-    margin-top: 150px;
+    margin-top: 8%;
 }
 
 .content .txt-3 {
@@ -666,13 +666,13 @@ section {
     font-weight: 600;
     text-align: center;
     color: var(--darkgrey);
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     pointer-events: none;
 }
 
 .joinBtn {
     padding: 10px 20px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     border: none;
     cursor: pointer;
     background-color: var(--alpha-b-60);
@@ -684,7 +684,7 @@ section {
     border-radius: 50px;
     width: auto;
     letter-spacing: .2rem;
-    font-size: clamp(.5rem, 2.5vw, .9rem);
+    font-size: clamp(.7rem, 2.5vw, .9rem);
     white-space: nowrap;
     transition: 0.35s ease-in-out;
 }
@@ -700,7 +700,8 @@ section {
     align-items: center;
     height: auto;
     background-color: var(--alpha-b-40);
-    margin-bottom: 50px;
+    margin-top: 5%;
+    /* margin-bottom: 50px; */
     overflow: hidden;
 }
 

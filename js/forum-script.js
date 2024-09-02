@@ -111,37 +111,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 右中文章欄切換
 document.addEventListener('DOMContentLoaded', () => {
-    // 获取所有类别标签
-    const categories = document.querySelectorAll('.atc_categories div');
-    // 获取所有内容区域
-    const contentSections = document.querySelectorAll('.body_atc ul');
-    // 获取所有的 "更多" 链接
-    const moreLinks = document.querySelectorAll('.atc_more-link');
+    // 取得所有類別標籤按鈕
+    const categoryButtons = document.querySelectorAll('.atc_categories div');
+    // 取得所有內容區域
+    const contentSections = document.querySelectorAll('.body_atc > div');
 
-    // 为每个类别标签添加点击事件
-    categories.forEach((category, index) => {
-        category.addEventListener('click', () => {
-            // 移除所有类别标签和内容区域的 active 类
-            categories.forEach(cat => cat.classList.remove('active'));
+    // 預設隱藏 niceAtc_content 和 normalAtc_content，顯示 hotAtc_content
+    contentSections.forEach(section => {
+        if (!section.classList.contains('hotAtc_content')) {
+            section.classList.remove('active');
+        } else {
+            section.classList.add('active');
+        }
+    });
+
+    // 預設將熱門文章的按鈕設為 active
+    categoryButtons.forEach(button => {
+        if (button.getAttribute('data-target') === 'hotAtc_content') {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 移除所有按鈕的 active 類別
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            // 隱藏所有內容區域
             contentSections.forEach(section => section.classList.remove('active'));
-            moreLinks.forEach(link => link.classList.remove('active-link'));
 
-            // 为点击的标签添加 active 类
-            category.classList.add('active');
-
-            // 获取目标内容区域并显示
-            const targetContentClass = category.getAttribute('data-target');
-            const targetContent = document.querySelector(`.${targetContentClass}`);
-
-            if (targetContent) {
-                targetContent.classList.add('active');
+            // 為點選的按鈕添加 active 類別
+            button.classList.add('active');
+            // 顯示相對應的內容區域
+            const targetClass = button.getAttribute('data-target');
+            const targetSection = document.querySelector(`.${targetClass}`);
+            if (targetSection) {
+                targetSection.classList.add('active');
             }
-
-            // 显示对应的 "更多" 链接
-            moreLinks[index].classList.add('active-link');
         });
     });
 });
+
+
 
 
 // 右下文章欄切換

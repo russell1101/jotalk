@@ -21,31 +21,22 @@
 
 <body>
     <!-- 頁首區 -->
-    <header id="barlist_head">
-        <div class="topbar">
-            <!-- logo區 -->
-            <h1 class="logo">
-                <a href="./index.html">
-                    <img src="./img/logo.svg" alt="jotalkLogo">
-                </a>
-            </h1>
-            <div class="menu">
-                <a href="./forum.html">綜合論壇</a>
-                <a href="./barlist.html">酒吧清單</a>
-                <a href="./about.html">關於我們</a>
-            </div>
-        </div>
-        <!-- 會員登入區 -->
-        <div class="account_login">
-            <button>
-                <a href="">會員登入</a>
-            </button>
-        </div>
-        <div class="barlist_slogan">
-            <h1>BAR LIST</h1>
-            <p>酒吧清單</p>
-        </div>
-    </header>
+    <div id="header"></div>
+    <script type="text/babel">
+        function App() {
+
+            React.useEffect(() => {
+                login();
+            }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
+
+            return (
+                <Header h1='BAR LIST' p='酒吧清單' bg='./img/barlist/barlist_head_pic.jpg' leftSlogan={true} slogan='' btn={true} />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('header'))
+            .render(<App />)
+    </script>
 
     <main>
         <img class="barlist-bg" src="./img/barlist/bg-tree.jpg">

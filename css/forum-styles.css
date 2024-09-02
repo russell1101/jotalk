@@ -54,7 +54,7 @@ h6 {
 
 /* 重置列表 */
 ul,
-li {
+ol {
     list-style: none;
 }
 
@@ -694,10 +694,15 @@ main {
     position: relative;
     z-index: 1;
     margin-top: 40px;
+    list-style: none;
 }
 
 .hotAtc-row1,
-.hotAtc-row2{
+.hotAtc-row2,
+.niceAtc-row1,
+.niceAtc-row2,
+.normalAtc-row1,
+.normalAtc-row2 {
     display: flex;
     width: 100%;
     height: 100%;
@@ -705,16 +710,25 @@ main {
 
 .hotAtc_content,
 .niceAtc_content,
-.normalAtc_content{
+.normalAtc_content {
     margin-top: 10px;
+    display: none;
 }
 
-.hotAtc_inner{
+.hotAtc_content.active,
+.niceAtc_content.active,
+.normalAtc_content.active {
+    display: block;
+}
+
+.hotAtc_inner,
+.niceAtc_inner,
+.normalAtc_inner {
     width: 200px;
     height: 270px;
 }
 
-.hotAtc_inner-pic1 {
+.inner-pic1 {
     background-image: url(../img/forum/forum_right_pic/atc1.png);
     background-size: cover;
     background-position: center;
@@ -723,7 +737,7 @@ main {
     transition: .35s ease-in-out;
 }
 
-.hotAtc_inner-pic2 {
+.inner-pic2 {
     background-image: url(../img/forum/forum_right_pic/atc2.png);
     background-size: cover;
     /* 或者使用 contain 根據需求 */
@@ -735,31 +749,31 @@ main {
     transition: .35s ease-in-out;
 }
 
-.hotAtc_inner-pic3 {
+.inner-pic3 {
     background-image: url(../img/forum/forum_right_pic/atc3.png);
     background-size: cover;
     /* 或者使用 contain 根據需求 */
     background-position: center;
     width: 100%;
     /* 根據需要調整 */
-    height:95%;
+    height: 95%;
     /* 根據需要調整 */
     transition: .35s ease-in-out;
 }
 
-.hotAtc_inner-pic4 {
+.inner-pic4 {
     background-image: url(../img/forum/forum_right_pic/atc4.png);
     background-size: cover;
     /* 或者使用 contain 根據需求 */
     background-position: center;
     width: 100%;
     /* 根據需要調整 */
-    height:95%;
+    height: 95%;
     /* 根據需要調整 */
     transition: .35s ease-in-out;
 }
 
-.hotAtc_inner-pic5 {
+.inner-pic5 {
     background-image: url(../img/forum/forum_right_pic/atc5.png);
     background-size: cover;
     /* 或者使用 contain 根據需求 */
@@ -771,7 +785,7 @@ main {
     transition: .35s ease-in-out;
 }
 
-.hotAtc_inner-pic6 {
+.inner-pic6 {
     background-image: url(../img/forum/forum_right_pic/atc6.png);
     background-size: cover;
     /* 或者使用 contain 根據需求 */
@@ -783,7 +797,7 @@ main {
     transition: .35s ease-in-out;
 }
 
-.hotAtc_inner-pic7 {
+.inner-pic7 {
     background-image: url(../img/forum/forum_right_pic/atc7.png);
     background-size: cover;
     /* 或者使用 contain 根據需求 */
@@ -795,7 +809,7 @@ main {
     transition: .35s ease-in-out;
 }
 
-.hotAtc_inner-pic8 {
+.inner-pic8 {
     background-image: url(../img/forum/forum_right_pic/atc8.png);
     background-size: cover;
     /* 或者使用 contain 根據需求 */
@@ -807,14 +821,14 @@ main {
     transition: .35s ease-in-out;
 }
 
-.hotAtc_inner-pic1:hover,
-.hotAtc_inner-pic2:hover,
-.hotAtc_inner-pic3:hover,
-.hotAtc_inner-pic4:hover,
-.hotAtc_inner-pic5:hover,
-.hotAtc_inner-pic6:hover,
-.hotAtc_inner-pic7:hover,
-.hotAtc_inner-pic8:hover {
+.inner-pic1:hover,
+.inner-pic2:hover,
+.inner-pic3:hover,
+.inner-pic4:hover,
+.inner-pic5:hover,
+.inner-pic6:hover,
+.inner-pic7:hover,
+.inner-pic8:hover {
     scale: 0.98;
 }
 
