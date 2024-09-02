@@ -13,6 +13,8 @@
 
     /* 主色 */
     --primary: #155569;
+    --secondary: #FFA800;
+    --secondary-hover: #e29909;
 
     /* 透明 */
     --alpha-w-40: rgba(255, 255, 255, .4);
@@ -94,7 +96,7 @@ main {
     width: 100%;
     max-width: 1140px;
     padding: 20px;
-    margin-top: 20px;
+    margin: 20px 0 30px;
 }
 
 /* 左側總容器 */
@@ -103,7 +105,6 @@ main {
     max-width: 330px;
     padding: 10px;
     box-sizing: border-box;
-    margin-right: 20px;
 }
 
 /* 右側總容器 */
@@ -120,14 +121,15 @@ main {
     width: auto;
     height: auto;
     max-width: 330px;
-    max-height: 550px;
+    max-height: 630px;
     display: flex;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: 5rem;
 }
 
 /* 布告欄btn */
-.body_bulletin .categories {
+.body_bulletin .categories,
+.body_tagVdo .tagVdo_categories {
     width: 32px;
     display: flex;
     flex-direction: column;
@@ -136,7 +138,8 @@ main {
     margin-right: 10px;
 }
 
-.body_bulletin .categories div {
+.body_bulletin .categories div,
+.body_tagVdo .tagVdo_categories div {
     width: 100%;
     height: 105px;
     text-align: center;
@@ -158,7 +161,7 @@ main {
     pointer-events: none;
     border: 1px solid transparent;
     background-color: var(--primary);
-    color: #ffffff;
+    color: var(--white);
 }
 
 .body_bulletin .categories div:hover {
@@ -167,10 +170,10 @@ main {
 
 /* 布告欄內容區域 */
 .bulletin_content {
-    padding: 0 20px;
+    padding: 0 10px;
     flex-grow: 1;
     width: 290px;
-    height: 620px;
+    height: auto;
     border: 1px solid var(--alpha-b-20);
     box-sizing: border-box;
     border-radius: 15px;
@@ -180,7 +183,6 @@ main {
 }
 
 /* -- 布告欄-新手指南 -- */
-
 /* 初始隱藏所有內容 */
 .bulletin_content>div {
     display: none;
@@ -194,10 +196,16 @@ main {
     cursor: pointer;
 }
 
-/* 標題和段落的行距 */
+.body_guide_content,
+.body_special_content,
+.body_rank_content {
+    padding: 0 10px;
+    margin-bottom: 1.5rem;
+}
+
 .bulletin_content h2 {
     margin-top: 20px;
-    font-size: .9rem;
+    font-size: .92rem;
     font-weight: 500;
     letter-spacing: .1rem;
 }
@@ -232,175 +240,111 @@ main {
     position: relative;
     justify-content: center;
     text-align: center;
-    margin-top: 2.5rem;
+    margin: 1.2rem 10px 1.5rem 10px;
 }
 
 .special_more-link a {
-    color: var(--darkgrey);
-    background-color: var(--alpha-b-20);
+    color: var(--white);
+    background-color: var(--secondary);
     border-radius: 10px;
     padding: 5px 15px;
     font-size: .9rem;
-    font-weight: 500;
-    letter-spacing: .2rem;
+    font-weight: 400;
+    letter-spacing: 3px;
 }
 
-.special_more-link a:hover{
-    background-color: var(--alpha-b-60);
+.special_more-link a:hover {
+    background-color: var(--secondary-hover);
     color: var(--white);
     transition: .25s ease;
 }
 
-/* ----------body(左側) 熱門標籤影片---------- */
-
-/* 熱門標籤與熱門影片的容器 */
-.body_tagVdo {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+.body_rank_content h2 {
+    margin-bottom: 5px;
+    font-size: 1rem;
 }
 
-/* 類別區域 */
-.body_tagVdo .tagVdo_categories {
-    color: #155569;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 30px;
-    /* 側邊欄的寬度 */
-    margin-right: 10px;
-    /* 與內容區域的距離 */
-}
-
-/* 類別項目 */
-.body_tagVdo .tagVdo_categories div {
-    writing-mode: vertical-rl;
-    text-align: center;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 20px 2px;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    height: 120px;
-}
-
-/* 當前選中的類別 */
-.body_tagVdo .tagVdo_categories .active {
-    pointer-events: none;
-    border: 1px solid transparent;
-    background-color: #155569;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-.body_tagVdo .tagVdo_categories div:hover {
-    border: 1px solid #155569;
-    /* background-color: transparent; */
-    /* 悬停时的背景色 */
-}
-
-/* 熱門標籤與熱門影片的內容 */
-.body_tagVdo .tagVdo_content {
-    width: 100%;
-    padding-left: 10px;
-    height: 350px;
-    font-size: 12px;
-}
-
-.body_tagVdo .body_hotTag_content,
-.body_tagVdo .body_hotVdo_content {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-weight: bold;
-    /* 將區域內所有文字加粗 */
-}
-
-/* 標籤內容區域 */
-.body_tagVdo .body_hotTag_content {
-    display: block;
-    /* 預設顯示 */
-    width: 100%;
-}
-
-.body_tagVdo .body_hotVdo_content {
-    display: none;
-    /* 預設隱藏 */
-    width: 100%;
-}
-
-/* 顯示當前選中內容 */
-.body_tagVdo .body_hotTag_content.active,
-.body_tagVdo .body_hotVdo_content.active {
-    display: block;
-}
-
-/* 隱藏未選中內容 */
-.body_tagVdo .body_hotTag_content:not(.active),
-.body_tagVdo .body_hotVdo_content:not(.active) {
-    display: none;
-}
-
-
-
-/* 每個標籤或影片的樣式 */
-.body_tagVdo .tagVdo_content .grid div {
-    box-sizing: border-box;
-    padding: 5px;
-    cursor: pointer;
-}
-
-/* 更多的連結 */
-.body_tagVdo .tagVdo_content .more-link {
-    margin-top: 10px;
-    text-align: center;
-    width: 100%;
+.body_rank_content p {
+    margin-bottom: 15px;
+    font-size: .88rem;
+    letter-spacing: .1rem;
 }
 
 .ranking-item {
     display: flex;
     align-items: center;
-    /* 垂直對齊 */
-    margin-bottom: 20px;
-    /* 元素之間的間距 */
     cursor: pointer;
+    justify-content: space-between;
 }
 
 .rank-number,
 .tag-name,
-.user-icons {
-    flex-basis: 33.33%;
-    /* 每個元素占據三分之一的寬度 */
+.tag-num {
     text-align: center;
-    /* 文字和圖片居中對齊 */
+    margin-bottom: 10px;
+    font-size: .9rem;
+    letter-spacing: .1rem;
 }
 
 .rank-number {
     font-weight: bold;
-    color: #004850;
+    color: var(--primary);
+    margin-left: 8px;
 }
 
 .tag-name {
-    color: #000000;
+    color: var(--darkgrey);
+    white-space: nowrap;
+}
+
+/* --熱門標籤 影片-- */
+.body_tagVdo {
+    display: flex;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    max-width: 330px;
+    max-height: 330px;
+}
+
+.tagVdo_content {
+    display: flex;
+    align-items: center;
+}
+
+.body_hotTag_content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    flex-grow: 1;
+    width: 290px;
+    height: auto;
+    border: 1px solid var(--alpha-b-20);
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: var(--alpha-w-40);
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.hotTag-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    font-size: .88rem;
+    letter-spacing: .1rem;
+}
+
+.hotTag-rank {
+    font-weight: bold;
+    color: var(--primary);
+    margin-left: 8px;
     margin-right: 10px;
 }
 
-.user-icons img {
-    width: 100%;
-    margin-left: 5px;
-}
-
-.body_tagVdo .tagVdo_content .more-link a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.body_tagVdo .tagVdo_content .more-link a:hover {
-    text-decoration: underline;
+.hotTag-name {
+    white-space: nowrap;
+    margin-right: 20px;
 }
 
 .body_hotVdo_content .grid {
@@ -419,22 +363,41 @@ main {
 
 .body_hotVdo_content .video-item iframe {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
-.body_hotVdo_content .more-link {
-    margin-top: 10px;
-    text-align: center;
+/* 當前選中的類別 */
+.body_tagVdo .tagVdo_categories .active {
+    pointer-events: none;
+    border: 1px solid transparent;
+    background-color: var(--primary);
+    color: var(--white);
 }
 
-.body_hotVdo_content .more-link a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
+.body_tagVdo .tagVdo_categories div:hover {
+    border: 1px solid var(--primary);
 }
 
-.body_hotVdo_content .more-link a:hover {
-    text-decoration: underline;
+.body_tagVdo .body_hotTag_content {
+    display: block;
+    width: 100%;
+}
+
+.body_tagVdo .body_hotVdo_content {
+    display: none;
+    width: 100%;
+}
+
+/* 顯示當前選中內容 */
+.body_tagVdo .body_hotTag_content.active,
+.body_tagVdo .body_hotVdo_content.active {
+    display: block;
+}
+
+/* 隱藏未選中內容 */
+.body_tagVdo .body_hotTag_content:not(.active),
+.body_tagVdo .body_hotVdo_content:not(.active) {
+    display: none;
 }
 
 /* ----------右側容器---------- */
@@ -522,7 +485,7 @@ main {
     font-size: .9rem;
     letter-spacing: .1rem;
     padding: 5px 10px;
-    background-color: #FFA800;
+    background-color: var(--secondary);
     border: none;
     border-radius: 20px 0 10px 20px;
     color: white;
@@ -534,7 +497,7 @@ main {
 .news_more-link button:hover,
 .atc_more-link button:hover,
 .teachs_more-link button:hover {
-    background-color: #e29909;
+    background-color: var(--secondary-hover);
 
 }
 

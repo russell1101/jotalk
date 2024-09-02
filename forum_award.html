@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOTALK – 兌換福利</title>
+    <link rel="icon" href="./favicon.ico">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
+
+
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
+
+    <link rel="stylesheet" href="./css/forum_award.css">
+</head>
+
+<body>
+    <!-- 頁首元件 -->
+    <div id="header"></div>
+    <script type="text/babel">
+        function App() {
+
+            React.useEffect(() => {
+                login();
+            }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
+
+            return (
+                <Header h1="LET'S JOTALK" bg='./img/forum/forum_head_pic.jpg' leftSlogan='' slogan={true} btn={true} />
+            )
+        }
+
+        ReactDOM
+            .createRoot(document.getElementById('header'))
+            .render(<App />)
+    </script>
+    <main>
+        <img class="forum-bg" src="./img/about/about-bg.jpg"></img>
+        <div class="container">
+            <section id="level">
+                <h2>會員階級獎勵</h2>
+                <div class="wrap">
+                    <img src="./img/forum/award/level.png">
+                </div>
+            </section>
+            <section id="new">
+                <h2>新會員獎勵</h2>
+                <div class="wrap">
+                    <img src="./img/forum/award/new-member.png">
+                </div>
+            </section>
+            <section id="other">
+                <h2>其他獎勵</h2>
+                <div class="wrap">
+                    <img src="./img/forum/award/other.png">
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script type="text/babel">
+        function App() {
+            return (
+                <Footer />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('footer'))
+            .render(<App />)
+    </script>
+    <script src="./Header_element/login.js"></script>
+</body>
+
+</html>

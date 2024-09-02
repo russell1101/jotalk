@@ -4,25 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>forum-Atc</title>
-
-
-    <!-- 步驟一：載入React, Bable -->
+    <title> JOTALK – 文章主頁</title>
+    <link rel="icon" href="./favicon.ico">
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- footer元件 -->
-    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
-    <link rel="stylesheet" href="./Footer_element/Footer.css">
-    <!-- Header元件 -->
     <script type="text/babel" src="./Header_element/Header.jsx"></script>
     <link rel="stylesheet" href="./Header_element/Header.css">
 
-    <link rel="stylesheet" href="./css/forum/forum_account.css">
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
+    <link rel="stylesheet" href="./css/forum_account.css">
 </head>
 
 <body>
+    <img class="forum-bg" src="./img/about/about-bg.jpg"></img>
     <!-- 頁首區 -->
     <!-- 步驟二：載入root元素 -->
     <div id="root"></div>
@@ -453,9 +450,8 @@
             .render(<App />)
     </script>
 
-
     <script src="./Header_element/login.js"></script>
-    <script src="./js/forum/forum_account.js"></script>
+    <script src="./js/forum_account.js"></script>
 </body>
 
 </html>

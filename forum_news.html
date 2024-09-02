@@ -4,53 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>forum-News</title>
-    <link rel="stylesheet" href="../css/forum/forum_news.css">
+    <title> JOTALK – 活動主頁</title>
+    <link rel="icon" href="./favicon.ico">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
+
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
+    <link rel="stylesheet" href="./css/forum_news.css">
 </head>
 
 <body>
-    <!-- 壓在背景的透明板 -->
-    <div class="overlay"></div>
+    <!-- 頁首元件 -->
+    <div id="header"></div>
+    <script type="text/babel">
+        function App() {
 
-    <!-- 頁首區 -->
-    <header id="topbar">
-        <!-- logo區 -->
-        <div class="forum_head">
-            <h1 class="logo">
-                <a href="../index.html">
-                    <img src="../img/logo.svg" alt="jotalkLogo">
-                </a>
-            </h1>
+            React.useEffect(() => {
+                login();
+            }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
 
-            <div class="menu">
-                <a href="../forum.html">綜合論壇</a>
-                <a href="../barlist.html">酒吧清單</a>
-                <a href="#">關於我們</a>
-            </div>
-        </div>
-        <!-- 會員登入區 -->
-        <div class="account_login">
-            <button>
-                <a href="">發表文章</a>
-            </button>
-            <button>
-                <a href="">會員登入</a>
-            </button>
-        </div>
+            return (
+                <Header h1="LET'S JOTALK" bg='./img/forum/forum_head_pic.jpg' leftSlogan='' slogan={true} btn={true} />
+            )
+        }
 
-        <!-- 標題及搜尋區 -->
-        <div class="forum_slogan">
-            <h1>Let's Jotalk</h1>
-            <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容">
-                <!-- <label for="">產品搜尋:</label> -->
-                <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
-                    placeholder="搜尋所有內容">
-                <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋">
-            </form>
-            <p>9999 會員 987 online 12345 文章</p>
-        </div>
-    </header>
+        ReactDOM
+            .createRoot(document.getElementById('header'))
+            .render(<App />)
+    </script>
+
     <main>
+        <img class="forum-bg" src="./img/about/about-bg.jpg"></img>
         <div class="news-container">
             <!-- 左區: 類別與標籤 -->
             <div class="left-section">
@@ -87,8 +76,19 @@
                 </div>
                 <button id="load-more">載入更多</button>
             </div>
-
         </div>
     </main>
-    <script src="../js/forum/forum_news.js"></script>
+    <div id="footer"></div>
+    <script type="text/babel">
+        function App() {
+            return (
+                <Footer />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('footer'))
+            .render(<App />)
+    </script>
+    <script src="./Header_element/login.js"></script>
+    <script src="./js/forum_news.js"></script>
 </body>

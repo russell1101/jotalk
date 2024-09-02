@@ -4,58 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>forum-Teach</title>
-    <link rel="stylesheet" href="../css/forum/forum_teach.css">
+    <title>JOTALK – 教學主頁</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel" src="../Footer_element/Footer.jsx"></script>
-    <link rel="stylesheet" href="../Footer_element/Footer.css">
+
+    <script type="text/babel" src="./Header_element/Header.jsx"></script>
+    <link rel="stylesheet" href="./Header_element/Header.css">
+
+    <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
+    <link rel="stylesheet" href="./Footer_element/Footer.css">
+    
+    <link rel="stylesheet" href="./css/forum_teach.css">
 </head>
 
 <body>
-    <!-- 壓在背景的透明板 -->
-    <div class="overlay"></div>
+    <!-- 頁首元件 -->
+    <div id="header"></div>
+    <script type="text/babel">
+        function App() {
+            
+            React.useEffect(() => {
+                login();
+            }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
 
-    <!-- 頁首區 -->
-    <header id="topbar">
-        <!-- logo區 -->
-        <div class="forum_head">
-            <h1 class="logo">
-                <a href="../index.html">
-                    <img src="../img/logo.svg" alt="jotalkLogo">
-                </a>
-            </h1>
-
-            <div class="menu">
-                <a href="../forum.html">綜合論壇</a>
-                <a href="../barlist.html">酒吧清單</a>
-                <a href="../about.html">關於我們</a>
-            </div>
-        </div>
-        <!-- 會員登入區 -->
-        <div class="account_login">
-            <button>
-                <a href="">發表文章</a>
-            </button>
-            <button>
-                <a href="">會員登入</a>
-            </button>
-        </div>
-
-        <!-- 標題及搜尋區 -->
-        <div class="forum_slogan">
-            <h1>Let's Jotalk</h1>
-            <!-- <form action="" method="post" name="forum_search" id="forum_search" title="搜尋論壇內容"> -->
-            <!-- <label for="">產品搜尋:</label> -->
-            <!-- <input type="search" name="forumInput-search" id="forumInput-search" title="產品搜尋欄位"
-                    placeholder="搜尋所有內容">
-                <input type="submit" name="forumSubmit--search" id="forumSubmit--search" title="產品搜尋按鈕" value="搜尋">
-            </form> -->
-        </div>
-    </header>
+            return (
+                <Header h1="LET'S JOTALK" bg='./img/forum/teach/teach_head_pic.jpg' leftSlogan='' slogan={true} btn={true} />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('header'))
+            .render(<App />)
+    </script>
     <main>
-
         <div class="teach_content">
             <!-- 上區 -->
             <div class="top-section">
@@ -170,17 +151,14 @@
             </div>
         </div>
     </main>
-    <!-- 步驟二：載入root元素 -->
     <div id="root"></div>
     <script type="text/babel">
-        // 步驟三：建立 React 元件
         function App() {
+            // jsx語法
             return (
                 <Footer />
             )
         }
-
-        // 步驟四：渲染元件到根元件上
         ReactDOM
             .createRoot(document.getElementById('root'))
             .render(<App />)
@@ -189,10 +167,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
-    <script src="../js/forum/forum_teach.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="./Header_element/login.js"></script>
+    <script src="./js/forum_teach.js"></script>
 </body>
 
 </html>
