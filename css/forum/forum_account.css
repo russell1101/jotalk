@@ -633,20 +633,19 @@ main {
     display: none;
 }
 
-.closebtn_article {
+.closebtn img {
     position: absolute;
-    /* 確保它相對於 .content 定位 */
+    width: 20px;
+    height: 20px;
     top: 15px;
-    /* 距離上方 15px */
     right: 15px;
-    /* 距離右邊 15px */
     font-size: 14px;
     cursor: pointer;
-    z-index: 1000;
-    transition: .3s ease-in-out;
+    z-index: 10;
+    transition: .25s ease-in-out;
 }
 
-#closebtn_article:hover {
+.closebtn img:hover {
     opacity: 60%;
 }
 
