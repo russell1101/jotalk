@@ -148,54 +148,60 @@ function helper() {
         // 其他預設的關鍵字與回應可在此添加
     ];
 
-    function addMessage(sender, text) {
-        const chatContainer = document.getElementById('chatContainer');
-        const messageElement = document.createElement('div');
-        messageElement.className = sender === 'user' ? 'user-message' : 'helper-message';
-        messageElement.innerHTML = text;
-        chatContainer.appendChild(messageElement);
-    };
-
     function processInput(text) {
-        let response = '請告訴我你想要的酒吧風格。<br>可選擇：英式復古、新手友善等。';
+        let response = '';
 
+        // step 0: 開始尋找酒吧
         if (state.step === 0) {
+            let foundKeyword = false; // 用於檢查是否找到匹配的關鍵字
+
             for (const item of responses) {
                 for (const keyword of item.keywords) {
                     if (text.toLowerCase().includes(keyword.toLowerCase())) {
                         response = item.response;
-                        state.step = item.nextStep;
+                        state.step = item.nextStep; // 更新 step 到下一步
+                        foundKeyword = true;
                         break;
                     }
                 }
-                if (response !== '對不起，我不太明白你的問題。') {
-                    break;
+                if (foundKeyword) {
+                    break; // 如果找到匹配的關鍵字，跳出迴圈
                 }
             }
+
+            if (!foundKeyword) {
+                response = '對不起，我不太明白你的問題。';
+            }
+
+            // step 1: 輸入酒吧風格
         } else if (state.step === 1) {
             if (!/[\u4e00-\u9fa5]+/.test(text)) {
                 response = '請輸入中文。<br>請告訴我你想要的酒吧風格。';
             } else {
-                state.style = text;
+                state.style = text; // 儲存用戶輸入的風格
                 response = '請告訴我你的人數。<br>選項：1-2、3-6、7-10、11-20。';
-                state.step = 2;
+                state.step = 2; // 進入下一步
             }
+
+            // step 2: 輸入人數
         } else if (state.step === 2) {
             if (!/^\d+$/.test(text)) {
                 response = '請輸入數字。<br>請告訴我你的人數。<br>選項：1-2、3-6、7-10、11-20。';
             } else {
-                state.members = text;
+                state.members = text; // 儲存人數
                 response = '請告訴我你想要的地點。<br>選項：台北市大安區、高雄市鹽埕區等。';
-                state.step = 3;
+                state.step = 3; // 進入下一步
             }
+
+            // step 3: 輸入地點並給出推薦
         } else if (state.step === 3) {
-            state.location = text;
+            state.location = text; // 儲存地點
             const recommendedBar = getRandomBar(state.location);
             response = `你想尋找的酒吧風格是: ${state.style}<br>人數是: ${state.members}<br>地點是: ${state.location} <br>以下是推薦給您的酒吧：<br>${recommendedBar} <a href="#">點此查看</a>`;
-            state.step = 0; // 重置狀態
+            state.step = 0; // 重置狀態，準備下一次互動
         }
 
-
+        // 最後添加消息到聊天框
         addMessage('helper', response);
     }
 

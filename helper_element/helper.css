@@ -171,8 +171,8 @@ a {
     right: -5px;
     width: 50px;
     height: 50px;
-    border-right: 10px solid transparent;
-    border-bottom: 60px solid white;
+    border-right: 5px solid transparent;
+    border-bottom: 100px solid white;
     z-index: -1;
 }
 
@@ -263,4 +263,39 @@ input {
 .chat-message.helper .chat-bubble {
     background-color: #155569;
     color: white;
+}
+
+/* 限制滾輪樣式只應用於 .chat-messages */
+.helper-box .chat-messages {
+    overflow-y: none; /* 啟用垂直滾動條 */
+    max-height: 500px; /* 設定最大高度，使滾輪可見（根據需要調整） */
+    padding-right: 10px; /* 設置內推的距離，調整滾輪與容器右邊緣的距離 */
+    box-sizing: content-box; /* 確保 padding 不影響元素的寬度 */
+    border-right: 10px solid transparent; /* 使用透明邊框來內推滾輪 */
+}
+
+/* 自訂滾輪樣式僅限於 .chat-messages */
+.helper-box .chat-messages::-webkit-scrollbar {
+    width: 6px; /* 設定垂直滾輪的寬度 */
+}
+
+.helper-box .chat-messages::-webkit-scrollbar-track {
+    background: var(--lightgrey); /* 滾輪軌道的背景顏色 */
+    border-radius: 10px; /* 滾輪軌道的圓角 */
+    margin: 40px 0; /* 上下添加 margin，縮短垂直滾輪的長度 */
+    /* 如果是水平滾輪，則使用 margin: 0 20px; */
+}
+
+.helper-box .chat-messages::-webkit-scrollbar-thumb {
+    background: var(--primary); /* 滾輪滑塊的顏色 */
+    border-radius: 10px; /* 滾輪滑塊的圓角 */
+}
+
+.helper-box .chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #24748c; /* 當滑鼠懸停在滑塊上時的顏色 */
+}
+
+/* 隱藏滾輪的箭頭 */
+.helper-box .chat-messages::-webkit-scrollbar-button {
+    display: none; /* 隱藏滾輪的箭頭 */
 }
