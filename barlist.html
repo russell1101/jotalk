@@ -13,6 +13,8 @@
     <script type="text/babel" src="./Header_element/Header.jsx"></script>
     <link rel="stylesheet" href="./Header_element/Header.css">
 
+    <script type="text/babel" src="./helper_element/helper.jsx"></script>
+    <link rel="stylesheet" href="./helper_element/helper.css">
 
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
@@ -21,6 +23,7 @@
 
 <body>
     <!-- 頁首區 -->
+    <!-- 頁首元件 -->
     <div id="header"></div>
     <script type="text/babel">
         function App() {
@@ -30,9 +33,10 @@
             }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
 
             return (
-                <Header h1='BAR LIST' p='酒吧清單' bg='./img/barlist/barlist_head_pic.jpg' leftSlogan={true} slogan='' btn={true} />
+                <Header h1="BAR LIST" bg='../img/barlist/barlist_head_pic.jpg' leftSlogan='酒吧清單' slogan={true} btn={true} />
             )
         }
+
         ReactDOM
             .createRoot(document.getElementById('header'))
             .render(<App />)
@@ -165,7 +169,7 @@
 
                             <div class="content--container">
                                 <div class="title--container">
-                                    <a class="title--text" href="#">Nightfall Nook</a>
+                                    <a class="title--text" href="#">Ludwig</a>
                                     <a class="title--text" href="#">4.5★</a>
                                 </div>
 
@@ -218,7 +222,7 @@
 
                             <div class="content--container">
                                 <div class="title--container">
-                                    <a class="title--text" href="#">Middle Two</a>
+                                    <a class="title--text" href="#">Milotic</a>
                                     <a class="title--text" href="#">4.1★</a>
                                 </div>
 
@@ -258,7 +262,7 @@
 
                             <div class="content--container">
                                 <div class="title--container">
-                                    <a class="title--text" href="#">Ludwig</a>
+                                    <a class="title--text" href="#">Nightfall Nook</a>
                                     <a class="title--text" href="#">4.0★</a>
                                 </div>
 
@@ -457,7 +461,7 @@
 
                             <div class="content--container">
                                 <div class="title--container">
-                                    <a class="title--text" href="#">Milotic</a>
+                                    <a class="title--text" href="#">Middle Two</a>
                                     <a class="title--text" href="#">4.8★</a>
                                 </div>
 
@@ -667,9 +671,9 @@
                 <div class="infoContant active">
                     <!-- 酒吧名字 -->
                     <div class="name-BL">
-                        <h2>Middle Two</h2>
+                        <h2>Milotic</h2>
                         <ul class="icon">
-                            <li><a class="icon-ig" id="ig" href="#"></a></li>
+                            <li><a class="icon-ig" href="https://www.instagram.com/"></a></li>
                             <li><a class="icon-phone" id="phone" href="#"></a></li>
                             <li><a class="icon-map" id="map" href="#"></a></li>
                         </ul>
@@ -699,9 +703,9 @@
 
                     <div class="intro">
                         <p>
-                            Nightfall Nook
-                            是您理想的去處，無論是想在安靜環境中放鬆，還是與朋友共享愉快時光，我們都將以卓越評分和周到服務歡迎您的光臨。這裡提供多樣化的飲品選擇，從經典調酒到特色創意酒款，滿足您不同的味蕾需求。溫馨的內部裝潢與舒適的座位安排，讓每位顧客都能享受愉悅的用餐和飲酒體驗。我們定期舉辦各種活動和特別優惠，帶給您無限驚喜與樂趣。Nightfall
-                            Nook 不僅僅是一間酒吧，更是一個讓您放鬆身心、與好友歡聚的理想場所。我們期待您的光臨，共度美好時光。
+                            Milotic
+                            是您理想的去處，無論是想在安靜環境中放鬆，還是與朋友共享愉快時光，我們都將以卓越評分和周到服務歡迎您的光臨。這裡提供多樣化的飲品選擇，從經典調酒到特色創意酒款，滿足您不同的味蕾需求。溫馨的內部裝潢與舒適的座位安排，讓每位顧客都能享受愉悅的用餐和飲酒體驗。我們定期舉辦各種活動和特別優惠，帶給您無限驚喜與樂趣。
+                            Milotic不僅僅是一間酒吧，更是一個讓您放鬆身心、與好友歡聚的理想場所。我們期待您的光臨，共度美好時光。
                         </p>
                     </div>
 
@@ -822,6 +826,23 @@
             <span id="closebtn-BL">X</span>
         </div>
     </div>
+    <div id="helper"></div>
+    <script type="text/babel">
+        function App() {
+
+            React.useEffect(() => {
+                helper();
+            }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
+
+            return (
+                <Helper />
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('helper'))
+            .render(<App />)
+    </script>
+
     <div id="footer"></div>
     <script type="text/babel">
         function App() {
@@ -833,6 +854,7 @@
             .createRoot(document.getElementById('footer'))
             .render(<App />)
     </script>
+    <script src="./helper_element/helper.js"></script>
     <script src="./Header_element/login.js"></script>
     <script src="./js/barlist.js"></script>
 </body>

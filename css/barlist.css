@@ -624,43 +624,43 @@ a.tag {
     }
 
     &:nth-of-type(3) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/bar-3.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-11.jpg");
     }
 
     &:nth-of-type(4) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/bar-4.jpg");
+        background-image: url("../img/barlist/barlist_pic/darwin.jpg");
     }
 
     &:nth-of-type(5) .preview-image {
-        background-image: url("https://picsum.photos/id/66/1280/900.webp");
+        background-image: url("../img/barlist/barlist_pic/bar-10.jpg");
     }
 
     &:nth-of-type(6) .preview-image {
-        background-image: url("https://picsum.photos/id/350/1280/900.webp");
+        background-image: url("../img/barlist/barlist_pic/winebucket.jpg");
     }
 
     &:nth-of-type(7) .preview-image {
-        background-image: url("https://picsum.photos/id/313/1280/900.webp");
+        background-image: url("../img/barlist/barlist_pic/blastoise.jpg");
     }
 
     &:nth-of-type(8) .preview-image {
-        background-image: url("https://picsum.photos/id/15/1280/900.webp");
+        background-image: url("../img/barlist/barlist_pic/middletwo.jpg");
     }
 
     &:nth-of-type(9) .preview-image {
-        background-image: url("https://picsum.photos/id/168/1280/900.webp");
+        background-image: url("../img/barlist/barlist_pic/bar-12.jpg");
     }
 
     &:nth-of-type(10) .preview-image {
-        background-image: url("https://picsum.photos/id/368/1280/900.webp");
+        background-image: url("../img/barlist/barlist_pic/oask.jpg");
     }
 
     &:nth-of-type(11) .preview-image {
-        background-image: url("https://picsum.photos/id/542/1280/900.webp");
+        background-image: url("../img/barlist/barlist_pic/rivernight.jpg");
     }
 
     &:nth-of-type(12) .preview-image {
-        background-image: url("https://picsum.photos/id/851/1280/900.webp");
+        background-image: url("../img/barlist/barlist_pic/bar-13.jpg");
     }
 }
 
@@ -732,9 +732,9 @@ a.tag {
         transform: scale(var(--bg-scale)) translateZ(1px);
         background-position: var(--bg-position);
         background-repeat: no-repeat;
-        filter: grayscale(100%);
-        mix-blend-mode: multiply;
-        opacity: .75;
+        filter: none;
+        mix-blend-mode:normal;
+        opacity: 1;
 
         will-change: background-color, transform;
 
@@ -1012,9 +1012,9 @@ a.tag {
             --bg-scale: 1, 1;
             --bg-position: 50% 100%;
 
-            filter: revert;
-            mix-blend-mode: revert;
-            opacity: revert;
+            filter: none;
+            mix-blend-mode: normal;
+            opacity: 1;
         }
     }
 }
@@ -1266,7 +1266,7 @@ a.tag {
     background-repeat: no-repeat;
 }
 
-.icon-ig {
+.infoContant .icon-ig {
     background-image: url(../img/barlist/barlist_jump_pic/icon--insta.svg);
     width: 100%;
     height: 100%;

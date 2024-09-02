@@ -1,0 +1,266 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
+/* utf8一定要在行數1 */
+/* import 一定要在第二行 */
+/* 重置所有標籤的樣式 */
+
+/* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加padding */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    color: #444;
+    display: block;
+    /* 預設inline行內元素改為block */
+    text-decoration: none;
+}
+
+/* 小幫手 */
+/* 包含小幫手按鈕和書籤的容器 */
+.helper-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: -90px;
+    display: flex;
+    align-items: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 40px 0 0 40px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding-left: 10px;
+
+}
+
+/* 書籤的文字部分 */
+.helper-label {
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); */
+    white-space: nowrap;
+    /* 防止文字換行 */
+    z-index: 1001;
+    /* 保持在最上層，確保不被其他元素覆蓋 */
+}
+
+/* 當滑鼠懸停在書籤或小幫手按鈕上時，整個容器滑動 */
+.helper-wrapper:hover,
+.helper-wrapper.forced-expanded {
+    right: 0px;
+    /* 顯示書籤的文字 */
+}
+
+/* 小幫手按鈕樣式 */
+.helper-btn {
+    background-color: transparent;
+    /* 背景透明以顯示圖片 */
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    z-index: 1001;
+    /* 保持在最上層，確保不被其他元素覆蓋 */
+
+}
+
+/* 小幫手按鈕圖片 */
+.helper-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 確保圖片完全覆蓋按鈕 */
+    /* border: 1px solid #2c2c2c; */
+    /* 移除圖片邊框 */
+    border-radius: 50%;
+    /* 圓角效果 */
+}
+
+/* 小幫手對話框樣式 */
+.helper-box {
+    position: absolute;
+    bottom: 40px;
+    right: 220px;
+    width: 600px;
+    height: 600px;
+    /* 固定高度 */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    display: none;
+    /* 初始化為隱藏狀態 */
+    z-index: 1000;
+    /* 保持在書籤和小幫手按鈕的下面，但依然在其他元素上方 */
+}
+
+/* 魚尾 */
+.helper-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: -5px;
+    width: 50px;
+    height: 50px;
+    border-right: 10px solid transparent;
+    border-bottom: 60px solid white;
+    z-index: -1;
+}
+
+/* 內部內容樣式保持不變 */
+.helper-box-content {
+    padding: 20px;
+    /* 這是內部內容區域的填充，用來讓內容遠離邊框 */
+}
+
+input {
+    border-radius: 10px;
+    /* 這裡設定輸入框的圓角，保持與其他部分一致 */
+}
+
+/* 內部其他元素的樣式 */
+.small-helper {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    border-radius: 10px 0 10px 0;
+}
+
+.chat-input {
+    display: flex;
+    width: 95%;
+    height: 2rem;
+    border-radius: 20px;
+    margin: 0 0 20px 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    border: none;
+    padding: 0 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 0 10px;
+    border: solid 1px #585858;
+}
+
+.chat-input button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 3px 2%;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.chat-input button:hover {
+    background-color: #24748c;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+    margin-left: 10px;
+    padding-left: 50px;
+}
+
+.chat-message.helper {
+    justify-content: flex-start;
+    margin-right: 10px;
+    padding-right: 50px;
+}
+
+.chat-bubble {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.chat-message.user .chat-bubble {
+    background-color: #f1f0f0;
+}
+
+.chat-message.helper .chat-bubble {
+    background-color: #155569;
+    color: white;
+}

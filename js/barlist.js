@@ -199,3 +199,22 @@ document.querySelectorAll('.categories-BL div').forEach(category => {
         document.querySelector(`.${target}`).classList.add('active');
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 獲取所有圖標
+    const phoneIcon = document.getElementById('phone');
+    const mapIcon = document.getElementById('map');
+    
+    // 為電話圖標添加事件監聽器
+    phoneIcon.addEventListener('click', (event) => {
+        event.preventDefault(); // 防止點擊後的默認行為（例如跳轉）
+        alert('已複製電話');
+    });
+    
+    // 為地圖圖標添加事件監聽器
+    mapIcon.addEventListener('click', (event) => {
+        event.preventDefault(); // 防止點擊後的默認行為（例如跳轉）
+        alert('已複製該店家資訊至剪貼簿');
+    });
+});
