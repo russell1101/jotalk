@@ -20,6 +20,7 @@
     --alpha-w-80: rgba(255, 255, 255, .8);
     --alpha-b-20: rgba(0, 0, 0, .2);
     --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
     --alpha-lg-10: rgba(88, 88, 88, 0.1);
 }
 
@@ -90,10 +91,9 @@ main {
 
 #otherMB-content {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    max-width: 1040px;
+    max-width: 1140px;
     width: 100%;
     padding: 20px;
     gap: 20px;

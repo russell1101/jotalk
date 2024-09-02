@@ -34,26 +34,25 @@
                 <Header h1="LET'S JOTALK" bg='./img/forum/forum_head_pic.jpg' leftSlogan='' slogan={true} btn={true} />
             )
         }
-        
+
         ReactDOM
             .createRoot(document.getElementById('header'))
             .render(<App />)
     </script>
 
-    <div class="overlay"></div>
     <main>
+        <img class="forum-bg" src="./img/about/about-bg.jpg"></img>
         <section class="forum_body">
             <!-- 左側欄位 -->
-            <div class="body_bull_tag">
+            <div class="forum-left">
                 <!-- 布告欄 -->
                 <div class="body_bulletin">
                     <div class="categories">
-                        <div class="body_guide active">新手指南</div>
-                        <div class="body_special">本月福利</div>
-                        <div class="body_rank">成就排名</div>
+                        <div class="body_guide active">新 手 指 南</div>
+                        <div class="body_special">本 月 福 利</div>
+                        <div class="body_rank">成 就 排 名</div>
                     </div>
                     <div class="bulletin_content">
-                        <!-- 這裡放置布告欄的內容 -->
                         <div class="body_guide_content active">
                             <h2>【尊重友善包容】</h2>
                             <p>請尊重其他用戶，保持友善和包容的態度，避免任何形式的攻擊性言論。</p>
@@ -77,15 +76,15 @@
                             <p>前往指定酒吧出示JOTALK網站兌換券，即可享有店家特色調酒一杯。</p>
                             <h2>【會員階級獎勵】</h2>
                             <h3>等級：生命之水</h3>
-                            <p> 合作廠商-護肝丸一瓶</p>
+                            <small> 合作廠商-護肝丸一瓶</small>
                             <h3>等級：金門高粱</h3>
-                            <p> 合作廠商-金門船票一張</p>
+                            <small> 合作廠商-金門船票一張</small>
                             <h3>等級：威士忌</h3>
-                            <p> 年度威士忌酒展門票一張</p>
+                            <small> 年度威士忌酒展門票一張</small>
                             <h3>等級：啤酒</h3>
-                            <p> 指定店家特色調酒一杯</p>
+                            <small> 指定店家特色調酒一杯</small>
                             <div class="special_more-link">
-                                <a href="./forum_content/forum_award.html">前往兌換福利>></a>
+                                <a href="./forum_content/forum_award.html">前往兌換福利</a>
                             </div>
 
                         </div>
@@ -141,14 +140,12 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- 標籤 -->
                 <div class="body_tagVdo">
                     <div class="tagVdo_categories">
                         <div class="body_hotTag active">熱門標籤</div>
                         <div class="body_hotVdo">熱門影片</div>
                     </div>
-
                     <div class="tagVdo_content">
                         <!-- 標籤內容區域 -->
                         <div class="body_hotTag_content active">
@@ -227,22 +224,22 @@
                     </div>
                     <!-- 熱門活動區域 -->
                     <ul class="news_content active">
-                        <li class="news pic1">
+                        <li class="news evt-pic1">
                             <a href="./forum_content/forum_news.html" class="content">
                                 <h2>期間限定! 世界調酒冠軍的得獎之作。</h2>
                             </a>
                         </li>
-                        <li class="news pic2">
+                        <li class="news evt-pic2">
                             <a href="./forum_content/forum_news.html" class="content">
                                 <h2>去海邊喝一杯吧! 海岸線酒吧大會集。</h2>
                             </a>
                         </li>
-                        <li class="news pic3">
+                        <li class="news evt-pic10">
                             <a href="./forum_content/forum_news.html" class="content">
-                                <h2>與世隔離，享受無際大海與美酒的時光。</h2>
+                                <h2>單身之夜，與調酒碰撞愛火。</h2>
                             </a>
                         </li>
-                        <li class="news pic4">
+                        <li class="news evt-pic4">
                             <a href="./forum_content/forum_news.html" class="content">
                                 <h2>在山林中迎接晨曦，品味特色精釀啤酒。</h2>
                             </a>
@@ -250,52 +247,51 @@
                     </ul>
                     <!-- 期間限定區域 -->
                     <ul class="limitEvt_content">
-                        <li class="limitEvt pic1">
+                        <li class="limitEvt evt-pic5">
                             <a href="./forum_content/forum_news.html" class="content">
-                                <h2>星空下的微醺之夜—戶外調酒露營派對</h2>
+                                <h2>星空下的微醺之夜—戶外調酒露營派對。</h2>
                             </a>
                         </li>
-                        <li class="limitEvt pic2">
+                        <li class="limitEvt evt-pic9">
                             <a href="./forum_content/forum_news.html" class="content">
-                                <h2>酒吧探險夜!</h2>
+                                <h2>面具之下，揭開神秘調酒狂歡！</h2>
                             </a>
                         </li>
-                        <li class="limitEvt pic3">
+                        <li class="limitEvt evt-pic6">
                             <a href="./forum_content/forum_news.html" class="content">
-                                <h2>舊時光新風味—復古雞尾酒夜市派對</h2>
+                                <h2>舊時光新風味—復古雞尾酒夜市派對。</h2>
                             </a>
                         </li>
-                        <li class="limitEvt pic4">
+                        <li class="limitEvt evt-pic7">
                             <a href="./forum_content/forum_news.html" class="content">
-                                <h2>花海與香氛的約會—花田間的香味調酒節</h2>
+                                <h2>花海與香氛的約會—花田間的香味調酒節。</h2>
                             </a>
                         </li>
                     </ul>
                     <!-- 常態活動區域 -->
                     <ul class="normalEvt_content">
-                        <li class="normalEvt pic1">
+                        <li class="normalEvt evt-pic3">
                             <a href="./forum_content/forum_news.html" class="content">
-                                <h2>單身調酒之夜</h2>
+                                <h2>與世隔離，享受無際大海與美酒的時光。</h2>
                             </a>
                         </li>
-                        <li class="normalEvt pic2">
+                        <li class="normalEvt evt-pic1">
                             <a href="./forum_content/forum_news.html" class="content">
                                 <h2>期間限定! 世界調酒冠軍的得獎之作。</h2>
                             </a>
                         </li>
-                        <li class="normalEvt pic3">
+                        <li class="normalEvt evt-pic8">
                             <a href="./forum_content/forum_news.html" class="content">
-                                <h2>花海與香氛的約會—花田間的香味調酒節</h2>
+                                <h2>在巷弄間，展開酒吧探險之旅。</h2>
                             </a>
                         </li>
-                        <li class="normalEvt pic4">
+                        <li class="normalEvt evt-pic10">
                             <a href="./forum_content/forum_news.html" class="content">
-                                <h2>台北酒精大縱走開始啦!</h2>
+                                <h2>單身之夜，與調酒碰撞愛火。</h2>
                             </a>
                         </li>
                     </ul>
                 </div>
-
                 <!-- 熱門文章 -->
                 <div class="body_atc">
                     <div class="atc_container">
@@ -370,7 +366,6 @@
                             </li>
                         </div>
                     </div>
-
                     <!-- 一般文章區域 -->
                     <div class="normalAtc_content">
                         <div class="normalAtc-row1">
@@ -402,77 +397,77 @@
                             </li>
                         </div>
                     </div>
-                    <!-- 教學文主頁 -->
-                    <div class="body_teach">
-                        <div class="teach_container">
-                            <div class="teach_categories">
-                                <div class="teach_baseWine active" data-target="baseWine_content">六大基酒</div>
-                                <div class="teach_bartendWine" data-target="bartendWine_content">經典調酒</div>
-                                <div class="teach_teachWine" data-target="teachWine_content">調酒教學</div>
-                            </div>
-                            <div class="teachs_more-link">
-                                <button
-                                    onclick="window.location.href='./forum_content/forum_teach.html'">前往教學主頁</button>
-                            </div>
-                        </div>
-                        <!-- 六大基酒區域 -->
-                        <ul class="baseWine_content active">
-                            <li class="baseWinePic1">
-                                <a href="./forum_content/forum_teach.html" class="content"></a>
-                            </li>
-                            <li class="baseWinePic2">
-                                <a href="./forum_content/forum_teach.html" class="content"></a>
-                            </li>
-                            <li class="baseWinePic3">
-                                <a href="./forum_content/forum_teach.html" class="content"></a>
-                            </li>
-                            <li class="baseWinePic4">
-                                <a href="./forum_content/forum_teach.html" class="content"></a>
-                            </li>
-
-                        </ul>
-                        <!-- 經典調酒區域 -->
-                        <ul class="bartendWine_content ">
-                            <li class="bartendWinePic1">
-                                <a href="./forum_content/forum_teach.html" class="content"></a>
-                            </li>
-                            <li class="bartendWinePic2">
-                                <a href="./forum_content/forum_teach.html" class="content"></a>
-                            </li>
-                            <li class="bartendWinePic3">
-                                <a href="./forum_content/forum_teach.html" class="content"></a>
-                            </li>
-                            <li class="bartendWinePic4">
-                                <a href="./forum_content/forum_teach.html" class="content"></a>
-                            </li>
-                        </ul>
-                        <!-- 調酒教學區域 -->
-                        <ul class="teachWine_content ">
-                            <li class="teachWinePic1">
-                                <a href="#" class="content">
-                                    <div class="video-item">
-                                        <iframe width="390" height="250"
-                                            src="https://www.youtube.com/embed/qH4Cge_ED-4?si=ag5jUerb6mDieJ90"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="teachWinePic2">
-                                <a href="#" class="content">
-                                    <div class="video-item">
-                                        <iframe width="390" height="250"
-                                            src="https://www.youtube.com/embed/W-JKSt5Lg6c?si=uc3VOfm_lLvCCHiH&amp;start=10"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
+                <!-- 教學文主頁 -->
+                <div class="body_teach">
+                    <div class="teach_container">
+                        <div class="teach_categories">
+                            <div class="teach_baseWine active" data-target="baseWine_content">六大基酒</div>
+                            <div class="teach_bartendWine" data-target="bartendWine_content">經典調酒</div>
+                            <div class="teach_teachWine" data-target="teachWine_content">調酒教學</div>
+                        </div>
+                        <div class="teachs_more-link">
+                            <button onclick="window.location.href='./forum_content/forum_teach.html'">前往教學主頁</button>
+                        </div>
+                    </div>
+                    <!-- 六大基酒區域 -->
+                    <ul class="baseWine_content active">
+                        <li class="baseWinePic1">
+                            <a href="./forum_content/forum_teach.html" class="content"></a>
+                        </li>
+                        <li class="baseWinePic2">
+                            <a href="./forum_content/forum_teach.html" class="content"></a>
+                        </li>
+                        <li class="baseWinePic3">
+                            <a href="./forum_content/forum_teach.html" class="content"></a>
+                        </li>
+                        <li class="baseWinePic4">
+                            <a href="./forum_content/forum_teach.html" class="content"></a>
+                        </li>
+
+                    </ul>
+                    <!-- 經典調酒區域 -->
+                    <ul class="bartendWine_content ">
+                        <li class="bartendWinePic1">
+                            <a href="./forum_content/forum_teach.html" class="content"></a>
+                        </li>
+                        <li class="bartendWinePic2">
+                            <a href="./forum_content/forum_teach.html" class="content"></a>
+                        </li>
+                        <li class="bartendWinePic3">
+                            <a href="./forum_content/forum_teach.html" class="content"></a>
+                        </li>
+                        <li class="bartendWinePic4">
+                            <a href="./forum_content/forum_teach.html" class="content"></a>
+                        </li>
+                    </ul>
+                    <!-- 調酒教學區域 -->
+                    <ul class="teachWine_content ">
+                        <li class="teachWinePic1">
+                            <a href="#" class="content">
+                                <div class="video-item">
+                                    <iframe width="390" height="250"
+                                        src="https://www.youtube.com/embed/qH4Cge_ED-4?si=ag5jUerb6mDieJ90"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="teachWinePic2">
+                            <a href="#" class="content">
+                                <div class="video-item">
+                                    <iframe width="390" height="250"
+                                        src="https://www.youtube.com/embed/W-JKSt5Lg6c?si=uc3VOfm_lLvCCHiH&amp;start=10"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <div class="helper-wrapper">
