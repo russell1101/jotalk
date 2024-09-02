@@ -22,7 +22,7 @@ function Header(props) {
                     <div className="menu_el">
                         <a href="./forum.html">綜合論壇</a>
                         <a href="./barlist.html">酒吧清單</a>
-                        <a href="">會員頁面</a>
+                        <a href="../member.html">會員頁面</a>
                     </div>
                 </div>
 
