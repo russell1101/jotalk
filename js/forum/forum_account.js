@@ -254,10 +254,3 @@ function windowout() {
         });
     });
 }
-
-
-
-
-
-
-
