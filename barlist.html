@@ -734,18 +734,24 @@
     </main>
     <div id="overlay-BL" className="overlay-BL"></div>
 
+    <!-- 彈出視窗網頁 -->
     <div id="loginWindow-BL" className="window-BL">
+        <div class="x-BL">
+            <span id="closebtn-BL">
+                <img src="./img/barlist/icon--cancel.svg" alt="closebtn-BL">
+            </span>
+        </div>
         <div class="BL">
             <div class="jump-pic">
                 <img src="./img/barlist/barlist_jump_pic/jump-pic.jpg" alt="jump-pic">
             </div>
-            <div className="contant-BL">
+            <div class="contant-BL">
 
                 <!-- 資訊分類 -->
-                <div class="categories-BL">
-                    <div class="BL-info active" data-target="infoContant">店家資訊</div>
-                    <div class="BL-menu" data-target="menuContant">MENU</div>
-                    <div class="BL-news" data-target="newsContant">活動&文章</div>
+                <div class="categories-BL" >
+                    <div class="BL-info active" data-target="infoContant" style="letter-spacing: 0.1rem;">店家資訊</div>
+                    <div class="BL-menu" data-target="menuContant" style="letter-spacing: 0.1rem;">MENU</div>
+                    <div class="BL-news" data-target="newsContant" style="letter-spacing: 0.1rem;">活動&文章</div>
                 </div>
 
                 <div class="infoContant active">
@@ -761,7 +767,7 @@
                     <div class="star" style="display: flex;">
                         <p>4.1</p>
                         <img class="" src="./img/barlist/jump-star.svg" alt="star"
-                        style="vertical-align: middle;width: 20px;">
+                        style="vertical-align: middle;width: 20px; margin-left: 2px;">
                     </div>
                     <div class="address">
                         <a class="ads-pic" href="#"></a>
@@ -814,7 +820,7 @@
                 <div class="menuContant">
                     <div class="menu-pic">
                         <img src="./img/barlist/barlist_jump_pic/bar_menu.jpg"
-                            alt="https://jiaoxi.orientluxuryhotel.com.tw/fac-detail/skybar/">
+                            alt="https://jiaoxi.orientluxuryhotel.com.tw/fac-detail/skybar/" style="overflow: hidden;">
                     </div>
                 </div>
 
@@ -906,11 +912,7 @@
                 </div>
             </div>
         </div>
-        <div class="x-BL">
-            <span id="closebtn-BL">
-                <img src="./img/barlist/icon--cancel.svg" alt="closebtn-BL">
-            </span>
-        </div>
+
     </div>
     <div id="helper"></div>
     <script type="text/babel">
