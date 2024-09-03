@@ -1,3 +1,13 @@
+// topbar
+window.addEventListener("scroll", function () {
+    var topbar = document.getElementById("topbar");
+    if (window.scrollY > 100) {
+        topbar.classList.add("collapsed");
+    } else {
+        topbar.classList.remove("collapsed");
+    }
+});
+
 // smoove 特效
 $(document).ready(function () {
     $('.smoove').smoove({
@@ -57,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
 });
 
-// index-4 反饋字卡
+// index-4 跑馬燈+反饋字卡
 document.addEventListener("DOMContentLoaded", () => {
     const marqueeContainers = document.querySelectorAll('.marquee-container');
 
@@ -67,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const contentHTML = marqueeContent.innerHTML;
         // console.log('source:' + marqueeContent.innerHTML);
 
-        for (let i = 0; i < 4; i++) { // 總共複製3次，使得內容總數量為4次
+        for (let i = 0; i < 10; i++) {
             marqueeContent.innerHTML += contentHTML;
             // console.log(`no${i}:` + marqueeContent.innerHTML);
         }

@@ -6,20 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOTALK – 我的會員</title>
     <link rel="icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./css/member-style.css">
-
-
-    <!-- 步驟一：載入React, Bable -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- footer元件 -->
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
-    <!-- Header元件 -->
+
     <script type="text/babel" src="./Header_element/Header.jsx"></script>
     <link rel="stylesheet" href="./Header_element/Header.css">
+
+    <link rel="stylesheet" href="./css/member-style.css">
 </head>
 
 <body>
@@ -57,7 +54,6 @@
                     <ul class="nav-setting" data-target="mb-setting"><a href="">我的設定</a></ul>
                 </div>
             </div>
-
             <div id="member-right">
                 <div id="member-rank">
                     <img src="./img/member/member-rank.png" alt="會員目前等級">
@@ -68,65 +64,71 @@
                         <div class="points_history">
                             <div class="store_month">
                                 <div class="record-header">
-                                    <p>2024年9月</p>
+                                    <span>2024年 9月</span>
                                     <span class="toggle-btn">–</span>
                                 </div>
                                 <div class="record-content this">
                                     <div class="record-date">
-                                        <p>Milotic</p>
-                                        <p>9/3</p>
+                                        <a href="./barlist.html">
+                                            <p>Milotic</p>
+                                        </a>
+                                        <p>9/8</p>
+                                    </div>
+                                    <div class="record-date">
+                                        <a href="./barlist.html">
+                                            <p>Nightfall Nook</p>
+                                        </a>
+                                        <p>9/7</p>
+                                    </div>
+                                    <div class="record-date">
+                                        <a href="./barlist.html">
+                                            <p>濁流</p>
+                                        </a>
+                                        <p>9/1</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="store_month">
+                                <div class="record-header">
+                                    <span>2024年 8月</span>
+                                    <span class="toggle-btn">+</span>
+                                </div>
+                                <div class="record-content">
+                                    <div class="record-date">
+                                        <p>Darwin</p>
+                                        <p>8/28</p>
+                                    </div>
+                                    <div class="record-date">
+                                        <p>二鹿</p>
+                                        <p>8/25</p>
+                                    </div>
+                                    <div class="record-date">
+                                        <p>Wine Bucket</p>
+                                        <p>8/25</p>
+                                    </div>
+                                    <div class="record-date">
+                                        <p>Sun Walk</p>
+                                        <p>8/17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="store_month">
+                                <div class="record-header">
+                                    <span>2024年 7月</span>
+                                    <span class="toggle-btn">+</span>
+                                </div>
+                                <div class="record-content">
+                                    <div class="record-date">
+                                        <p>Takao</p>
+                                        <p>7/28</p>
                                     </div>
                                     <div class="record-date">
                                         <p>Nightfall Nook</p>
-                                        <p>9/3</p>
+                                        <p>7/20</p>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="store_month">
-                                <div class="record-header">
-                                    <p>2024年9月</p>
-                                    <span class="toggle-btn">+</span>
-                                </div>
-                                <div class="record-content">
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="store_month">
-                                <div class="record-header">
-                                    <p>2024年9月</p>
-                                    <span class="toggle-btn">+</span>
-                                </div>
-                                <div class="record-content">
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>Darwin</p>
+                                        <p>7/14</p>
                                     </div>
                                 </div>
                             </div>
@@ -137,65 +139,50 @@
                         <div class="points_history">
                             <div class="store_month">
                                 <div class="record-header">
-                                    <p>2024年9月</p>
+                                    <span>2024年 9月</span>
                                     <span class="toggle-btn">–</span>
                                 </div>
                                 <div class="record-content this">
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <a href="./forum.html">
+                                            <p>單身之夜，與調酒碰撞愛火</p>
+                                        </a>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <a href="./forum.html">
+                                            <p>在巷弄間，展開酒吧探險之旅</p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="store_month">
                                 <div class="record-header">
-                                    <p>2024年9月</p>
+                                    <span>2024年 8月</span>
                                     <span class="toggle-btn">+</span>
                                 </div>
                                 <div class="record-content">
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <a href="./forum.html">
+                                            <p>星空下的微醺之夜—戶外調酒露營派對</p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="store_month">
                                 <div class="record-header">
-                                    <p>2024年9月</p>
+                                    <span>2024年 7月</span>
                                     <span class="toggle-btn">+</span>
                                 </div>
                                 <div class="record-content">
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <a href="./forum.html">
+                                            <p>期間限定! 世界調酒冠軍的得獎之作。</p>
+                                        </a>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <a href="./forum.html">
+                                            <p>花海與香氛的約會—花田間的香味調酒節</p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -206,134 +193,146 @@
                         <div class="points_history">
                             <div class="store_month">
                                 <div class="record-header">
-                                    <p>2024年9月</p>
+                                    <span>2024年 9月</span>
                                     <span class="toggle-btn">–</span>
                                 </div>
                                 <div class="record-content this">
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>8月酒吧評選</p>
+                                        <div class="like-num">🤍 888</div>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>幫我找這位帥哥是誰</p>
+                                        <div class="like-num">🤍 520</div>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
-                                    </div>
-                                    <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>一個人去酒吧是為了什麼？</p>
+                                        <div class="like-num">🤍 111</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="store_month">
                                 <div class="record-header">
-                                    <p>2024年9月</p>
+                                    <span>2024年 8月</span>
                                     <span class="toggle-btn">+</span>
                                 </div>
                                 <div class="record-content">
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>Darwin</p>
+                                        <p>8/28</p>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>二鹿</p>
+                                        <p>8/25</p>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>Wine Bucket</p>
+                                        <p>8/25</p>
+                                    </div>
+                                    <div class="record-date">
+                                        <p>Sun Walk</p>
+                                        <p>8/17</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="store_month">
                                 <div class="record-header">
-                                    <p>2024年9月</p>
+                                    <span>2024年 7月</span>
                                     <span class="toggle-btn">+</span>
                                 </div>
                                 <div class="record-content">
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>Takao</p>
+                                        <p>7/28</p>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>Nightfall Nook</p>
+                                        <p>7/20</p>
                                     </div>
                                     <div class="record-date">
-                                        <p>酒吧店名</p>
-                                        <p>9/3</p>
+                                        <p>Darwin</p>
+                                        <p>7/14</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="history">
+                <div id="point-history">
                     <h2>積分歷史紀錄</h2>
-                    <div class="store_month">
-                        <div class="record-header">
-                            <p>2024年9月</p>
-                            <span class="toggle-btn">–</span>
-                        </div>
-                        <div class="record-content this">
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
+                    <div class="allHistory">
+                        <div class="store_month">
+                            <div class="record-header">
+                                <p>2024年 9月</p>
+                                <span class="toggle-btn">–</span>
                             </div>
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
-                            </div>
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
-                            </div>
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="store_month">
-                        <div class="record-header">
-                            <p>2024年9月</p>
-                            <span class="toggle-btn">+</span>
-                        </div>
-                        <div class="record-content">
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
-                            </div>
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
-                            </div>
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
+                            <div class="record-content this">
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="store_month">
-                        <div class="record-header">
-                            <p>2024年9月</p>
-                            <span class="toggle-btn">+</span>
+                        <div class="store_month">
+                            <div class="record-header">
+                                <p>2024年 8月</p>
+                                <span class="toggle-btn">+</span>
+                            </div>
+                            <div class="record-content">
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="record-content">
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
+                        <div class="store_month">
+                            <div class="record-header">
+                                <p>2024年 7月</p>
+                                <span class="toggle-btn">+</span>
                             </div>
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
-                            </div>
-                            <div class="record-date">
-                                <p>酒吧店名</p>
-                                <p>9/3</p>
+                            <div class="record-content">
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
+                                <div class="record-date">
+                                    <p>9/3</p>
+                                    <span>標題</span>
+                                    <p>+ 20分</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -354,7 +353,7 @@
     </script>
 
     <script src="./Header_element/login.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/member.js"></script>
 </body>
 
 </html>

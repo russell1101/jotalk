@@ -342,7 +342,7 @@ section {
     letter-spacing: .2rem;
     font-weight: 500;
     color: var(--white);
-    margin-top: 25%;
+    margin-top: 20%;
     pointer-events: none;
 }
 
@@ -430,7 +430,7 @@ section {
 
 .container {
     display: flex;
-    width: 33%;
+    width: 30%;
     overflow: hidden;
 }
 
@@ -639,12 +639,12 @@ section {
 .content .txt-3 {
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
-    font-size: clamp(.8rem, 1.1vw, 1.5rem);
+    font-size: clamp(1rem, 1.2vw, 1.8rem);
     letter-spacing: .2rem;
     font-weight: 600;
     text-align: center;
     color: var(--darkgrey);
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     pointer-events: none;
 }
 
@@ -674,7 +674,7 @@ section {
     border-radius: 50px;
     width: auto;
     letter-spacing: .2rem;
-    font-size: clamp(.7rem, 2.5vw, .9rem);
+    font-size: clamp(.8rem, 2.5vw, 1rem);
     white-space: nowrap;
     transition: 0.35s ease-in-out;
 }
@@ -692,7 +692,6 @@ section {
     height: auto;
     background-color: var(--alpha-b-40);
     margin-top: 5%;
-    /* margin-bottom: 50px; */
     overflow: hidden;
 }
 
@@ -704,10 +703,10 @@ section {
 
 .marquee-content {
     display: inline-block;
-    color: var(--alpha-w-80);
+    color: var(--alpha-w-60);
     font-family: "Mallanna", sans-serif;
     letter-spacing: 1px;
-    animation: marquee 60s linear infinite;
+    animation: marquee 150s linear infinite;
 }
 
 
