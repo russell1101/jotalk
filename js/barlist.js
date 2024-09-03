@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setupPreviewClick() {
     // 取得所有的 preview--container 元素
-    const previewContainers = document.querySelectorAll('.preview--container');
+    const previewContainers = document.querySelectorAll('.list_item');
     const overlay = document.getElementById("overlay-BL");
     const myWindow = document.getElementById("loginWindow-BL");
     const close = document.getElementById("closebtn-BL");
@@ -216,5 +216,28 @@ document.addEventListener('DOMContentLoaded', () => {
     mapIcon.addEventListener('click', (event) => {
         event.preventDefault(); // 防止點擊後的默認行為（例如跳轉）
         alert('已複製該店家資訊至剪貼簿');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 選取所有的 .item_content 元素
+    const itemContents = document.querySelectorAll('.item_content');
+
+    // 遍歷每個 item_content 元素
+    itemContents.forEach(itemContent => {
+        // 在當前 item_content 中選取星星圖片
+        const starIcon = itemContent.querySelector('.star-icon');
+
+        if (starIcon) {
+            // 當滑鼠移到 item_content 元素時，切換星星圖片
+            itemContent.addEventListener('mouseenter', () => {
+                starIcon.src = './img/barlist/star.svg'; // 懸停時切換成不同顏色的星星
+            });
+
+            // 當滑鼠離開 item_content 元素時，恢復星星圖片
+            itemContent.addEventListener('mouseleave', () => {
+                starIcon.src = './img/barlist/star1.svg'; // 鼠標移開後恢復原始圖片
+            });
+        }
     });
 });
