@@ -87,23 +87,13 @@ a {
 /* ----------頁首區---------- */
 #header_el {
     position: relative;
-    /* 設置為 relative 以便內部元素使用 absolute 定位 */
     width: 100%;
-    /* 使 header 撐滿全寬 */
-    height: 400px;
-    /* 設置 header 高度 */
+    height: 380px;
     padding: 0;
-    /* 確保沒有額外的 padding */
     margin: 0;
-    /* 確保沒有額外的 margin */
     background-size: cover;
-    /* 確保背景圖覆蓋整個容器 */
     background-position: center;
-    /* 將背景圖置中 */
     background-repeat: no-repeat;
-    /* 防止背景圖重複 */
-    /* transition: height 0.3s ease; */
-    /* z-index: 1000; */
 }
 
 #header_el .topbar_el section {
@@ -125,10 +115,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* 确保内容在容器中心 */
     border-radius: 99px;
     transition: width 1s ease, border-radius 1s ease, justify-content 1s ease;
-    /* 同步过渡 */
     z-index: 999;
 }
 
@@ -144,9 +132,7 @@ a {
     height: 60px;
     display: flex;
     justify-content: center;
-    /* 水平居中 */
     align-items: center;
-    /* 垂直居中 */
 }
 
 #header_el .topbar_el .logo_el a {
@@ -162,27 +148,22 @@ a {
 #header_el .topbar_el:hover {
     width: 40%;
     max-width: 550px;
-    /* 滑鼠觸碰時擴展 */
     border-radius: 99px;
-    /* 變長條 */
     justify-content: space-between;
-    /* 水平排列内容 */
 }
 
 
 
 #header_el .topbar_el .menu_el {
+    
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
     white-space: nowrap;
-    /* 阻止文字换行 */
     overflow: hidden;
-    /* 隐藏溢出的内容 */
     visibility: hidden;
     opacity: 0;
     transition: opacity 4s ease, visibility 0s 0.3s;
-    /* 菜單顯隱 */
 }
 
 /* header .topbar_el 選項 hover效果 */
@@ -191,8 +172,6 @@ a {
     color: var(--darkgrey);
     font-weight: 900;
     letter-spacing: .2rem;
-    /* padding: 5px 0px;
-    margin: 0 40px; */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -204,9 +183,7 @@ a {
     position: absolute;
     bottom: 0;
     left: 50%;
-    /* 初始位置在中心 */
     right: 50%;
-    /* 初始位置在中心 */
     height: .6px;
     background-color: var(--lightgrey);
     transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
@@ -215,9 +192,7 @@ a {
 
 #header_el .topbar_el .menu_el a:hover::after {
     left: 0;
-    /* 展開到左邊界 */
     right: 0;
-    /* 展開到右邊界 */
 }
 
 
@@ -248,7 +223,7 @@ a {
 #header_el .account_logout_el {
     position: absolute;
     top: 40px;
-    right: 50px;
+    right: 40px;
 }
 
 #header_el .account_login_el button,
@@ -265,7 +240,6 @@ a {
     opacity: 0.7;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    /* 如果需要更改按鈕的透明度，可以使用 opacity */
 }
 
 #header_el .account_login_el button:hover,
@@ -323,12 +297,9 @@ a {
     justify-content: center;
     text-align: center;
     position: absolute;
-    /* 設置為 absolute 以便於在 topbar 中定位 */
     bottom: 0;
-    /* 將其定位到 topbar 底部 */
     left: 50%;
     transform: translateX(-50%);
-    /* 水平居中 */
     padding: 20px;
 }
 
@@ -336,10 +307,10 @@ a {
     color: #ffffff;
     width: 100%;
     font-family: "Mallanna", sans-serif;
-    font-size: clamp(2rem, 2.8vw, 3.5rem);
+    font-size: clamp(2.8rem, 3vw, 4rem);
     font-weight: 500;
     letter-spacing: .2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 
@@ -352,7 +323,7 @@ a {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 1;
+    z-index: 2;
     display: none;
     /* 初始狀態隱藏 */
     opacity: 0;
@@ -425,7 +396,6 @@ a {
     height: 20px;
     top: 15px;
     right: 15px;
-    font-size: 14px;
     cursor: pointer;
     z-index: 10;
     transition: .25s ease-in-out;
@@ -468,7 +438,7 @@ a {
 #member_form input {
     width: 100%;
     height: 2rem;
-    padding-left: 20px;
+    padding-left: 10px;
     color: black;
     font-weight: 400;
     border: 1px solid #8B8B8B;
@@ -481,7 +451,7 @@ a {
 #member_form input:focus,
 #member_form textarea {
     /* 修改focus預設樣式 */
-    outline: 1px solid #976c6e;
+    outline: 1px solid #105a5e;
 }
 
 #member_form input::placeholder {
@@ -497,7 +467,8 @@ a {
 }
 
 #loginWindow_el small {
-    font-size: 10px;
+    font-size: clamp(.6rem, 1.5vw, .7rem);
+    letter-spacing: 1px;
     cursor: pointer;
 }
 
@@ -536,14 +507,14 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 10px;
+    font-size: clamp(.6rem, 1.5vw, .7rem);
+    letter-spacing: 1px;
     background-color: #F5F5F5;
     padding: 0 10px;
     color: #484848;
     z-index: 10;
+    pointer-events: none;
 }
-
-
 
 .icon_el {
     width: 90%;
@@ -558,6 +529,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0;
 }
 
 .icon_el-fb,
