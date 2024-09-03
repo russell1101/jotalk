@@ -22,7 +22,7 @@ function Header(props) {
                     <div className="menu_el">
                         <a href="./forum.html">綜合論壇</a>
                         <a href="./barlist.html">酒吧清單</a>
-                        <a href="../member.html">會員頁面</a>
+                        <a href="./member.html">會員頁面</a>
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@ function Header(props) {
                 </div>
 
                 <div class="slogan_el" style={slogan}>
-                    <h1>Let's Jotalk</h1>
+                    <h1>LET'S JOTALK!</h1>
                 </div>
 
                 <div className="writeBtn_el" style={btnNone}>
@@ -51,20 +51,20 @@ function Header(props) {
                 <div id="account_overlay_el" className="account_overlay_el"></div>
 
                 <div id="loginWindow_el" className="window_el">
-                    <figure id="closebtn_el"><img src="../img/member/iconmonstr-x.svg" alt="" /></figure>
+                    <figure id="closebtn_el"><img src="../img/member/iconmonstr-x.svg"/></figure>
                     <div className="contant_el">
                         <div className="login_border_el">
                             <h2>LOGIN</h2>
                         </div>
                         <form action="./member.html" method="post" name="member_form" id="member_form" title="會員登入表單">
                             <label htmlFor="email"></label>
-                            <input type="email" name="email" id="email" title="email欄位" placeholder="*輸入信箱" required
+                            <input type="email" name="email" id="email" title="輸入信箱欄位" placeholder="*輸入信箱" required
                                 autoComplete />
                             <div className="forget_passward">
                                 <label htmlFor="password"></label>
-                                <input type="password" name="password" id="password" title="password欄位" placeholder="*輸入密碼"
+                                <input type="password" name="password" id="password" title="輸入密碼欄位" placeholder="*輸入密碼"
                                     required autoComplete />
-                                <small>忘記密碼?</small>
+                                <small title="忘記密碼">忘記密碼?</small>
                             </div>
 
                             <div className="button_el">
