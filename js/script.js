@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 根据状态设置按钮符号和背景颜色
             if (isExpanded) {
-                toggleBtn.textContent = '-';
-                storeMonth.style.backgroundColor = '#58585827';
+                toggleBtn.textContent = '–';
+                storeMonth.style.backgroundColor = '#58585809';
             } else {
                 toggleBtn.textContent = '+';
                 storeMonth.style.backgroundColor = '#585858';
