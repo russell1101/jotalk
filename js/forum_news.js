@@ -1,3 +1,10 @@
+setTimeout(function () {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.display = 'none';
+}, 3000); // 後隱藏GIF
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const categories = document.querySelectorAll('.category');
     const contents = document.querySelectorAll('.news_content');
@@ -11,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             contents.forEach(content => {
                 content.classList.add('hidden');
                 content.classList.remove('active');
-                
+
                 // 隱藏所有文章
                 const articles = content.querySelectorAll('.article');
                 articles.forEach(article => article.classList.add('hidden'));

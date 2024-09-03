@@ -15,10 +15,16 @@
 
     <script type="text/babel" src="./Footer_element/Footer.jsx"></script>
     <link rel="stylesheet" href="./Footer_element/Footer.css">
+
     <link rel="stylesheet" href="./css/forum_news.css">
 </head>
 
 <body>
+
+    <div id="loading-screen">
+        <img src="./img/loading.gif" alt="" loop="infinite">
+    </div>
+
     <!-- 頁首元件 -->
     <div id="header"></div>
     <script type="text/babel">
@@ -54,7 +60,23 @@
             <!-- 右區: 文章內容 -->
             <div class="right-section">
                 <div class="news_content active" id="news_hot">
-                    <div class="article">熱門文章1</div>
+                    <div class="article">
+                        <div class="content">
+                            <div class="text">
+                                <small class="date">2024/09/20</small>
+                                <h2 class="title">期間限定! 世界調酒冠軍的得獎之作。</h2>
+                                <p>這是一個你絕對不想錯過的夜晚！來自全球的調酒冠軍，將親臨現場，展示他們的得獎之作。
+                                    無論你是調酒愛好者，還是酒吧文化的忠實粉絲，這次活動都將帶你進入一個前所未有的味覺冒險。
+                                    世界調酒冠軍將帶來他們的冠軍調酒作品，每一款都經過精心設計，融合了創新與經典的元素。每一口，都將帶你感受冠軍的靈感與創意，體驗前所未有的味蕾衝擊。
+                                    活動當晚，你可以親眼見證世界調酒冠軍的獨特技藝，感受頂級調酒的創意火花，並且每位參加者都有機會品嚐到這些難得的限量冠軍調酒。
+                                    此外，我們還準備了現場互動遊戲，參加者將有機會贏取冠軍特製調酒的專屬配方及限量紀念品。
+                                    這不僅僅是品味調酒，更是一場感官的饗宴，帶給你難忘的夜晚！我們邀請所有對調酒充滿熱情的人，共襄盛舉，與世界冠軍一起舉杯歡慶這個特別的夜晚。
+                                    </p>
+                                <div class="likes"></div>
+                            </div>
+                            <figure class="photo"><img src="./img/about/about-head-pic.jpg" alt=""></figure>
+                        </div>
+                    </div>
                     <div class="article">熱門文章2</div>
                     <div class="article">熱門文章3</div>
                     <div class="article hidden">熱門文章4</div>
