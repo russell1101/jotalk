@@ -148,8 +148,8 @@ main {
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     font-size: 1.2rem;
-    letter-spacing: .1rem;
-    font-weight: 600;
+    letter-spacing: .2rem;
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -249,6 +249,7 @@ main {
 .history-like h2 {
     text-align: center;
     margin-top: 8px;
+    padding-bottom: 10px;
     font-size: 1.5rem;
     letter-spacing: .3rem;
     font-weight: 600;
@@ -263,7 +264,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem;
+    padding: 0 1rem;
     gap: 10px;
     overflow-y: scroll;
 }
@@ -376,6 +377,7 @@ main {
 #point-history h2 {
     text-align: center;
     margin-top: 8px;
+    padding-bottom: 10px;
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     font-size: 1.5rem;
@@ -394,7 +396,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem;
+    padding: 0 1rem;
     gap: 10px;
     overflow-y: scroll;
 }
@@ -448,4 +450,47 @@ main {
 
 .allHistory::-webkit-scrollbar-button {
     display: none;
+}
+
+.nav-mbCollect {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.nav-mbCollect ul {
+    margin-right: 50px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    font-weight: 500;
+    color: var(--darkgrey);
+}
+
+.nav-mbCollect a:hover {
+    color: var(--primary);
+}
+
+.collect-content>div {
+    display: none;
+}
+
+.collect-bar,
+.collect-article,
+.collect-member {
+    display: none;
+}
+
+.nav-mb-article.active~.collect-bar,
+.nav-mb-collect.active~.collect-article,
+.nav-mb-visited.active~.collect-member {
+    display: block;
+}
+
+@media (max-width:1024px) {
+    #points{
+        overflow-X: scroll;
+    }
 }
