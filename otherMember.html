@@ -46,11 +46,12 @@
                     <li class="userLevel">會員等級：酒吧新手</li>
                     <li class="userPostFollower">23篇文章　56人追蹤</li>
                 </ul>
-                
+
                 <div class="nav-btn">
                     <div class="nav-follow">
                         <a href=""><img src="./img/member/Icon-follow.svg"></a>
-                        <a href=""><p>追蹤他</p>
+                        <a href="">
+                            <p>追蹤他</p>
                         </a>
                     </div>
                     <ul class="nav-article" data-target="omb-article"><a href="">他的文章</a></ul>
@@ -58,11 +59,527 @@
                     <ul class="nav-visited" data-target="omb-visited"><a href="">他的探店</a></ul>
                 </div>
             </div>
-        
+
             <div id="omb-right">
-                <div id="omb-article">
-                    <p>他寫的文章</p>
-                </div>
+
+
+                <!-- 載入元件 -->
+                <div id="omb_article"></div>
+                <script type="text/babel">
+                    // 文章列表
+                    function List(props) {
+                        const { target, user_img, user_name, post_time, art_title, hashtag1, hashtag2, hashtag3, art_content, heart_num, comment_num, bookMark_num, img_src } = props;
+
+                        return (
+                            <div class="article" data-target={target}>  {/* target要放 "content-1"*/}
+                                <div class="text">
+                                    <div class="user">
+                                        <figure><img src={user_img} alt="" /></figure>
+                                        <h2>{user_name}</h2>
+                                        <small>{post_time}</small>
+                                    </div>
+                                    <h2 id="article_title">{art_title}</h2>
+                                    <div id="hashtag">
+                                        <small>{hashtag1}</small>
+                                        <small>{hashtag2}</small>
+                                        <small>{hashtag3}</small>
+                                    </div>
+                                    <p>{art_content}</p>
+                                    <div id="like">
+                                        <div id="heart">
+                                            <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
+                                            <p id="heart_num">{heart_num}</p>
+                                        </div>
+                                        <div id="comment">
+                                            <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg"
+                                                alt="" />
+                                            <p id="comment_num">{comment_num}</p>
+                                        </div>
+                                        <div id="bookMark">
+                                            <img id="bookMark_img" src="../img/forum/account/like/icon _bookmark_.svg" alt="" />
+                                            <p id="bookMark_num">{bookMark_num}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <figure class="picture"><img src={img_src} alt="" /></figure>
+                            </div>
+                        )
+                    }
+
+
+                    // 文章視窗元件
+                    function Article(props) {
+                        const { user_img, user_name, post_time, art_title, hashtag1, hashtag2, hashtag3, art_content, heart_num, comment_num, bookMark_num } = props;
+                        return (
+                            <>
+                                <figure className="closebtn"><img src="./img/forum/account/iconmonstr-x.svg" alt="" /></figure>
+                                <div className="content_user">
+                                    <figure><img src={user_img} alt="" /></figure>
+                                    <h2>{user_name}</h2>
+                                    <small>{post_time}</small>
+                                </div>
+                                <h1>{art_title}</h1>
+                                <div id="hashtag">
+                                    <small>{hashtag1}</small>
+                                    <small>{hashtag2}</small>
+                                    <small>{hashtag3}</small>
+                                </div>
+                                <div className="padding">
+                                    <p id="p">{art_content}</p>
+                                    <div id="like">
+                                        <div id="heart">
+                                            <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
+                                            <p id="heart_num">{heart_num}</p>
+                                        </div>
+                                        <div id="comment">
+                                            <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg"
+                                                alt="" />
+                                            <p id="comment_num">{comment_num}</p>
+                                        </div>
+                                        <div id="bookMark">
+                                            <img id="bookMark_img" src="../img/forum/account/like/icon _bookmark_.svg" alt="" />
+                                            <p id="bookMark_num">{bookMark_num}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                            </>
+                        )
+                    }
+
+                    // 留言元件
+                    function Comment(props) {
+                        const { time, user_url, userName, user_time, floor, content, heart_num, comment_num } = props;
+                        return (
+                            <>
+                                {/*留言區域*/}
+                                <div className="comment" data-timestamp={time}>
+                                    <div className="comment_user">
+                                        <figure><img src={user_url} alt="" /></figure>
+                                        <h2>{userName}</h2>
+                                        <small>{user_time}</small>
+                                        <small>{floor}</small>
+                                    </div>
+                                    <p>{content}</p>
+                                    <div id="like">
+                                        <div id="heart">
+                                            <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
+                                            <p id="heart_num">{heart_num}</p>
+                                        </div>
+                                        <div id="comment">
+                                            <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
+                                            <p id="comment_num">{comment_num}</p>
+                                        </div>
+                                        <small>查看更多回覆</small>
+                                    </div>
+                                    <hr />
+                                </div>
+                            </>
+                        )
+                    }
+                    function App() {
+
+                        React.useEffect(() => {
+                            windowout();
+                        }, []);
+
+                        // 文章列表內容
+                        const list = [
+                            {
+                                id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                target: 'content-1',
+                                user_img: './img/forum/account/user/user6.jpg',
+                                user_name: '信義王陽明',
+                                post_time: '4 hours ago',
+                                art_title: '我在信義fake sober',
+                                hashtag1: '#探店心得',
+                                hashtag2: '#酒超好喝',
+                                hashtag3: '#酒吧推薦',
+                                art_content: '我現在人在信義fake sober，打算成為兩性中的King!打算聊100個女生目前進度是0，問都問 不會叫你估狗',
+                                heart_num: '687',
+                                comment_num: '87',
+                                bookMark_num: '98',
+                                img_src: './img/barlist/barlist_pic/bar-2.jpg'
+                            },
+                            {
+                                id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                target: 'content-2',
+                                user_img: './img/forum/account/user/user5.jpg',
+                                user_name: '文山區宋江',
+                                post_time: '6 hours ago',
+                                art_title: '酒吧評選',
+                                hashtag1: '#探店心得',
+                                hashtag2: '#酒超好喝',
+                                hashtag3: '#酒吧推薦',
+                                art_content: '信義酒吧評選 1.sleep no more 2.fake sober 3.draft land 4.台虎 5.barcode',
+                                heart_num: '600',
+                                comment_num: '40',
+                                bookMark_num: '80',
+                                img_src: './img/barlist/barlist_pic/bar-1.jpg',
+                            },
+                            {
+                                id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                                target: 'content-3',
+                                user_img: './img/forum/account/user/user2.jpg',
+                                user_name: '鶯歌鯉魚王',
+                                post_time: '2 hours ago',
+                                art_title: '幫我找這位帥哥是誰',
+                                hashtag1: '#探店心得',
+                                hashtag2: '#酒吧帥哥',
+                                hashtag3: '#酒精路跑',
+                                art_content: '昨晚在我們的酒吧裡發生了一件讓所有人都瞠目結舌的事！一位長超帥的客人在點了一杯威士忌後，突然站在吧台中央，高聲宣布自己能表演「讀心術」。所有人起初都以為他是在開玩笑，直到他開始準確無誤地說出幾位客人心中的秘密，現場氣氛瞬間凝重起來。這位神秘客人在引發一陣騷動後，竟然悄悄離去，留下眾人錯愕不已！這位帥哥到底是誰？',
+                                heart_num: '520',
+                                comment_num: '20',
+                                bookMark_num: '30',
+                                img_src: './img/barlist/barlist_pic/bar-3.jpg',
+                            }
+                        ]
+
+                        const article = [
+                            {
+                                id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                user_img: './img/forum/account/user/user6.jpg',
+                                user_name: '信義王陽明',
+                                post_time: '9月20號 20:00',
+                                art_title: '信義fake sober，打算聊100個女生',
+                                hashtag1: '#探店心得',
+                                hashtag2: '#酒超好喝',
+                                hashtag3: '#酒吧推薦',
+                                art_content: '我現在人在信義fake sober，打算成為兩性中的King！目標是要和100個女生展開對話，目前進度是0，但這只是個開始。別擔心，我是那種不會讓你失望的男人。問什麼問題都可以，這裡不會叫你去估狗，直接來找我就對了。讓我成為你們的答案庫，讓你們的夜晚充滿笑聲和驚喜。每個人都有機會，我也有我的計畫和策略，要和這100個女生逐一展開精彩對話。來吧，大家，一起玩這個有趣的遊戲！今晚，讓我們把這裡變成我們的舞台！',
+                                heart_num: '687',
+                                comment_num: '87',
+                                bookMark_num: '98',
+                            },
+                            {
+                                id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                user_img: './img/forum/account/user/user5.jpg',
+                                user_name: '文山區宋江',
+                                post_time: '9月20號 18:00',
+                                art_title: '酒吧評選',
+                                hashtag1: '#探店心得',
+                                hashtag2: '#酒超好喝',
+                                hashtag3: '#酒吧推薦',
+                                art_content: '信義酒吧評選 1.sleep no more 2.fake sober 3.draft land 4.台虎 5.barcode',
+                                heart_num: '600',
+                                comment_num: '40',
+                                bookMark_num: '80',
+                            },
+                            {
+                                id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                                user_img: './img/forum/account/user/user2.jpg',
+                                user_name: '鶯歌鯉魚王',
+                                post_time: '9月20號 22:00',
+                                art_title: '幫我找這位帥哥是誰',
+                                hashtag1: '#探店心得',
+                                hashtag2: '#酒吧帥哥',
+                                hashtag3: '#酒精路跑',
+                                art_content: '昨晚在我們的酒吧裡發生了一件讓所有人都瞠目結舌的事！一位長超帥的客人在點了一杯威士忌後，突然站在吧台中央，高聲宣布自己能表演「讀心術」。所有人起初都以為他是在開玩笑，直到他開始準確無誤地說出幾位客人心中的秘密，現場氣氛瞬間凝重起來。這位神秘客人在引發一陣騷動後，竟然悄悄離去，留下眾人錯愕不已！這位帥哥到底是誰？',
+                                heart_num: '520',
+                                comment_num: '20',
+                                bookMark_num: '30'
+                            }
+                        ]
+
+                        // 留言內容１
+                        const comment = [
+                            {
+                                id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T21:20:00',
+                                user_url: '../img/forum/account/user/user1.jpg',
+                                userName: '信義王陽明',
+                                user_time: '9月20日 21:20',
+                                floor: 'B1',
+                                content: '問',
+                                heart_num: 250,
+                                comment_num: 3
+                            },
+                            {
+                                id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T21:22:00',
+                                user_url: '../img/forum/account/user/user4.jpg',
+                                userName: 'Rong',
+                                user_time: '9月20日 21:22',
+                                floor: 'B2',
+                                content: '我不信!!',
+                                heart_num: 240,
+                                comment_num: 0
+                            },
+                            {
+                                id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:10:00',
+                                user_url: '../img/forum/account/user/user2.jpg',
+                                userName: 'Tinna',
+                                user_time: '9月20日 22:10',
+                                floor: 'B3',
+                                content: '這家真的讚推薦!!氣氛好 大家都好聊天',
+                                heart_num: 150,
+                                comment_num: 1
+                            },
+                            {
+                                id: 4, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:10:00',
+                                user_url: '../img/forum/account/user/user6.jpg',
+                                userName: '景美77',
+                                user_time: '9月20日 23:30',
+                                floor: 'B4',
+                                content: '先把你的身高報出來',
+                                heart_num: 150,
+                                comment_num: 1
+                            },
+                            {
+                                id: 5, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:10:00',
+                                user_url: '../img/forum/account/user/user3.jpg',
+                                userName: '鶯歌鯉魚王',
+                                user_time: '9月21日 00:30',
+                                floor: 'B4',
+                                content: '顏值>>>>>>>>>>>>穿搭',
+                                heart_num: 150,
+                                comment_num: 1
+                            },
+                        ]
+
+                        // 留言內容2
+                        const comment2 = [
+                            {
+                                id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T18:22:00',
+                                user_url: '../img/forum/account/user/user6.jpg',
+                                userName: '信義878',
+                                user_time: '9月20日 18:22',
+                                floor: 'B1',
+                                content: 'barcode推一個!!',
+                                heart_num: 150,
+                                comment_num: 1
+                            },
+                            {
+                                id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T18:30:00',
+                                user_url: '../img/forum/account/user/user3.jpg',
+                                userName: '文山宋江',
+                                user_time: '9月20日 18:30',
+                                floor: 'B2',
+                                content: 'fakesober絕對是最頂',
+                                heart_num: 300,
+                                comment_num: 20
+                            },
+                            {
+                                id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T19:00:00',
+                                user_url: '../img/forum/account/user/user1.jpg',
+                                userName: '信義王陽明',
+                                user_time: '9月20日 19:00',
+                                floor: 'B3',
+                                content: '不要酒吧了去ruff才爽',
+                                heart_num: 99,
+                                comment_num: 1
+                            },
+                            {
+                                id: 4, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:10:00',
+                                user_url: '../img/forum/account/user/user2.jpg',
+                                userName: '蓋蓋',
+                                user_time: '9月20日 22:30',
+                                floor: 'B4',
+                                content: '我推薦我家，還有Netfilx',
+                                heart_num: 150,
+                                comment_num: 1
+                            },
+                            {
+                                id: 5, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:10:00',
+                                user_url: '../img/forum/account/user/user5.jpg',
+                                userName: 'Hennnrry',
+                                user_time: '9月20日 22:30',
+                                floor: 'B4',
+                                content: '問就是放感情，可以放感情不能放進去',
+                                heart_num: 150,
+                                comment_num: 1
+                            },
+                        ]
+
+                        // 留言內容3
+                        const comment3 = [
+                            {
+                                id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:22:00',
+                                user_url: '../img/forum/account/user/user5.jpg',
+                                userName: '信義878',
+                                user_time: '9月20日 22:22',
+                                floor: 'B1',
+                                content: '+1好奇想知道!!',
+                                heart_num: 22,
+                                comment_num: 1
+                            },
+                            {
+                                id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:30:00',
+                                user_url: '../img/forum/account/user/user2.jpg',
+                                userName: '文山宋江',
+                                user_time: '9月20日 22:30',
+                                floor: 'B2',
+                                content: '是不是鼎鼎大名的魔術師David',
+                                heart_num: 30,
+                                comment_num: 2
+                            },
+                            {
+                                id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T23:00:00',
+                                user_url: '../img/forum/account/user/user4.jpg',
+                                userName: '信義王陽明',
+                                user_time: '9月20日 23:00',
+                                floor: 'B3',
+                                content: '有我也有看到！',
+                                heart_num: 99,
+                                comment_num: 1
+                            },
+                            {
+                                id: 4, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:22:00',
+                                user_url: '../img/forum/account/user/user1.jpg',
+                                userName: '土城孝全',
+                                user_time: '9月21日 01:22',
+                                floor: 'B4',
+                                content: '可以請他把我劈腿的前女友變回來嗎...',
+                                heart_num: 22,
+                                comment_num: 1
+                            },
+                            {
+                                id: 5, //跑迴圈時 需要一個資料不會重複的key值
+                                time: '2024-09-20T22:22:00',
+                                user_url: '../img/forum/account/user/user2.jpg',
+                                userName: '板橋姍姍',
+                                user_time: '9月21日 08:22',
+                                floor: 'B5',
+                                content: '在哪裡，我也想給他側看看',
+                                heart_num: 22,
+                                comment_num: 1
+                            },
+                        ]
+                        return (
+                            <>
+                                <div className="Atc_content active" id="Atc_hot">
+                                    {
+                                        [...Array(3)].map((_, i) =>
+                                            list.map((item) => {
+                                                // 呼叫卡片元件
+                                                // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                                // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                                return < List key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} img_src={item.img_src} />
+                                            })
+                                        )
+                                    }
+                                </div>
+
+
+                                <div id="overlay" className="overlay"></div>
+
+                                <div id="content-1" className="content hidden">
+                                    {/*導入Article元件*/}
+                                    {
+                                        article.slice(0, 1).map((item) => {
+                                            // 呼叫卡片元件
+                                            // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                            // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                            return <Article key={item.id} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} />
+                                        })
+                                    }
+
+
+                                    <div className="comment-section">
+                                        {/*排序按鈕區域*/}
+                                        <div className="sort-buttons">
+                                            <button className="sort-button sort-hot">熱門留言</button>
+                                            <button className="sort-button sort-newest">由新至舊留言</button>
+                                            <button className="sort-button sort-oldest">由舊至新留言</button>
+                                        </div>
+
+
+                                        <div id="comments1">
+                                            {
+                                                comment.map((item) => {
+                                                    // 呼叫卡片元件
+                                                    // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                                    // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                                    return <Comment key={item.id} time={item.time} user_url={item.user_url} userName={item.userName} user_time={item.user_time} floor={item.floor} content={item.content} heart_num={item.heart_num} comment_num={item.comment_num} />
+                                                })
+                                            }
+                                        </div>
+                                    </div >
+                                </div >
+
+
+                                <div id="content-2" className="content hidden">
+                                    {
+                                        article.slice(1, 2).map((item) => {
+                                            // 呼叫卡片元件
+                                            // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                            // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                            return <Article key={item.id} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} />
+                                        })
+                                    }
+
+                                    <div className="comment-section">
+                                        {/*排序按鈕區域*/}
+                                        <div className="sort-buttons">
+                                            <button className="sort-button sort-hot">熱門留言</button>
+                                            <button className="sort-button sort-newest">由新至舊留言</button>
+                                            <button className="sort-button sort-oldest">由舊至新留言</button>
+                                        </div>
+
+                                        <div id="comments2">
+                                            {
+                                                comment2.map((item) => {
+                                                    // 呼叫卡片元件
+                                                    // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                                    // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                                    return <Comment key={item.id} time={item.time} user_url={item.user_url} userName={item.userName} user_time={item.user_time} floor={item.floor} content={item.content} heart_num={item.heart_num} comment_num={item.comment_num} />
+                                                })
+                                            }
+                                        </div>
+                                    </div >
+                                </div >
+
+                                <div id="content-3" className="content hidden">
+                                    {
+                                        article.slice(2, 3).map((item) => {
+                                            // 呼叫卡片元件
+                                            // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                            // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                            return <Article key={item.id} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} />
+                                        })
+                                    }
+
+                                    <div className="comment-section">
+                                        {/*排序按鈕區域*/}
+                                        <div className="sort-buttons">
+                                            <button className="sort-button sort-hot">熱門留言</button>
+                                            <button className="sort-button sort-newest">由新至舊留言</button>
+                                            <button className="sort-button sort-oldest">由舊至新留言</button>
+                                        </div>
+
+                                        <div id="comments3">
+                                            {
+                                                comment3.map((item) => {
+                                                    // 呼叫卡片元件
+                                                    // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                                    // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                                    return <Comment key={item.id} time={item.time} user_url={item.user_url} userName={item.userName} user_time={item.user_time} floor={item.floor} content={item.content} heart_num={item.heart_num} comment_num={item.comment_num} />
+                                                })
+                                            }
+                                        </div>
+                                    </div >
+                                </div >
+                            </div >
+                        )
+                    }
+                    ReactDOM
+                        .createRoot(document.getElementById('omb_article'))
+                        .render(<App />)
+                </script>
+
+
+
                 <div id="omb-collect">
                     <div class="nav-ombCollect">
                         <ul class="nav-omb-article" data-target="collect-bar"><a href="">酒吧收藏</a></ul>
@@ -89,7 +606,7 @@
                 </div>
             </div>
         </section>
-        
+
     </main>
     <div id="footer"></div>
 
