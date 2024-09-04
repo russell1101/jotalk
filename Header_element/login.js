@@ -104,6 +104,26 @@ function login() {
     }
     // 當頁面加載時，更新登入狀態
     updateLoginStatus();
+
+    // 檢查是否登入
+    document.querySelector('a[href="./member.html"]').addEventListener('click', function (event) {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+        if (isLoggedIn === 'true') {
+            // 已登录，允许导航
+            return true;
+        } else {
+            // 未登录，阻止导航并显示提示
+            event.preventDefault();
+            alert('尚未登入');
+            account_overlay_el.style.display = "block"; // 顯示遮罩層
+            myWindow.style.display = "block"; // 顯示彈出視窗
+            setTimeout(() => { // 使用setTimeout來觸發漸變效果
+                account_overlay_el.style.opacity = "1"; // 遮罩層漸變顯示
+                myWindow.style.opacity = "1"; // 彈出視窗漸變顯示
+            }, 10); // 延遲以確保display生效
+        }
+    });
 }
 
 
