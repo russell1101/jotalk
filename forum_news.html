@@ -97,53 +97,233 @@
 
             <!-- 右區: 文章內容 -->
             <div class="right-section">
-                <div class="news_content active" id="news_hot">
-                    <div class="article">
-                        <div class="content">
-                            <div class="text">
-                                <small class="date">2024/09/20</small>
-                                <h2 class="title">期間限定! 世界調酒冠軍的得獎之作</h2>
-                                <p>這是一個你絕對不想錯過的夜晚！來自全球的調酒冠軍，將親臨現場，展示他們的得獎之作。
-                                    無論你是調酒愛好者，還是酒吧文化的忠實粉絲，這次活動都將帶你進入一個前所未有的味覺冒險。
-                                    世界調酒冠軍將帶來他們的冠軍調酒作品，每一款都經過精心設計，融合了創新與經典的元素。每一口，都將帶你感受冠軍的靈感與創意，體驗前所未有的味蕾衝擊。
-                                    活動當晚，你可以親眼見證世界調酒冠軍的獨特技藝，感受頂級調酒的創意火花，並且每位參加者都有機會品嚐到這些難得的限量冠軍調酒。
-                                    此外，我們還準備了現場互動遊戲，參加者將有機會贏取冠軍特製調酒的專屬配方及限量紀念品。
-                                    這不僅僅是品味調酒，更是一場感官的饗宴，帶給你難忘的夜晚！我們邀請所有對調酒充滿熱情的人，共襄盛舉，與世界冠軍一起舉杯歡慶這個特別的夜晚。
-                                </p>
-                                <div class="likes">
-                                    <div class="bookmark">
-                                        <img class="even bookMark_img" src="./img/forum/news/likes/bookmark.svg"
-                                            alt="" />
-                                        <p class="even bookMark_num">20</p>
+
+                <div id="list"></div>
+                <script type="text/babel">
+                    function List(props) {
+                        const { hidden, date, title, content, bookmark_num, view_num, photo_src } = props;
+                        const articleClass = `article ${hidden ? 'hidden' : ''}`;
+                        return (
+                            <div className={articleClass}>
+                                <div class="content">
+                                    <div class="text">
+                                        <small class="date">{date}</small>
+                                        <h2 class="title">{title}</h2>
+                                        <p>{content}</p>
+                                        <div class="likes">
+                                            <div class="bookmark">
+                                                <img class="even bookMark_img" src="./img/forum/news/likes/bookmark.svg"
+                                                    alt="" />
+                                                <p class="even bookMark_num">{bookmark_num}</p>
+                                            </div>
+                                            <div class="view">
+                                                <img class="even view_img" src="./img/forum/news/likes/view.svg" alt="" />
+                                                <p class="even view_num">{view_num}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="view">
-                                        <img class="even view_img" src="./img/forum/news/likes/view.svg" alt="" />
-                                        <p class="even view_num">200</p>
-                                    </div>
+                                    <figure class="photo"><img src={photo_src} alt="" /></figure>
                                 </div>
                             </div>
-                            <figure class="photo"><img src="./img/about/about-head-pic.jpg" alt=""></figure>
-                        </div>
-                    </div>
-                    <div class="article">熱門文章2</div>
-                    <div class="article">熱門文章3</div>
-                    <div class="article hidden">熱門文章4</div>
-                    <div class="article hidden">熱門文章5</div>
-                </div>
-                <div class="news_content hidden" id="news_limit">
-                    <div class="article">精選文章1</div>
-                    <div class="article">精選文章2</div>
-                    <div class="article">精選文章3</div>
-                    <div class="article hidden">精選文章4</div>
-                    <div class="article hidden">精選文章5</div>
-                </div>
-                <div class="news_content hidden" id="news_normal">
-                    <div class="article">一般文章1</div>
-                    <div class="article">一般文章2</div>
-                    <div class="article">一般文章3</div>
-                    <div class="article hidden">一般文章4</div>
-                    <div class="article hidden">一般文章5</div>
-                </div>
+                        )
+                    }
+
+                    function App() {
+                        const list = [
+                            {
+                                id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/09/15',
+                                title: '期間限定! 世界調酒冠軍的得獎之作',
+                                contnet: '這是一個你絕對不想錯過的夜晚！來自全球的調酒冠軍，將親臨現場，展示他們的得獎之作。無論你是調酒愛好者，還是酒吧文化的忠實粉絲，這次活動都將帶你進入一個前所未有的味覺冒險。世界調酒冠軍將帶來他們的冠軍調酒作品，每一款都經過精心設計，融合了創新與經典的元素。每一口，都將帶你感受冠軍的靈感與創意，體驗前所未有的味蕾衝擊。活動當晚，你可以親眼見證世界調酒冠軍的獨特技藝，感受頂級調酒的創意火花，並且每位參加者都有機會品嚐到這些難得的限量冠軍調酒。此外，我們還準備了現場互動遊戲，參加者將有機會贏取冠軍特製調酒的專屬配方及限量紀念品。這不僅僅是品味調酒，更是一場感官的饗宴，帶給你難忘的夜晚！我們邀請所有對調酒充滿熱情的人，共襄盛舉，與世界冠軍一起舉杯歡慶這個特別的夜晚。',
+                                bookmark_num: '20',
+                                view_num: '200',
+                                photo_src: './img/about/about-head-pic.jpg'
+                            },
+                            {
+                                id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-1.jpg'
+                            },
+                            {
+                                id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-2.jpg'
+                            },
+                            {
+                                id: 4, //跑迴圈時 需要一個資料不會重複的key值
+                                hidden: 'hidden',
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-3.jpg'
+                            },
+                            {
+                                id: 5, //跑迴圈時 需要一個資料不會重複的key值
+                                hidden: 'hidden',
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-4.jpg'
+                            },
+                        ]
+
+                        const list2 = [
+                            {
+                                id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/09/15',
+                                title: '期間限定! 世界調酒冠軍的得獎之作',
+                                contnet: '這是一個你絕對不想錯過的夜晚！來自全球的調酒冠軍，將親臨現場，展示他們的得獎之作。無論你是調酒愛好者，還是酒吧文化的忠實粉絲，這次活動都將帶你進入一個前所未有的味覺冒險。世界調酒冠軍將帶來他們的冠軍調酒作品，每一款都經過精心設計，融合了創新與經典的元素。每一口，都將帶你感受冠軍的靈感與創意，體驗前所未有的味蕾衝擊。活動當晚，你可以親眼見證世界調酒冠軍的獨特技藝，感受頂級調酒的創意火花，並且每位參加者都有機會品嚐到這些難得的限量冠軍調酒。此外，我們還準備了現場互動遊戲，參加者將有機會贏取冠軍特製調酒的專屬配方及限量紀念品。這不僅僅是品味調酒，更是一場感官的饗宴，帶給你難忘的夜晚！我們邀請所有對調酒充滿熱情的人，共襄盛舉，與世界冠軍一起舉杯歡慶這個特別的夜晚。',
+                                bookmark_num: '20',
+                                view_num: '200',
+                                photo_src: './img/forum/news/event/event-5.jpg'
+                            },
+                            {
+                                id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-6.jpg'
+                            },
+                            {
+                                id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-7.jpg'
+                            },
+                            {
+                                id: 4, //跑迴圈時 需要一個資料不會重複的key值
+                                hidden: 'hidden',
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-8.jpg'
+                            },
+                            {
+                                id: 5, //跑迴圈時 需要一個資料不會重複的key值
+                                hidden: 'hidden',
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-9.jpg'
+                            },
+                        ]
+
+                        const list3 = [
+                            {
+                                id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/09/15',
+                                title: '期間限定! 世界調酒冠軍的得獎之作',
+                                contnet: '這是一個你絕對不想錯過的夜晚！來自全球的調酒冠軍，將親臨現場，展示他們的得獎之作。無論你是調酒愛好者，還是酒吧文化的忠實粉絲，這次活動都將帶你進入一個前所未有的味覺冒險。世界調酒冠軍將帶來他們的冠軍調酒作品，每一款都經過精心設計，融合了創新與經典的元素。每一口，都將帶你感受冠軍的靈感與創意，體驗前所未有的味蕾衝擊。活動當晚，你可以親眼見證世界調酒冠軍的獨特技藝，感受頂級調酒的創意火花，並且每位參加者都有機會品嚐到這些難得的限量冠軍調酒。此外，我們還準備了現場互動遊戲，參加者將有機會贏取冠軍特製調酒的專屬配方及限量紀念品。這不僅僅是品味調酒，更是一場感官的饗宴，帶給你難忘的夜晚！我們邀請所有對調酒充滿熱情的人，共襄盛舉，與世界冠軍一起舉杯歡慶這個特別的夜晚。',
+                                bookmark_num: '20',
+                                view_num: '200',
+                                photo_src: './img/forum/news/event/event-10.jpg'
+                            },
+                            {
+                                id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-11.jpg'
+                            },
+                            {
+                                id: 3, //跑迴圈時 需要一個資料不會重複的key值
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-12.jpg'
+                            },
+                            {
+                                id: 4, //跑迴圈時 需要一個資料不會重複的key值
+                                hidden: 'hidden',
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-3.jpg'
+                            },
+                            {
+                                id: 5, //跑迴圈時 需要一個資料不會重複的key值
+                                hidden: 'hidden',
+                                date: '2024/08/30',
+                                title: '去海邊喝一杯吧! 海岸線酒吧大會集',
+                                contnet: '準備好迎接一個充滿海風與美酒的夜晚嗎？這次，我們把最棒的酒吧搬到了海岸邊，為你打造一個難忘的夏日派對！來自各地的海岸線特色酒吧將齊聚一堂，帶來他們的招牌調酒，讓你在徐徐海風中感受美酒與大海的完美結合。無論你喜歡清爽的海洋風味，還是熱情的南國風情，這裡都有你想要的那杯。現場還有特別設計的互動區域，讓你能邊品酒邊享受沙灘的樂趣。不論是與朋友開懷暢飲，還是獨自享受片刻寧靜，這裡都將成為你夏天最難忘的記憶。想像一下，在蔚藍的大海旁，手握一杯精心調製的美酒，沉浸在音樂與歡笑中，這樣的夜晚，怎麼能錯過？趕快揪團，一起來海邊喝一杯吧，讓我們用美酒和海浪，為你帶來一個完美的夏日派對！',
+                                bookmark_num: '30',
+                                view_num: '350',
+                                photo_src: './img/forum/news/event/event-4.jpg'
+                            },
+                        ]
+
+                        React.useEffect(() => {
+                            windowout();
+                        }, []); // 空依賴陣列表示只在組件掛載和卸載時執行
+
+                        return (
+                            <>
+                                <div className="news_content active" id="news_hot">
+                                    {
+                                        list.map((item) => {
+                                            // 呼叫卡片元件
+                                            // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                            // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                            return <List key={item.id} hidden={item.hidden} date={item.date} title={item.title} content={item.contnet} bookmark_num={item.bookmark_num} view_num={item.view_num} photo_src={item.photo_src} />
+                                        })
+                                    }
+                                </div>
+                                <div className="news_content hidden" id="news_limit">
+                                    {
+                                        list2.map((item) => {
+                                            // 呼叫卡片元件
+                                            // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                            // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                            return <List key={item.id} hidden={item.hidden} date={item.date} title={item.title} content={item.contnet} bookmark_num={item.bookmark_num} view_num={item.view_num} photo_src={item.photo_src} />
+                                        })
+                                    }
+                                </div>
+                                <div className="news_content hidden" id="news_normal">
+                                    {
+                                        list3.map((item) => {
+                                            // 呼叫卡片元件
+                                            // <Card title='基本版' price={1000} desc='基本版說明區' btnName='免費試用' />
+                                            // 改用陣列回傳值給元件 map為迴圈方法 products是我們設定的陣列 陣列中有3物件故迴圈跑3次 回傳的值會到item身上 key值指定
+                                            return <List key={item.id} hidden={item.hidden} date={item.date} title={item.title} content={item.contnet} bookmark_num={item.bookmark_num} view_num={item.view_num} photo_src={item.photo_src} />
+                                        })
+                                    }
+                                </div>
+                            </ >
+                        )
+                    }
+
+                    ReactDOM
+                        .createRoot(document.getElementById('list'))
+                        .render(<App />)
+                </script>
+
                 <button id="load-more">載入更多</button>
             </div>
         </div>
