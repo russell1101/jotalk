@@ -386,18 +386,44 @@ main {
     margin-top: 5px;
 }
 
-.left_detail p {
+.left_detail p,
+.right_detail p {
     margin-top: 5px;
-    letter-spacing: .3rem;
+    letter-spacing: .2rem;
     line-height: 2rem;
 }
 
 .right_detail {
     width: 40%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+}
+
+.share {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 20px;
+}
+
+.share img {
+    width: 30px;
+    height: 30px;
+}
+
+.right_detail p {
+    margin-top: 30px;
+}
+
+.right_detail .link {
+    margin-top: 50px;
+    padding: 10px 50px;
+    background-color: #155569;
+    color: white;
+    border-radius: 50px;
 }
 
 .show {
