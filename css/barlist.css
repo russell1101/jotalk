@@ -956,6 +956,7 @@ a.tag {
     transition: opacity .3s ease;
     /* 添加漸變效果，持續時間0.8秒 */
     letter-spacing: 0.05rem;
+    overflow: hidden; /* 防止內容溢出 */
 }
 
 .x-BL {
@@ -1007,9 +1008,9 @@ a.tag {
     background-color: #555; /* 滾動條懸停時的顏色 */
 }
 
-.contant-BL {
+/* .contant-BL {
     margin-top: 10px;
-}
+} */
 
 /* 關閉按鈕樣式 */
 #closebtn-BL {
@@ -1040,11 +1041,11 @@ a.tag {
 }
 
 .jump-pic img {
-    display: flex;
-    align-items: flex-start;
-    /* 將大圖片和小圖片在垂直方向對齊到上方 */
-    margin-top: 20px;
-    width: 100;
+    display: block; /* 使用 block 而不是 flex */
+    margin-top: 20px; /* 如果需要保留外邊距 */
+    width: 100%; /* 確保圖片寬度填滿容器 */
+    height: auto; /* 保持圖片的原比例 */
+    object-fit: cover; /* 如果圖片需要裁剪以適應容器，否則可移除 */
 }
 
 
@@ -1097,6 +1098,21 @@ a.tag {
 .menuContant.active,
 .newsContant.active {
     display: block;
+    overflow-y: auto; /* 當內容超過容器高度時啟用滾動 */
+}
+
+.menuContant {
+    width: 100%; /* 根據需要設置容器的寬度 */
+    height: auto; /* 根據需要設置容器的高度 */
+    justify-content: center; /* 居中對齊 */
+    align-items: center; /* 居中對齊 */
+    overflow: hidden; /* 防止圖片溢出 */
+}
+
+.menu-pic {
+    width: 100%; /* 讓容器寬度適應父級 */
+    height: auto; /* 根據需要設置容器的高度 */
+    overflow: hidden; /* 防止圖片溢出 */
 }
 
 .name-BL {
@@ -1250,6 +1266,7 @@ a.tag {
     color: #ffffff;
     border: solid transparent;
 }
+
 
 .newsConinfo {
     display: flex;

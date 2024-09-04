@@ -391,7 +391,7 @@ html {
 .teach_atc .teach_picBase,
 .teach_atc .teach_picBartend,
 .teach_atc .teach_picTeach {
-    width: 85%;
+    width: 90%;
     height: 700px;
     /* height: 100vh; */
     position: relative;
@@ -524,12 +524,8 @@ html {
 .teach_atc .site-headerBase,
 .teach_atc .site-headerBartend,
 .teach_atc .site-headerTeach {
-    width: 20%;
     max-width: 160px;
     background-color: transparent;
-    /* justify-content: center; */
-    /* flex-direction: column; */
-    /* align-items: flex-end; */
     position: absolute;
     right: 0;
     top: 150px;
@@ -587,7 +583,7 @@ html {
     .teach_atc .site-headerBartend.active,
     .teach_atc .site-headerTeach.active {
         display: none;
-        visibility: hidden;
+        opacity: 0;
     }
 }
 
