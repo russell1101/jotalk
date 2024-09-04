@@ -442,7 +442,7 @@ a.tag {
     }
 
     &:nth-of-type(3) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/bar-11.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-6.jpg");
     }
 
     &:nth-of-type(4) .preview-image {
@@ -1008,9 +1008,10 @@ a.tag {
     background-color: #555; /* 滾動條懸停時的顏色 */
 }
 
-/* .contant-BL {
-    margin-top: 10px;
-} */
+.contant-BL {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
 /* 關閉按鈕樣式 */
 #closebtn-BL {
@@ -1078,8 +1079,6 @@ a.tag {
     /* 当前选中项的背景色 */
     color: #ffffff;
     margin-right: 10px;
-
-
 }
 
 .categories-BL div:hover {
@@ -1194,8 +1193,9 @@ a.tag {
     border: 1px solid #155569;
     margin-left: 10px;
     border-radius: 10px;
-    width: 17%;
+    padding: 2px 15px;
     white-space: nowrap;
+    font-size: 0.8rem;
 }
 
 .infoContant .info {
@@ -1208,7 +1208,7 @@ a.tag {
 }
 
 .infoContant .info h3 {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #155569;
     font-weight: 700;
 }
@@ -1224,7 +1224,8 @@ a.tag {
     display: flex;
     width: 100%;
     margin-top: 30px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    padding: 0 20px;
 }
 
 .infoContant .tag {
@@ -1236,8 +1237,7 @@ a.tag {
     flex-wrap: wrap;
     list-style-type: none;
     max-width: 100%;
-    /* 根據需要調整最大寬度 */
-    margin-top: 10px;
+    margin: 20px 0;
     font-size: 14px;
 }
 
