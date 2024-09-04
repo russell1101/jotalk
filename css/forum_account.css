@@ -384,15 +384,12 @@ main {
 
 .content::-webkit-scrollbar-thumb {
     border-radius: 99px;
-    /* border-color: ; */
-    /* border: 1px solid #585858; */
     background-color: #828282;
 }
 
 .content::-webkit-scrollbar-track {
     border-radius: 99px;
     margin: 50px 0;
-    background-color: #c8c8c8;
 }
 
 .content::-webkit-scrollbar-button {
