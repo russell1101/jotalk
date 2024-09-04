@@ -173,8 +173,9 @@ main {
     margin-right: 5px;
 }
 
+/* 右區 */
 #omb-right {
-    flex: 2;
+    /* flex: 2; */
     max-width: 80%;
     background-color: var(--alpha-w-60);
     border-radius: 10px;
@@ -182,6 +183,28 @@ main {
     height: 100%;
     min-height: 120vh;
 }
+
+.Atc_content {
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+}
+
+.Atc_content .hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
 
 .nav-ombCollect {
     display: flex;
@@ -199,7 +222,7 @@ main {
     color: var(--darkgrey);
 }
 
-.nav-ombCollect a:hover{
+.nav-ombCollect a:hover {
     color: var(--primary);
 }
 
@@ -219,7 +242,7 @@ main {
     display: block;
 }
 
-.visited-bar p{
+.visited-bar p {
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     font-size: 1.2rem;
@@ -227,4 +250,378 @@ main {
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 20px;
+}
+
+
+
+
+/* 卡片內容 */
+.article {
+    width: 90%;
+    height: 170px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #5858585b;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: .35s ease-in-out;
+}
+
+.article:hover {
+    scale: 0.99;
+}
+
+.picture {
+    height: 90%;
+    width: 30%;
+    min-width: 100px;
+    max-width: 150px;
+
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.text {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    line-height: 0;
+}
+
+.user {
+    width: 55%;
+    min-width: 180px;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user figure {
+    width: 25px;
+    height: 25px;
+}
+
+.user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 99px;
+}
+
+.user h2 {
+    font-size: 15px;
+}
+
+#article_title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#hashtag {
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+.text small {
+    font-size: 14px;
+    color: #585858;
+}
+
+.text p {
+    line-height: 120%;
+    font-size: 16px;
+    font-weight: 470;
+    width: 90%;
+    /* 設定寬度為200px */
+    overflow: hidden;
+    /* 隱藏超出範圍的內容 */
+    text-overflow: ellipsis;
+    /* 超出部分用省略號表示 */
+    white-space: nowrap;
+    /* 禁止換行 */
+}
+
+#like {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#like p {
+    font-size: 14px;
+    font-weight: 450;
+}
+
+#heart_img,
+#bookMark_img {
+    cursor: pointer;
+    transition: .25s ease-in-out;
+}
+
+#heart_img:hover,
+#bookMark_img:hover {
+    opacity: 60%;
+}
+
+#heart,
+#comment,
+#bookMark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#like img {
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+}
+
+
+/* 文章內頁 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+    /* 初始狀態隱藏 */
+    opacity: 0;
+    /* 初始透明度為0 */
+    transition: opacity .8s ease;
+    /* 添加漸變效果，持續時間0.3秒 */
+    display: flex;
+    /* 使用 flexbox 來對齊內容 */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+}
+
+.content {
+    position: fixed;
+    /* position: relative; */
+    top: 10%;
+    /* left: 50%; */
+    border-radius: 10px;
+    /* transform: translate(-50%, -50%); */
+    background-color: #F5F5F5;
+    width: 60%;
+    height: 80vh;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    opacity: 0;
+    transition: opacity .3s ease;
+    overflow-y: scroll;
+    border-right: solid 10px transparent;
+}
+
+/* Chrome, Edge, and Safari */
+.content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background-color: #828282;
+}
+
+.content::-webkit-scrollbar-track {
+    border-radius: 99px;
+    margin: 50px 0;
+}
+
+.content::-webkit-scrollbar-button {
+    display: none;
+}
+
+.closebtn img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 0px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+    transition: .25s ease-in-out;
+}
+
+.closebtn img:hover {
+    opacity: 60%;
+}
+
+.content_user {
+    width: 30%;
+    min-width: 210px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content_user figure {
+    width: 25px;
+    height: 25px;
+}
+
+.content_user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 99px;
+}
+
+.content_user h2 {
+    font-size: 15px;
+}
+
+.content_user small {
+    font-size: .85rem;
+    font-weight: 200;
+}
+
+.content h1 {
+    margin-top: 10px;
+}
+
+#p {
+    margin-top: 15px;
+    line-height: 2rem;
+}
+
+.content #like {
+    margin-top: 20px;
+    width: 25%;
+    min-width: 150px;
+}
+
+.content .padding {
+    padding-left: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.content hr {
+    width: 100%;
+}
+
+
+/* 評論區 */
+.comment-section {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.sort-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.sort-hot,
+.sort-newest,
+.sort-oldest {
+    color: #000000;
+    border: solid 0.1px;
+    border-radius: 10px;
+    width: 32%;
+    min-width: 88px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.sort-hot {
+    background-color: #155569;
+    color: #ffffff;
+    letter-spacing: .3rem;
+}
+
+/* 評論內容 */
+.comment {
+    padding: 0 20px;
+}
+
+.comment_user {
+    width: 40%;
+    min-width: 210px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.comment_user figure {
+    width: 25px;
+    height: 25px;
+}
+
+.comment_user img {
+    width: 100%;
+    height: 100%;
+    min-width: 25px;
+    object-fit: cover;
+    border-radius: 99px;
+}
+
+.comment_user h2 {
+    margin-left: 10px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.comment_user small {
+    margin-left: 15px;
+    font-size: .85rem;
+    font-weight: 200;
+    white-space: nowrap;
+}
+
+.comment p {
+    margin-top: 15px;
+}
+
+.comment #like {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.comment #heart_num,
+.comment #comment_num {
+    margin: 0;
+}
+
+.comment #like small {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.comment hr {
+    margin-top: 10px;
+    width: 100%;
 }
