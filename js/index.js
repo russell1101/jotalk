@@ -118,3 +118,18 @@ document.addEventListener("DOMContentLoaded", () => {
         moveFeedbackCards();
     }, 4000);
 });
+
+
+// 檢查是否登入
+document.querySelector('a[href="./otherMember.html"]').addEventListener('click', function (event) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+        // 如果已登录，跳转到另一个页面
+        event.preventDefault(); // 阻止默认行为
+        window.location.href = './member.html'; // 替换为你想跳转的页面
+    } else {
+        // 如果未登录，弹出提示并继续到当前链接
+        alert('以訪客身份登入，可查看其他會員資料');
+    }
+});
