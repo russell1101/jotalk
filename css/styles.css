@@ -125,11 +125,8 @@ a {
 #topbar:hover {
     width: 40%;
     max-width: 550px;
-    /* 滑鼠觸碰時擴展 */
     border-radius: 99px;
-    /* 變長條 */
     justify-content: space-between;
-    /* 水平排列内容 */
 }
 
 
@@ -139,9 +136,7 @@ a {
     flex-grow: 1;
     justify-content: space-around;
     white-space: nowrap;
-    /* 阻止文字換行 */
     overflow: hidden;
-    /* 隱藏溢出的内容 */
     visibility: visible;
     opacity: 1;
     transition: opacity 4s ease, visibility 0s 0.3s;
@@ -167,7 +162,6 @@ a {
     height: .6px;
     background-color: var(--lightgrey);
     transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
-    /* 改變 transition 參數 */
 }
 
 #topbar .menu a:hover::after {
@@ -699,6 +693,7 @@ section {
     /* width: 100%; */
     /* overflow: hidden; */
     white-space: nowrap;
+    pointer-events: none;
 }
 
 .marquee-content {

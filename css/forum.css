@@ -197,8 +197,7 @@ main {
 }
 
 .body_guide_content,
-.body_special_content,
-.body_rank_content {
+.body_special_content {
     padding: 0 10px;
     margin-bottom: 1.5rem;
 }
@@ -208,6 +207,7 @@ main {
     font-size: .92rem;
     font-weight: 500;
     letter-spacing: .1rem;
+    pointer-events: none;
 }
 
 .bulletin_content h3 {
@@ -217,6 +217,7 @@ main {
     letter-spacing: 1px;
     line-height: 1.5;
     margin-left: 8px;
+    pointer-events: none;
 }
 
 .bulletin_content p,
@@ -226,6 +227,7 @@ main {
     letter-spacing: 1px;
     line-height: 1.5;
     margin-left: 8px;
+    pointer-events: none;
 }
 
 .body_special_content small {
@@ -234,6 +236,7 @@ main {
     font-size: .88rem;
     letter-spacing: 1px;
     line-height: 1.5;
+    pointer-events: none;
 }
 
 .special_more-link {
@@ -259,15 +262,22 @@ main {
     transition: .25s ease;
 }
 
+.body_rank_content {
+    padding: 0 10px;
+    margin-bottom: 1.5rem;
+}
+
 .body_rank_content h2 {
     margin-bottom: 5px;
     font-size: 1rem;
+    pointer-events: none;
 }
 
 .body_rank_content p {
     margin-bottom: 15px;
     font-size: .88rem;
     letter-spacing: .1rem;
+    pointer-events: none;
 }
 
 .ranking-item a{
@@ -295,6 +305,11 @@ main {
 .tag-name {
     color: var(--darkgrey);
     white-space: nowrap;
+    transition: .15s ease-in-out;
+}
+
+.tag-name:hover{
+    scale: 1.04;
 }
 
 /* --熱門標籤 影片-- */
@@ -346,6 +361,11 @@ main {
 .hotTag-name {
     white-space: nowrap;
     margin-right: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+.hotTag-name:hover{
+    scale: 1.07;
 }
 
 .body_hotVdo_content .grid {

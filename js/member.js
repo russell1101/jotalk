@@ -46,3 +46,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// 右側分頁切換
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.nav-btn ul');
+    const contentDivs = document.querySelectorAll('#member-right > div');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // 移除所有按鈕的active class
+            buttons.forEach(btn => {
+                btn.style.backgroundColor = '';
+                btn.style.borderRadius = '';
+            });
+
+            // 將點擊的按鈕設置為黃色背景和圓角
+            button.style.backgroundColor = '#155569';
+            button.style.fontColor = '#ffffff';
+            button.style.borderRadius = '5px';
+
+            // 隱藏所有的內容區域
+            contentDivs.forEach(div => div.style.display = 'none');
+
+            // 顯示與點擊按鈕對應的內容區域
+            const targetId = button.getAttribute('data-target');
+            document.getElementById(targetId).style.display = 'block';
+        });
+    });
+
+    // 預設顯示第一個按鈕對應的內容區域
+    buttons[0].click();
+});
+
+
+
+
+
+
+
+
+

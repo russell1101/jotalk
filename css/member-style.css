@@ -13,6 +13,8 @@
 
     /* 主色 */
     --primary: #155569;
+    --secondary: #FFA800;
+    --secondary-hover: #e29909;
 
     /* 透明 */
     --alpha-w-40: rgba(255, 255, 255, .4);
@@ -105,7 +107,7 @@ main {
     flex: 1;
     width: 20%;
     max-width: 220px;
-    padding: 10px;    
+    padding: 10px;
     margin-right: 20px;
     box-sizing: border-box;
     justify-content: center;
@@ -124,13 +126,21 @@ main {
 .userID {
     font-size: 1.4rem;
     letter-spacing: 2px;
+    pointer-events: none;
 }
 
-.userLevel,
+.userLevel {
+    font-size: 1.1rem;
+    letter-spacing: .1rem;
+    margin: 0;
+    pointer-events: none;
+}
+
 .userPostFollower {
     font-size: 1.1rem;
     letter-spacing: .1rem;
     margin: 0;
+    cursor: pointer;
 }
 
 .nav-btn {
@@ -142,6 +152,14 @@ main {
     font-weight: 600;
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nav-btn.active {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 10px;
 }
 
 .nav-btn ul {
@@ -159,7 +177,7 @@ main {
 
 /* 右側 */
 #member-right {
-    width: auto;
+    width: 80%;
     height: 100%;
     height: auto;
     min-height: 120vh;
@@ -167,41 +185,70 @@ main {
     background-color: var(--alpha-w-60);
     border-radius: 10px;
     padding: 30px 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 #member-rank {
-    width: 60%;
+    width: 100%;
     height: 60%;
     border-radius: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin: auto;
+    gap: 5rem;
 }
 
 #member-rank img {
-    width: 100%;
+    width: 60%;
     height: 100%;
+    margin-left: 3.5rem;
 }
 
+#member-rank .toAward {
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    white-space: nowrap;
+    width: 20%;
+    height: 20%;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 550;
+    letter-spacing: 2px;
+    border: none;
+    transition: 0.1s ease-in-out;
+}
+
+#member-rank .toAward:hover {
+    scale: 1.03;
+}
+
+/* 積分區 */
 #points {
     margin-top: 30px;
-    display: flex;    
+    display: flex;
 }
 
 .history-store,
 .history-evt,
-.history-like{
+.history-like {
     width: 100%;
     max-width: 850;
 }
 
 .history-store h2,
 .history-evt h2,
-.history-like h2{
+.history-like h2 {
     text-align: center;
     margin-top: 8px;
-    font-family: "Noto Sans TC", sans-serif;
-    font-optical-sizing: auto;
     font-size: 1.5rem;
     letter-spacing: .3rem;
     font-weight: 600;
@@ -229,7 +276,7 @@ main {
     transition: background-color 0.2s ease-in-out;
 }
 
-.store_month span{
+.store_month span {
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     font-size: 1.1rem;
@@ -238,10 +285,10 @@ main {
     color: var(--darkgrey);
 }
 
-.store_month p{
+.store_month p {
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
-    font-size: 1rem;
+    font-size: .9rem;
     letter-spacing: 2px;
     font-weight: 500;
     color: var(--darkgrey);
@@ -257,8 +304,8 @@ main {
 }
 
 .record-content {
-    width: 260px;
-    max-height: 0;
+    width: 200px;
+    /* max-height: 0; */
     overflow: hidden;
     gap: 10px;
     transition: max-height 0.2s ease-in-out;
@@ -277,6 +324,7 @@ main {
 .record-date {
     display: flex;
     justify-content: space-between;
+    gap: 5px;
     padding: 3px 0;
     margin-bottom: 5px;
     transition: max-height 0.2s ease-in-out;
@@ -286,7 +334,7 @@ main {
     scale: 0.99;
 }
 
-.record-date .like-num{    
+.record-date .like-num {
     white-space: nowrap;
 }
 
@@ -314,7 +362,7 @@ main {
 #point-history {
     margin-top: 10px;
     width: 100%;
-    max-width: 940px;
+    max-width: 970px;
     height: 100%;
     max-height: 800px;
     border-radius: 10px;
@@ -325,7 +373,7 @@ main {
     padding: 1rem;
 }
 
-#point-history h2{
+#point-history h2 {
     text-align: center;
     margin-top: 8px;
     font-family: "Noto Sans TC", sans-serif;
@@ -337,7 +385,7 @@ main {
     pointer-events: none;
 }
 
-.allHistory{
+.allHistory {
     width: 100%;
     height: 400px;
     max-height: 500px;
@@ -349,6 +397,37 @@ main {
     padding: 1rem;
     gap: 10px;
     overflow-y: scroll;
+}
+
+.allHistory .record-content {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.allHistory .record-date {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.allHistory .record-date p {
+    margin: 0;
+    flex: 1;
+}
+
+.allHistory .record-date .title {
+    flex: 4;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.allHistory .record-date .plus-point {
+    flex: 1;
+    text-align: right;
 }
 
 /* Chrome, Edge, and Safari */

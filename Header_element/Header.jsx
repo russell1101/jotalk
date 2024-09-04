@@ -22,7 +22,7 @@ function Header(props) {
                     <div className="menu_el">
                         <a href="./forum.html">綜合論壇</a>
                         <a href="./barlist.html">酒吧清單</a>
-                        <a href="./member.html">會員頁面</a>
+                        <a href="./member.html">我的會員</a>
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@ function Header(props) {
                                 <button type="button" name="btn_submit" id="btn_register" title="送出按鈕">
                                     <span>註冊</span>
                                 </button>
-                            </div>
+                            </div></form>
                             <div className="fast__login">
                                 <hr />
                                 <p>快速登入</p>
@@ -84,7 +84,7 @@ function Header(props) {
                                 <li><a className="icon_el-mail" id="google" href="#"></a></li>
                                 <li><a className="icon_el-line" id="line" href="#"></a></li>
                             </ul>
-                        </form>
+                        
                     </div>
                 </div>
             </header>
