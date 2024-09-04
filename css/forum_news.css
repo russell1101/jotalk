@@ -111,7 +111,10 @@ main {
     max-width: 160px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    gap: 30px;
+    font-size: 1.1rem;
 }
 
 .categories .category.active,
@@ -120,8 +123,16 @@ main {
     color: #ffffff;
 }
 
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
 .categories .category {
-    padding: 1px 10px;
+    padding: 2px 15px;
     cursor: pointer;
     border-radius: 10px;
     color: #155569;
@@ -129,6 +140,7 @@ main {
 
 .tagTitle {
     margin: 0 10px;
+    border-bottom: 1px solid black;
     font-size: 14px;
 }
 
@@ -236,6 +248,10 @@ main {
     align-items: center;
 }
 
+.bookmark{
+    width: 60px;
+}
+
 .bookmark .even,
 .view .even {
     flex: 1;
@@ -275,7 +291,7 @@ main {
     display: block;
     box-sizing: border-box;
     padding: 10px 20px;
-    /* background-color: #155569; */
+    background-color: #155569;
     color: #ffffff;
     border: none;
     border-radius: 5px;
