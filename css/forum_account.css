@@ -108,6 +108,7 @@ main {
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
+    font-size: 1.1rem;
 }
 
 .categories .category.active,
@@ -125,21 +126,21 @@ main {
 }
 
 .categories .category {
-    padding: 1px 10px;
+    padding: 2px 15px;
     cursor: pointer;
     border-radius: 10px;
     color: #155569;
 }
 
 #tagTitle {
-    font-size: 14px;
+    font-size: 1.1rem;
     border-bottom: 1px solid black;
     margin-bottom: 2px;
 }
 
 .tags .tag {
     color: #000000;
-    font-size: 12px;
+    font-size: 1rem;
     padding: 7.5px 0;
 }
 
@@ -185,7 +186,7 @@ main {
     display: block;
     box-sizing: border-box;
     padding: 10px 20px;
-    /* background-color: #155569; */
+    background-color: #155569;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -270,8 +271,8 @@ main {
 }
 
 #article_title {
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 #hashtag {
