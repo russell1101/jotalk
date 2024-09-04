@@ -1,3 +1,8 @@
+setTimeout(function () {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.display = 'none';
+}, 3000); // 後隱藏GIF
+
 // topbar
 window.addEventListener("scroll", function () {
     var topbar = document.getElementById("topbar");

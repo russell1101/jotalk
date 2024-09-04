@@ -1,10 +1,3 @@
-setTimeout(function () {
-    const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.style.display = 'none';
-}, 3000); // 後隱藏GIF
-
-
-
 function windowout() {
     const categories = document.querySelectorAll('.category');
     const contents = document.querySelectorAll('.news_content');
