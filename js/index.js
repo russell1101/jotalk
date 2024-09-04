@@ -120,16 +120,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// 檢查是否登入
-document.querySelector('a[href="./otherMember.html"]').addEventListener('click', function (event) {
+// 偵測 "我的會員" 按鈕的點擊事件
+document.querySelector('a[href="./otherMember.html"]').addEventListener('click', function(event) {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
 
     if (isLoggedIn === 'true') {
-        // 如果已登录，跳转到另一个页面
-        event.preventDefault(); // 阻止默认行为
-        window.location.href = './member.html'; // 替换为你想跳转的页面
+        event.preventDefault();
+        window.location.href = './member.html';
     } else {
-        // 如果未登录，弹出提示并继续到当前链接
-        alert('以訪客身份登入，可查看其他會員資料');
+        alert('以訪客身份登入，前往查看其他會員資料');
     }
 });
+
+// 偵測 "加入會員 開始體驗" 按鈕的點擊事件
+document.querySelector('.joinBtn').addEventListener('click', function(event) {
+    event.preventDefault();
+    alert('以訪客身份登入，前往查看其他會員資料，可加入Jotalk會員體驗完整功能');
+    window.location.href = './otherMember.html';
+});
+
+
