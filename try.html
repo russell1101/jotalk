@@ -1,0 +1,78 @@
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOTALK – 我的會員</title>
+    <link rel="icon" href="./favicon.ico">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./Post_element/Post.jsx"></script>
+    <link rel="stylesheet" href="./Post_element/Post.css">
+
+</head>
+
+<body>
+    <main>
+        <button class="article" data-target="content-1">點我</button>
+
+        <div id="root"></div>
+        <script type="text/babel">
+            function App() {
+
+                const article = [
+                    {
+                        id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                        user_img: './img/forum/account/user/user6.jpg',
+                        user_name: '信義王陽明',
+                        post_time: '9月20號 20:00',
+                        art_title: '信義fake sober，打算聊100個女生',
+                        hashtag1: '#探店心得',
+                        hashtag2: '#酒超好喝',
+                        hashtag3: '#酒吧推薦',
+                        art_content: '我現在人在信義fake sober，打算成為兩性中的King！目標是要和100個女生展開對話，目前進度是0，但這只是個開始。別擔心，我是那種不會讓你失望的男人。問什麼問題都可以，這裡不會叫你去估狗，直接來找我就對了。讓我成為你們的答案庫，讓你們的夜晚充滿笑聲和驚喜。每個人都有機會，我也有我的計畫和策略，要和這100個女生逐一展開精彩對話。來吧，大家，一起玩這個有趣的遊戲！今晚，讓我們把這裡變成我們的舞台！',
+                        heart_num: '687',
+                        comment_num: '87',
+                        bookMark_num: '98',
+                        time: '2024-09-20T18:22:00',
+                        time2: '2024-09-01T18:22:00',
+                        user_url: '../img/forum/account/user/user6.jpg',
+                        userName: '信義878',
+                        user_time: '9月20日 18:22',
+                        user_time2: '9月01日 18:22',
+                        floor: 'B1',
+                        content: 'barcode推一個!!',
+                        heart_cmt: 150,
+                        comment_cmt: 1
+                    }
+                ]
+
+                React.useEffect(() => {
+                    post();
+                }, []);
+
+                return (
+                    <>
+                        {
+                            article.map((item) => {
+                                return <Post key={item.id} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} userName={item.userName} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} content={item.content} heart_cmt={item.heart_cmt} comment_cmt={item.comment_cmt} />
+                            })
+                        }
+                    </>
+                )
+            }
+            ReactDOM
+                .createRoot(document.getElementById('root'))
+                .render(<App />)
+        </script>
+
+
+    </main>
+
+    <script src="./Post_element/Post.js"></script>
+</body>
+
+
+</html>
