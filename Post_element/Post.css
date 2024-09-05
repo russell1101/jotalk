@@ -1,0 +1,370 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Mallanna&family=Noto+Sans+TC:wght@100..900&display=swap');
+/* utf8一定要在行數1 */
+/* import 一定要在第二行 */
+
+/* 顏色設定(設定變數) */
+:root {
+    /* 灰階 */
+    --black: #000000;
+    --darkgrey: rgb(44, 44, 44);
+    --lightgrey: rgb(88, 88, 88);
+    --white: #ffffff;
+
+    /* 主色 */
+    --primary: #155569;
+
+    /* 透明 */
+    --alpha-w-40: rgba(255, 255, 255, .4);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-w-80: rgba(255, 255, 255, .8);
+    --alpha-b-20: rgba(0, 0, 0, .2);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
+    --alpha-lg-10: rgba(88, 88, 88, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加padding */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    color: #444;
+    display: block;
+    /* 預設inline行內元素改為block */
+    text-decoration: none;
+}
+
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+/* 右側 */
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#hashtag {
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+#like {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#like p {
+    font-size: 14px;
+    font-weight: 450;
+}
+
+#heart_img,
+#bookMark_img {
+    cursor: pointer;
+    transition: .25s ease-in-out;
+}
+
+#heart_img:hover,
+#bookMark_img:hover {
+    opacity: 60%;
+}
+
+#heart,
+#comment,
+#bookMark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#like img {
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+}
+
+/* 文章內頁 */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+    /* 初始狀態隱藏 */
+    opacity: 0;
+    /* 初始透明度為0 */
+    transition: opacity .8s ease;
+    /* 添加漸變效果，持續時間0.3秒 */
+    /* display: flex;  */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+}
+
+.content {
+    position: fixed;
+    /* position: relative; */
+    top: 10%;
+    /* left: 50%; */
+    border-radius: 10px;
+    /* transform: translate(-50%, -50%); */
+    background-color: #F5F5F5;
+    width: 800px;
+    height: 80vh;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    opacity: 0;
+    transition: opacity .3s ease;
+    overflow-y: scroll;
+    border-right: solid 10px transparent;
+}
+
+@media (max-width:1350px) {
+    .content {
+        width: 600px;
+    }
+}
+
+/* Chrome, Edge, and Safari */
+.content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background-color: #828282;
+}
+
+.content::-webkit-scrollbar-track {
+    border-radius: 99px;
+    margin: 50px 0;
+}
+
+.content::-webkit-scrollbar-button {
+    display: none;
+}
+
+.closebtn img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 0px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+    transition: .25s ease-in-out;
+}
+
+.closebtn img:hover {
+    opacity: 60%;
+}
+
+.content_user {
+    width: 30%;
+    min-width: 210px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content_user figure {
+    width: 25px;
+    height: 25px;
+}
+
+.content_user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 99px;
+}
+
+.content_user h2 {
+    font-size: 15px;
+}
+
+.content_user small {
+    font-size: .85rem;
+    font-weight: 200;
+}
+
+.content h1 {
+    margin-top: 10px;
+}
+
+#p {
+    margin-top: 15px;
+    line-height: 2rem;
+}
+
+.content #like {
+    margin-top: 20px;
+    width: 25%;
+    min-width: 150px;
+}
+
+.content .padding {
+    padding-left: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.content hr {
+    width: 100%;
+}
+
+
+/* 評論區 */
+.comment-section {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.sort-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.sort-hot,
+.sort-newest,
+.sort-oldest {
+    color: #000000;
+    border: solid 0.1px;
+    border-radius: 10px;
+    width: 32%;
+    min-width: 88px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.sort-hot {
+    background-color: #155569;
+    color: #ffffff;
+    letter-spacing: .3rem;
+}
+
+/* 評論內容 */
+.comment {
+    padding: 0 20px;
+}
+
+.comment_user {
+    width: 40%;
+    min-width: 210px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.comment_user figure {
+    width: 25px;
+    height: 25px;
+}
+
+.comment_user img {
+    width: 100%;
+    height: 100%;
+    min-width: 25px;
+    object-fit: cover;
+    border-radius: 99px;
+}
+
+.comment_user h2 {
+    margin-left: 10px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.comment_user small {
+    margin-left: 15px;
+    font-size: .85rem;
+    font-weight: 200;
+    white-space: nowrap;
+}
+
+.comment p {
+    margin-top: 15px;
+}
+
+.comment #like {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.comment #heart_num,
+.comment #comment_num {
+    margin: 0;
+}
+
+.comment #like small {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.comment hr {
+    margin-top: 10px;
+    width: 100%;
+}
