@@ -382,6 +382,12 @@ main {
     border-right: solid 10px transparent;
 }
 
+@media (max-width:1350px) {
+    .content{
+        width: 600px;
+    }
+}
+
 /* Chrome, Edge, and Safari */
 .content::-webkit-scrollbar {
     width: 5px;
