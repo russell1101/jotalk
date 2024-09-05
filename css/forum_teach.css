@@ -568,13 +568,13 @@ html {
     font-weight: bold;
 }
 
-@media (max-width:1024px) {
+@media (max-width:1200px) {
     .teach_atc {
         width: 100%;
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:1200px) {
 
     .teach_atc .site-headerBase,
     .teach_atc .site-headerBartend,
@@ -587,7 +587,7 @@ html {
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:1200px) {
     #pic1-1,
     #pic1-2,
     #pic1-3,
@@ -604,7 +604,7 @@ html {
     }
 }
 
-@media (max-width:1024px) {
+@media (max-width:1200px) {
 
     #pic1-5,
     #pic1-6 {
