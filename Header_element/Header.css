@@ -21,6 +21,7 @@
     --alpha-w-80: rgba(255, 255, 255, .8);
     --alpha-b-20: rgba(0, 0, 0, .2);
     --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-b-70: rgba(0, 0, 0, 0.7);
     --alpha-lg-10: rgba(88, 88, 88, 0.1);
 }
 
@@ -71,14 +72,13 @@ img {
 a {
     color: #444;
     display: block;
-    /* 預設inline行內元素改為block */
     text-decoration: none;
 }
 
 /* 玻璃擬態 */
 #header_el .topbar_el {
-    background-image: linear-gradient(45deg, rgba(225, 225, 225, 0.4),
-            rgba(225, 225, 225, 0.7));
+    background-image: linear-gradient(0deg, rgba(225, 225, 225, 0.619),
+            rgba(255, 255, 255, 0.914));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
         inset -2px -2px rgba(0, 0, 0, 0.027);
     backdrop-filter: blur(10px);
@@ -163,7 +163,7 @@ a {
     overflow: hidden;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 4s ease, visibility 0s 0.3s;
+    transition: opacity .5s ease-in-out, visibility 0s 0.3s;
 }
 
 /* header .topbar_el 選項 hover效果 */
@@ -206,7 +206,7 @@ a {
 #header_el .topbar_el:hover .menu_el {
     opacity: 1;
     visibility: visible;
-    transition: opacity 4s ease, visibility 0s 0.2s;
+    transition: opacity 2s ease, visibility 0s 0.2s;
     justify-content: space-around;
 }
 
@@ -216,7 +216,7 @@ a {
 #header_el .writeBtn_el {
     position: absolute;
     top: 40px;
-    right: 160px;
+    right: 150px;
 }
 
 #header_el .account_login_el,
@@ -226,26 +226,32 @@ a {
     right: 40px;
 }
 
-#header_el .account_login_el button,
-.account_logout_el button,
-.writeBtn_el button {
-    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
-            rgba(225, 225, 225, 0.8));
+#loginBtn_el,
+#logoutBtn_el,
+#writeBtn_el {
+    background-color:var(--alpha-w-60);
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
         inset -2px -2px rgba(0, 0, 0, 0.027);
     backdrop-filter: blur(10px);
     border: none;
-    padding: 10px 20px;
-    border-radius: 99px;
-    opacity: 0.7;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: .85rem;
+    font-weight: 450;
+    letter-spacing: 1px;
+    opacity: 1;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
-#header_el .account_login_el button:hover,
-.account_logout_el :hover,
-.writeBtn_el button:hover {
-    background-color: #ffffff;
+#loginBtn_el:hover,
+#logoutBtn_el:hover,
+#writeBtn_el:hover {
+    background-color: var(--alpha-b-70);
+    color: var(--white);
+    opacity: 1;
 }
 
 #header_el .account_login_el a {
@@ -325,35 +331,8 @@ a {
     background: rgba(0, 0, 0, 0.7);
     z-index: 2;
     display: none;
-    /* 初始狀態隱藏 */
     opacity: 0;
-    /* 初始透明度為0 */
     transition: opacity .35s ease;
-    /* 添加漸變效果，持續時間0.3秒 */
-}
-
-/* 登入按鈕樣式 */
-.account_login_el {
-    position: absolute;
-    top: 40px;
-    right: 50px;
-}
-
-.account_login_el button {
-    background-image: linear-gradient(5deg, rgba(225, 225, 225, 0.065),
-            rgba(225, 225, 225, 0.8));
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, .15),
-        inset -2px -2px rgba(0, 0, 0, 0.027);
-    backdrop-filter: blur(10px);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 99px;
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-.account_login_el button:hover {
-    background-color: white;
 }
 
 /* 彈出視窗樣式 */
@@ -374,11 +353,8 @@ a {
     flex-direction: column;
     align-items: center;
     display: none;
-    /* 初始狀態隱藏 */
     opacity: 0;
-    /* 初始透明度為0 */
     transition: opacity .35s ease;
-    /* 添加漸變效果，持續時間0.3秒 */
 }
 
 .contant_el {
