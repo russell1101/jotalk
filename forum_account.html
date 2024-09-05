@@ -139,14 +139,14 @@
 
 
         function App() {
+            React.useEffect(() => {
+                windowout();
+            }, []);
 
             React.useEffect(() => {
                 login();
             }, []);
 
-            React.useEffect(() => {
-                windowout();
-            }, []);
 
 
             // 文章列表內容
