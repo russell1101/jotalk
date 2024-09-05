@@ -1,12 +1,11 @@
-// 小幫手
 function helper() {
-
     const helperBtn = document.getElementById('helperBtn');
     const helperBox = document.getElementById('helperBox');
     const helperSendButton = document.getElementById('helperSendButton');
     const helperInput = document.getElementById('helperInput');
     const helperText = document.getElementById('helperText');
     const helperWrapper = document.querySelector('.helper-wrapper');
+    const helperLabel = document.querySelector('.helper-label'); // 選取 LET ME HELP 標籤
 
     let isHelperBoxOpen = false; // 追蹤對話框是否已展開
     let hasDefaultMessageBeenAdded = false; // 追蹤是否已添加預設訊息
@@ -17,26 +16,20 @@ function helper() {
         location: ''
     };
 
+    // 綁定到小幫手按鈕的點擊事件
+    helperBtn.addEventListener('click', toggleHelperBox);
 
+    // 綁定到 "LET ME HELP" 標籤的點擊事件
+    helperLabel.addEventListener('click', toggleHelperBox);
 
-    helperBtn.addEventListener('click', () => {
+    // 切換對話框的顯示狀態
+    function toggleHelperBox() {
         if (!isHelperBoxOpen) {
-            helperBox.style.display = 'flex';
-            helperWrapper.classList.add('expanded', 'forced-expanded'); // 保持展開狀態並加上強制展開的標記
-            isHelperBoxOpen = true;
-
-            // 如果還沒有添加預設訊息，則添加
-            if (!hasDefaultMessageBeenAdded) {
-                addMessage('helper', '你好！請問我可以幫你什麼？<br>可以點選以下問題或直接打字詢問');
-                addDefaultQuestions(); // 添加預設問題
-                hasDefaultMessageBeenAdded = true; // 標記預設訊息已添加
-            }
+            openHelperBox();
         } else {
-            helperBox.style.display = 'none';
-            helperWrapper.classList.remove('forced-expanded'); // 移除強制展開的標記
-            isHelperBoxOpen = false;
+            closeHelperBox();
         }
-    });
+    }
 
     helperWrapper.addEventListener('mouseenter', () => {
         if (!isHelperBoxOpen) {
@@ -57,6 +50,30 @@ function helper() {
         }
     });
 
+    document.addEventListener('click', (event) => {
+        if (isHelperBoxOpen && !helperWrapper.contains(event.target) && !helperBtn.contains(event.target) && !helperLabel.contains(event.target)) {
+            closeHelperBox();
+        }
+    });
+
+    function openHelperBox() {
+        helperBox.style.display = 'flex';
+        helperWrapper.classList.add('expanded', 'forced-expanded');
+        isHelperBoxOpen = true;
+
+        if (!hasDefaultMessageBeenAdded) {
+            addMessage('helper', '你好！請問我可以幫你什麼？<br>可以點選以下問題或直接打字詢問');
+            addDefaultQuestions();
+            hasDefaultMessageBeenAdded = true;
+        }
+    }
+
+    function closeHelperBox() {
+        helperBox.style.display = 'none';
+        helperWrapper.classList.remove('forced-expanded');
+        isHelperBoxOpen = false;
+    }
+
     function sendMessage() {
         const text = helperInput.value.trim();
         if (text !== '') {
@@ -64,7 +81,7 @@ function helper() {
             processInput(text);
             helperInput.value = '';
         }
-    };
+    }
 
     function addDefaultQuestions() {
         const questions = [
@@ -75,7 +92,7 @@ function helper() {
 
         questions.forEach(question => {
             const questionDiv = document.createElement('div');
-            questionDiv.className = 'chat-message helper'; // 使用現有樣式
+            questionDiv.className = 'chat-message helper';
             const bubble = document.createElement('div');
             bubble.className = 'chat-bubble';
             bubble.innerText = question.text;
@@ -86,7 +103,7 @@ function helper() {
                 handleDefaultQuestion(question.action);
             });
         });
-    };
+    }
 
     const bars = {
         北: ['Ludwig', 'Darwin', 'Blastoise', 'Oask'],
@@ -108,8 +125,8 @@ function helper() {
                 }
             }
         }
-        return null; // 如果地點不匹配
-    };
+        return null;
+    }
 
     function getRandomBar(location) {
         const region = getRegionFromLocation(location);
@@ -117,14 +134,14 @@ function helper() {
         if (!barList) return '無法找到符合的酒吧';
         const randomIndex = Math.floor(Math.random() * barList.length);
         return barList[randomIndex];
-    };
+    }
 
     function handleDefaultQuestion(action) {
         switch (action) {
             case 'findBar':
                 addMessage('user', '尋找酒吧');
                 state.step = 0; // 重置步驟
-                processInput('尋找酒吧'); // 傳入初始文本
+                processInput('尋找酒吧');
                 break;
             case 'currentTime':
                 const now = new Date();
@@ -137,35 +154,53 @@ function helper() {
                 addMessage('helper', '距離你最近的捷運站為善導寺站，末班車時間為00:44');
                 break;
         }
-    };
+    }
 
     const responses = [
         {
-            keywords: ['醉', '酒', '換一家', '其他家'],
+            keywords: ['尋找酒吧', '找酒吧'],
             response: '請告訴我你想要的酒吧風格。<br>可選擇：英式復古、新手友善等。',
             nextStep: 1
         },
-        // 其他預設的關鍵字與回應可在此添加
+        {
+            keywords: ['醉', '酒', '換一家', '其他', '再一家'],
+            response: '請告訴我你想要的酒吧風格。<br>可選擇：英式復古、新手友善等。',
+            nextStep: 1
+        },
+        {
+            keywords: ['現在時間', '幾點', '時間'],
+            response: function () {
+                const now = new Date();
+                return `現在時間是 ${now.toLocaleString('zh-TW')}`;
+            }
+        },
+        {
+            keywords: ['捷運末班車', '末班車', '捷運'],
+            response: '距離你最近的捷運站為善導寺站，末班車時間為00:44'
+        }
     ];
 
     function processInput(text) {
         let response = '';
 
-        // step 0: 開始尋找酒吧
         if (state.step === 0) {
-            let foundKeyword = false; // 用於檢查是否找到匹配的關鍵字
+            let foundKeyword = false;
 
             for (const item of responses) {
                 for (const keyword of item.keywords) {
                     if (text.toLowerCase().includes(keyword.toLowerCase())) {
-                        response = item.response;
-                        state.step = item.nextStep; // 更新 step 到下一步
+                        if (typeof item.response === 'function') {
+                            response = item.response();  // 如果回應是一個函數，則執行它
+                        } else {
+                            response = item.response;
+                        }
+                        state.step = item.nextStep || 0; // 如果沒有下一步，重置為0
                         foundKeyword = true;
                         break;
                     }
                 }
                 if (foundKeyword) {
-                    break; // 如果找到匹配的關鍵字，跳出迴圈
+                    break;
                 }
             }
 
@@ -173,35 +208,31 @@ function helper() {
                 response = '對不起，我不太明白你的問題。';
             }
 
-            // step 1: 輸入酒吧風格
         } else if (state.step === 1) {
             if (!/[\u4e00-\u9fa5]+/.test(text)) {
                 response = '請輸入中文。<br>請告訴我你想要的酒吧風格。';
             } else {
-                state.style = text; // 儲存用戶輸入的風格
+                state.style = text;
                 response = '請告訴我你的人數。<br>選項：1-2、3-6、7-10、11-20。';
-                state.step = 2; // 進入下一步
+                state.step = 2;
             }
 
-            // step 2: 輸入人數
         } else if (state.step === 2) {
             if (!/^\d+$/.test(text)) {
                 response = '請輸入數字。<br>請告訴我你的人數。<br>選項：1-2、3-6、7-10、11-20。';
             } else {
-                state.members = text; // 儲存人數
+                state.members = text;
                 response = '請告訴我你想要的地點。<br>選項：台北市大安區、高雄市鹽埕區等。';
-                state.step = 3; // 進入下一步
+                state.step = 3;
             }
 
-            // step 3: 輸入地點並給出推薦
         } else if (state.step === 3) {
-            state.location = text; // 儲存地點
+            state.location = text;
             const recommendedBar = getRandomBar(state.location);
             response = `你想尋找的酒吧風格是: ${state.style}<br>人數是: ${state.members}<br>地點是: ${state.location} <br>以下是推薦給您的酒吧：<br>${recommendedBar} <a href="#">點此查看</a>`;
-            state.step = 0; // 重置狀態，準備下一次互動
+            state.step = 0;
         }
 
-        // 最後添加消息到聊天框
         addMessage('helper', response);
     }
 
@@ -210,9 +241,12 @@ function helper() {
         messageDiv.className = `chat-message ${sender}`;
         const bubble = document.createElement('div');
         bubble.className = 'chat-bubble';
-        bubble.innerHTML = text; // 允许HTML内容
+        bubble.innerHTML = text;
         messageDiv.appendChild(bubble);
         helperText.appendChild(messageDiv);
-        helperText.scrollTop = helperText.scrollHeight; // 滾動到底部
+        helperText.scrollTop = helperText.scrollHeight;
     }
 }
+
+// 初始化小幫手功能
+helper();
