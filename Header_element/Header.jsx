@@ -37,7 +37,7 @@ function Header(props) {
                 </div>
 
                 <div className="writeBtn_el" style={btnNone}>
-                    <button>發表文章</button>
+                    <button id="writeBtn_el">發表文章</button>
                 </div>
 
                 <div className="account_login_el">
