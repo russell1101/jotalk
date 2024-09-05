@@ -592,8 +592,7 @@ html {
     #pic1-2,
     #pic1-3,
     #pic1-4,
-    #pic1-5,
-    #pic1-6,
+
     #pic2-1,
     #pic2-2,
     #pic2-3,
@@ -601,6 +600,15 @@ html {
     #pic2-5,
     #pic2-6 {
         width: 100%;
-        height: 78%;
+        height: 80%;
+    }
+}
+
+@media (max-width:1024px) {
+
+    #pic1-5,
+    #pic1-6 {
+        width: 100%;
+        height: 75%;
     }
 }
