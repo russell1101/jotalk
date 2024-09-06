@@ -165,6 +165,9 @@ main {
     width: 100%;
     max-width: 900px;
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 }
 
 .news_content {
@@ -237,7 +240,7 @@ main {
 }
 
 .text .likes {
-    margin-top: 45px;
+    margin-top: 75px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -297,14 +300,14 @@ main {
     padding: 10px 20px;
     background-color: #155569;
     color: #ffffff;
+    font-size: 1rem;
+    letter-spacing: 1px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    margin: 20px auto;
-    /* 置中 */
+    margin-bottom: 20px;
     max-width: 830px;
-    /* 確保按鈕不會超過文章區域寬度 */
 }
 
 
@@ -345,7 +348,27 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     /* 滾動條 */
-    overflow-y: auto;
+    overflow-y: scroll;
+}
+
+/* 卷軸 */
+.window::-webkit-scrollbar {
+    width: 5px;
+}
+
+.window::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    border: 1px solid #dadada;
+    background-color: #8a8a8a65;
+}
+
+.window::-webkit-scrollbar-track {
+    border-radius: 99px;
+    margin: 40px 0 5px 0;
+}
+
+.window::-webkit-scrollbar-button {
+    display: none;
 }
 
 #closeBtn img {
@@ -397,6 +420,7 @@ main {
 
 .left_detail {
     width: 50%;
+    pointer-events: none;
 }
 
 .left_detail h2 {

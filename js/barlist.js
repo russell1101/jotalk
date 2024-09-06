@@ -209,13 +209,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 為電話圖標添加事件監聽器
     phoneIcon.addEventListener('click', (event) => {
         event.preventDefault(); // 防止點擊後的默認行為（例如跳轉）
-        alert('已複製電話');
+        alert('已複製該店家電話號碼至剪貼簿');
     });
     
     // 為地圖圖標添加事件監聽器
     mapIcon.addEventListener('click', (event) => {
         event.preventDefault(); // 防止點擊後的默認行為（例如跳轉）
-        alert('已複製該店家資訊至剪貼簿');
+        alert('已複製該店家連結至剪貼簿');
     });
 });
 

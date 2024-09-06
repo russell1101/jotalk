@@ -14,6 +14,7 @@
 
     /* 主色 */
     --primary: #155569;
+    --secondary: #FFA800;
 
     /* 透明 */
     --alpha-w-40: rgba(255, 255, 255, .4);
@@ -103,9 +104,7 @@ a {
     font-weight: bold;
     /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); */
     white-space: nowrap;
-    /* 防止文字換行 */
     z-index: 1001;
-    /* 保持在最上層，確保不被其他元素覆蓋 */
     cursor: pointer;
 }
 
@@ -113,7 +112,6 @@ a {
 .helper-wrapper:hover,
 .helper-wrapper.forced-expanded {
     right: 0px;
-    /* 顯示書籤的文字 */
 }
 
 /* 小幫手按鈕樣式 */
@@ -159,9 +157,7 @@ a {
     flex-direction: column;
     overflow: visible;
     display: none;
-    /* 初始化為隱藏狀態 */
     z-index: 1000;
-    /* 保持在書籤和小幫手按鈕的下面，但依然在其他元素上方 */
 }
 
 /* 魚尾 */
@@ -180,7 +176,6 @@ a {
 /* 內部內容樣式保持不變 */
 .helper-box-content {
     padding: 20px;
-    /* 這是內部內容區域的填充，用來讓內容遠離邊框 */
 }
 
 input {
@@ -223,10 +218,15 @@ input {
 .chat-input button {
     background-color: var(--primary);
     color: white;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: .9rem;
+    font-weight: 400;
+    letter-spacing: 3px;
     border: none;
-    padding: 3px 2%;
+    padding: 2px 15px 4px 15px;
     cursor: pointer;
-    margin: 0 10px;
+    margin: 0 5px;
     border-radius: 10px;
 }
 
@@ -237,6 +237,10 @@ input {
 .chat-message {
     display: flex;
     margin-bottom: 10px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    letter-spacing: 1.5px;
 }
 
 .chat-message.user {
@@ -251,6 +255,10 @@ input {
     padding-right: 50px;
 }
 
+.commendBar {
+    font-size: 1.3rem;
+}
+
 .chat-bubble {
     max-width: 80%;
     padding: 10px;
@@ -258,45 +266,54 @@ input {
 }
 
 .chat-message.user .chat-bubble {
-    background-color: #f1f0f0;
+    background-color: #e8e8e8;
 }
 
 .chat-message.helper .chat-bubble {
-    background-color: #3f8499;
+    background-color: #286f84e2;
     color: white;
 }
 
 /* 限制滾輪樣式只應用於 .chat-messages */
 .helper-box .chat-messages {
-    overflow-y: none; /* 啟用垂直滾動條 */
-    max-height: 500px; /* 設定最大高度，使滾輪可見（根據需要調整） */
-    padding-right: 10px; /* 設置內推的距離，調整滾輪與容器右邊緣的距離 */
-    box-sizing: content-box; /* 確保 padding 不影響元素的寬度 */
-    border-right: 10px solid transparent; /* 使用透明邊框來內推滾輪 */
+    overflow-y: none;
+    /* 啟用垂直滾動條 */
+    max-height: 500px;
+    /* 設定最大高度，使滾輪可見（根據需要調整） */
+    padding-right: 10px;
+    /* 設置內推的距離，調整滾輪與容器右邊緣的距離 */
+    box-sizing: content-box;
+    /* 確保 padding 不影響元素的寬度 */
+    border-right: 10px solid transparent;
+    /* 使用透明邊框來內推滾輪 */
 }
 
 /* 自訂滾輪樣式僅限於 .chat-messages */
 .helper-box .chat-messages::-webkit-scrollbar {
-    width: 6px; /* 設定垂直滾輪的寬度 */
+    width: 6px;
+    /* 設定垂直滾輪的寬度 */
 }
 
 .helper-box .chat-messages::-webkit-scrollbar-track {
-    background: var(--alpha-b-20); /* 滾輪軌道的背景顏色 */
-    border-radius: 10px; /* 滾輪軌道的圓角 */
-    margin: 40px 0; /* 上下添加 margin，縮短垂直滾輪的長度 */
-    /* 如果是水平滾輪，則使用 margin: 0 20px; */
+    background: var(--alpha-b-20);
+    border-radius: 10px;
+    margin: 40px 0 20px;
 }
 
 .helper-box .chat-messages::-webkit-scrollbar-thumb {
-    background: #3f8499; /* 滾輪滑塊的顏色 */
-    border-radius: 10px; /* 滾輪滑塊的圓角 */
+    background: #3f8499;
+    /* 滾輪滑塊的顏色 */
+    border-radius: 10px;
+    /* 滾輪滑塊的圓角 */
 }
 
 .helper-box .chat-messages::-webkit-scrollbar-thumb:hover {
-    background: var(--primary); /* 當滑鼠懸停在滑塊上時的顏色 */
+    background: var(--primary);
+    /* 當滑鼠懸停在滑塊上時的顏色 */
 }
 
 /* 隱藏滾輪的箭頭 */
 .helper-box .chat-messages::-webkit-scrollbar-button {
-    display: none; /* 隱藏滾輪的箭頭 */
+    display: none;
+    /* 隱藏滾輪的箭頭 */
 }

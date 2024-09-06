@@ -110,6 +110,8 @@ main {
     padding: 10px;
     margin-right: 20px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -145,6 +147,7 @@ main {
 
 .nav-btn {
     margin-top: 50px;
+    max-width: 150px;
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     font-size: 1.2rem;
@@ -152,6 +155,9 @@ main {
     font-weight: 500;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     cursor: pointer;
 }
@@ -164,6 +170,10 @@ main {
 
 .nav-btn ul {
     margin-top: 20px;
+}
+
+.nav-btn ul a{
+    padding: 0 10px 0 15px;
 }
 
 .nav-btn ul a:hover {
@@ -352,7 +362,7 @@ main {
 
 .points_history::-webkit-scrollbar-track {
     border-radius: 99px;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .points_history::-webkit-scrollbar-button {

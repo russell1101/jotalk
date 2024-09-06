@@ -101,14 +101,22 @@ main {
 
 /* 左側 */
 .left-section {
+    flex: 1;
     width: 20%;
-    max-width: 160px;
+    max-width: 220px;
+    margin-right: 20px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 30px;
-    font-size: 1.1rem;
+    text-align: center;
+    white-space: nowrap;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
 }
 
 .categories .category.active,
@@ -126,16 +134,23 @@ main {
 }
 
 .categories .category {
-    padding: 2px 15px;
+    padding: 5px 15px 5px 18px;
     cursor: pointer;
     border-radius: 10px;
     color: #155569;
 }
 
+.tags{
+    margin-top: 3rem;
+}
+
 #tagTitle {
     font-size: 1.1rem;
-    border-bottom: 1px solid black;
-    margin-bottom: 2px;
+    width: 120px;
+    border-bottom: 1px solid var(--darkgrey);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    pointer-events: none;
 }
 
 .tags .tag {
@@ -152,13 +167,15 @@ main {
     background-color: #ffffff;
     width: 80%;
     max-width: 900px;
+    height: auto;
     margin-left: 20px;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 0;
-    padding: 30px 5px;
+    padding: 2rem 0;
 }
 
 .Atc_content {
@@ -189,14 +206,14 @@ main {
     padding: 10px 20px;
     background-color: #155569;
     color: #ffffff;
+    font-size: 1rem;
+    letter-spacing: 1px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    margin: 20px auto;
-    /* 置中 */
+    margin-top:30px;
     max-width: 830px;
-    /* 確保按鈕不會超過文章區域寬度 */
 }
 
 

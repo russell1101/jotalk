@@ -5,10 +5,10 @@ function helper() {
     const helperInput = document.getElementById('helperInput');
     const helperText = document.getElementById('helperText');
     const helperWrapper = document.querySelector('.helper-wrapper');
-    const helperLabel = document.querySelector('.helper-label'); // 選取 LET ME HELP 標籤
+    const helperLabel = document.querySelector('.helper-label');
 
     let isHelperBoxOpen = false; // 追蹤對話框是否已展開
-    let hasDefaultMessageBeenAdded = false; // 追蹤是否已添加預設訊息
+    let hasDefaultMessageBeenAdded = false;
     let state = {
         step: 0,
         style: '',
@@ -62,7 +62,7 @@ function helper() {
         isHelperBoxOpen = true;
 
         if (!hasDefaultMessageBeenAdded) {
-            addMessage('helper', '你好！請問我可以幫你什麼？<br>可以點選以下問題或直接打字詢問');
+            addMessage('helper', 'Hi 我是Ai小幫手BEER，歡迎向我提問喔！<br>可以點選以下問題或直接打字詢問 🍺');
             addDefaultQuestions();
             hasDefaultMessageBeenAdded = true;
         }
@@ -85,9 +85,9 @@ function helper() {
 
     function addDefaultQuestions() {
         const questions = [
-            { text: '1. 尋找酒吧', action: 'findBar' },
-            { text: '2. 現在時間', action: 'currentTime' },
-            { text: '3. 捷運末班車', action: 'lastTrain' }
+            { text: '尋找酒吧 👀', action: 'findBar' },
+            { text: '現在時間 ⏰', action: 'currentTime' },
+            { text: '捷運末班車 💨', action: 'lastTrain' }
         ];
 
         questions.forEach(question => {
@@ -98,6 +98,9 @@ function helper() {
             bubble.innerText = question.text;
             questionDiv.appendChild(bubble);
             helperText.appendChild(questionDiv);
+
+            // 添加滑鼠事件
+            questionDiv.style.cursor = 'pointer';
 
             questionDiv.addEventListener('click', () => {
                 handleDefaultQuestion(question.action);
@@ -159,12 +162,12 @@ function helper() {
     const responses = [
         {
             keywords: ['尋找酒吧', '找酒吧'],
-            response: '請告訴我你想要的酒吧風格。<br>可選擇：英式復古、新手友善等。',
+            response: '請告訴我你想要的酒吧風格<br>例如：英式復古、新手友善等',
             nextStep: 1
         },
         {
             keywords: ['醉', '酒', '換一家', '其他', '再一家'],
-            response: '請告訴我你想要的酒吧風格。<br>可選擇：英式復古、新手友善等。',
+            response: '請告訴我你想要的酒吧風格<br>例如：英式復古、新手友善等',
             nextStep: 1
         },
         {
@@ -205,31 +208,31 @@ function helper() {
             }
 
             if (!foundKeyword) {
-                response = '對不起，我不太明白你的問題。';
+                response = '對不起，我不太明白你的問題，請再次詢問😵';
             }
 
         } else if (state.step === 1) {
             if (!/[\u4e00-\u9fa5]+/.test(text)) {
-                response = '請輸入中文。<br>請告訴我你想要的酒吧風格。';
+                response = '請輸入中文<br>並告訴我你想要的酒吧風格🍺';
             } else {
                 state.style = text;
-                response = '請告訴我你的人數。<br>選項：1-2、3-6、7-10、11-20。';
+                response = '請告訴我你的人數<br>選項：1-2、3-6、7-10、11-20';
                 state.step = 2;
             }
 
         } else if (state.step === 2) {
             if (!/^\d+$/.test(text)) {
-                response = '請輸入數字。<br>請告訴我你的人數。<br>選項：1-2、3-6、7-10、11-20。';
+                response = '請輸入數字，並告訴我你的人數<br>選項：1-2、3-6、7-10、11-20';
             } else {
                 state.members = text;
-                response = '請告訴我你想要的地點。<br>選項：台北市大安區、高雄市鹽埕區等。';
+                response = '請告訴我你想要的地點<br>例如：台北市大安區、高雄市鹽埕區等';
                 state.step = 3;
             }
 
         } else if (state.step === 3) {
             state.location = text;
             const recommendedBar = getRandomBar(state.location);
-            response = `你想尋找的酒吧風格是: ${state.style}<br>人數是: ${state.members}<br>地點是: ${state.location} <br>以下是推薦給您的酒吧：<br>${recommendedBar} <a href="#">點此查看</a>`;
+            response = `你想尋找的酒吧<br>風格是: ${state.style}<br>人數是: ${state.members}<br>地點是: ${state.location} <br>以下是推薦給您的酒吧：<br>${recommendedBar} <a class='commendBar' href="#" style="color:yellow">點此查看 ⬅︎</a>`;
             state.step = 0;
         }
 

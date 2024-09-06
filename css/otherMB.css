@@ -113,6 +113,7 @@ main {
 
 .userIfm {
     margin-right: 30px;
+    pointer-events: none;
 }
 
 .userIfm li {
