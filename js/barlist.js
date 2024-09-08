@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function setupPreviewClick() {
-    // 取得所有的 preview--container 元素
+    // 取得所有的 list_item 元素
     const previewContainers = document.querySelectorAll('.list_item');
     const overlay = document.getElementById("overlay-BL");
     const myWindow = document.getElementById("loginWindow-BL");
@@ -140,6 +140,30 @@ function setupPreviewClick() {
     previewContainers.forEach(previewContainer => {
         previewContainer.addEventListener('click', function (event) {
             event.preventDefault(); // 阻止默認行為，防止自動聚焦
+            
+            // 檢查點擊的是否是愛心圖標按鈕或圖片
+            const isHeartButton = event.target.matches('button[id^="imageButton"]');
+            const isHeartImage = event.target.matches('img[id^="buttonImage"]');
+            
+            if (isHeartButton || isHeartImage) {
+                // 如果點擊的是愛心圖標按鈕或圖片，僅切換圖片，不彈出視窗
+                
+                // 找到愛心圖標的圖片元素
+                const img = isHeartButton 
+                    ? event.target.querySelector('img')  // 點擊的是按鈕，則找按鈕內的圖片
+                    : event.target;  // 點擊的是圖片，則直接使用目標
+
+                // 切換愛心圖標圖片
+                if (img.src.includes('collect-heart.svg')) {
+                    img.src = './img/barlist/collect-heart-onclick.svg';
+                } else {
+                    img.src = './img/barlist/collect-heart.svg';
+                }
+
+                return; // 停止執行，避免彈出視窗
+            }
+
+            // 如果點擊的不是愛心圖標，則顯示彈出視窗
             overlay.style.display = "block"; // 顯示遮罩層
             myWindow.style.display = "block"; // 顯示彈出視窗
             
@@ -177,67 +201,4 @@ function setupPreviewClick() {
 // 在頁面加載後設置點擊事件
 window.addEventListener('load', function() {
     setupPreviewClick();
-});
-
-
-// 彈跳視窗的內容切換
-document.querySelectorAll('.categories-BL div').forEach(category => {
-    category.addEventListener('click', function() {
-        // 移除所有分類的 active 類別
-        document.querySelectorAll('.categories-BL div').forEach(item => {
-            item.classList.remove('active');
-        });
-        // 為點擊的分類添加 active 類別
-        this.classList.add('active');
-
-        // 隱藏所有內容區域
-        document.querySelectorAll('.infoContant, .menuContant, .newsContant').forEach(content => {
-            content.classList.remove('active');
-        });
-        // 顯示對應的內容區域
-        const target = this.getAttribute('data-target');
-        document.querySelector(`.${target}`).classList.add('active');
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    // 獲取所有圖標
-    const phoneIcon = document.getElementById('phone');
-    const mapIcon = document.getElementById('map');
-    
-    // 為電話圖標添加事件監聽器
-    phoneIcon.addEventListener('click', (event) => {
-        event.preventDefault(); // 防止點擊後的默認行為（例如跳轉）
-        alert('已複製該店家電話號碼至剪貼簿');
-    });
-    
-    // 為地圖圖標添加事件監聽器
-    mapIcon.addEventListener('click', (event) => {
-        event.preventDefault(); // 防止點擊後的默認行為（例如跳轉）
-        alert('已複製該店家連結至剪貼簿');
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    // 選取所有的 .item_content 元素
-    const itemContents = document.querySelectorAll('.item_content');
-
-    // 遍歷每個 item_content 元素
-    itemContents.forEach(itemContent => {
-        // 在當前 item_content 中選取星星圖片
-        const starIcon = itemContent.querySelector('.star-icon');
-
-        if (starIcon) {
-            // 當滑鼠移到 item_content 元素時，切換星星圖片
-            itemContent.addEventListener('mouseenter', () => {
-                starIcon.src = './img/barlist/star.svg'; // 懸停時切換成不同顏色的星星
-            });
-
-            // 當滑鼠離開 item_content 元素時，恢復星星圖片
-            itemContent.addEventListener('mouseleave', () => {
-                starIcon.src = './img/barlist/star1.svg'; // 鼠標移開後恢復原始圖片
-            });
-        }
-    });
 });
