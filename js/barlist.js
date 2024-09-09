@@ -202,3 +202,68 @@ function setupPreviewClick() {
 window.addEventListener('load', function() {
     setupPreviewClick();
 });
+
+
+// 跳出視窗切換分頁
+document.addEventListener('DOMContentLoaded', function () {
+    // 取得所有分類的元素
+    const categoryButtons = document.querySelectorAll('.categories-BL div');
+    
+    // 監聽每個分類的點擊事件
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // 移除所有分類上的 active 樣式
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+            // 添加當前點擊分類的 active 樣式
+            this.classList.add('active');
+
+            // 取得對應的內容 target
+            const targetContent = this.getAttribute('data-target');
+
+            // 隱藏所有內容
+            document.querySelectorAll('.contant-BL > div').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // 顯示對應的內容
+            document.querySelector(`.${targetContent}`).classList.add('active');
+        });
+    });
+})
+
+// 加入收藏跳出通知
+document.querySelector('.collect-BL a').addEventListener('click', function(event) {
+    event.preventDefault();  // 阻止預設的跳轉行為
+    alert('已加入收藏');
+});
+
+// 跳出儲存電話
+document.querySelector('.icon-phone').addEventListener('click', function(event) {
+    event.preventDefault();  // 阻止預設的跳轉行為
+    alert('已將電話儲存到剪貼簿');
+});
+
+// 跳出儲存資訊
+document.querySelector('.icon-map').addEventListener('click', function(event) {
+    event.preventDefault();  // 阻止預設的跳轉行為
+    alert('已將店家資料儲存到剪貼簿');
+});
+
+// 選擇所有的 list_item 元素
+document.querySelectorAll('.list_item').forEach(item => {
+    // 取得星星圖片元素
+    const starIcon = item.querySelector('.star-icon');
+    
+    // 監聽滑鼠進入事件
+    item.addEventListener('mouseenter', function() {
+        // 當滑鼠進入，變更星星圖片
+        starIcon.src = './img/barlist/star.svg';  // 替換成你想要顯示的星星圖片
+    });
+
+    // 監聽滑鼠離開事件
+    item.addEventListener('mouseleave', function() {
+        // 當滑鼠離開，恢復星星圖片
+        starIcon.src = './img/barlist/star1.svg';  // 恢復原來的星星圖片
+    });
+});
