@@ -458,43 +458,75 @@ a.tag {
     }
 
     &:nth-of-type(3) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/bar-6.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-3.jpg");
     }
 
     &:nth-of-type(4) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/darwin.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-4.jpg");
     }
 
     &:nth-of-type(5) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/bar-10.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-5.jpg");
     }
 
     &:nth-of-type(6) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/winebucket.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-6.jpg");
     }
 
     &:nth-of-type(7) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/blastoise.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-7.jpg");
     }
 
     &:nth-of-type(8) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/middletwo.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-8.jpg");
     }
 
     &:nth-of-type(9) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/bar-12.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-9.jpg");
     }
 
     &:nth-of-type(10) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/oask.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-10.jpg");
     }
 
     &:nth-of-type(11) .preview-image {
-        background-image: url("../img/barlist/barlist_pic/rivernight.jpg");
+        background-image: url("../img/barlist/barlist_pic/bar-11.jpg");
     }
 
     &:nth-of-type(12) .preview-image {
+        background-image: url("../img/barlist/barlist_pic/bar-12.jpg");
+    }
+
+    &:nth-of-type(13) .preview-image {
         background-image: url("../img/barlist/barlist_pic/bar-13.jpg");
+    }
+
+    &:nth-of-type(14) .preview-image {
+        background-image: url("../img/barlist/barlist_pic/bar-14.jpg");
+    }
+
+    &:nth-of-type(15) .preview-image {
+        background-image: url("../img/barlist/barlist_pic/bar-15.jpg");
+    }
+
+    &:nth-of-type(16) .preview-image {
+        background-image: url("../img/barlist/barlist_pic/bar-16.jpg");
+    }
+
+    &:nth-of-type(17) .preview-image {
+        background-image: url("../img/barlist/barlist_pic/bar-17.jpg");
+    }
+
+    &:nth-of-type(18) .preview-image {
+        background-image: url("../img/barlist/barlist_pic/bar-18.jpg");
+    }
+
+    &:nth-of-type(19) .preview-image {
+        background-image: url("../img/barlist/barlist_pic/bar-19.jpg");
+    }
+
+    &:nth-of-type(20    ) .preview-image {
+        background-image: url("../img/barlist/barlist_pic/bar-20.jpg");
     }
 }
 
