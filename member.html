@@ -15,6 +15,9 @@
 
     <script type="text/babel" src="./Header_element/Header.jsx"></script>
     <link rel="stylesheet" href="./Header_element/Header.css">
+    <!-- 文章彈出元件 -->
+    <script type="text/babel" src="./Post_element/Post.jsx"></script>
+    <link rel="stylesheet" href="./Post_element/Post.css">
 
     <link rel="stylesheet" href="./css/member.css">
 </head>
@@ -37,6 +40,95 @@
             .render(<App />)
     </script>
 
+
+    <!-- 文章彈出頁 -->
+    <div id="post"></div>
+    <script type="text/babel">
+        function App() {
+
+            const article = [
+                {
+                    id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                    target: '1',
+                    user_img: './img/forum/account/user/user6.jpg',
+                    user_name: '信義王陽明',
+                    post_time: '9月20號 20:00',
+                    art_title: '信義fake sober，打算聊100個女生',
+                    hashtag1: '#探店心得',
+                    hashtag2: '#酒超好喝',
+                    hashtag3: '#酒吧推薦',
+                    art_content: '我現在人在信義fake sober，打算成為兩性中的King！目標是要和100個女生展開對話，目前進度是0，但這只是個開始。別擔心，我是那種不會讓你失望的男人。問什麼問題都可以，這裡不會叫你去估狗，直接來找我就對了。讓我成為你們的答案庫，讓你們的夜晚充滿笑聲和驚喜。每個人都有機會，我也有我的計畫和策略，要和這100個女生逐一展開精彩對話。來吧，大家，一起玩這個有趣的遊戲！今晚，讓我們把這裡變成我們的舞台！',
+                    heart_num: '687',
+                    comment_num: '87',
+                    bookMark_num: '98',
+                    time: '2024-09-20T18:22:00',
+                    time2: '2024-09-01T18:22:00',
+                    user_url: '../img/forum/account/user/user6.jpg',
+                    userName: '信義878',
+                    user_time: '9月20日 18:22',
+                    user_time2: '9月01日 18:22',
+                    floor: 'B1',
+                    content: 'barcode推一個!!',
+                    heart_cmt: 150,
+                    comment_cmt: 1
+                },
+                {
+                    id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                    target: '2',
+                    user_img: './img/forum/account/user/user6.jpg',
+                    user_name: '信義王陽明',
+                    post_time: '9月20號 20:00',
+                    art_title: 'c8 c8 c8 c8 c8c 8 c',
+                    hashtag1: '#探店心得',
+                    hashtag2: '#酒超好喝',
+                    hashtag3: '#酒吧推薦',
+                    art_content: '我現在人在信義fake sober，打算成為兩性中的King！目標是要和100個女生展開對話，目前進度是0，但這只是個開始。別擔心，我是那種不會讓你失望的男人。問什麼問題都可以，這裡不會叫你去估狗，直接來找我就對了。讓我成為你們的答案庫，讓你們的夜晚充滿笑聲和驚喜。每個人都有機會，我也有我的計畫和策略，要和這100個女生逐一展開精彩對話。來吧，大家，一起玩這個有趣的遊戲！今晚，讓我們把這裡變成我們的舞台！',
+                    heart_num: '687',
+                    comment_num: '87',
+                    bookMark_num: '98',
+                    time: '2024-09-20T18:22:00',
+                    time2: '2024-09-01T18:22:00',
+                    user_url: '../img/forum/account/user/user6.jpg',
+                    userName: '信義878',
+                    user_time: '9月20日 18:22',
+                    user_time2: '9月01日 18:22',
+                    floor: 'B1',
+                    content: 'barcode推一個!!',
+                    heart_cmt: 150,
+                    comment_cmt: 1
+                }
+            ]
+
+            React.useEffect(() => {
+                post();
+            }, []);
+
+            return (
+                <>
+
+                    {
+                        article.slice(0, 1).map((item) => {
+                            return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} userName={item.userName} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} content={item.content} heart_cmt={item.heart_cmt} comment_cmt={item.comment_cmt} />
+                        })
+                    }
+
+
+                    {
+                        article.slice(1, 2).map((item) => {
+                            return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} userName={item.userName} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} content={item.content} heart_cmt={item.heart_cmt} comment_cmt={item.comment_cmt} />
+                        })
+                    }
+
+                </>
+            )
+        }
+        ReactDOM
+            .createRoot(document.getElementById('post'))
+            .render(<App />)
+    </script>
+
+
+
     <main>
         <img class="member-bg" src="./img/bg-tree.jpg">
         <div id="member-content">
@@ -56,7 +148,7 @@
                 </div>
             </div>
             <div id="member-right">
-                <div id="mb-goal" >
+                <div id="mb-goal">
                     <div id="member-rank">
                         <img src="./img/member/member-rank.png" alt="會員目前等級">
                         <a class="toAward" href="./forum_award.html">前往兌換優惠</a>
@@ -204,11 +296,11 @@
                                             <p>9月酒吧評選</p>
                                             <div class="like-num">🤍 888</div>
                                         </div>
-                                        <div class="record-date">
-                                            <p>幫我找這位帥哥是誰</p>
+                                        <div class="record-date article" data-target="content-1">
+                                            <p>信義fake sober，打算聊100個女生</p>
                                             <div class="like-num">🤍 520</div>
                                         </div>
-                                        <div class="record-date">
+                                        <div class="record-date article" data-target="content-2">
                                             <p>一個人去酒吧是為了什麼？</p>
                                             <div class="like-num">🤍 111</div>
                                         </div>
@@ -431,6 +523,7 @@
     </script>
 
     <script src="./Header_element/login.js"></script>
+    <script src="./Post_element/Post.js"></script>
     <script src="./js/member.js"></script>
 </body>
 

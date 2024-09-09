@@ -7,8 +7,8 @@ function post() {
 
     articles.forEach(article => {
         article.addEventListener('click', function () {
-            
-            const Content = document.getElementById('content-1');
+            const target = article.getAttribute('data-target'); // 獲取 data-target 值
+            const Content = document.getElementById(target); // 找到對應的 content
 
             overlay.style.display = "block";
             Content.classList.remove('hidden');
