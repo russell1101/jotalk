@@ -202,3 +202,36 @@ function setupPreviewClick() {
 window.addEventListener('load', function() {
     setupPreviewClick();
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // 取得所有分類的元素
+    const categoryButtons = document.querySelectorAll('.categories-BL div');
+    
+    // 監聽每個分類的點擊事件
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // 移除所有分類上的 active 樣式
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+            // 添加當前點擊分類的 active 樣式
+            this.classList.add('active');
+
+            // 取得對應的內容 target
+            const targetContent = this.getAttribute('data-target');
+
+            // 隱藏所有內容
+            document.querySelectorAll('.contant-BL > div').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // 顯示對應的內容
+            document.querySelector(`.${targetContent}`).classList.add('active');
+        });
+    });
+})
+
+document.querySelector('.collect-BL a').addEventListener('click', function(event) {
+    event.preventDefault();  // 阻止預設的跳轉行為
+    alert('已加入收藏');
+});
