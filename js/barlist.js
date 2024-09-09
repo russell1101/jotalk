@@ -238,6 +238,18 @@ document.querySelector('.collect-BL a').addEventListener('click', function(event
     alert('已加入收藏');
 });
 
+// 跳出儲存電話
+document.querySelector('.icon-phone').addEventListener('click', function(event) {
+    event.preventDefault();  // 阻止預設的跳轉行為
+    alert('已將電話儲存到剪貼簿');
+});
+
+// 跳出儲存資訊
+document.querySelector('.icon-map').addEventListener('click', function(event) {
+    event.preventDefault();  // 阻止預設的跳轉行為
+    alert('已將店家資料儲存到剪貼簿');
+});
+
 // 選擇所有的 list_item 元素
 document.querySelectorAll('.list_item').forEach(item => {
     // 取得星星圖片元素
