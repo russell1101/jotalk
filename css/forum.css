@@ -280,7 +280,7 @@ main {
     pointer-events: none;
 }
 
-.ranking-item a{
+.ranking-item a {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -308,7 +308,7 @@ main {
     transition: .15s ease-in-out;
 }
 
-.tag-name:hover{
+.tag-name:hover {
     scale: 1.04;
 }
 
@@ -364,7 +364,7 @@ main {
     transition: 0.2s ease-in-out;
 }
 
-.hotTag-name:hover{
+.hotTag-name:hover {
     scale: 1.07;
 }
 
@@ -864,6 +864,36 @@ main {
 .bartendWinePic3:hover,
 .bartendWinePic4:hover {
     scale: 0.98;
+}
+
+/* 遮罩跟彈出視窗 */
+/* 初始狀態：遮罩隱藏 */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+}
+
+/* 中心顯示圖片 */
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* 大圖片樣式 */
+.overlay-content img {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: block;
 }
 
 @media (max-width: 1024px) {

@@ -43,6 +43,13 @@
             .render(<App />)
     </script>
 
+    <!-- 遮罩及點擊圖片顯示彈出視窗的區塊 -->
+    <div id="image-overlay" class="overlay">
+        <div class="overlay-content">
+            <img id="overlay-image" src="" alt="大圖">
+        </div>
+    </div>
+
     <main>
         <img class="forum-bg" src="./img/bg-tree.jpg"></img>
         <section class="forum_body">
@@ -106,49 +113,49 @@
                                 </a>
                             </div>
                             <div class="ranking-item"><a href="./otherMember.html">
-                                <span class="rank-number">NO.3</span>
-                                <span class="tag-name">古亭波奇</span>
-                                <span class="tag-num">69家</span>
-                            </a>
+                                    <span class="rank-number">NO.3</span>
+                                    <span class="tag-name">古亭波奇</span>
+                                    <span class="tag-num">69家</span>
+                                </a>
                             </div>
                             <h2>【聽我的準沒錯】</h2>
                             <p>被選為精選文章的數量</p>
                             <div class="ranking-item"><a href="./otherMember.html">
-                                <span class="rank-number">NO.1</span>
-                                <span class="tag-name">景美7文</span>
-                                <span class="tag-num">50篇</span>
+                                    <span class="rank-number">NO.1</span>
+                                    <span class="tag-name">景美7文</span>
+                                    <span class="tag-num">50篇</span>
                                 </a>
                             </div>
                             <div class="ranking-item"><a href="./otherMember.html">
-                                <span class="rank-number">NO.2</span>
-                                <span class="tag-name">哼哼亨利</span>
-                                <span class="tag-num">40篇</span>
+                                    <span class="rank-number">NO.2</span>
+                                    <span class="tag-name">哼哼亨利</span>
+                                    <span class="tag-num">40篇</span>
                                 </a>
                             </div>
                             <div class="ranking-item"><a href="./otherMember.html">
-                                <span class="rank-number">NO.3</span>
-                                <span class="tag-name">蓋瑞底家</span>
-                                <span class="tag-num">30篇</span>
+                                    <span class="rank-number">NO.3</span>
+                                    <span class="tag-name">蓋瑞底家</span>
+                                    <span class="tag-num">30篇</span>
                                 </a>
                             </div>
                             <h2>【愛心收割者】</h2>
                             <p>發表文章所收穫的愛心數量</p>
                             <div class="ranking-item"><a href="./otherMember.html">
-                                <span class="rank-number">NO.1</span>
-                                <span class="tag-name">哼哼亨利</span>
-                                <span class="tag-num">999+</span>
+                                    <span class="rank-number">NO.1</span>
+                                    <span class="tag-name">哼哼亨利</span>
+                                    <span class="tag-num">999+</span>
                                 </a>
                             </div>
                             <div class="ranking-item"><a href="./otherMember.html">
-                                <span class="rank-number">NO.2</span>
-                                <span class="tag-name">古亭波奇</span>
-                                <span class="tag-num">500+</span>
+                                    <span class="rank-number">NO.2</span>
+                                    <span class="tag-name">古亭波奇</span>
+                                    <span class="tag-num">500+</span>
                                 </a>
                             </div>
                             <div class="ranking-item"><a href="./otherMember.html">
-                                <span class="rank-number">NO.3</span>
-                                <span class="tag-name">景美7文</span>
-                                <span class="tag-num">200+</span>
+                                    <span class="rank-number">NO.3</span>
+                                    <span class="tag-name">景美7文</span>
+                                    <span class="tag-num">200+</span>
                                 </a>
                             </div>
                         </div>
@@ -426,32 +433,32 @@
                     </div>
                     <!-- 六大基酒區域 -->
                     <ul class="baseWine_content active">
-                        <li class="baseWinePic1">
+                        <li class="baseWinePic1" data-large="./img/forum/teach/base-vodka.png">
                             <a href="./forum_content/forum_teach.html" class="content"></a>
                         </li>
-                        <li class="baseWinePic2">
+                        <li class="baseWinePic2" data-large="./img/forum/teach/base-whisky.png">
                             <a href="./forum_content/forum_teach.html" class="content"></a>
                         </li>
-                        <li class="baseWinePic3">
+                        <li class="baseWinePic3" data-large="./img/forum/teach/base-gin.png">
                             <a href="./forum_content/forum_teach.html" class="content"></a>
                         </li>
-                        <li class="baseWinePic4">
+                        <li class="baseWinePic4" data-large="./img/forum/teach/base-rum.png">
                             <a href="./forum_content/forum_teach.html" class="content"></a>
                         </li>
 
                     </ul>
                     <!-- 經典調酒區域 -->
-                    <ul class="bartendWine_content ">
-                        <li class="bartendWinePic1">
+                    <ul class="bartendWine_content">
+                        <li class="bartendWinePic1" data-large="./img/forum/teach/oldfashion.png">
                             <a href="./forum_content/forum_teach.html" class="content"></a>
                         </li>
-                        <li class="bartendWinePic2">
+                        <li class="bartendWinePic2" data-large="./img/forum/teach/lonisland.png">
                             <a href="./forum_content/forum_teach.html" class="content"></a>
                         </li>
-                        <li class="bartendWinePic3">
+                        <li class="bartendWinePic3" data-large="./img/forum/teach/sidecar.png">
                             <a href="./forum_content/forum_teach.html" class="content"></a>
                         </li>
-                        <li class="bartendWinePic4">
+                        <li class="bartendWinePic4" data-large="./img/forum/teach/margarita.png">
                             <a href="./forum_content/forum_teach.html" class="content"></a>
                         </li>
                     </ul>

@@ -168,3 +168,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// 點擊彈出視窗
+
+document.addEventListener("DOMContentLoaded", function () {
+    const overlay = document.getElementById("image-overlay");
+    const overlayImage = document.getElementById("overlay-image");
+
+    // 查找所有帶有 data-large 屬性的 li 元素
+    const items = document.querySelectorAll("li[data-large]");
+
+    // 為每個 li 添加點擊事件處理器
+    items.forEach(item => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();  // 防止 a 標籤的預設行為
+            const largeImageSrc = item.getAttribute("data-large");  // 取得 data-large 屬性的值
+            overlayImage.src = largeImageSrc;  // 設置彈出圖片的 src
+            overlay.style.display = "block";   // 顯示遮罩
+        });
+    });
+
+    // 點擊遮罩時隱藏遮罩和圖片
+    overlay.addEventListener("click", function () {
+        overlay.style.display = "none";
+    });
+});
