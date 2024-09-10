@@ -1155,7 +1155,7 @@ a.tag {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin: 15px 0;
 }
 
 .menu-pic {
