@@ -885,7 +885,7 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    background-color: #ececec;
     padding: 20px;
 }
 
