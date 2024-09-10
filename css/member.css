@@ -172,7 +172,7 @@ main {
     margin-top: 20px;
 }
 
-.nav-btn ul a{
+.nav-btn ul a {
     padding: 0 10px 0 15px;
 }
 
@@ -500,7 +500,18 @@ main {
 }
 
 @media (max-width:1024px) {
-    #points{
+    #points {
         overflow-X: scroll;
     }
+}
+
+
+/* 文章區 */
+.article {
+    cursor: pointer;
+    transition: .35s ease-in-out;
+}
+
+.article:hover {
+    transform: scale(.99);
 }
