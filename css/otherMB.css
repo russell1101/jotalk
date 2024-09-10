@@ -201,7 +201,7 @@ main {
 .nav-ombCollect {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 20px;
+    margin: 10px 10px 20px;
 }
 
 .nav-ombCollect ul {
