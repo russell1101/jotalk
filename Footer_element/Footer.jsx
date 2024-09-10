@@ -7,7 +7,7 @@ function Footer() {
                     <ul id="info">
                         <li><a href="https://policies.google.com/privacy?hl=zh-TW">隱私政策</a></li>
                         <li><a href="https://policies.google.com/terms?hl=zh-TW">服務條款</a></li>
-                        <li><a href="../about.html">關於我們</a></li>
+                        <li><a href="./about.html">關於我們</a></li>
                         <li><a href="#">店家登入</a></li>
                     </ul>
                     <ul id="social">
