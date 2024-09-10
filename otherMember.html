@@ -84,7 +84,7 @@
                         <div class="collect-article">
                             <img class="article" data-target="content-1" src="./img/member/otherMember/forum-7.png"
                                 alt="">
-                            <img class="article" data-target="content-1" src="./img/member/otherMember/forum-2.png"
+                            <img class="article" data-target="content-2" src="./img/member/otherMember/forum-2.png"
                                 alt="">
                             <img class="article" data-target="content-1" src="./img/member/otherMember/forum-3.png"
                                 alt="">
@@ -108,13 +108,15 @@
 
 
 
-        <div id="root"></div>
+        <!-- 文章彈出頁 -->
+        <div id="post"></div>
         <script type="text/babel">
             function App() {
 
                 const article = [
                     {
                         id: 1, //跑迴圈時 需要一個資料不會重複的key值
+                        target: '1',
                         user_img: './img/forum/account/user/user6.jpg',
                         user_name: '信義王陽明',
                         post_time: '9月20號 20:00',
@@ -133,6 +135,31 @@
                         user_time: '9月20日 18:22',
                         user_time2: '9月01日 18:22',
                         floor: 'B1',
+                        content: '泰酷辣!!!',
+                        heart_cmt: 150,
+                        comment_cmt: 1
+                    },
+                    {
+                        id: 2, //跑迴圈時 需要一個資料不會重複的key值
+                        target: '2',
+                        user_img: './img/forum/account/user/user2.jpg',
+                        user_name: '鶯歌鯉魚王',
+                        post_time: '9月18號 20:00',
+                        art_title: '9月酒吧評選',
+                        hashtag1: '#探店心得',
+                        hashtag2: '#酒超好喝',
+                        hashtag3: '#酒吧推薦',
+                        art_content: '我信義酒吧評選 1.sleep no more 2.fake sober 3.draft land 4.台虎 5.barcode',
+                        heart_num: '687',
+                        comment_num: '87',
+                        bookMark_num: '98',
+                        time: '2024-09-20T18:22:00',
+                        time2: '2024-09-01T18:22:00',
+                        user_url: '../img/forum/account/user/user4.jpg',
+                        userName: '信義878',
+                        user_time: '9月20日 18:22',
+                        user_time2: '9月01日 18:22',
+                        floor: 'B1',
                         content: 'barcode推一個!!',
                         heart_cmt: 150,
                         comment_cmt: 1
@@ -146,15 +173,20 @@
                 return (
                     <>
                         {
-                            article.map((item) => {
-                                return <Post key={item.id} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} userName={item.userName} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} content={item.content} heart_cmt={item.heart_cmt} comment_cmt={item.comment_cmt} />
+                            article.slice(0, 1).map((item) => {
+                                return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} userName={item.userName} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} content={item.content} heart_cmt={item.heart_cmt} comment_cmt={item.comment_cmt} />
+                            })
+                        }
+                        {
+                            article.slice(1, 2).map((item) => {
+                                return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} userName={item.userName} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} content={item.content} heart_cmt={item.heart_cmt} comment_cmt={item.comment_cmt} />
                             })
                         }
                     </>
                 )
             }
             ReactDOM
-                .createRoot(document.getElementById('root'))
+                .createRoot(document.getElementById('post'))
                 .render(<App />)
         </script>
     </main>

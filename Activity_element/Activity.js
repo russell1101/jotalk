@@ -1,6 +1,6 @@
 function activity_windowout() {
     // 點擊article 出現視窗
-    const articles = document.querySelectorAll('.article');
+    const articles = document.querySelectorAll('.article_evt');
     articles.forEach(article => {
         article.addEventListener('click', function () {
             const overlay = document.getElementById('overlay_evt');

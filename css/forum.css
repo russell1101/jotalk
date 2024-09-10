@@ -644,6 +644,10 @@ main {
     background-image: url('../img/forum/forum_right_pic/event-10.jpg');
 }
 
+.article_evt {
+    border: none;
+    background-color: transparent;
+}
 
 /* 文章區 */
 .body_atc {
