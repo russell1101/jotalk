@@ -432,61 +432,61 @@ html {
 
 /* 為不同的 section 設置背景圖片 */
 #pic1-1 {
-    background-image: url('../../img/forum/teach/base-brandy.png');
+    background-image: url('./../img/forum/teach/base-brandy.png');
 }
 
 #pic1-2 {
-    background-image: url('../../img/forum/teach/base-gin.png');
+    background-image: url('./../img/forum/teach/base-gin.png');
     height: 675px;
 }
 
 #pic1-3 {
-    background-image: url('../../img/forum/teach/base-tequila.png');
+    background-image: url('./../img/forum/teach/base-tequila.png');
 }
 
 #pic1-4 {
-    background-image: url('../../img/forum/teach/base-rum.png');
+    background-image: url('./../img/forum/teach/base-rum.png');
     height: 675px;
 }
 
 #pic1-5 {
-    background-image: url('../../img/forum/teach/base-vodka.png');
+    background-image: url('./../img/forum/teach/base-vodka.png');
     height: 660px;
 }
 
 #pic1-6 {
-    background-image: url('../../img/forum/teach/base-whisky.png');
+    background-image: url('./../img/forum/teach/base-whisky.png');
     height: 640px;
 }
 
 /* 為經典調酒 sections 設置背景圖片 */
 #pic2-1 {
-    background-image: url('../../img/forum/teach/sidecar.png');
+    background-image: url('./../img/forum/teach/sidecar.png');
     height: 675px;
 }
 
 #pic2-2 {
-    background-image: url('../../img/forum/teach/ginfizz.png');
+    background-image: url('./../img/forum/teach/ginfizz.png');
     height: 663px;
 }
 
 #pic2-3 {
-    background-image: url('../../img/forum/teach/margarita.png');
+    background-image: url('./../img/forum/teach/margarita.png');
     height: 665px;
 }
 
 #pic2-4 {
-    background-image: url('../../img/forum/teach/lonisland.png');
+    background-image: url('./../img/forum/teach/lonisland.png');
     height: 665px;
 }
 
 #pic2-5 {
-    background-image: url('../../img/forum/teach/cosmopo.png');
+    background-image: url('./../img/forum/teach/cosmopo.png');
     height: 660px;
 }
 
 #pic2-6 {
-    background-image: url('../../img/forum/teach/oldfashion.png');
+    background-image: url('./../img/forum/teach/oldfashion.png');
     height: 660px;
 }
 
