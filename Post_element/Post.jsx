@@ -74,20 +74,20 @@ function Post(props) {
                         </div>
                         <div className="comment" data-timestamp={time2}>
                             <div className="comment_user">
-                                <figure><img src={user_url} alt="" /></figure>
-                                <h2>{userName}</h2>
+                                <figure><img src={user_url2} alt="" /></figure>
+                                <h2>{userName2}</h2>
                                 <small>{user_time2}</small>
-                                <small>{floor}</small>
+                                <small>{floor2}</small>
                             </div>
-                            <p>{content}</p>
+                            <p>{content2}</p>
                             <div id="like">
                                 <div id="heart">
                                     <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
-                                    <p id="heart_num">{heart_cmt}</p>
+                                    <p id="heart_num">{heart_cmt2}</p>
                                 </div>
                                 <div id="comment">
                                     <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
-                                    <p id="comment_num">{comment_cmt}</p>
+                                    <p id="comment_num">{comment_cmt2}</p>
                                 </div>
                                 <small>查看更多回覆</small>
                             </div>

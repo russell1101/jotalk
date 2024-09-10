@@ -312,7 +312,7 @@ a {
 main {
     display: flex;
     justify-content: center;
-    background-image: url(../../img/forum/teach/teach-bg-pic.jpg);
+    background-image: url(./../img/forum/teach/teach-bg-pic.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
