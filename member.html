@@ -67,14 +67,20 @@
                     bookMark_num: '98',
                     time: '2024-09-20T20:22:00',
                     time2: '2024-09-20T20:30:00',
-                    user_url: '../img/forum/account/user/user6.jpg',
+                    user_url: './img/forum/account/user/user6.jpg',
+                    user_url2: './img/forum/account/user/user2.jpg',
                     userName: '信義878',
+                    userName2: '哈哈',
                     user_time: '9月20日 20:22',
                     user_time2: '9月20日 20:30',
                     floor: 'B1',
+                    floor2: 'B2',
                     content: '泰酷辣!!!',
+                    content2: '說啥呢這哥',
                     heart_cmt: 150,
-                    comment_cmt: 1
+                    heart_cmt2: 60,
+                    comment_cmt: 1,
+                    comment_cmt2: 6
                 },
                 {
                     id: 2, //跑迴圈時 需要一個資料不會重複的key值
@@ -90,16 +96,22 @@
                     heart_num: '687',
                     comment_num: '87',
                     bookMark_num: '98',
-                    time: '2024-09-20T18:22:00',
-                    time2: '2024-09-01T18:22:00',
-                    user_url: '../img/forum/account/user/user4.jpg',
+                    time: '2024-09-20T20:22:00',
+                    time2: '2024-09-20T20:30:00',
+                    user_url: './img/forum/account/user/user6.jpg',
+                    user_url2: './img/forum/account/user/user3.jpg',
                     userName: '信義878',
-                    user_time: '9月20日 18:22',
-                    user_time2: '9月01日 18:22',
+                    userName2: '哈哈',
+                    user_time: '9月20日 20:22',
+                    user_time2: '9月20日 20:30',
                     floor: 'B1',
-                    content: 'barcode推一個!!',
+                    floor2: 'B2',
+                    content: 'barcode推一個!!!',
+                    content2: 'fakesober絕對是最頂的把..',
                     heart_cmt: 150,
-                    comment_cmt: 1
+                    heart_cmt2: 60,
+                    comment_cmt: 1,
+                    comment_cmt2: 6
                 }
             ]
 
@@ -113,22 +125,20 @@
 
             return (
                 <>
-                    <Activity />
-
                     {
                         article.slice(0, 1).map((item) => {
-                            return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} userName={item.userName} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} content={item.content} heart_cmt={item.heart_cmt} comment_cmt={item.comment_cmt} />
+                            return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} user_url2={item.user_url2} userName={item.userName} userName2={item.userName2} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} floor2={item.floor2} content={item.content} content2={item.content2} heart_cmt={item.heart_cmt} heart_cmt2={item.heart_cmt2} comment_cmt={item.comment_cmt} comment_cmt2={item.comment_cmt2} />
                         })
                     }
 
 
                     {
                         article.slice(1, 2).map((item) => {
-                            return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} userName={item.userName} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} content={item.content} heart_cmt={item.heart_cmt} comment_cmt={item.comment_cmt} />
+                            return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} user_url2={item.user_url2} userName={item.userName} userName2={item.userName2} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} floor2={item.floor2} content={item.content} content2={item.content2} heart_cmt={item.heart_cmt} heart_cmt2={item.heart_cmt2} comment_cmt={item.comment_cmt} comment_cmt2={item.comment_cmt2} />
                         })
                     }
-
-                </>
+                    <Activity />
+                </ >
             )
         }
         ReactDOM
@@ -497,12 +507,15 @@
                     </div>
                     <!-- 文章元件 -->
                     <div class="collect-article">
-                        <img class="article" data-target="content-1" src="./img/member/otherMember/forum-1.png" draggable="false">
-                        <img class="article" data-target="content-2" src="./img/member/otherMember/forum-2.png" draggable="false">
-                        <img class="article" data-target="content-1" src="./img/member/otherMember/forum-3.png" draggable="false">
+                        <img class="article" data-target="content-1" src="./img/member/otherMember/forum-1.png"
+                            draggable="false">
+                        <img class="article" data-target="content-2" src="./img/member/otherMember/forum-2.png"
+                            draggable="false">
+                        <img class="article" data-target="content-1" src="./img/member/otherMember/forum-3.png"
+                            draggable="false">
                     </div>
                     <div class="collect-member">
-                        <img src="./img/member/member-collect.png"draggable="false">
+                        <img src="./img/member/member-collect.png" draggable="false">
                     </div>
                 </div>
                 <div id="mb-visited">

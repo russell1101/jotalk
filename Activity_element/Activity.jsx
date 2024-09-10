@@ -24,8 +24,9 @@ function Activity(props) {
                             <div class="right_detail">
 
                                 <div class="share_evt">
-                                    <img id="bookmark" src="./img/forum/news/likes/bookmark_window.svg" alt="" onClick={handleBookmarkClick} />
-                                    <img id="share" src="./img/forum/news/likes/share_window.svg" alt=""  onClick={handleShareClick}/>
+                                {/* onClick={handleBookmarkClick}  onClick={handleShareClick} */}
+                                    <img id="bookmark" src="./img/forum/news/likes/bookmark_window.svg" alt=""  />
+                                    <img id="share" src="./img/forum/news/likes/share_window.svg" alt=""  />
                                 </div>
                                 <p><code class="bold">活動時間：</code><br />
                                     2024年9月20日（週五）<br />19:00-22:00<br />

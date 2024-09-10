@@ -1,6 +1,6 @@
 // 文章視窗元件
 function Post(props) {
-    const { target, user_img, user_name, post_time, art_title, hashtag1, hashtag2, hashtag3, art_content, heart_num, comment_num, bookMark_num, time, time2, user_url, userName, user_time, user_time2, floor, content, heart_cmt, comment_cmt } = props;
+    const { target, user_img, user_name, post_time, art_title, hashtag1, hashtag2, hashtag3, art_content, heart_num, comment_num, bookMark_num, time, time2, user_url, user_url2, userName, userName2, user_time, user_time2, floor, floor2, content, content2, heart_cmt, heart_cmt2, comment_cmt, comment_cmt2 } = props;
     const artId = `content-${target}`;
 
     return (
