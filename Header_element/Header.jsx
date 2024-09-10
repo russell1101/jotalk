@@ -51,7 +51,7 @@ function Header(props) {
                 <div id="account_overlay_el" className="account_overlay_el"></div>
 
                 <div id="loginWindow_el" className="window_el">
-                    <figure id="closebtn_el"><img src="../img/member/iconmonstr-x.svg"/></figure>
+                    <figure id="closebtn_el"><img src="./img/member/iconmonstr-x.svg"/></figure>
                     <div className="contant_el">
                         <div className="login_border_el">
                             <h2>LOGIN</h2>
