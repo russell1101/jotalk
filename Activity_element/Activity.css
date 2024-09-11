@@ -250,3 +250,9 @@ a {
     display: block;
     opacity: 1;
 }
+
+/* 當鼠標懸停在圖片上時，改變為手指形狀 */
+#bookmark,
+#share {
+    cursor: pointer;
+}

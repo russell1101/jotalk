@@ -33,4 +33,18 @@ function activity_windowout() {
             popWindow.style.display = 'none';
         }, 350); // 350 毫秒与 CSS 中的 transition 持续时间一致
     }
+
+
+
+        // 監聽 'bookmark' 圖片的點擊事件
+        document.getElementById('bookmark').addEventListener('click', function() {
+            alert('已將活動加入收藏');
+        });
+    
+        // 監聽 'share' 圖片的點擊事件
+        document.getElementById('share').addEventListener('click', function() {
+            alert('已將活動複製到剪貼簿');
+        });
 }
+
+
