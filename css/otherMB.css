@@ -136,9 +136,24 @@ main {
     font-optical-sizing: auto;
     font-size: 1.1rem;
     letter-spacing: .1rem;
-    font-weight: 600;
+    font-weight: 500;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.category {
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: .2s ease;
+    margin-top: 20px;
+}
+
+.category a:hover {
+    color: var(--primary);
+    scale: 1.04;
 }
 
 .nav-btn .active {
@@ -147,33 +162,12 @@ main {
 
 .nav-btn .active a {
     color: #ffffff;
+    padding: 5px 20px;
+    scale: 1;
 }
 
 .nav-btn .active a:hover {
     color: #ffffff;
-}
-
-.category {
-    border-radius: 10px;
-    border: 1px solid transparent;
-    transition: all .2s ease-in-out;
-}
-
-.category:hover {
-    border: 1px solid #155569;
-}
-
-.nav-btn ul {
-    margin-top: 20px;
-}
-
-.nav-btn ul a:hover {
-    color: var(--primary);
-}
-
-.nav-btn ul a:active {
-    font-weight: 800;
-    color: var(--primary);
 }
 
 .nav-follow {
@@ -183,7 +177,8 @@ main {
     text-align: center;
     background-color: var(--alpha-w-60);
     border-radius: 10px;
-    padding: 4px;
+    border: 1.5px solid var(--lightgrey);
+    padding: 4px 20px;
 }
 
 .nav-follow a:hover {
@@ -223,26 +218,35 @@ main {
 .nav-ombCollect {
     display: flex;
     justify-content: flex-start;
+    text-align: center;
+    align-items: center;
     margin: 10px 10px 20px;
+    height: 40px;
 }
 
 .nav-ombCollect ul {
-    margin-right: 30px;
-    padding: 0 10px;
+    margin-right: 10px;
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     font-size: 1rem;
-    letter-spacing: .1rem;
-    font-weight: 500;
+    letter-spacing: 1.5px;
+    font-weight: 600;
     color: var(--darkgrey);
+    transition: .15s ease;
+}
+
+.nav-ombCollect a {
+    padding: 1px 6px 1px 8px;
 }
 
 .nav-ombCollect a:hover {
     color: var(--primary);
+    scale: 1.04;
 }
 
 .collect-content>div {
     display: none;
+    margin-top: 10px;
 }
 
 .collect-bar,
@@ -260,27 +264,19 @@ main {
 .collect {
     border: 1px solid transparent;
     border-radius: 10px;
-    transition: .2s ease-in-out;
-}
-
-.collect:hover {
-    border: 1px solid #155569;
+    padding: 2px 15px;
 }
 
 .nav-ombCollect .active {
     background-color: #155569;
+    padding: 4px 15px;
 }
 
 .nav-ombCollect .active a {
     color: #ffffff;
 }
 
-.visited-bar p {
-    font-family: "Noto Sans TC", sans-serif;
-    font-optical-sizing: auto;
-    font-size: 1.2rem;
-    letter-spacing: .1rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 20px;
+.nav-ombCollect .active a:hover {
+    color: #ffffff;
+    scale: 1;
 }
