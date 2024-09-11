@@ -537,11 +537,11 @@ main {
     opacity: .7;
 }
 
-/* .sort-hot {
+.sort-hot {
     background-color: #155569;
     color: #ffffff;
     letter-spacing: .3rem;
-} */
+}
 
 /* 評論內容 */
 .comment {

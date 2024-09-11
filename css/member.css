@@ -314,6 +314,10 @@ main {
     transition: .2s ease-in-out;
 }
 
+.record-header:hover {
+    opacity: .7;
+}
+
 .record-content {
     width: 200px;
     /* max-height: 0; */
@@ -516,6 +520,6 @@ main {
     transform: scale(.99);
 }
 
-.mb-setting{
+.mb-setting {
     pointer-events: none;
 }
