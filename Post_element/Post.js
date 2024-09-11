@@ -57,7 +57,7 @@ function post() {
     // 這個函數用來重置所有按鈕的顏色
     function resetColor(buttons) {
         buttons.forEach(button => {
-            button.style.backgroundColor = 'white';
+            button.style.backgroundColor = '#F5F5F5';
             button.style.color = 'black';
         });
     }
