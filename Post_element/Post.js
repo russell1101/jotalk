@@ -5,6 +5,17 @@ function post() {
     const overlay = document.getElementById("overlay");
     const closeButtons = document.querySelectorAll(".closebtn");
 
+    const bodyAtc = document.querySelector('.body_atc');
+
+    // 只在 body_atc 區域內禁用 <a> 的預設跳轉
+    if (bodyAtc) {
+        bodyAtc.addEventListener('click', function (event) {
+            if (event.target.tagName === 'A') {
+                event.preventDefault(); // 阻止 <a> 的跳轉行為
+            }
+        });
+    }
+
     articles.forEach(article => {
         article.addEventListener('click', function () {
             const target = article.getAttribute('data-target'); // 獲取 data-target 值

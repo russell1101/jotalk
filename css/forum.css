@@ -872,7 +872,7 @@ main {
 
 /* 遮罩跟彈出視窗 */
 /* 初始狀態：遮罩隱藏 */
-.overlay {
+.overlay-teach {
     display: none;
     position: fixed;
     top: 0;

@@ -168,14 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// 點擊彈出視窗
-
+// 點擊圖片彈出視窗
 document.addEventListener("DOMContentLoaded", function () {
-    const overlay = document.getElementById("image-overlay");
+    const overlay_teach = document.getElementById("image-overlay");
     const overlayImage = document.getElementById("overlay-image");
 
-    // 查找所有帶有 data-large 屬性的 li 元素
-    const items = document.querySelectorAll("li[data-large]");
+    // 限定查找範圍在 body_teach 區域內
+    const bodyTeach = document.querySelector(".body_teach");
+    const items = bodyTeach.querySelectorAll("li[data-large]");
 
     // 為每個 li 添加點擊事件處理器
     items.forEach(item => {
@@ -183,12 +183,12 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();  // 防止 a 標籤的預設行為
             const largeImageSrc = item.getAttribute("data-large");  // 取得 data-large 屬性的值
             overlayImage.src = largeImageSrc;  // 設置彈出圖片的 src
-            overlay.style.display = "block";   // 顯示遮罩
+            overlay_teach.style.display = "block";   // 顯示遮罩
         });
     });
 
     // 點擊遮罩時隱藏遮罩和圖片
-    overlay.addEventListener("click", function () {
-        overlay.style.display = "none";
+    overlay_teach.addEventListener("click", function () {
+        overlay_teach.style.display = "none";
     });
 });
