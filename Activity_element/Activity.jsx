@@ -25,7 +25,7 @@ function Activity(props) {
 
                                 <div class="share_evt">
                                 {/* onClick={handleBookmarkClick}  onClick={handleShareClick} */}
-                                    <img id="bookmark" src="./img/forum/news/likes/bookmark_window.svg" alt=""  />
+                                    <img id="bookmark" src="./img/forum/news/likes/bookmark_window.svg"  alt=""  />
                                     <img id="share" src="./img/forum/news/likes/share_window.svg" alt=""  />
                                 </div>
                                 <p><code class="bold">活動時間：</code><br />
