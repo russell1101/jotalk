@@ -141,6 +141,28 @@ main {
     flex-direction: column;
 }
 
+.nav-btn .active {
+    background-color: #155569;
+}
+
+.nav-btn .active a {
+    color: #ffffff;
+}
+
+.nav-btn .active a:hover {
+    color: #ffffff;
+}
+
+.category {
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all .2s ease-in-out;
+}
+
+.category:hover {
+    border: 1px solid #155569;
+}
+
 .nav-btn ul {
     margin-top: 20px;
 }
@@ -205,7 +227,8 @@ main {
 }
 
 .nav-ombCollect ul {
-    margin-right: 50px;
+    margin-right: 30px;
+    padding: 0 10px;
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
     font-size: 1rem;
@@ -232,6 +255,24 @@ main {
 .nav-omb-collect.active~.collect-article,
 .nav-omb-visited.active~.collect-member {
     display: block;
+}
+
+.collect {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+}
+
+.collect:hover {
+    border: 1px solid #155569;
+}
+
+.nav-ombCollect .active {
+    background-color: #155569;
+}
+
+.nav-ombCollect .active a {
+    color: #ffffff;
 }
 
 .visited-bar p {
