@@ -136,9 +136,7 @@
                         time: '2024-09-20T20:22:00',
                         user_time: '9月20日 20:22',
                         floor: 'B1',
-                        floor2: 'B2',
                         content: '泰酷辣!!!',
-                        content2: '說啥呢這哥',
                         heart_cmt: 150,
                         comment_cmt: 5,
                         user_url2: './img/forum/account/user/user2.jpg',
@@ -148,7 +146,15 @@
                         floor2: 'B2',
                         content2: '說啥呢這哥',
                         heart_cmt2: 99,
-                        comment_cmt2: 10
+                        comment_cmt2: 10,
+                        user_url3: './img/forum/account/user/user4.jpg',
+                        userName3: '龍潭薯條殺手',
+                        time3: '2024-09-20T20:40:00',
+                        user_time3: '9月20日 20:40',
+                        floor3: 'B3',
+                        content3: '這我連回都不想回= =',
+                        heart_cmt3: 66,
+                        comment_cmt3: 6
                     },
                     {
                         id: 2, //跑迴圈時 需要一個資料不會重複的key值
@@ -191,7 +197,7 @@
                     <>
                         {
                             article.slice(0, 1).map((item) => {
-                                return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} user_url={item.user_url} user_url2={item.user_url2} userName={item.userName} userName2={item.userName2} user_time={item.user_time} user_time2={item.user_time2} floor={item.floor} floor2={item.floor2} content={item.content} content2={item.content2} heart_cmt={item.heart_cmt} heart_cmt2={item.heart_cmt2} comment_cmt={item.comment_cmt} comment_cmt2={item.comment_cmt2} />
+                                return <Post key={item.id} target={item.target} user_img={item.user_img} user_name={item.user_name} post_time={item.post_time} art_title={item.art_title} hashtag1={item.hashtag1} hashtag2={item.hashtag2} hashtag3={item.hashtag3} art_content={item.art_content} heart_num={item.heart_num} comment_num={item.comment_num} bookMark_num={item.bookMark_num} time={item.time} time2={item.time2} time3={item.time3} user_url={item.user_url} user_url2={item.user_url2} user_url3={item.user_url3} userName={item.userName} userName2={item.userName2} userName3={item.userName3} user_time={item.user_time} user_time2={item.user_time2} user_time3={item.user_time3} floor={item.floor} floor2={item.floor2} floor3={item.floor3} content={item.content} content2={item.content2} content3={item.content3} heart_cmt={item.heart_cmt} heart_cmt2={item.heart_cmt2} heart_cmt3={item.heart_cmt3} comment_cmt={item.comment_cmt} comment_cmt2={item.comment_cmt2} comment_cmt3={item.comment_cmt3}/>
                             })
                         }
                         {

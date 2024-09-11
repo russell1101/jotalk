@@ -1,6 +1,6 @@
 // 文章視窗元件
 function Post(props) {
-    const { target, user_img, user_name, post_time, art_title, hashtag1, hashtag2, hashtag3, art_content, heart_num, comment_num, bookMark_num, time, time2, user_url, user_url2, userName, userName2, user_time, user_time2, floor, floor2, content, content2, heart_cmt, heart_cmt2, comment_cmt, comment_cmt2 } = props;
+    const { target, user_img, user_name, post_time, art_title, hashtag1, hashtag2, hashtag3, art_content, heart_num, comment_num, bookMark_num, time, time2, time3,user_url, user_url2, user_url3, userName, userName2, userName3,user_time, user_time2, user_time3,floor, floor2, floor3,content, content2, content3,heart_cmt, heart_cmt2, heart_cmt3,comment_cmt, comment_cmt2,comment_cmt3 } = props;
     const artId = `content-${target}`;
 
     return (
@@ -88,6 +88,27 @@ function Post(props) {
                                 <div id="comment">
                                     <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
                                     <p id="comment_num">{comment_cmt2}</p>
+                                </div>
+                                <small>查看更多回覆</small>
+                            </div>
+                            <hr />
+                        </div>
+                        <div className="comment" data-timestamp={time3}>
+                            <div className="comment_user">
+                                <figure><img src={user_url3} alt="" /></figure>
+                                <h2>{userName3}</h2>
+                                <small>{user_time3}</small>
+                                <small>{floor3}</small>
+                            </div>
+                            <p>{content3}</p>
+                            <div id="like">
+                                <div id="heart">
+                                    <img id="heart_img" src="../img/forum/account/like/icon _heart_.svg" alt="" />
+                                    <p id="heart_num">{heart_cmt3}</p>
+                                </div>
+                                <div id="comment">
+                                    <img id="comment_img" src="../img/forum/account/like/icon _comment square_.svg" alt="" />
+                                    <p id="comment_num">{comment_cmt3}</p>
                                 </div>
                                 <small>查看更多回覆</small>
                             </div>
